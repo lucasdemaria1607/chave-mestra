@@ -1,0 +1,10 @@
+# Claude Code local state (não vai para o repo)
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
+*.tmp
+*.log

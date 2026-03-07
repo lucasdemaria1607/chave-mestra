@@ -1,0 +1,10 @@
+{
+  "name": "chave-mestra-estrategista",
+  "version": "2.0.0",
+  "description": "PROACTIVELY activate for: 1. User says 'planeja uma campanha', 'mapa de campanha', 'cronograma de lançamento'; 2. User needs to choose a launch modality: Meteórico (3–7 days), Desafio (7/14/21 days), Lançamento Interno (4–8 weeks), Protocolo Massivo (4–12 weeks); 3. User says 'lançamento meteórico', 'desafio 7 dias', 'lançamento interno', 'protocolo massivo'; 4. User needs a day-by-day campaign schedule with the 4 narrative acts (World Establishment, Inciting Incident, The Journey, The Decision); 5. User says 'copy por fase de campanha', 'o que postar cada dia', 'narrativa de lançamento'; 6. User wants to plan what to communicate at each stage of a launch sequence; 7. User says 'que modalidade usar', 'como vou lançar esse produto', 'estratégia de campanha'.",
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "homepage": "https://instagram.com/olucasgrigo"
+  },
+  "keywords": ["chave-mestra", "estrategista", "campanha", "lançamento", "meteórico", "desafio", "protocolo-massivo", "cronograma", "narrativa", "mapa-de-campanha"]
+}

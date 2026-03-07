@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tema Chave Mestra — Sistema Visual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English:ital@0;1&family=IM+Fell+DW+Pica&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════════════════════════════
+   TEMA CHAVE MESTRA — SISTEMA VISUAL COMPLETO
+   Versão 1.0 · Março 2026 · @olucasgrigo
+   
+   USO: Copie o bloco :root e as classes que precisar para qualquer projeto.
+   Tudo que começa com .cm- é um componente do tema.
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── TOKENS: VARIÁVEIS CSS ─────────────────────────────────────────────── */
+:root {
+  /* Ouro Imperial */
+  --gold-bright:    #f0d060;
+  --gold:           #d4af37;
+  --gold-dim:       #b8922a;
+  --gold-deep:      #8b6914;
+  --gold-ghost:     rgba(212, 175, 55, 0.12);
+  --gold-glow:      rgba(212, 175, 55, 0.35);
+
+  /* Escuros */
+  --void:           #0a0a08;
+  --abyss:          #0f0e0a;
+  --dark:           #141310;
+  --charcoal:       #1e1c17;
+  --shadow:         #252218;
+  --ink:            #2e2a20;
+
+  /* Pergaminho (claros) */
+  --parchment:      #f5edd6;
+  --parchment-dim:  #ede0c0;
+  --parchment-deep: #d4c4a0;
+  --cream:          #faf6ec;
+
+  /* Sinais */
+  --blood:          #8b1a1a;
+  --emerald:        #1a5c2a;
+  --sapphire:       #1a2e5c;
+  --silver:         #9a9280;
+  --ash:            #6a6258;
+
+  /* Tipografia */
+  --font-title:     'Cinzel Decorative', 'Cinzel', serif;
+  --font-heading:   'Cinzel', serif;
+  --font-body:      'IM Fell English', 'Playfair Display', serif;
+  --font-prose:     'IM Fell DW Pica', 'Playfair Display', serif;
+  --font-code:      'Courier Prime', 'Courier New', monospace;
+
+  /* Espaços */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  /* Bordas */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Sombras */
+  --shadow-gold:  0 0 24px rgba(212, 175, 55, 0.25);
+  --shadow-deep:  0 8px 32px rgba(0, 0, 0, 0.8);
+  --shadow-lift:  0 2px 12px rgba(0, 0, 0, 0.6);
+  --inset-glow:   inset 0 1px 0 rgba(212, 175, 55, 0.3);
+}
+
+/* ─── RESET E BASE ──────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--void);
+  color: var(--parchment);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Textura de grão sobre tudo */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.6;
+}
+
+/* Vinheta nas bordas */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.7) 100%);
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--abyss); }
+::-webkit-scrollbar-thumb { background: var(--gold-deep); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ─── SELEÇÃO DE TEXTO ──────────────────────────────────────────────────── */
+::selection { background: var(--gold-ghost); color: var(--gold-bright); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — TIPOGRAFIA
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-display {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  text-shadow: 0 0 40px var(--gold-glow);
+}
+
+.cm-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  color: var(--parchment);
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--gold-ghost);
+  position: relative;
+}
+
+.cm-h1::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.cm-h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+.cm-h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gold-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.cm-label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--ash);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.cm-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--parchment-dim);
+}
+
+.cm-code {
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  color: var(--gold-bright);
+  background: rgba(212, 175, 55, 0.08);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.cm-italic { font-style: italic; color: var(--parchment-dim); }
+.cm-gold   { color: var(--gold); }
+.cm-dim    { color: var(--ash); }
+.cm-blood  { color: var(--blood); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — LAYOUT
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.cm-section {
+  padding: var(--space-3xl) 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.cm-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.cm-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — ORNAMENTOS
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Linha ornamental com símbolo central */
+.cm-ornament {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  color: var(--gold-deep);
+  margin: var(--space-xl) 0;
+}
+
+.cm-ornament::before,
+.cm-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-deep));
+}
+
+.cm-ornament::after {
+  background: linear-gradient(to left, transparent, var(--gold-deep));
+}
+
+.cm-ornament span {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  white-space: nowrap;
+}
+
+/* Divisor simples dourado */
+.cm-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: var(--space-xl) 0;
+  opacity: 0.4;
+}
+
+/* Selo / Badge */
+.cm-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 1px solid var(--gold-deep);
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-gold), var(--inset-glow);
+  position: relative;
+}
+
+.cm-seal::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Número romano ornamental */
+.cm-numeral {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  color: rgba(212, 175, 55, 0.15);
+  line-height: 1;
+  user-select: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — CARDS E CONTAINERS
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Card de pergaminho escuro */
+.cm-card {
+  background: var(--charcoal);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cm-card:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Canto ornamental no card */
+.cm-card::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px;
+  width: 20px; height: 20px;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+  border-radius: var(--radius-sm) 0 0 0;
+}
+
+.cm-card::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; right: -1px;
+  width: 20px; height: 20px;
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+
+/* Card com glow especial */
+.cm-card-featured {
+  background: linear-gradient(135deg, var(--charcoal) 0%, var(--ink) 100%);
+  border: 1px solid var(--gold-dim);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-gold), var(--shadow-deep);
+}
+
+/* Pergaminho claro (fundo parchment) */
+.cm-scroll {
+  background: var(--parchment);
+  color: var(--dark);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  position: relative;
+  box-shadow: var(--shadow-deep);
+  border-top: 3px solid var(--gold-deep);
+  border-bottom: 3px solid var(--gold-deep);
+}
+
+.cm-scroll .cm-h1 { color: var(--dark); border-color: rgba(139, 105, 20, 0.3); }
+.cm-scroll .cm-h1::after { background: var(--gold-deep); }
+.cm-scroll .cm-body { color: #3a3020; }
+
+/* Container de código / terminal */
+.cm-terminal {
+  background: var(--void);
+  border: 1px solid var(--gold-ghost);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--gold-bright);
+  position: relative;
+  overflow-x: auto;
+}
+
+.cm-terminal::before {
+  content: '● ● ●';
+  display: block;
+  color: var(--gold-deep);
+  font-size: 0.7rem;
+  letter-spacing: 4px;
+  margin-bottom: var(--space-md);
+  opacity: 0.6;
+}
+
+.cm-terminal .dim { color: var(--ash); }
+.cm-terminal .accent { color: var(--gold); }
+.cm-terminal .comment { color: var(--emerald); opacity: 0.7; }
+
+/* Caixa de destaque / alerta */
+.cm-callout {
+  border-left: 3px solid var(--gold);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--gold-ghost);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: var(--space-lg) 0;
+}
+
+.cm-callout-blood {
+  border-left-color: var(--blood);
+  background: rgba(139, 26, 26, 0.1);
+}
+
+.cm-callout-emerald {
+  border-left-color: var(--emerald);
+  background: rgba(26, 92, 42, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — BOTÕES
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 12px 28px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Primário — ouro sólido */
+.cm-btn-primary {
+  background: var(--gold);
+  color: var(--void);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+}
+
+.cm-btn-primary:hover {
+  background: var(--gold-bright);
+  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Secundário — contorno dourado */
+.cm-btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+}
+
+.cm-btn-outline:hover {
+  background: var(--gold-ghost);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Ghost — sutil */
+.cm-btn-ghost {
+  background: transparent;
+  color: var(--parchment-dim);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.cm-btn-ghost:hover {
+  background: rgba(212, 175, 55, 0.06);
+  color: var(--gold);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Destrutivo */
+.cm-btn-blood {
+  background: var(--blood);
+  color: var(--parchment);
+  border: 1px solid rgba(139, 26, 26, 0.5);
+}
+
+.cm-btn-blood:hover {
+  background: #a32020;
+  box-shadow: 0 4px 16px rgba(139, 26, 26, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — BADGES
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+}
+
+.cm-badge-gold   { background: var(--gold-ghost); color: var(--gold); border: 1px solid rgba(212,175,55,0.3); }
+.cm-badge-blood  { background: rgba(139,26,26,0.2); color: #d44444; border: 1px solid rgba(139,26,26,0.3); }
+.cm-badge-silver { background: rgba(154,146,128,0.15); color: var(--silver); border: 1px solid rgba(154,146,128,0.25); }
+.cm-badge-dark   { background: var(--charcoal); color: var(--parchment-dim); border: 1px solid var(--ink); }
+.cm-badge-scroll { background: rgba(212,196,160,0.1); color: var(--parchment-deep); border: 1px solid rgba(212,196,160,0.2); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — TABELA
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.cm-table thead tr {
+  background: var(--ink);
+  border-bottom: 1px solid var(--gold-dim);
+}
+
+.cm-table thead th {
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cm-table tbody tr {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.06);
+  transition: background 0.2s;
+}
+
+.cm-table tbody tr:hover { background: rgba(212, 175, 55, 0.04); }
+
+.cm-table tbody td {
+  padding: var(--space-md) var(--space-lg);
+  color: var(--parchment-dim);
+}
+
+.cm-table tbody td:first-child {
+  color: var(--parchment);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — INPUTS / FORMS
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-input {
+  width: 100%;
+  background: var(--charcoal);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 10px var(--space-md);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--parchment);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cm-input:focus {
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 0 3px var(--gold-ghost);
+}
+
+.cm-input::placeholder { color: var(--ash); font-style: italic; }
+
+.cm-input-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 6px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — LISTA ORNAMENTAL
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cm-list li {
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.05);
+  color: var(--parchment-dim);
+  position: relative;
+  font-family: var(--font-body);
+}
+
+.cm-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--gold-deep);
+  font-size: 0.65rem;
+  top: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — PROGRESS / STATUS
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-progress-bar {
+  height: 4px;
+  background: var(--ink);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cm-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  background: linear-gradient(to right, var(--gold-deep), var(--gold-bright));
+  width: var(--progress, 60%);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--gold-glow);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — NAVEGAÇÃO / HEADER
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 10, 8, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+  padding: var(--space-md) 0;
+}
+
+.cm-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.cm-logo {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-shadow: 0 0 20px var(--gold-glow);
+}
+
+.cm-nav-links {
+  display: flex;
+  gap: var(--space-xl);
+  list-style: none;
+}
+
+.cm-nav-links a {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ash);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cm-nav-links a:hover { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENTES — HERO
+═══════════════════════════════════════════════════════════════════════════ */
+
+.cm-hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-3xl) var(--space-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Linhas de grade perspectiva */
+.cm-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 60px,
+      rgba(212, 175, 55, 0.03) 60px,
+      rgba(212, 175, 55, 0.03) 61px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 60px,
+      rgba(212, 175, 55, 0.03) 60px,
+      rgba(212, 175, 55, 0.03) 61px
+    );
+  pointer-events: none;
+}
+
+/* Glow central */
+.cm-hero::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITÁRIOS
+═══════════════════════════════════════════════════════════════════════════ */
+
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mb-xs { margin-bottom: var(--space-xs); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+.flex        { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.gap-sm      { gap: var(--space-sm); }
+.gap-md      { gap: var(--space-md); }
+.gap-lg      { gap: var(--space-lg); }
+.wrap        { flex-wrap: wrap; }
+
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+.w-full      { width: 100%; }
+
+/* Animação de entrada */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.cm-animate { animation: fadeUp 0.6s ease forwards; }
+.cm-animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.cm-animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.cm-animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.cm-animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ESTILOS DA PÁGINA DE DEMO
+═══════════════════════════════════════════════════════════════════════════ */
+
+.demo-section-title {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.color-swatch {
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-sm);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.color-swatch-label {
+  font-family: var(--font-code);
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.4);
+  padding: 2px 6px;
+  border-radius: 2px;
+  backdrop-filter: blur(4px);
+}
+
+.type-sample {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.06);
+}
+
+.type-meta {
+  font-family: var(--font-code);
+  font-size: 0.7rem;
+  color: var(--ash);
+  margin-top: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ─── NAVBAR ──────────────────────────────────────────────────────────── -->
+<nav class="cm-navbar">
+  <div class="cm-navbar-inner">
+    <a class="cm-logo" href="#">⚙ Chave Mestra</a>
+    <ul class="cm-nav-links">
+      <li><a href="#tipografia">Tipografia</a></li>
+      <li><a href="#cores">Cores</a></li>
+      <li><a href="#componentes">Componentes</a></li>
+      <li><a href="#layout">Layout</a></li>
+      <li><a href="#codigo">Código</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── HERO ────────────────────────────────────────────────────────────── -->
+<section class="cm-hero">
+  <p class="cm-label cm-animate cm-animate-delay-1" style="margin-bottom:20px">Sistema Visual — Versão 1.0 · Março 2026</p>
+  <h1 class="cm-display cm-animate cm-animate-delay-2" style="margin-bottom:16px">Tema Chave Mestra</h1>
+  <p class="cm-body cm-animate cm-animate-delay-3" style="max-width:520px;text-align:center;margin-bottom:40px">
+    O design system da marca. Uma linguagem visual coesa que transforma qualquer output em pergaminho digital — com a autoridade do antigo e a precisão do moderno.
+  </p>
+  <div class="flex gap-md wrap flex-center cm-animate cm-animate-delay-4">
+    <a class="cm-btn cm-btn-primary" href="#componentes">Ver Componentes</a>
+    <a class="cm-btn cm-btn-outline" href="#codigo">Código Fonte</a>
+  </div>
+
+  <div class="cm-ornament" style="width:100%;max-width:600px;margin-top:60px">
+    <span>Pergaminho · Portal · Forja</span>
+  </div>
+</section>
+
+<div class="cm-container">
+
+<!-- ─── TIPOGRAFIA ───────────────────────────────────────────────────────── -->
+<section class="cm-section" id="tipografia">
+  <p class="demo-section-title">Seção 01 — Tipografia</p>
+
+  <div class="type-sample">
+    <div class="cm-display">Chave Mestra</div>
+    <p class="type-meta">.cm-display · Cinzel Decorative 700 · Display / Hero</p>
+  </div>
+
+  <div class="type-sample">
+    <h1 class="cm-h1">A Arte de Abrir Portais</h1>
+    <p class="type-meta">.cm-h1 · Cinzel 600 · Títulos principais de página</p>
+  </div>
+
+  <div class="type-sample">
+    <h2 class="cm-h2">Diagnóstico de Mercado</h2>
+    <p class="type-meta">.cm-h2 · Cinzel 400 Uppercase · Títulos de seção</p>
+  </div>
+
+  <div class="type-sample">
+    <h3 class="cm-h3">Zeitgeist e Tensões Subterrâneas</h3>
+    <p class="type-meta">.cm-h3 · Cinzel 600 Uppercase Small · Subtítulos</p>
+  </div>
+
+  <div class="type-sample">
+    <p class="cm-label">Plugin 04 · Camada de Criação</p>
+    <p class="type-meta">.cm-label · Cinzel 600 Uppercase · Labels e metadados</p>
+  </div>
+
+  <div class="type-sample">
+    <p class="cm-body">O Método Carga não é uma lista de gatilhos. É um sistema de calibração da pressão psicológica exercida pelo conteúdo — que opera abaixo da percepção racional, desarmando resistências antes que a mente crítica possa intervir.</p>
+    <p class="type-meta">.cm-body · IM Fell English · Corpo de texto</p>
+  </div>
+
+  <div class="type-sample">
+    <p class="cm-body cm-italic">Personalidade e inteligência são as principais chaves que geram resultados.</p>
+    <p class="type-meta">.cm-italic · IM Fell English Italic · Citações e ênfases</p>
+  </div>
+
+  <div class="type-sample">
+    <code class="cm-code">SKILL-04-chavideo-v1.0.md</code>
+    <p class="type-meta mt-sm">.cm-code · Courier Prime · Código inline e referências técnicas</p>
+  </div>
+</section>
+
+<!-- ─── PALETA DE CORES ──────────────────────────────────────────────────── -->
+<section class="cm-section" id="cores">
+  <p class="demo-section-title">Seção 02 — Paleta de Cores</p>
+
+  <h2 class="cm-h2 mb-lg">Ouro Imperial</h2>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:40px">
+    <div class="color-swatch" style="background:#f0d060;aspect-ratio:1"><div class="color-swatch-label">#f0d060<br>gold-bright</div></div>
+    <div class="color-swatch" style="background:#d4af37;aspect-ratio:1"><div class="color-swatch-label">#d4af37<br>gold</div></div>
+    <div class="color-swatch" style="background:#b8922a;aspect-ratio:1"><div class="color-swatch-label">#b8922a<br>gold-dim</div></div>
+    <div class="color-swatch" style="background:#8b6914;aspect-ratio:1"><div class="color-swatch-label">#8b6914<br>gold-deep</div></div>
+    <div class="color-swatch" style="background:rgba(212,175,55,0.12);border:1px solid #d4af37;aspect-ratio:1"><div class="color-swatch-label">rgba(212,175,55,0.12)<br>gold-ghost</div></div>
+  </div>
+
+  <h2 class="cm-h2 mb-lg">Escuros</h2>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:40px">
+    <div class="color-swatch" style="background:#0a0a08;border:1px solid #333;aspect-ratio:1"><div class="color-swatch-label">#0a0a08<br>void</div></div>
+    <div class="color-swatch" style="background:#141310;aspect-ratio:1"><div class="color-swatch-label">#141310<br>dark</div></div>
+    <div class="color-swatch" style="background:#1e1c17;aspect-ratio:1"><div class="color-swatch-label">#1e1c17<br>charcoal</div></div>
+    <div class="color-swatch" style="background:#252218;aspect-ratio:1"><div class="color-swatch-label">#252218<br>shadow</div></div>
+    <div class="color-swatch" style="background:#2e2a20;aspect-ratio:1"><div class="color-swatch-label">#2e2a20<br>ink</div></div>
+    <div class="color-swatch" style="background:#6a6258;aspect-ratio:1"><div class="color-swatch-label">#6a6258<br>ash</div></div>
+  </div>
+
+  <h2 class="cm-h2 mb-lg">Pergaminho</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px">
+    <div class="color-swatch" style="background:#faf6ec;aspect-ratio:1"><div class="color-swatch-label" style="color:#333">#faf6ec<br>cream</div></div>
+    <div class="color-swatch" style="background:#f5edd6;aspect-ratio:1"><div class="color-swatch-label" style="color:#333">#f5edd6<br>parchment</div></div>
+    <div class="color-swatch" style="background:#ede0c0;aspect-ratio:1"><div class="color-swatch-label" style="color:#333">#ede0c0<br>parchment-dim</div></div>
+    <div class="color-swatch" style="background:#d4c4a0;aspect-ratio:1"><div class="color-swatch-label" style="color:#333">#d4c4a0<br>parchment-deep</div></div>
+  </div>
+
+  <h2 class="cm-h2 mb-lg">Sinais</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+    <div class="color-swatch" style="background:#8b1a1a;aspect-ratio:1"><div class="color-swatch-label">#8b1a1a · blood<br>Erro, urgência, remoção</div></div>
+    <div class="color-swatch" style="background:#1a5c2a;aspect-ratio:1"><div class="color-swatch-label">#1a5c2a · emerald<br>Sucesso, confirmação</div></div>
+    <div class="color-swatch" style="background:#1a2e5c;aspect-ratio:1"><div class="color-swatch-label">#1a2e5c · sapphire<br>Info, destaque neutro</div></div>
+  </div>
+</section>
+
+<!-- ─── COMPONENTES ──────────────────────────────────────────────────────── -->
+<section class="cm-section" id="componentes">
+  <p class="demo-section-title">Seção 03 — Componentes</p>
+
+  <!-- BOTÕES -->
+  <h2 class="cm-h2 mb-lg">Botões</h2>
+  <div class="flex gap-md wrap mb-xl">
+    <button class="cm-btn cm-btn-primary">Portal Primário</button>
+    <button class="cm-btn cm-btn-outline">Contorno Dourado</button>
+    <button class="cm-btn cm-btn-ghost">Fantasma</button>
+    <button class="cm-btn cm-btn-blood">Ação Crítica</button>
+  </div>
+
+  <!-- BADGES -->
+  <h2 class="cm-h2 mb-lg">Badges</h2>
+  <div class="flex gap-sm wrap mb-xl">
+    <span class="cm-badge cm-badge-gold">Dourado</span>
+    <span class="cm-badge cm-badge-blood">Urgente</span>
+    <span class="cm-badge cm-badge-silver">Prata</span>
+    <span class="cm-badge cm-badge-dark">Escuro</span>
+    <span class="cm-badge cm-badge-scroll">Pergaminho</span>
+    <span class="cm-badge cm-badge-gold">✅ Pronto</span>
+    <span class="cm-badge cm-badge-blood">◻ Pendente</span>
+  </div>
+
+  <!-- CARDS -->
+  <h2 class="cm-h2 mb-lg">Cards</h2>
+  <div class="cm-grid-3 mb-xl">
+
+    <div class="cm-card">
+      <p class="cm-label mb-sm">Plugin 04</p>
+      <h3 class="cm-h2" style="font-size:1.1rem;margin-bottom:12px">Chavideo</h3>
+      <p class="cm-body" style="font-size:0.9rem">Roteiros de vídeo viral usando 14 exercícios Progymnasmata + tensões cinematográficas.</p>
+      <div class="mt-lg flex gap-sm">
+        <span class="cm-badge cm-badge-gold">Criação</span>
+        <span class="cm-badge cm-badge-dark">Camada 3</span>
+      </div>
+    </div>
+
+    <div class="cm-card">
+      <p class="cm-label mb-sm">Plugin 02</p>
+      <h3 class="cm-h2" style="font-size:1.1rem;margin-bottom:12px">Forja da Persona</h3>
+      <p class="cm-body" style="font-size:0.9rem">SZC + Alma da Persona. Mapeamento interno completo: Inferno, Purgatório, Paraíso.</p>
+      <div class="mt-lg flex gap-sm">
+        <span class="cm-badge cm-badge-scroll">Diagnóstico</span>
+        <span class="cm-badge cm-badge-dark">Camada 1</span>
+      </div>
+    </div>
+
+    <div class="cm-card-featured">
+      <p class="cm-label mb-sm">Destaque</p>
+      <h3 class="cm-h2" style="font-size:1.1rem;margin-bottom:12px;color:var(--gold-bright)">Plugin 00 · Chaveiro</h3>
+      <p class="cm-body" style="font-size:0.9rem">O guardião. Assimila livros e PDFs sem comprometer o que já funciona.</p>
+      <div class="mt-lg flex gap-sm">
+        <span class="cm-badge cm-badge-gold">★ Meta</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CALLOUTS -->
+  <h2 class="cm-h2 mb-lg">Callouts</h2>
+  <div class="mb-xl">
+    <div class="cm-callout">
+      <p class="cm-h3 mb-sm">Nota Importante</p>
+      <p class="cm-body">Nunca sobrescreva — sempre versione. A versão anterior é patrimônio do sistema.</p>
+    </div>
+    <div class="cm-callout cm-callout-blood mt-md">
+      <p class="cm-h3 mb-sm" style="color:var(--blood)">Atenção Crítica</p>
+      <p class="cm-body">O glossário é lei. Termos proprietários nunca são substituídos por equivalentes genéricos.</p>
+    </div>
+    <div class="cm-callout cm-callout-emerald mt-md">
+      <p class="cm-h3 mb-sm" style="color:#44aa66">Confirmado</p>
+      <p class="cm-body">Peça 01 — Estrutura Física entregue e validada. Pronta para implementação.</p>
+    </div>
+  </div>
+
+  <!-- ORNAMENTOS -->
+  <h2 class="cm-h2 mb-lg">Ornamentos</h2>
+  <div class="mb-xl">
+    <div class="cm-ornament"><span>⚙ Chaveiro ⚙</span></div>
+    <div class="cm-ornament"><span>Portal do Terreno</span></div>
+    <hr class="cm-divider">
+    <div class="flex gap-md flex-center mb-md mt-md">
+      <div class="cm-seal"><span>I</span></div>
+      <div class="cm-seal"><span>II</span></div>
+      <div class="cm-seal"><span>III</span></div>
+      <div class="cm-seal"><span>IV</span></div>
+    </div>
+  </div>
+
+  <!-- PERGAMINHO CLARO -->
+  <h2 class="cm-h2 mb-lg">Pergaminho Claro</h2>
+  <div class="cm-scroll mb-xl">
+    <h2 class="cm-h1">Manifesto Chave Mestra</h2>
+    <p class="cm-body mt-md">A Chave Mestra não é um curso. Não é um método. Não é mais um produto digital. É uma tese sobre como resultados reais são gerados — e uma proposta de jornada para quem quer construí-los.</p>
+    <p class="cm-body cm-italic mt-md">Personalidade e inteligência são as principais chaves que geram resultados.</p>
+    <div class="mt-lg flex gap-sm">
+      <span class="cm-badge cm-badge-dark">Fevereiro 2026</span>
+      <span class="cm-badge cm-badge-dark">@olucasgrigo</span>
+    </div>
+  </div>
+
+  <!-- INPUTS -->
+  <h2 class="cm-h2 mb-lg">Inputs</h2>
+  <div class="cm-grid-2 mb-xl">
+    <div>
+      <label class="cm-input-label">Nome do Plugin</label>
+      <input type="text" class="cm-input" placeholder="Ex: chavideo, chavossel...">
+    </div>
+    <div>
+      <label class="cm-input-label">Versão</label>
+      <input type="text" class="cm-input" placeholder="Ex: 1.0, 1.1...">
+    </div>
+  </div>
+
+  <!-- LISTA -->
+  <h2 class="cm-h2 mb-lg">Lista Ornamental</h2>
+  <ul class="cm-list mb-xl">
+    <li>Crescimento por adição, nunca por substituição</li>
+    <li>Proponha antes de implementar — o usuário decide</li>
+    <li>O core filosófico é intocável: Personalidade + Inteligência = Resultados</li>
+    <li>O glossário é lei em todos os outputs do sistema</li>
+    <li>O que vier — acerto ou erro — vira tesouro</li>
+  </ul>
+
+  <!-- TABELA -->
+  <h2 class="cm-h2 mb-lg">Tabela</h2>
+  <div style="overflow-x:auto" class="mb-xl">
+    <table class="cm-table">
+      <thead>
+        <tr>
+          <th>Plugin</th>
+          <th>Camada</th>
+          <th>Função</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>00 — Chaveiro</td>
+          <td>Meta</td>
+          <td>Manutenção e coerência do sistema</td>
+          <td><span class="cm-badge cm-badge-gold">✅ Pronto</span></td>
+        </tr>
+        <tr>
+          <td>01 — Portal do Terreno</td>
+          <td>Diagnóstico</td>
+          <td>Análise estrutural de mercado</td>
+          <td><span class="cm-badge cm-badge-silver">◻ Pendente</span></td>
+        </tr>
+        <tr>
+          <td>04 — Chavideo</td>
+          <td>Criação</td>
+          <td>Roteiros de vídeo + Progymnasmata</td>
+          <td><span class="cm-badge cm-badge-gold">✅ Pronto</span></td>
+        </tr>
+        <tr>
+          <td>08 — Portal da Escala</td>
+          <td>Escala</td>
+          <td>Métricas, alavancas, equipe</td>
+          <td><span class="cm-badge cm-badge-silver">◻ Pendente</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TERMINAL / CÓDIGO -->
+  <h2 class="cm-h2 mb-lg">Terminal</h2>
+  <div class="cm-terminal mb-xl">
+    <span class="comment"># SKILL-00-chaveiro-v1.0.md</span>
+    <br><span class="dim">---</span>
+    <br><span class="accent">name:</span> chaveiro
+    <br><span class="accent">version:</span> 1.0
+    <br><span class="dim">---</span>
+    <br>
+    <br><span class="comment"># Protocolo de assimilação ativo</span>
+    <br><span class="dim">→</span> Material recebido: <span class="accent">SISTEMA-CONHECIMENTO.pdf</span>
+    <br><span class="dim">→</span> Camada identificada: <span class="accent">Camada 0 — Base Intelectual</span>
+    <br><span class="dim">→</span> Notas extraídas: <span class="accent">7</span>
+    <br><span class="dim">→</span> Modelos mentais: <span class="accent">3 novos</span>
+    <br><span class="dim">→</span> Propostas de update: <span class="accent">Plugin 09</span>
+    <br>
+    <br><span class="accent">STATUS: Aguardando aprovação do usuário</span>
+  </div>
+
+  <!-- PROGRESS -->
+  <h2 class="cm-h2 mb-lg">Progress / Status</h2>
+  <div style="display:flex;flex-direction:column;gap:16px;max-width:500px" class="mb-xl">
+    <div>
+      <div class="flex" style="justify-content:space-between;margin-bottom:6px">
+        <span class="cm-label">Kit Coprodução</span>
+        <span class="cm-label" style="color:var(--gold)">33%</span>
+      </div>
+      <div class="cm-progress-bar" style="--progress:33%"></div>
+    </div>
+    <div>
+      <div class="flex" style="justify-content:space-between;margin-bottom:6px">
+        <span class="cm-label">Peças entregues</span>
+        <span class="cm-label" style="color:var(--gold)">2 / 6</span>
+      </div>
+      <div class="cm-progress-bar" style="--progress:33%"></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─── LAYOUT ───────────────────────────────────────────────────────────── -->
+<section class="cm-section" id="layout">
+  <p class="demo-section-title">Seção 04 — Layout</p>
+
+  <h2 class="cm-h2 mb-lg">Grid 2 Colunas</h2>
+  <div class="cm-grid-2 mb-xl">
+    <div class="cm-card">
+      <h3 class="cm-h3 mb-md">Coluna Esquerda</h3>
+      <p class="cm-body">Conteúdo principal. Use para seções de diagnóstico, estratégia e análise quando precisar de comparação lado a lado.</p>
+    </div>
+    <div class="cm-card">
+      <h3 class="cm-h3 mb-md">Coluna Direita</h3>
+      <p class="cm-body">Conteúdo complementar. Ideal para contexto, notas técnicas e referências que enriquecem o conteúdo principal.</p>
+    </div>
+  </div>
+
+  <h2 class="cm-h2 mb-lg">Grid 3 Colunas</h2>
+  <div class="cm-grid-3 mb-xl">
+    <div class="cm-card" style="padding:var(--space-lg)">
+      <div class="cm-numeral">I</div>
+      <h3 class="cm-h3 mb-sm">Diagnóstico</h3>
+      <p class="cm-body" style="font-size:0.85rem">Terreno + Persona</p>
+    </div>
+    <div class="cm-card" style="padding:var(--space-lg)">
+      <div class="cm-numeral">II</div>
+      <h3 class="cm-h3 mb-sm">Estratégia</h3>
+      <p class="cm-body" style="font-size:0.85rem">Copy 3x5 + Carga</p>
+    </div>
+    <div class="cm-card" style="padding:var(--space-lg)">
+      <div class="cm-numeral">III</div>
+      <h3 class="cm-h3 mb-sm">Criação</h3>
+      <p class="cm-body" style="font-size:0.85rem">Chavideo + Chavossel</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─── CÓDIGO DE USO ────────────────────────────────────────────────────── -->
+<section class="cm-section" id="codigo">
+  <p class="demo-section-title">Seção 05 — Como Usar</p>
+
+  <h2 class="cm-h2 mb-lg">Injeção Rápida</h2>
+  <p class="cm-body mb-lg">Para aplicar o tema em qualquer HTML novo, adicione o link da fonte e o bloco de variáveis CSS no <code class="cm-code">&lt;head&gt;</code>:</p>
+
+  <div class="cm-terminal mb-xl">
+    <span class="comment">&lt;!-- 1. Google Fonts --&gt;</span>
+    <br><span class="dim">&lt;link</span> <span class="accent">rel=</span>"preconnect" <span class="accent">href=</span>"https://fonts.googleapis.com"<span class="dim">&gt;</span>
+    <br><span class="dim">&lt;link</span> <span class="accent">href=</span>"https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&amp;family=Cinzel+Decorative:wght@400;700&amp;family=IM+Fell+English:ital@0;1&amp;family=Courier+Prime:ital,wght@0,400;0,700;1,400&amp;display=swap" <span class="accent">rel=</span>"stylesheet"<span class="dim">&gt;</span>
+    <br>
+    <br><span class="comment">&lt;!-- 2. Copie o bloco :root com todos os --tokens --&gt;</span>
+    <br><span class="comment">&lt;!-- 3. Copie as classes .cm-* que você precisar --&gt;</span>
+    <br><span class="comment">&lt;!-- 4. Use as classes diretamente no HTML --&gt;</span>
+  </div>
+
+  <h2 class="cm-h2 mb-lg">Exemplo de Uso</h2>
+  <div class="cm-terminal">
+    <span class="comment">&lt;!-- Card de plugin --&gt;</span>
+    <br><span class="dim">&lt;div</span> <span class="accent">class=</span>"cm-card"<span class="dim">&gt;</span>
+    <br>  <span class="dim">&lt;p</span> <span class="accent">class=</span>"cm-label"<span class="dim">&gt;</span>Plugin 04<span class="dim">&lt;/p&gt;</span>
+    <br>  <span class="dim">&lt;h3</span> <span class="accent">class=</span>"cm-h2"<span class="dim">&gt;</span>Chavideo<span class="dim">&lt;/h3&gt;</span>
+    <br>  <span class="dim">&lt;p</span> <span class="accent">class=</span>"cm-body"<span class="dim">&gt;</span>Roteiros com Progymnasmata.<span class="dim">&lt;/p&gt;</span>
+    <br>  <span class="dim">&lt;span</span> <span class="accent">class=</span>"cm-badge cm-badge-gold"<span class="dim">&gt;</span>Criação<span class="dim">&lt;/span&gt;</span>
+    <br><span class="dim">&lt;/div&gt;</span>
+  </div>
+
+</section>
+
+</div><!-- /cm-container -->
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+<footer style="border-top:1px solid rgba(212,175,55,0.1);padding:var(--space-xl) 0;margin-top:var(--space-3xl)">
+  <div class="cm-container">
+    <div class="cm-ornament"><span>⚙ Chave Mestra ⚙</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:var(--space-lg)">
+      <span class="cm-label">Tema Chave Mestra · Versão 1.0 · Março 2026</span>
+      <span class="cm-label">@olucasgrigo</span>
+    </div>
+    <p class="cm-body" style="text-align:center;margin-top:var(--space-md);font-size:0.85rem;color:var(--ash);font-style:italic">
+      A Chave Mestra está em construção permanente. Sempre estará. Isso é a proposta.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

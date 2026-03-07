@@ -1,0 +1,10 @@
+{
+  "name": "chave-mestra-visual",
+  "version": "1.0.0",
+  "description": "PROACTIVELY activate for: 1. User asks for a visual output: HTML, CSS, landing page, carousel, poster, dashboard, PDF, slides, Instagram post, report; 2. User says 'aplica a estética Chave Mestra', 'usa o tema visual', 'formata isso visualmente'; 3. User wants a Pergaminho Branco (white, direct, clean), Preto (black background, bold, provocative), or Dourado (parchment, classical, transformation); 4. User asks for glassmorphism, 3D elements, floating cards, or modern+classical aesthetic; 5. User wants to format any content (copy, carousel, script, campaign) into a specific visual format; 6. User says 'cria o visual', 'formata para Instagram', 'monta o carrossel visual', 'HTML dessa copy'; 7. Any request where the output is a designed artifact — not just text.",
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "homepage": "https://instagram.com/olucasgrigo"
+  },
+  "keywords": ["chave-mestra", "visual", "design", "estética", "HTML", "CSS", "carrossel", "landing-page", "pergaminho", "glassmorphism", "instagram", "slides", "dashboard"]
+}

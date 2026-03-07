@@ -1,0 +1,10 @@
+{
+  "name": "chave-mestra-bardo",
+  "version": "2.0.0",
+  "description": "PROACTIVELY activate for: 1. User says 'cria um roteiro de vídeo', 'faz um script', 'chavideo', 'roteiro para Reels'; 2. User needs a short-form video script (Reels, TikTok, Shorts) or long-form (YouTube, webinar); 3. User says 'roteiro vertical', 'roteiro horizontal', 'script para TikTok', 'vídeo de 60 segundos'; 4. User wants to select a Progymnasmata exercise (narrative, comparison, description, praise, encomium) for their video; 5. User says 'que exercício usar', 'qual cinematica combina', 'tensão dramática no vídeo'; 6. User has a topic or copy piece and wants to transform it into a structured video script; 7. Any request for rhetorical video storytelling using the 14 Progymnasmata exercises and 20 cinematic tension techniques.",
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "homepage": "https://instagram.com/olucasgrigo"
+  },
+  "keywords": ["chave-mestra", "bardo", "roteiro", "vídeo", "script", "reels", "tiktok", "youtube", "progymnasmata", "cinematica", "chavideo"]
+}

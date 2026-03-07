@@ -1,0 +1,10 @@
+{
+  "name": "chave-mestra-forjador",
+  "version": "2.0.0",
+  "description": "PROACTIVELY activate for: 1. User says 'documenta esse erro', 'registra esse aprendizado', 'tesouro dos erros', 'o que aprendemos com essa campanha'; 2. User wants to create a permanent note (Zettelkasten) from an insight, pattern, or learning; 3. User says 'forja do conhecimento', 'nota permanente', 'Zettelkasten', 'captura esse insight'; 4. User wants to update a plugin with a confirmed pattern (2+ occurrences validated); 5. User says 'atualiza o plugin com isso', 'padrão confirmado', 'evolui o skill X'; 6. User needs to build or update the evolution map of the Chave Mestra system; 7. User says 'mapa de evolução', 'o sistema evoluiu como', 'o que mudamos desde a última versão'; 8. Any knowledge management request — capture, organize, evolve, version.",
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "homepage": "https://instagram.com/olucasgrigo"
+  },
+  "keywords": ["chave-mestra", "forjador", "zettelkasten", "conhecimento", "erros", "aprendizado", "evolução", "nota-permanente", "tesouro-dos-erros", "forja-do-conhecimento"]
+}

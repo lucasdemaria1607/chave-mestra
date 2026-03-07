@@ -1,0 +1,64 @@
+{
+  "name": "chave-mestra",
+  "owner": {
+    "name": "Lucas De Maria (Grigo)",
+    "homepage": "https://instagram.com/olucasgrigo"
+  },
+  "plugins": [
+    {
+      "name": "chave-mestra-chaveiro",
+      "source": "./chaveiro",
+      "description": "Plugin 00 — Meta-manutenção do sistema: assimilação de livros/PDFs, atualização de skills, verificação de coerência, integração de frameworks."
+    },
+    {
+      "name": "chave-mestra-cartografo",
+      "source": "./cartografo",
+      "description": "Plugin 01 — Portal do Terreno: diagnóstico estrutural de mercado com PESTEL, Porter's 5 Forces, Mapa de Sofisticação, gaps e posicionamento."
+    },
+    {
+      "name": "chave-mestra-oraculo",
+      "source": "./oraculo",
+      "description": "Plugin 02 — Forja da Persona: mapeamento profundo de avatar via SZC + Alma da Persona (Inferno/Purgatório/Paraíso)."
+    },
+    {
+      "name": "chave-mestra-alquimista",
+      "source": "./alquimista",
+      "description": "Plugin 03 — Pergaminho de Copy: calibração e criação de copy via Copy 3x5 + Método Carga + SZC + frameworks de anúncios."
+    },
+    {
+      "name": "chave-mestra-bardo",
+      "source": "./bardo",
+      "description": "Plugin 04 — Chavideo: roteiros de vídeo curto e longo com base retórica nos 14 exercícios Progymnasmata + cinemáticas."
+    },
+    {
+      "name": "chave-mestra-escriba",
+      "source": "./escriba",
+      "description": "Plugin 05 — Chavossel: carrosséis editoriais de 6–10 slides com arco retórico completo e sintaxe própria."
+    },
+    {
+      "name": "chave-mestra-estrategista",
+      "source": "./estrategista",
+      "description": "Plugin 06 — Mapa de Campanha: planejamento completo de lançamentos com diagnóstico de modalidade, cronograma e copy por fase."
+    },
+    {
+      "name": "chave-mestra-arquiteto",
+      "source": "./arquiteto",
+      "description": "Plugin 07 — Esteira Notion: protocolo de escrita e população da MINHA ESTEIRA no Notion com copy completo por linha."
+    },
+    {
+      "name": "chave-mestra-tesoureiro",
+      "source": "./tesoureiro",
+      "description": "Plugin 08 — Portal da Escala: diagnóstico de fase, mapa de alavancas, esteira de valor, painel de métricas e matriz de decisão."
+    },
+    {
+      "name": "chave-mestra-forjador",
+      "source": "./forjador",
+      "description": "Plugin 09 — Forja do Conhecimento: Zettelkasten digital, Tesouro dos Erros e evolução de plugins com padrões confirmados."
+    },
+    {
+      "name": "chave-mestra-visual",
+      "source": "./visual",
+      "description": "Plugin 10 — O Iluminista: estética transversal Chave Mestra com Pergaminhos Branco, Preto e Dourado em HTML/CSS."
+    }
+  ]
+}

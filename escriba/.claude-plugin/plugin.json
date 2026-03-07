@@ -1,0 +1,10 @@
+{
+  "name": "chave-mestra-escriba",
+  "version": "2.0.0",
+  "description": "PROACTIVELY activate for: 1. User says 'cria um carrossel sobre X', 'chavossel', '10 slides', 'ensaio visual'; 2. User wants to create a carousel for Instagram or any platform in 10-slide essay format; 3. User says 'roteiro de carrossel', 'adapta isso para carrossel', 'carrossel para Instagram', 'faz um carrossel'; 4. User needs to select a Progymnasmata rhetorical exercise for a carousel (Narrativa, Comparação, Descrição, Louvor, etc.); 5. User says 'que exercício para carrossel', 'qual estrutura de slides', 'ensaio visual sobre X'; 6. User has existing copy, video script, or idea and wants it transformed into Chavossel format with 10 narrative acts; 7. Any content request in carousel format — always 10 slides, always with full rhetorical arc.",
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "homepage": "https://instagram.com/olucasgrigo"
+  },
+  "keywords": ["chave-mestra", "escriba", "carrossel", "chavossel", "instagram", "slides", "progymnasmata", "ensaio-visual", "10-slides", "carousel"]
+}

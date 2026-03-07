@@ -1,0 +1,10 @@
+{
+  "name": "chave-mestra-arquiteto",
+  "version": "2.0.0",
+  "description": "PROACTIVELY activate for: 1. User says 'popula o Notion', 'cria as tarefas no Notion', 'esteira notion', 'MINHA ESTEIRA'; 2. User has a campaign plan and needs to execute it operationally in Notion with one row per day; 3. User says 'registra a campanha no Notion', 'cria as linhas do lançamento no Notion', 'coloca isso no Notion'; 4. User needs to find a product in Notion, locate its sub-database, and create content entries; 5. User says 'atualiza a esteira', 'cria o banco de dados do lançamento', 'popula os dias da campanha'; 6. User has campaign copy ready (from Estrategista) and needs it moved into Notion structure; 7. Any request to bridge campaign planning into Notion operational execution via MINHA ESTEIRA protocol.",
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "homepage": "https://instagram.com/olucasgrigo"
+  },
+  "keywords": ["chave-mestra", "arquiteto", "notion", "esteira", "operacional", "tarefas", "lançamento", "database", "MINHA ESTEIRA", "esteira-notion"]
+}
