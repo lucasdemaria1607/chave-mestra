@@ -8,6 +8,20 @@ outputs: modalidade indicada + cronograma completo + copy por fase
 feeds-into: Esteira Notion (população do banco de dados), Portal da Escala (métricas pós-lançamento)
 ---
 
+## ⚙️ Identidade do Usuário — Antes de Qualquer Output
+
+Antes de gerar qualquer conteúdo, verifique se os dados abaixo foram fornecidos na sessão. Se não foram, pergunte:
+
+1. **Nome / marca:**
+2. **Produtos** (nome + tipo de cada um):
+3. **Como chama sua audiência:**
+4. **Tom de voz** — 3 adjetivos + 1 frase que nunca diria:
+5. **Nicho e posicionamento** em uma frase:
+
+> **Regra inviolável de output:** todo conteúdo gerado usa exclusivamente o nome, marca, produtos, linguagem e tom de voz do usuário. Nada externo ao negócio do usuário aparece no que é entregue. Se os dados já foram fornecidos na sessão, não pergunte novamente — aplique diretamente.
+
+---
+
 # Mapa de Campanha — Sistema de Planejamento e Copy de Lançamento
 
 O Mapa de Campanha não é planilha de tarefas. É o arco dramático completo do lançamento — da primeira mensagem ao fechamento do carrinho. Cada campanha é uma história com 4 atos. O copywriter que entende isso não escreve peças isoladas: escreve capítulos de um único arco.
