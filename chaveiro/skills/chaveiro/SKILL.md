@@ -362,7 +362,7 @@ changelog:
 ### Passo 1: Verificar estado do repositório
 
 ```bash
-cd "C:\Users\lucas\Downloads\Chave Mestra\CHAVE-MESTRA"
+cd [raiz-do-repositório-local]
 git status
 git diff --stat
 ```
