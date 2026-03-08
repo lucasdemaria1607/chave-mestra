@@ -195,3 +195,22 @@ NARRATIVA DE CONEXÃO:
 - `copy-3x5.md` — a Matriz C1 alimenta diretamente a Camada 1 do Copy 3x5
 - `modalidades.md` — o Céu Particular informa a promessa de cada modalidade de campanha
 - `exercicios.md` — Etopeia e Écfrase são os exercícios Progymnasmata mais alimentados pela Forja
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada 1 — Diagnóstico. Recebe de: Portal do Terreno (01) — dados de mercado enriquecem o SZC. Entrega para: Pergaminho de Copy (03), Chavossel (05), Chavideo (04). Par direto: Portal do Terreno — juntos cobrem todo o diagnóstico.
+
+Antes de sugerir, verifica o contexto da sessão: que materiais já foram produzidos, que insumos foram fornecidos. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem. Se vários itens estão em falta, recomenda o mais impactante primeiro. Nunca derramas tudo de uma vez.
+
+**Regra:** entrega a Alma da Persona primeiro — recomenda depois, nunca durante a execução.
+
+| Se o utilizador ainda não tem… | Sugestão proativa |
+|---|---|
+| Diagnóstico de mercado *(base ainda mais sólida)* | "A persona está viva — temos o Inferno, o Purgatório e o Céu. Se ainda não mapeaste o terreno competitivo, seria um bom momento para o **Portal do Terreno**: ver quem mais está prometendo resolver essas dores e onde está a brecha real de posicionamento." |
+| Copy calibrada *(passo seguinte mais natural)* | "Com a Alma da Persona mapeada, o **Pergaminho de Copy** é o próximo passo direto — usa os estados internos que acabámos de dissecar para calibrar copy que o lead sente como escrita especificamente para ele." |
+| Carrossel ou vídeo *(criação imediata com o insumo fresco)* | "Os estados mapeados aqui são o combustível perfeito para um hook de abertura. Seria o momento certo para o **Chavossel** (carrossel que espelha o Inferno no slide 1) ou o **Chavideo** (vídeo que abre com a dor exata que acabámos de nomear)." |
+
+> **Reconhecimento de insumo:** Se a sessão já incluiu um Relatório de Terreno, omite essa sugestão e avança para copy e criação. Se copy calibrada já existe, vai direto para carrossel ou vídeo.

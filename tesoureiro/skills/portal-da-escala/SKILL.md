@@ -338,3 +338,22 @@ CAMPANHA RECOMENDADA: [Modalidade + justificativa]
 - `modalidades.md` — campanha recomendada pela Matriz de Decisão usa templates aqui
 - `notion-integracao.md` — painel de métricas alimenta a Esteira Notion
 - `copy-3x5.md` — nível de consciência informado pelo estado do negócio informa proporção C1/C2/C3
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada 6 — Escala. Recebe de: dados reais de execução (métricas, resultados de campanha). Entrega para: próximo ciclo — Mapa de Campanha (06), Portal do Terreno (01), Forja da Persona (02). É o ponto de retroalimentação: transforma resultados em inteligência para o próximo ciclo.
+
+Antes de sugerir, verifica o contexto da sessão: que dados foram analisados, que problemas foram identificados. As sugestões são condicionais — faz apenas as que o contexto do diagnóstico genuinamente indica. Se vários itens estão em falta, recomenda o mais urgente primeiro. Nunca derramas tudo de uma vez.
+
+**Regra:** entrega o diagnóstico de escala primeiro — recomenda depois, nunca durante a execução.
+
+| Se o diagnóstico indicar… | Sugestão proativa |
+|---|---|
+| Próxima campanha ainda não planeada *(próximo ciclo natural)* | "Diagnóstico feito. Com dados reais em mãos, seria o momento para o **Mapa de Campanha** — o próximo ciclo começa com benchmarks do que funcionou, não com suposições." |
+| Problema de posicionamento ou qualidade do lead | "Se os dados apontam para problema de posicionamento ou qualidade do lead, seria um bom momento para revisitar o **Portal do Terreno** e a **Forja da Persona** antes da próxima campanha." |
+| Aprendizados que merecem registo permanente | "Os insights deste diagnóstico têm valor permanente. A **Forja do Conhecimento** transforma esses dados em notas Zettelkasten — o próximo ciclo começa mais inteligente." |
+
+> **Reconhecimento de insumo:** A sugestão mais relevante depende do que o diagnóstico revelou. Se o problema é de posicionamento → Portal do Terreno + Forja da Persona. Se é de execução → Mapa de Campanha direto. Se é de sistema → Forja do Conhecimento.

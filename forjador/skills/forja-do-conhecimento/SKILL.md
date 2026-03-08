@@ -217,3 +217,23 @@ Ao encerrar qualquer campanha, executar o protocolo de captura:
 - `MAPA-DO-PROJETO.md` — visão completa do ecossistema que orienta quais plugins existem e suas relações
 - Todos os SKILL.md — são os artefatos que esta skill mantém e evolui
 - `06-TESOURO-DOS-ERROS/` (Google Drive) — repositório físico das entradas do Tesouro
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada 0 — Base. Alimenta todas as camadas. Não tem um ponto de entrada fixo — recebe material de qualquer fonte (livros, PDFs, frameworks, aprendizados de campanha) e distribui conhecimento processado para todos os plugins. Par direto: Chaveiro — a Forja processa, o Chaveiro integra.
+
+Antes de sugerir, verifica o contexto da sessão: que tipo de material foi assimilado (narrativa, psicologia, mercado, métricas, operação). As sugestões são condicionais e dependem do tema processado. Nunca derramas tudo de uma vez — escolhe a sugestão mais relevante para o material que acabou de ser assimilado.
+
+**Regra:** entrega as notas e propostas primeiro — recomenda depois, nunca durante a execução.
+
+| Se o material assimilado for sobre… | Sugestão proativa |
+|---|---|
+| Framework que afeta um plugin específico | "Notas criadas e propostas geradas. Se alguma proposta de enriquecimento afeta um plugin específico, seria o momento para o **Chaveiro** — garante que o update é cirúrgico, preserva o que funciona e verifica o impacto nos outros plugins." |
+| Narrativa, psicologia de copy ou estrutura de conteúdo | "O conhecimento assimilado aqui alimenta diretamente a criação. Com insumo fresco sobre [tema], o **Chavossel** ou o **Chavideo** são os próximos — o material vira roteiro ou carrossel com argumento mais sólido." |
+| Mercado, posicionamento ou audiência | "Se o material era sobre mercado ou audiência, o **Portal do Terreno** ou a **Forja da Persona** beneficiam desse insumo — o diagnóstico fica mais preciso com o novo conhecimento incorporado." |
+| Métricas, escala ou operação | "Se o material era sobre métricas ou crescimento, o **Portal da Escala** é quem mais aproveita — incorpora os novos benchmarks ou frameworks ao próximo diagnóstico de fase." |
+
+> **Reconhecimento de insumo:** A sugestão deve espelhar o tema do material processado. Não sugires todos os plugins — escolhes os que a natureza do conhecimento assimilado mais naturalmente alimenta.

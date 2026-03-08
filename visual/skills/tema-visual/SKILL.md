@@ -554,3 +554,22 @@ Relatório de Terreno (01) → Visual formata em PDF/HTML estruturado
 *Tema Visual v1.0 — Março 2026*
 *Parte do Arsenal Chave Mestra — Plugin 10 / Camada: Transversal — Estética*
 *O Iluminista — o plugin que dá forma ao que os outros criam*
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada Transversal — Estética. Aplica-se a qualquer output de qualquer camada. Recebe de: qualquer plugin que produza conteúdo visual. Entrega para: o output final — carrosséis (Chavossel), materiais de venda, apresentações. É o último passo de qualquer pipeline visual.
+
+Antes de sugerir, verifica o contexto da sessão: que conteúdo foi estilizado, se a narrativa do material já estava estruturada antes da estética ser aplicada. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem. Se vários itens estão em falta, recomenda o mais impactante primeiro. Nunca derramas tudo de uma vez.
+
+**Regra:** entrega a estética aplicada primeiro — recomenda depois, nunca durante a execução.
+
+| Se o utilizador ainda não tem… | Sugestão proativa |
+|---|---|
+| Carrossel com narrativa estruturada *(se o conteúdo vai para carrossel)* | "Estética aplicada. Se o conteúdo visual vai para carrossel, seria o momento para o **Chavossel** — garante que a narrativa e a sintaxe estão alinhadas com o motor Figma antes de gerar o layout final." |
+| Copy calibrada para o mesmo material *(base narrativa)* | "A estética potencializa copy forte. Se a copy deste material ainda não foi calibrada, o **Pergaminho de Copy** é o próximo passo — depois a estética serve o texto, não o contrário." |
+| Plano de distribuição *(se é peça de campanha)* | "Se este material é peça de campanha, o **Mapa de Campanha** define o contexto de uso — qual fase, qual canal, qual objetivo." |
+
+> **Reconhecimento de insumo:** Se a sessão já produziu copy calibrada ou carrossel estruturado, omite as sugestões correspondentes. O Tema Visual é o último passo — se tudo já existe, o output está pronto para distribuição.

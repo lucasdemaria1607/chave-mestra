@@ -252,3 +252,22 @@ FASE DE RESISTÊNCIA — CHECKLIST:
 - `frameworks-anuncios.md` → 12 frameworks selecionados (AIDA, PAS, BAB, DIC, PASTOR, FAB, STAR, HEART, 4P, Feel-Felt-Found, STORYSELLING, QUEST) com templates e orientação por canal
 - `templates-oferta.md` → 10 ângulos narrativos × 4 tipos de produto CM (Pergaminho, Portal, Forja, Mentoria Individual) — templates com placeholders
 - `manychat-ativacao.md` → funis de comentário → DM para 3 destinos (WhatsApp, Landing Page, Oferta Direta) × 5 ângulos narrativos × 3 canais (carrossel, reel, stories)
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada 2 — Estratégia. Recebe de: Forja da Persona (02) e Portal do Terreno (01) — alimentam os estados internos e o posicionamento. Entrega para: Chavossel (05), Chavideo (04), Mapa de Campanha (06). É o filtro central: sem copy calibrada, criação e campanha ficam sem eixo.
+
+Antes de sugerir, verifica o contexto da sessão: que materiais já foram produzidos, que insumos foram fornecidos. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem. Se vários itens estão em falta, recomenda o mais impactante primeiro. Nunca derramas tudo de uma vez.
+
+**Regra:** entrega a copy calibrada primeiro — recomenda depois, nunca durante a execução.
+
+| Se o utilizador ainda não tem… | Sugestão proativa |
+|---|---|
+| Carrossel criado *(aplicação imediata mais direta)* | "Copy calibrada. Seria um bom momento para o **Chavossel** — adaptar essa mensagem para narrativa visual de carrossel. O mesmo argumento distribuído em slides com impacto progressivo, usando a sintaxe Chavossel." |
+| Roteiro de vídeo *(mesmo argumento, outro formato)* | "O mesmo argumento pode virar vídeo com o **Chavideo** — o Progymnasmata estrutura o hook e a curva de tensão com base na copy que acabámos de calibrar. Não precisas recomeçar do zero." |
+| Plano de campanha *(se é peça de lançamento)* | "Se esta copy é peça de lançamento, seria o momento certo para o **Mapa de Campanha** — define quando e como cada peça entra, e qual o papel desta copy em cada fase." |
+
+> **Reconhecimento de insumo:** Se a sessão já incluiu output da Forja da Persona ou do Portal do Terreno, esses insumos alimentaram esta copy — confirma que foram usados e omite as sugestões de diagnóstico. Vai direto para criação.

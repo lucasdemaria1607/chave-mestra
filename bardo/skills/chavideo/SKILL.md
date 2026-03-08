@@ -250,3 +250,22 @@ Efeito retórico pretendido: [o que o roteiro deve fazer ao público]
 - `copy-3x5.md` / `metodo-carga.md` — calibração de cargas narrativas
 - `alma-da-persona.md` — Inferno/Céu alimenta Dramatic Question e Catharsis
 - `szc.md` — Zeitgeist alimenta Rising Stakes e Identity Threat
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada 3 — Criação. Recebe de: Pergaminho de Copy (03) e Forja da Persona (02) — calibram argumento e psicologia. Entrega para: Mapa de Campanha (06), Esteira Notion (07). Par direto: Chavossel — mesmo exercício Progymnasmata, formatos distintos.
+
+Antes de sugerir, verifica o contexto da sessão: que materiais já foram produzidos, que insumos foram fornecidos. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem. Se vários itens estão em falta, recomenda o mais impactante primeiro. Nunca derramas tudo de uma vez.
+
+**Regra:** entrega o roteiro de vídeo primeiro — recomenda depois, nunca durante a execução.
+
+| Se o utilizador ainda não tem… | Sugestão proativa |
+|---|---|
+| Carrossel para o mesmo tema *(par natural deste roteiro)* | "Roteiro pronto. O mesmo argumento adaptado para carrossel multiplica o alcance. Seria um bom momento para o **Chavossel** — a mesma estrutura Progymnasmata transformada em ensaio visual, com a sintaxe certa para o motor Figma." |
+| Plano de campanha *(se é peça de campanha)* | "Se este vídeo é peça de campanha, o **Mapa de Campanha** define o contexto de uso — aquecimento, abertura ou fechamento — e garante que a peça entra no momento certo." |
+| Persona ou copy não calibradas *(base em falta)* | "Se ainda não tens a persona mapeada (**Forja da Persona**) ou copy calibrada (**Pergaminho de Copy**) para este produto, vale considerar antes do próximo vídeo — o roteiro fica num nível diferente com esse insumo." |
+
+> **Reconhecimento de insumo:** Se a sessão já incluiu output do Pergaminho de Copy ou da Forja da Persona, omite essas sugestões — os insumos já existem. Vai direto para carrossel ou campanha.

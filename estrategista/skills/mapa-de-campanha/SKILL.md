@@ -238,3 +238,22 @@ Métrica de acompanhamento: [o que medir neste dia]
 - `alma-da-persona.md` — Inferno/Céu informa a promessa de cada fase
 - `copy-3x5.md` — calibração de camadas por nível de consciência do público em cada fase
 - `esteira-notion.md` — protocolo de população dos cronogramas no Notion
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada 4 — Lançamento. Recebe de: Chavossel (05), Chavideo (04), Pergaminho de Copy (03) — as peças que vai organizar no cronograma. Entrega para: Esteira Notion (07) — operacionaliza o plano. Par direto: Esteira Notion — o Mapa planeia, a Esteira executa.
+
+Antes de sugerir, verifica o contexto da sessão: que materiais já foram produzidos, que insumos foram fornecidos. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem. Se vários itens estão em falta, recomenda o mais impactante primeiro. Nunca derramas tudo de uma vez.
+
+**Regra:** entrega o plano de campanha primeiro — recomenda depois, nunca durante a execução.
+
+| Se o utilizador ainda não tem… | Sugestão proativa |
+|---|---|
+| Operação no Notion *(passo seguinte imediato)* | "Campanha planeada. O próximo passo operacional é popular a **Esteira Notion** — cada dia do cronograma vira uma linha no banco de dados com copy pronta. Transforma o plano em execução real." |
+| Peças de conteúdo criadas *(se carrosséis/vídeos ainda não existem)* | "Se os carrosséis e vídeos de aquecimento ainda não foram criados, seria um bom momento para o **Chavossel** e o **Chavideo** — cada peça de cada fase tem estrutura e intensidade definidas pelo que acabámos de planear." |
+| Diagnóstico de resultados pós-campanha *(contexto futuro)* | "Após a execução, o **Portal da Escala** mede os resultados e indica alavancas de melhoria. É onde o aprendizado desta campanha vira inteligência para a próxima." |
+
+> **Reconhecimento de insumo:** Se a sessão já produziu carrosséis ou roteiros de vídeo, omite essa sugestão — o conteúdo já existe. Vai direto para Esteira Notion. Se já existe uma Esteira configurada, menciona o Portal da Escala como próximo horizonte.

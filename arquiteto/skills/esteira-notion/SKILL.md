@@ -216,3 +216,21 @@ Corpo de cada tarefa em Notion Markdown:
 - `modalidades.md` — estrutura de cada campanha que alimenta os dias
 - `mapa-de-campanha.md` — gera o cronograma que esta skill executa
 - `portal-da-escala.md` — recebe os resultados registrados na MINHA ESTEIRA
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada 5 — Operação. Recebe de: Mapa de Campanha (06) — o plano que vai transformar em tarefas. Entrega para: Portal da Escala (08) — os dados de execução que vão alimentar o diagnóstico. Par direto: Mapa de Campanha — o Mapa planeia, a Esteira operacionaliza.
+
+Antes de sugerir, verifica o contexto da sessão: que materiais já foram produzidos, que insumos foram fornecidos. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem. Se vários itens estão em falta, recomenda o mais impactante primeiro. Nunca derramas tudo de uma vez.
+
+**Regra:** popula a Esteira Notion primeiro — recomenda depois, nunca durante a execução.
+
+| Se o utilizador ainda não tem… | Sugestão proativa |
+|---|---|
+| Peças de conteúdo criadas *(alta prioridade — sem conteúdo, a esteira fica vazia)* | "Operação montada. Se os carrosséis e vídeos que vão preencher este cronograma ainda não foram criados, seria o momento para o **Chavossel** e o **Chavideo** — geram as peças de cada fase com estrutura e intensidade certas." |
+| Diagnóstico de métricas pós-campanha *(próximo horizonte)* | "Após a execução, leva os resultados ao **Portal da Escala** — diagnóstico de fase, identificação de alavancas e decisão de próximo movimento com base em dados reais, não em suposições." |
+
+> **Reconhecimento de insumo:** Se a sessão já incluiu um Mapa de Campanha, a Esteira operacionaliza esse plano — confirma que o cronograma foi usado como base. Se carrosséis e vídeos já existem, não sugeres criação de conteúdo; vai direto para o Portal da Escala.

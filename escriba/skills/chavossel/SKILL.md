@@ -481,3 +481,23 @@ O ritmo pode variar conforme o exercício. O que nunca varia: ruptura periódica
 - `copy-3x5.md` — calibração de qual camada cada slide serve (C1/C2/C3)
 - `metodo-carga.md` — calibração de intensidade emocional e intelectual
 - `progymnasmata-video-map.md` — a mesma estrutura exercício → adaptação para vídeo (Chavideo)
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada 3 — Criação. Recebe de: Pergaminho de Copy (03) e Forja da Persona (02) — alimentam argumento, psicologia e intensidade. Entrega para: Mapa de Campanha (06), Esteira Notion (07). Par direto: Chavideo — mesmo exercício Progymnasmata, formatos distintos.
+
+Antes de sugerir, verifica o contexto da sessão: que materiais já foram produzidos, que insumos foram fornecidos. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem. Se vários itens estão em falta, recomenda o mais impactante primeiro. Nunca derramas tudo de uma vez.
+
+**Regra:** entrega o carrossel primeiro — recomenda depois, nunca durante a execução.
+
+| Se o utilizador ainda não tem… | Sugestão proativa |
+|---|---|
+| Persona mapeada *(fundamenta tudo — alta prioridade)* | "Carrossel entregue. Se ainda não tens a persona mapeada, seria um bom momento para a **Forja da Persona** — os estados Inferno/Purgatório/Céu são o combustível que torna qualquer hook irresistível. O próximo carrossel fica em outro nível." |
+| Copy calibrada *(afina o argumento)* | "A narrativa do carrossel fica ainda mais afiada com o **Pergaminho de Copy** — calibração por nível de consciência e Método Carga. Se ainda não tens copy calibrada para este produto, esse seria o próximo passo." |
+| Roteiro de vídeo equivalente *(par natural deste carrossel)* | "O mesmo argumento pode virar vídeo. Seria um bom momento para o **Chavideo** — adapta a estrutura Progymnasmata deste carrossel para roteiro com curva de tensão cinematográfica." |
+| Plano de campanha *(se é peça de campanha)* | "Se este carrossel é peça de campanha, o **Mapa de Campanha** define o papel de cada peça no cronograma — aquecimento, conversão ou reativação." |
+
+> **Reconhecimento de insumo:** Se a sessão já incluiu output do Pergaminho de Copy ou da Forja da Persona, omite as sugestões correspondentes. Se já existe um roteiro de vídeo para o mesmo tema, omite essa sugestão e vai direto para campanha.

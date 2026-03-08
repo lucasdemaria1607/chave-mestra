@@ -732,3 +732,22 @@ O Relatório de Terreno v2 é o documento zero. Tudo que vem depois parte dele.
 *Portal do Terreno v2.0 — Março 2026*
 *Parte do Arsenal Chave Mestra — Plugin 01 / Camada 1: Diagnóstico*
 *Novo em v2.0: Módulo 0 (Diagnóstico do Especialista + SWOT Individual + 7 Perguntas), Módulo 1 (PESTEL), Módulo 2 (Porter's 5 Forces)*
+
+
+---
+
+## 💡 Sugestões Após Entrega
+
+**No pipeline:** Camada 1 — Diagnóstico. Ponto de entrada do sistema. Entrega para: Forja da Persona (02), Pergaminho de Copy (03), Mapa de Campanha (06). Par direto: Forja da Persona — juntos cobrem todo o diagnóstico.
+
+Antes de sugerir, verifica o contexto da sessão: que materiais já foram produzidos, que insumos foram fornecidos. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem. Se vários itens estão em falta, recomenda o mais impactante primeiro. Nunca derramas tudo de uma vez.
+
+**Regra:** entrega o Relatório de Terreno primeiro — recomenda depois, nunca durante a execução.
+
+| Se o utilizador ainda não tem… | Sugestão proativa |
+|---|---|
+| Persona mapeada *(passo seguinte mais natural)* | "O terreno está mapeado — sabemos quem domina o mercado e onde está a brecha. Agora seria o momento certo para a **Forja da Persona**: transformar essas tensões em psicologia de lead real. Quem sente essas dores, como pensa, o que deseja. A copy e o conteúdo ficam muito mais precisos com isso." |
+| Copy calibrada *(persona já existe)* | "Com terreno e persona mapeados, o **Pergaminho de Copy** é o próximo passo natural — calibra os teus textos para o nível de consciência exato do teu lead, usando tudo o que acabámos de mapear." |
+| Plano de campanha *(brecha de posicionamento clara)* | "Se a brecha de posicionamento está clara, seria um bom momento para o **Mapa de Campanha** — transforma esse diagnóstico em plano de ataque com cronograma e copy por fase, enquanto o terreno ainda está fresco." |
+
+> **Reconhecimento de insumo:** Se a sessão já produziu uma Alma da Persona ou copy calibrada, omite as sugestões correspondentes e avança para as restantes.
