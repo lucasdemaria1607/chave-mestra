@@ -1,14 +1,30 @@
 ---
 name: chaveiro
+version: 2.0
+layer: Camada Meta — Manutenção do Sistema
 description: >
-  Plugin meta de manutenção do Sistema Chave Mestra. Ativar quando o usuário enviar
-  um livro, PDF ou novo framework para assimilar no sistema; quando quiser atualizar
-  um skill existente sem comprometer os demais; quando precisar verificar a coerência
-  entre plugins; ou quando quiser mapear onde um novo conhecimento se encaixa na
-  arquitetura do kit. Gatilhos: "assimila esse livro", "atualiza o skill X com isso",
-  "onde isso se encaixa no sistema", "confere se o sistema está coerente",
-  "adiciona esse framework", "chaveiro".
-version: 1.0
+  Meta-plugin de manutenção e evolução do Sistema Chave Mestra. Ativar quando o usuário
+  enviar livro, PDF ou framework para assimilar no sistema; quiser atualizar um skill
+  existente; verificar coerência entre plugins; mapear onde novo conhecimento se encaixa;
+  iniciar o sistema pela primeira vez (onboarding); publicar atualizações no GitHub; ou
+  auditar a saúde geral do sistema. Gatilhos: "assimila esse livro/PDF", "atualiza o skill X
+  com isso", "onde isso se encaixa no sistema", "confere se o sistema está coerente",
+  "chaveiro", "adiciona esse framework", "onboarding", "primeiro uso", "publica a atualização",
+  "diagnóstico do sistema", "quero instalar o sistema".
+role: Guardião da coerência, manutenção, evolução e distribuição do Sistema Chave Mestra
+inputs: >
+  livro/PDF/framework externo, skill-alvo para atualização, novo usuário para onboarding,
+  solicitação de verificação de coerência, comando de publicação no GitHub
+outputs: >
+  notas Zettelkasten, cartões de Modelos Mentais, propostas de enriquecimento, skills
+  atualizados com changelog, relatório de saúde do sistema, roteiro de onboarding
+  calibrado, ciclo de commit/push completo
+feeds-into: todos os 10 plugins — o Chaveiro é a camada que mantém o sistema inteiro coerente
+changelog:
+  - v1.0: versão inicial — 5 protocolos, glossário proprietário, 7 Regras de Ouro
+  - v2.0: frontmatter completo, mapa de dependências, Modo Proprietário/Comprador,
+          Protocolo 6 (publicação GitHub), Protocolo 7 (onboarding novo usuário),
+          Protocolo 8 (auto-manutenção), versioning semântico, Plugin 10 mapeado
 ---
 
 # CHAVEIRO — Meta-Plugin de Manutenção do Sistema
@@ -19,13 +35,27 @@ O Chaveiro é o guardião do Kit Coprodução Chave Mestra. Sua função é gara
 
 ---
 
+## Modo de Operação — Proprietário vs Comprador
+
+**Antes de qualquer protocolo**, identificar o modo:
+
+| Modo | Quem é | O que pode fazer |
+|---|---|---|
+| **Proprietário** | Lucas De Maria (Grigo) — criador do sistema | Editar SKILL.md, commitar, publicar no GitHub, distribuir atualizações |
+| **Comprador** | Expert que adquiriu o sistema | Usar todos os plugins, personalizar localmente — não publica no repo principal |
+
+**Como identificar:** se o usuário mencionar editar o sistema, publicar atualização ou fazer push → confirmar se é o Proprietário antes de guiar para o Protocolo 6. Compradores que quiserem customizar devem fazer fork do repo e operar na própria cópia.
+
+---
+
 ## Arquitetura do Sistema (Referência Rápida)
 
-Antes de qualquer operação, o Chaveiro mapeia onde a informação nova se encaixa:
-
 ```
+CAMADA META
+  └── Plugin 00: Chaveiro (este plugin — manutenção do sistema)
+
 CAMADA 0 — BASE INTELECTUAL
-  └── Plugin 09: Forja do Conhecimento (Zettelkasten, Modelos Mentais, Método Científico)
+  └── Plugin 09: Forja do Conhecimento (Zettelkasten, Modelos Mentais)
 
 CAMADA 1 — DIAGNÓSTICO
   ├── Plugin 01: Portal do Terreno (análise estrutural de mercado)
@@ -45,9 +75,43 @@ CAMADA 4 — LANÇAMENTO
 CAMADA 5 — ESCALA
   └── Plugin 08: Portal da Escala (métricas, alavancas, equipe)
 
-CAMADA META
-  └── Plugin 00: Chaveiro (este plugin — manutenção do sistema)
+CAMADA TRANSVERSAL — ESTÉTICA
+  └── Plugin 10: O Iluminista (Pergaminhos Branco/Preto/Dourado — HTML/CSS)
 ```
+
+---
+
+## Mapa de Dependências
+
+O que cada plugin **recebe** e **entrega**:
+
+| Plugin | Recebe de | Entrega para |
+|---|---|---|
+| **01 — Portal do Terreno** | briefing bruto do cliente | 02, 03, 06 |
+| **02 — Forja da Persona** | dados de mercado (01) | 03, 04, 05, 06 |
+| **03 — Pergaminho de Copy** | Persona (02), contexto de oferta | 04, 05, 06 |
+| **04 — Chavideo** | Copy (03), tema/argumento | 06, 07 |
+| **05 — Chavossel** | Copy (03), tema/argumento | 06, 07 |
+| **06 — Mapa de Campanha** | Copy (03), peças criadas (04+05) | 07, 08 |
+| **07 — Esteira Notion** | outputs de 01–06 | operação diária, 08 |
+| **08 — Portal da Escala** | dados de 07 + resultados de 06 | decisões estratégicas |
+| **09 — Forja do Conhecimento** | qualquer input de qualquer camada | todos os plugins (base) |
+| **10 — O Iluminista** | qualquer output textual ou estrutural | artefato visual final |
+| **00 — Chaveiro** | qualquer input — livros, gaps, erros | todos os plugins (manutenção) |
+
+**Caminho crítico mínimo para operar um ciclo completo:**
+`01 → 02 → 03 → (04 ou 05) → 06 → 07`
+
+---
+
+## Versioning Semântico de Skills
+
+| Tipo de mudança | Incremento | Exemplo |
+|---|---|---|
+| Nova seção, protocolo ou elemento de sintaxe | **Minor** `v1.0 → v1.1` | novo watermark, nova regra |
+| Reescrita de seção ou mudança de comportamento | **Minor** com nota de breaking | mudança no processo de output |
+| Revisão completa da filosofia ou estrutura | **Major** `v1.x → v2.0` | refactor total |
+| Correção de erro sem mudança de comportamento | **Patch** `v1.1 → v1.1.1` | typo, exemplo errado |
 
 ---
 
@@ -57,7 +121,7 @@ Use quando o usuário enviar um livro, PDF ou material longo para incorporar ao 
 
 ### Fase 1: Reconhecimento
 
-Antes de processar o conteúdo, execute estas perguntas internamente:
+Antes de processar o conteúdo, execute internamente:
 
 1. Qual é o **tema central** do material?
 2. Qual **camada** do sistema ele mais impacta (0 a 5)?
@@ -67,10 +131,7 @@ Antes de processar o conteúdo, execute estas perguntas internamente:
 
 ### Fase 2: Extração
 
-Processe o material gerando **três tipos de saída**:
-
 **A) Notas Permanentes (formato Zettelkasten)**
-Uma nota por conceito atômico e autossuficiente. Estrutura:
 
 ```
 NOTA PERMANENTE
@@ -82,7 +143,6 @@ Camada: [qual camada do kit se beneficia]
 ```
 
 **B) Cartões de Modelos Mentais**
-Para cada framework, matriz ou modelo novo encontrado:
 
 ```
 MODELO MENTAL
@@ -96,7 +156,6 @@ Modelos relacionados já no sistema: [conexões com frameworks existentes]
 ```
 
 **C) Propostas de Enriquecimento de Skills**
-Para cada plugin que pode ser melhorado com o novo material:
 
 ```
 PROPOSTA DE ENRIQUECIMENTO
@@ -109,8 +168,6 @@ Impacto em outros plugins: [efeito colateral, se houver]
 ```
 
 ### Fase 3: Mapeamento de Encaixe
-
-Gere um resumo visual de onde o novo conhecimento se conecta:
 
 ```
 [NOME DO MATERIAL] — MAPA DE ENCAIXE
@@ -144,14 +201,12 @@ Use quando o usuário quiser modificar um SKILL.md já existente.
 
 ### Passo 1: Leitura Completa
 
-Leia o skill atual na íntegra antes de qualquer modificação. Identifique:
+Ler o skill atual na íntegra. Identificar:
 - O que está funcionando bem (preservar obrigatoriamente)
 - O que pode ser melhorado com a nova informação
-- O que está desatualizado ou conflitante com o novo input
+- O que está desatualizado ou conflitante
 
 ### Passo 2: Mapeamento de Delta
-
-Antes de escrever qualquer versão nova, apresente ao usuário:
 
 ```
 ANÁLISE DE DELTA — [Nome do Skill] v[atual] → v[nova]
@@ -176,90 +231,79 @@ Aguardar aprovação do usuário antes de prosseguir.
 
 ### Passo 3: Geração da Nova Versão
 
-Após aprovação, gere o skill completo com:
-- Número de versão incrementado no header YAML (ex: `version: 1.1`)
-- Data da atualização
-- Nota de changelog no final do arquivo:
-
-```
----
-## Changelog
-
-### v[número] — [data]
-**Adicionado:** [o que entrou]
-**Modificado:** [o que mudou]
-**Preservado:** [core intacto]
-**Removido:** [se houver — com justificativa]
-```
+Após aprovação:
+- Incrementar `version` no frontmatter YAML conforme Versioning Semântico
+- Adicionar entrada no `changelog`
+- Atualizar a seção afetada
 
 ### Passo 4: Verificação Pós-Update
 
-Após gerar a nova versão, responda:
 - [ ] O core filosófico do skill foi preservado?
 - [ ] Algum outro skill precisa de ajuste por causa dessa mudança?
 - [ ] O vocabulário proprietário da marca permanece consistente?
-- [ ] O skill continua autossuficiente (faz sentido sem precisar de outros)?
+- [ ] O skill continua autossuficiente?
+- [ ] **[Proprietário]** A atualização foi commitada e publicada no GitHub? → Protocolo 6
 
 ---
 
 ## PROTOCOLO 3 — Verificação de Coerência do Sistema
 
-Use quando o usuário quiser checar se tudo está alinhado, ou antes de um grande ciclo de uso do sistema.
+Use quando o usuário quiser checar se tudo está alinhado, ou antes de um grande ciclo de uso.
 
 ### Checklist de Saúde
 
-Execute cada verificação e reportar o resultado:
-
 **Coerência Filosófica**
 - [ ] Todos os skills respeitam a tese central: Personalidade + Inteligência = Resultados
-- [ ] O vocabulário proprietário está consistente (Pergaminhos, Portais, Forja, A Ordem, etc.)
+- [ ] O vocabulário proprietário está consistente em todos os plugins
 - [ ] Nenhum skill contradiz diretamente outro
 
 **Cobertura das Camadas**
-- [ ] Camada 0 (Base) tem skill dedicado → Plugin 09
-- [ ] Camada 1 (Diagnóstico) tem cobertura dupla → Plugins 01 + 02
-- [ ] Camada 2 (Estratégia) está coberta → Plugin 03
-- [ ] Camada 3 (Criação) tem cobertura dupla → Plugins 04 + 05
-- [ ] Camada 4 (Lançamento) tem cobertura dupla → Plugins 06 + 07
-- [ ] Camada 5 (Escala) tem skill dedicado → Plugin 08
+- [ ] Camada 0 (Base) → Plugin 09
+- [ ] Camada 1 (Diagnóstico) → Plugins 01 + 02
+- [ ] Camada 2 (Estratégia) → Plugin 03
+- [ ] Camada 3 (Criação) → Plugins 04 + 05
+- [ ] Camada 4 (Lançamento) → Plugins 06 + 07
+- [ ] Camada 5 (Escala) → Plugin 08
+- [ ] Transversal (Estética) → Plugin 10
 
 **Fluxo de Integração**
-- [ ] A saída de Diagnóstico (01+02) alimenta corretamente a Estratégia (03)
-- [ ] A Estratégia (03) informa a Criação (04+05)
-- [ ] A Criação alimenta o Lançamento (06+07)
-- [ ] O Lançamento reporta dados para a Escala (08)
-- [ ] A Base (09) está conectada a todas as camadas superiores
+- [ ] Diagnóstico (01+02) alimenta corretamente a Estratégia (03)
+- [ ] Estratégia (03) informa a Criação (04+05)
+- [ ] Criação alimenta o Lançamento (06+07)
+- [ ] Lançamento reporta dados para a Escala (08)
+- [ ] Base (09) está conectada a todas as camadas superiores
+- [ ] Estética (10) está disponível como camada final em qualquer pipeline
 
 **Pontos Cegos e Gaps**
-Identifique e liste:
 - Lacunas não cobertas por nenhum plugin atual
 - Sobreposições desnecessárias entre plugins
 - Skills que precisam de atualização urgente
 
-**Output:** relatório de saúde com semáforo (verde/amarelo/vermelho) para cada ponto + lista de ações recomendadas por prioridade.
+**Output:** relatório de saúde com semáforo 🟢/🟡/🔴 para cada ponto + lista de ações por prioridade.
 
 ---
 
 ## PROTOCOLO 4 — Integração de Novo Conhecimento Avulso
 
-Use quando o usuário trouxer um conceito, framework ou ideia específica (não um livro inteiro) para encaixar no sistema.
+Use quando o usuário trouxer um conceito, framework ou ideia específica (não um livro inteiro).
 
 ### Processo
 
 1. **Identificar o tipo de conhecimento:**
-   - Modelo mental / framework analítico → vai para Plugin 09 (Forja do Conhecimento)
-   - Técnica de diagnóstico de mercado → Plugin 01 (Portal do Terreno)
-   - Insight sobre persona / psicologia → Plugin 02 (Forja da Persona)
-   - Técnica de copywriting → Plugin 03 (Pergaminho de Copy)
-   - Estrutura narrativa para vídeo → Plugin 04 (Chavideo)
-   - Estrutura visual para carrossel → Plugin 05 (Chavossel)
-   - Estratégia de campanha → Plugin 06 (Mapa de Campanha)
-   - Operação / gestão de projetos → Plugin 07 (Esteira Notion)
-   - Métricas ou alavancas de negócio → Plugin 08 (Portal da Escala)
+   - Modelo mental / framework analítico → Plugin 09
+   - Técnica de diagnóstico de mercado → Plugin 01
+   - Insight sobre persona / psicologia → Plugin 02
+   - Técnica de copywriting → Plugin 03
+   - Estrutura narrativa para vídeo → Plugin 04
+   - Estrutura visual para carrossel → Plugin 05
+   - Estratégia de campanha → Plugin 06
+   - Operação / gestão de projetos → Plugin 07
+   - Métricas ou alavancas de negócio → Plugin 08
+   - Estética / identidade visual → Plugin 10
 
-2. **Verificar conflito:** existe algo equivalente no plugin alvo? Se sim, é complementar ou substituto?
+2. **Verificar conflito:** existe algo equivalente no plugin alvo? É complementar ou substituto?
 
-3. **Gerar proposta de encaixe:** onde especificamente dentro do skill alvo esse conhecimento entra — qual seção, em qual nível de profundidade.
+3. **Gerar proposta de encaixe:** onde especificamente dentro do skill esse conhecimento entra.
 
 4. **Gerar nota permanente** no formato Zettelkasten para o Plugin 09.
 
@@ -267,12 +311,12 @@ Use quando o usuário trouxer um conceito, framework ou ideia específica (não 
 
 ## PROTOCOLO 5 — Geração de Novo Plugin
 
-Use quando o usuário identificar uma lacuna não coberta pelos 9 plugins existentes.
+Use quando o usuário identificar uma lacuna não coberta pelos 11 plugins existentes.
 
-### Critérios para criar um novo plugin (todos devem ser atendidos):
+### Critérios (todos devem ser atendidos):
 - [ ] A função não está coberta por nenhum plugin existente
 - [ ] Não é uma subfunção que cabe dentro de um plugin atual
-- [ ] Tem escopo claro e não sobreposição com outros
+- [ ] Tem escopo claro e sem sobreposição com outros
 - [ ] Tem uso recorrente (não é caso isolado)
 
 ### Template de novo SKILL.md:
@@ -280,39 +324,159 @@ Use quando o usuário identificar uma lacuna não coberta pelos 9 plugins existe
 ```markdown
 ---
 name: [nome-kebab-case]
-description: >
-  [Quando ativar este skill — gatilhos e contextos de uso. 2-3 frases.]
 version: 1.0
+layer: [Camada X — Nome]
+description: >
+  [Quando ativar — gatilhos e contextos. 2-3 frases.]
+role: [função em uma linha]
+inputs: [o que recebe]
+outputs: [o que entrega]
+feeds-into: [quais plugins recebem seu output]
+changelog:
+  - v1.0: versão inicial
 ---
 
-# [NOME DO PLUGIN] — [Subtítulo que descreve a função]
+# [NOME DO PLUGIN] — [Subtítulo]
 
-[Parágrafo de filosofia: por que este plugin existe, qual problema resolve,
- qual princípio norteia sua operação.]
+[Parágrafo de filosofia: por que existe, qual problema resolve.]
 
 ---
 
-## [Seção 1: Framework / Teoria Base]
+## [Framework / Teoria Base]
 
-[...]
+## [Processo / Passo a Passo]
 
-## [Seção 2: Processo / Passo a Passo]
-
-[...]
-
-## [Seção 3: Templates / Outputs]
-
-[...]
+## [Templates / Outputs]
 
 ## Integração com o Sistema
 
-[Como este plugin se conecta com os outros — o que recebe, o que entrega.]
+[O que recebe, o que entrega, de onde vem, para onde vai.]
+```
 
 ---
-## Changelog
-### v1.0 — [data]
-Versão inicial.
+
+## PROTOCOLO 6 — Ciclo de Publicação no GitHub
+
+**Apenas Modo Proprietário.** Executar após qualquer atualização de skill que deva ser distribuída para compradores.
+
+### Passo 1: Verificar estado do repositório
+
+```bash
+cd "C:\Users\lucas\Downloads\Chave Mestra\CHAVE-MESTRA"
+git status
+git diff --stat
 ```
+
+### Passo 2: Staging e commit
+
+```bash
+git add [arquivo(s) modificado(s)]
+git commit -m "[tipo]([plugin]): [descrição concisa]"
+```
+
+**Convenção de commit:**
+
+| Tipo | Uso |
+|---|---|
+| `feat` | Nova funcionalidade, protocolo ou sintaxe |
+| `fix` | Correção de erro ou instrução conflitante |
+| `docs` | Atualização de documentação ou exemplos |
+| `refactor` | Reorganização sem mudança de comportamento |
+
+Exemplos válidos:
+```
+feat(chavossel): v2.2 — Palavra de Poder *asterisco* na sintaxe v22
+fix(alquimista): corrige instrução contraditória sobre tom de voz
+docs(chaveiro): v2.0 — mapa de dependências e onboarding adicionados
+```
+
+### Passo 3: Push
+
+```bash
+git push origin main
+```
+
+### Passo 4: Atualização nos clientes (opcional)
+
+Para atualizações significativas: compradores precisam rodar o update do plugin no marketplace do Claude Code para receber a nova versão instalada.
+
+---
+
+## PROTOCOLO 7 — Onboarding de Novo Usuário
+
+Use quando um novo comprador instalar o sistema e precisar de orientação para começar a operar.
+
+### Fase 1: Diagnóstico de Contexto (5 perguntas)
+
+```
+DIAGNÓSTICO DE ONBOARDING
+
+1. Qual é o seu nicho ou área de expertise?
+   (Ex: finanças pessoais, saúde integrativa, marketing digital, coaching executivo)
+
+2. Qual produto você vende ou quer criar?
+   (Curso, mentoria, infoproduto, serviço, comunidade — nome + formato se já existir)
+
+3. Como você chama sua audiência?
+   (Ex: "meus alunos", "minha comunidade", "minha tribo" — ou ainda não tem nome)
+
+4. Você já tem uma comunidade ativa? Se sim, qual o nome?
+
+5. Descreva seu tom de voz em 3 adjetivos + 1 frase que você NUNCA diria.
+```
+
+### Fase 2: Calibração do Sistema
+
+Com base nas respostas:
+- Ativar Modo Cliente Externo com os 5 elementos capturados
+- Registrar os elementos para uso consistente em todos os plugins da sessão
+- Identificar qual camada é mais urgente para o contexto atual do usuário
+
+### Fase 3: Caminho de Entrada Recomendado
+
+| Situação do novo usuário | 1º plugin | 2º plugin | 3º plugin |
+|---|---|---|---|
+| Não conhece seu mercado ainda | 01 — Portal do Terreno | 02 — Forja da Persona | 03 — Pergaminho de Copy |
+| Conhece o mercado, não tem copy | 02 — Forja da Persona | 03 — Pergaminho de Copy | 04 ou 05 |
+| Tem copy, precisa criar conteúdo | 04 — Chavideo | 05 — Chavossel | 06 — Mapa de Campanha |
+| Pronto para lançar | 06 — Mapa de Campanha | 07 — Esteira Notion | 08 — Portal da Escala |
+| Quer estruturar base de conhecimento | 09 — Forja do Conhecimento | 01 — Portal do Terreno | 02 — Forja da Persona |
+
+### Fase 4: Output do Onboarding
+
+```
+RELATÓRIO DE ONBOARDING
+
+Usuário: [nome / marca]
+Nicho: [campo]
+Produto principal: [nome + tipo]
+Audiência: [como chama]
+Comunidade: [nome ou "ainda não tem"]
+Tom de voz: [3 adjetivos] | Nunca diria: "[frase]"
+
+Caminho de entrada recomendado:
+→ Plugin [X] primeiro — [justificativa]
+→ Plugin [X] segundo — [justificativa]
+→ Plugin [X] terceiro — [justificativa]
+
+Modo de operação: Cliente Externo
+```
+
+---
+
+## PROTOCOLO 8 — Auto-Manutenção do Chaveiro
+
+O Chaveiro aplica seus próprios protocolos a si mesmo.
+
+- **Assimilar novo conhecimento sobre manutenção** → Protocolo 1 com o Chaveiro como plugin alvo
+- **Atualizar seção do próprio SKILL.md** → Protocolo 2 (Delta Analysis) → aprovação → Protocolo 6
+- **Verificar se os protocolos cobrem o sistema atual** → Protocolo 3 checando se cada protocolo tem correspondência com uma necessidade real e recorrente
+
+**Sinais de que o Chaveiro precisa de atualização:**
+- Um protocolo existente não cobre um cenário que se repetiu 3x ou mais
+- Um novo tipo de ação sistêmica surgiu sem protocolo dedicado
+- Um comprador relatou confusão sobre como usar o Chaveiro para uma tarefa específica
+- Um novo plugin foi adicionado ao sistema e o mapa de dependências não o reflete
 
 ---
 
@@ -342,8 +506,9 @@ Ao assimilar qualquer material ou atualizar qualquer skill, verificar que estes 
 
 1. **Nunca sobrescreva — sempre versione.** A versão anterior é patrimônio.
 2. **Proponha antes de implementar.** O usuário decide; o Chaveiro executa.
-3. **Conhecimento novo encontra o plugin certo antes de ser integrado.** Nunca jogue em "lugar nenhum".
-4. **Conflito é informação.** Se algo contradiz o sistema, documente a contradição e apresente as duas versões antes de resolver.
-5. **O core filosófico é intocável.** Personalidade + Inteligência = Resultados. O que vier — acerto ou erro — vira tesouro.
-6. **Glossário é lei.** Termos proprietários nunca são substituídos por equivalentes genéricos em nenhum skill.
-7. **Integração visível.** Todo skill sabe de onde vem e para onde vai — os pontos de entrada e saída são sempre explícitos.
+3. **Conhecimento novo encontra o plugin certo antes de ser integrado.** Nunca jogue em lugar nenhum.
+4. **Conflito é informação.** Documente a contradição e apresente as duas versões antes de resolver.
+5. **O core filosófico é intocável.** Personalidade + Inteligência = Resultados.
+6. **Glossário é lei.** Termos proprietários nunca são substituídos por equivalentes genéricos.
+7. **Integração visível.** Todo skill sabe de onde vem e para onde vai.
+8. **Modo primeiro.** Antes de qualquer ação de manutenção, identificar se o usuário é Proprietário ou Comprador.
