@@ -1,6 +1,6 @@
 ---
 name: chavossel
-version: 2.0
+version: 2.2
 layer: Camada 3 — Criação
 description: >
   Geração de carrosséis editoriais de 6 a 10 slides com Progymnasmata e sintaxe Chavossel v22.
@@ -14,6 +14,7 @@ changelog:
   - v1.0: versão inicial — 10 slides fixos, instrução contraditória sobre marcadores
   - v2.0: slides flexíveis (6–10), regra de densidade inversa, output com # e --- literais obrigatórios
   - v2.1: elemento Watermark [WATERMARK: TEXTO] adicionado à sintaxe v22 — estético, não narrativo
+  - v2.2: Palavra de Poder *asterisco* adicionada à sintaxe v22 — destaque cromático e tipográfico no motor Figma
 ---
 
 # Chavossel — Motor de Ensaios Visuais com Progymnasmata
@@ -34,8 +35,65 @@ O Chavossel não gera carrosséis. Gera ensaios visuais. A missão é adaptar a 
 | **O Grito** | `# Frase curta <20 palavras` isolado, sem corpo | Aforismo, plot twist, ruptura |
 | **Corte** | `---` em linha isolada | Separador de slides — detectado pelo plugin Figma |
 | **Watermark** | `[WATERMARK: TEXTO]` em linha isolada | Texto decorativo gigante no fundo do slide — palavra-chave, nome, data, número |
+| **Palavra de Poder** | `*palavra*` inline no corpo | Destaque cromático (cor de acento) + tipografia bold/itálico no motor Figma — para 1 ou 2 palavras por slide |
 
 **Regra crítica:** todo slide é separado por `---`. Nunca escrever dois slides sem o corte entre eles.
+
+---
+
+## Palavra de Poder — Destaque Tipográfico
+
+A Palavra de Poder é um **elemento de contraste visual dentro do corpo do texto**. O motor Figma lê o `*asterisco*` e aplica automaticamente a cor de acento (ouro) + bold/itálico na palavra marcada — criando ruptura rítmica e foco do olhar sem quebrar o fluxo narrativo.
+
+### Como escrever
+
+Envolver apenas a palavra (ou expressão mínima) entre asteriscos, inline no texto:
+
+```
+O homem comum tenta se *explicar*.
+Não é sobre holofotes. É sobre controle *absoluto*.
+A presença não é um dom. É um *posicionamento*.
+```
+
+### Regras de uso
+
+1. **Máximo de 1 a 2 Palavras de Poder por slide** — o destaque existe pelo contraste; excesso anula o efeito
+2. **Nunca marcar frases inteiras** — a marcação é de palavra ou expressão curtíssima (máximo 3 palavras)
+3. **Nunca usar no slide 1** — a abertura carrega todo o peso visual; o asterisco competiria com a manchete
+4. **Escolher a palavra de maior tensão semântica** — o verbo que rompe, o substantivo que concentra o argumento, o adjetivo que contradiz a expectativa
+5. **Nunca usar em Watermark nem em `#` Manchete** — a Palavra de Poder pertence ao corpo do texto
+6. **Compatível com todos os tipos de slide** — Corpo, Immersive Reader, e slides sem manchete
+
+### Exemplos
+
+Uma Palavra de Poder por slide:
+```
+# O Arquétipo da Autoridade
+
+Não se trata de holofotes ou admiração pública.
+Trata-se de controle *absoluto* sobre si mesmo.
+
+---
+```
+
+Duas Palavras de Poder no mesmo slide:
+```
+O homem comum reage por impulso e perde a margem.
+Quem domina o ambiente nunca entra em uma negociação em *desvantagem* — nunca age por *reatividade*.
+
+---
+```
+
+Com Watermark + Palavra de Poder:
+```
+[WATERMARK: MÉTODO]
+
+# É a sua hora.
+
+A presença não é um dom. É um *posicionamento*.
+
+---
+```
 
 ---
 
@@ -308,6 +366,7 @@ O ritmo pode variar conforme o exercício. O que nunca varia: ruptura periódica
 8. Densidade inversa: menos slides = mais texto por slide. Nunca o oposto.
 9. Output final = roteiro bruto + nota técnica de 3 linhas abaixo
 10. Watermark: até 3 por slide; 0/3/4/5/7 por carrossel conforme propósito; nunca no slide 1 nem no fechamento; nunca narrativo — sempre estético
+11. Palavra de Poder: máximo 2 por slide; nunca frase inteira; nunca no slide 1; nunca em `#` Manchete nem em Watermark — exclusiva do corpo do texto
 
 ---
 
