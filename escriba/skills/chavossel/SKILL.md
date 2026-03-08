@@ -1,6 +1,6 @@
 ---
 name: chavossel
-version: 2.2
+version: 2.3
 layer: Camada 3 — Criação
 description: >
   Geração de carrosséis editoriais de 6 a 10 slides com Progymnasmata e sintaxe Chavossel v22.
@@ -15,6 +15,7 @@ changelog:
   - v2.0: slides flexíveis (6–10), regra de densidade inversa, output com # e --- literais obrigatórios
   - v2.1: elemento Watermark [WATERMARK: TEXTO] adicionado à sintaxe v22 — estético, não narrativo
   - v2.2: Palavra de Poder *asterisco* adicionada à sintaxe v22 — destaque cromático e tipográfico no motor Figma
+  - v2.3: sintaxe completa documentada — **negrito**, _itálico_, ~sublinhado~, CAIXA ALTA; filosofia de marcação centrada na natureza semântica da palavra; dosagem por propósito; regra do CTA
 ---
 
 ## ⚙️ Identidade do Usuário — Antes de Qualquer Output
@@ -41,70 +42,125 @@ O Chavossel não gera carrosséis. Gera ensaios visuais. A missão é adaptar a 
 
 ## Sintaxe Chavossel v22 (OBRIGATÓRIA)
 
-| Ferramenta | Sintaxe | Efeito Visual |
+### Referência de Marcadores
+
+| Ferramenta | Sintaxe | Efeito Visual no Motor |
 |---|---|---|
-| **Manchete** | `# Frase longa de título` | Título de impacto no topo do slide |
-| **Corpo** | Texto normal (parágrafos) | Leitura narrativa padrão |
-| **Immersive Reader** | Texto puro >20 palavras, sem `#` | Remove distrações, foco tipográfico — para argumentos densos |
-| **O Grito** | `# Frase curta <20 palavras` isolado, sem corpo | Aforismo, plot twist, ruptura |
-| **Corte** | `---` em linha isolada | Separador de slides — detectado pelo plugin Figma |
-| **Watermark** | `[WATERMARK: TEXTO]` em linha isolada | Texto decorativo gigante no fundo do slide — palavra-chave, nome, data, número |
-| **Palavra de Poder** | `*palavra*` inline no corpo | Destaque cromático (cor de acento) + tipografia bold/itálico no motor Figma — para 1 ou 2 palavras por slide |
+| **Manchete** | `# Frase de título` | Título de impacto no topo do slide |
+| **Corpo** | Texto normal | Leitura narrativa padrão |
+| **Immersive Reader** | Texto puro >20 palavras, sem `#` | Foco tipográfico — para argumentos densos |
+| **O Grito** | `# Frase curta` isolada, sem corpo | Aforismo, plot twist, ruptura, CTA |
+| **Corte** | `---` em linha isolada | Separador de slides |
+| **Watermark** | `[WATERMARK: TEXTO]` em linha isolada | Texto decorativo gigante no fundo do slide |
+| **Ouro** | `*palavra*` | Cor de título + bold/itálico — destaque cromático |
+| **Negrito** | `**palavra**` | Fonte pesada — ancoragem visual forte |
+| **Itálico** | `_palavra_` | Fonte inclinada — leveza, subtom, sugestão |
+| **Sublinhado** | `~palavra~` | Linha abaixo — parada obrigatória do olhar |
+| **Caixa Alta** | `PALAVRA` | Maiúsculas nativas — grito, autoridade máxima |
 
-**Regra crítica:** todo slide é separado por `---`. Nunca escrever dois slides sem o corte entre eles.
+**Regra de corte:** todo slide separado por `---`. Nunca dois slides sem o corte entre eles.
+
+**Regra de sobreposição:** nenhum marcador combina com outro na mesma palavra ou caractere. Proibido `***palavra***`, `_**palavra**_`, `*~palavra~*`. Para combinar efeitos — aplicar em palavras diferentes do mesmo slide.
+
+---
+
+## A Filosofia da Marcação — Sintaxe Serve a Palavra
+
+O escritor não aplica marcadores por categoria gramatical nem por fórmula. **Lê a palavra. Identifica o que ela é na narrativa. Aplica o marcador que serve a essa natureza.**
+
+A mesma palavra pode receber formatações diferentes em carrosséis diferentes — porque o que muda é o papel que ela desempenha naquele texto específico, naquele slide específico, naquele momento da narrativa.
+
+### O que cada marcador serve
+
+**Ouro `*palavra*`** — serve a palavra que é o núcleo semântico do slide. O termo que, se o leitor só ler aquele, entende o que o slide quer dizer. Pode ser um conceito, um verbo de ruptura, um substantivo que concentra o argumento inteiro. Máximo 1 a 2 por slide — o contraste é o efeito.
+
+**Negrito `**palavra**`** — serve palavras que precisam de peso. Números absolutos, dados, fatos brutos, o nome do inimigo narrativo, o preço, a data crítica, o diagnóstico. Ancora o olhar em algo que não pode passar despercebido.
+
+**Itálico `_palavra_`** — serve palavras de subtom. O que é dito de lado, com ironia, com leveza deliberada. Um pensamento interno que o leitor reconhece como seu. Uma citação viva dentro do texto. Um nome estrangeiro. Uma sugestão que não precisa de peso — precisa de elegância.
+
+**Sublinhado `~palavra~`** — serve a palavra que exige parada. O leitor não pode deslizar sobre ela. Reservado para momentos de conclusão, choque, revelação ou contradição que muda tudo. Raridade é o poder. Nunca mais de 1 por carrossel.
+
+**Caixa Alta `PALAVRA`** — serve ao grito. Autoridade que não pede licença. Despertar de dor. Imperativo que não discute. Pode ser uma palavra no meio do corpo ou o slide inteiro como O Grito.
+
+**Watermark `[WATERMARK: TEXTO]`** — serve à camada visual do slide, não ao argumento. O nome do personagem da história. O ano. O lugar. O número que ainda vai ser revelado. O conceito em latim. Existe como textura — jamais como informação.
+
+### Natureza das palavras e sua sintaxe natural
+
+O escritor lê cada palavra e pergunta: **o que ela é?**
+
+| A palavra é… | Sintaxe natural |
+|---|---|
+| O conceito central do slide | `*ouro*` |
+| Um desejo nomeado | `*ouro*` ou `_itálico_` |
+| Uma dor concreta | `**negrito**` ou `*ouro*` |
+| Um medo sem nome | `_itálico_` |
+| Um número, dado, fato | `**negrito**` |
+| O nome do inimigo narrativo | `**negrito**` |
+| Uma ironia, um pensamento do leitor | `_itálico_` |
+| Uma data, lugar, personagem | `[WATERMARK]` ou `**negrito**` |
+| Uma emoção bruta e direta | `*ouro*` ou `CAIXA ALTA` |
+| Uma conclusão que não pode passar | `~sublinhado~` |
+| Um imperativo, grito, chamada | `CAIXA ALTA` ou `# O Grito` |
+| Um conceito filosófico, termo técnico | `_itálico_` ou `*ouro*` |
+| Informação de alto valor, revelação | `**negrito**` ou `*ouro*` |
+
+Esta tabela é referência — não decreto. O escritor decide. O que determina a escolha é o impacto que aquela palavra precisa causar naquele leitor, naquele momento do argumento.
 
 ---
 
-## Palavra de Poder — Destaque Tipográfico
+## Dosagem de Formatação por Propósito
 
-A Palavra de Poder é um **elemento de contraste visual dentro do corpo do texto**. O motor Figma lê o `*asterisco*` e aplica automaticamente a cor de acento (ouro) + bold/itálico na palavra marcada — criando ruptura rítmica e foco do olhar sem quebrar o fluxo narrativo.
+A quantidade de marcadores não é estética — é editorial. O escritor decide a densidade antes de escrever, com base no propósito do carrossel.
 
-### Como escrever
+### Critério por finalidade
 
-Envolver apenas a palavra (ou expressão mínima) entre asteriscos, inline no texto:
+**Texto limpo — zero ou 1 marcador por slide**
+Quando o argumento é denso o suficiente para prescindir de ajuda visual. Filosófico, intelectual, analítico. O peso está nas palavras, não na formatação. Excesso de marcadores nesse tipo de conteúdo seria ruído — denunciaria insegurança no texto.
+
+**Formatação pontual — 1 a 2 marcadores por slide, distribuídos**
+A maioria dos carrosséis. O escritor escolhe as palavras de maior carga semântica em cada slide e marca apenas elas. O contraste existe porque a maioria do texto não tem marcação.
+
+**Formatação densa — 3 a 4 marcadores por slide**
+Carrosséis de lançamento, urgência real, alta emoção. Quando o leitor precisa ser guiado pelo olhar — datas, preços, nomes, o que muda, o que fecha, o que está em jogo. A densidade é proposital e serve a um objetivo comercial ou emocional específico.
+
+**Grito puro — o slide inteiro é formatação**
+O Grito (`# FRASE CURTA`) com Caixa Alta. Nenhum corpo. A formatação é o slide. Usado em CTA principal, viradas narrativas, revelações de tese.
+
+### Critério por fase de campanha
+
+| Fase | Dosagem indicada | Por quê |
+|---|---|---|
+| **Conteúdo orgânico / autoridade** | Limpo a pontual | Argumento fala por si; excesso parece venda disfarçada |
+| **Aquecimento** | Pontual | Emoção crescente, ainda sem urgência |
+| **Abertura de carrinho** | Densa | Datas, preços, benefícios — tudo precisa ser visto |
+| **Fechamento / últimas horas** | Densa + Grito | Urgência real exige formatação que não deixa o leitor escapar |
+| **Pós-venda / entrega** | Limpo | Confiança construída; formatação excessiva seria ruído |
+| **Reativação de base** | Pontual a densa | Depende da temperatura da lista |
+
+### O CTA principal nunca é corpo normal
+
+O slide de fechamento com a chamada à ação principal recebe obrigatoriamente `#` como O Grito ou CAIXA ALTA no corpo. Nunca texto corrido sem marcação. O olhar do leitor precisa saber que chegou ao destino.
+
+Formatos válidos para CTA:
 
 ```
-O homem comum tenta se *explicar*.
-Não é sobre holofotes. É sobre controle *absoluto*.
-A presença não é um dom. É um *posicionamento*.
-```
-
-### Regras de uso
-
-1. **Máximo de 1 a 2 Palavras de Poder por slide** — o destaque existe pelo contraste; excesso anula o efeito
-2. **Nunca marcar frases inteiras** — a marcação é de palavra ou expressão curtíssima (máximo 3 palavras)
-3. **Nunca usar no slide 1** — a abertura carrega todo o peso visual; o asterisco competiria com a manchete
-4. **Escolher a palavra de maior tensão semântica** — o verbo que rompe, o substantivo que concentra o argumento, o adjetivo que contradiz a expectativa
-5. **Nunca usar em Watermark nem em `#` Manchete** — a Palavra de Poder pertence ao corpo do texto
-6. **Compatível com todos os tipos de slide** — Corpo, Immersive Reader, e slides sem manchete
-
-### Exemplos
-
-Uma Palavra de Poder por slide:
-```
-# O Arquétipo da Autoridade
-
-Não se trata de holofotes ou admiração pública.
-Trata-se de controle *absoluto* sobre si mesmo.
+# Entre agora. As vagas fecham amanhã.
 
 ---
 ```
 
-Duas Palavras de Poder no mesmo slide:
 ```
-O homem comum reage por impulso e perde a margem.
-Quem domina o ambiente nunca entra em uma negociação em *desvantagem* — nunca age por *reatividade*.
+# ENTRE AGORA
+
+As vagas fecham amanhã às 23h59.
 
 ---
 ```
 
-Com Watermark + Palavra de Poder:
 ```
-[WATERMARK: MÉTODO]
+CLIQUE NO LINK DA BIO.
 
-# É a sua hora.
-
-A presença não é um dom. É um *posicionamento*.
+É agora ou nunca.
 
 ---
 ```
@@ -380,7 +436,12 @@ O ritmo pode variar conforme o exercício. O que nunca varia: ruptura periódica
 8. Densidade inversa: menos slides = mais texto por slide. Nunca o oposto.
 9. Output final = roteiro bruto + nota técnica de 3 linhas abaixo
 10. Watermark: até 3 por slide; 0/3/4/5/7 por carrossel conforme propósito; nunca no slide 1 nem no fechamento; nunca narrativo — sempre estético
-11. Palavra de Poder: máximo 2 por slide; nunca frase inteira; nunca no slide 1; nunca em `#` Manchete nem em Watermark — exclusiva do corpo do texto
+11. Ouro `*palavra*`: máximo 2 por slide; nunca frase inteira; nunca no slide 1; exclusivo do corpo do texto — nunca em `#` nem em Watermark
+12. Negrito `**palavra**`: sem limite rígido por slide — guiado pelo peso semântico; cada palavra marcada deve ser insubstituível naquele slide
+13. Itálico `_palavra_`: leveza e subtom; nunca em grito nem em dado bruto — serve ao que é dito de lado
+14. Sublinhado `~palavra~`: raridade absoluta — máximo 1 por carrossel; reservado para conclusão, choque ou contradição que muda tudo
+15. Caixa Alta `PALAVRA`: grito e autoridade — no corpo ou como O Grito inteiro; CTA principal sempre usa `#` ou CAIXA ALTA, nunca corpo normal
+16. Sobreposição proibida: nenhum marcador combina com outro na mesma palavra; efeitos múltiplos = palavras diferentes no mesmo slide
 
 ---
 
