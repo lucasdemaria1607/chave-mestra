@@ -1,10 +1,22 @@
 {
   "name": "chave-mestra-oraculo",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "PROACTIVELY activate for: 1. User says 'mapeia a persona', 'forja da persona', 'quem é meu lead', 'descreve meu público'; 2. User wants to map the deep psychological states of their avatar (Inferno, Purgatório, Paraíso/Céu); 3. User says 'alma da persona', 'inferno particular', 'pesquisa de avatar', 'mapeamento de avatar'; 4. User needs SZC (Status Quo, Zeitgeist, Conclusão — never call it pesquisa de mercado); 5. User wants to understand what drives, pains, and aspires their ideal client before creating copy or content; 6. User says 'cria a persona do nicho X', 'o que meu avatar sente', 'qual é o inferno do meu cliente'; 7. User is about to create a sales page, copy, or campaign and needs persona psychological depth first.",
   "author": {
     "name": "Lucas De Maria (Grigo)",
     "homepage": "https://instagram.com/olucasgrigo"
   },
-  "keywords": ["chave-mestra", "oraculo", "persona", "avatar", "alma-da-persona", "SZC", "inferno", "purgatório", "paraíso", "psicologia", "forja-da-persona"]
+  "keywords": [
+    "chave-mestra",
+    "oraculo",
+    "persona",
+    "avatar",
+    "alma-da-persona",
+    "SZC",
+    "inferno",
+    "purgatório",
+    "paraíso",
+    "psicologia",
+    "forja-da-persona"
+  ]
 }

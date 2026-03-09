@@ -1,10 +1,21 @@
 {
   "name": "chave-mestra-chaveiro",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "PROACTIVELY activate for: 1. User says 'chaveiro', 'assimila esse livro/PDF', 'onde isso se encaixa no sistema'; 2. User wants to absorb a book, article, PDF, or external framework into the Chave Mestra system; 3. User says 'atualiza o skill X', 'modifica o plugin Y', 'refina o sistema'; 4. User says 'o sistema está coerente?', 'verifica os plugins', 'faz auditoria do sistema'; 5. User wants to evolve any SKILL.md with new confirmed patterns or learnings; 6. User says 'chaveiro protocolo 1/2/3/4/5'; 7. Any meta-maintenance or meta-evolution request on the Chave Mestra system itself; 8. User wants to generate a new plugin or integrate a new methodology.",
   "author": {
     "name": "Lucas De Maria (Grigo)",
     "homepage": "https://instagram.com/olucasgrigo"
   },
-  "keywords": ["chave-mestra", "chaveiro", "meta", "manutenção", "sistema", "assimilação", "versionamento", "coerência", "plugin", "atualização"]
+  "keywords": [
+    "chave-mestra",
+    "chaveiro",
+    "meta",
+    "manutenção",
+    "sistema",
+    "assimilação",
+    "versionamento",
+    "coerência",
+    "plugin",
+    "atualização"
+  ]
 }

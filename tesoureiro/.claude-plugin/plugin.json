@@ -1,10 +1,22 @@
 {
   "name": "chave-mestra-tesoureiro",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "PROACTIVELY activate for: 1. User says 'diagnóstico do meu negócio', 'portal da escala', 'em que fase estou'; 2. User needs to identify which of the 4 business phases they are in (<50 clients, 50–500, 500+, high revenue); 3. User says 'como crescer', 'análise de métricas', 'ROAS', 'LTV', 'CAC', 'taxa de conversão'; 4. User needs to identify their priority lever: Mídia, Código, Pessoas, or Capital (Naval Ravikant framework); 5. User says 'próximo movimento estratégico', 'como escalar', 'onde reinvestir', 'o que parar de fazer'; 6. User wants a value ladder mapping or metrics dashboard for their digital business; 7. User asks 'o que devo fazer agora para crescer', 'qual alavanca ativar', 'métricas que importam no meu estágio'.",
   "author": {
     "name": "Lucas De Maria (Grigo)",
     "homepage": "https://instagram.com/olucasgrigo"
   },
-  "keywords": ["chave-mestra", "tesoureiro", "escala", "métricas", "ROAS", "LTV", "CAC", "alavancas", "fase", "crescimento", "portal-da-escala"]
+  "keywords": [
+    "chave-mestra",
+    "tesoureiro",
+    "escala",
+    "métricas",
+    "ROAS",
+    "LTV",
+    "CAC",
+    "alavancas",
+    "fase",
+    "crescimento",
+    "portal-da-escala"
+  ]
 }
