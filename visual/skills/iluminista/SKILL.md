@@ -1,6 +1,6 @@
 ---
 name: iluminista
-version: 2.0
+version: 3.0
 plugin: "10"
 layer: "Transversal — Estética"
 description: >
@@ -75,7 +75,7 @@ A regra de ouro: **conteúdo medíocre com design excelente vende mais que conte
 ## MODO CM vs MODO CLIENTE
 
 ### MODO CM — Cliente da sessão é Lucas / Chave Mestra
-- Usar os 3 Pergaminhos (Branco, Preto, Dourado) como variantes primárias
+- Usar os 4 Pergaminhos (Branco, Preto, Dourado, Arcano) como variantes primárias
 - Tokens CM ativos: `--gold #d4af37`, `--void #0a0a08`, `--parchment #f5edd6`
 - Fontes CM: Cinzel Decorative + IM Fell English + Inter
 - Glossário CM aplica nos outputs (Pergaminho, Portal, Portadores, etc.)
@@ -97,7 +97,7 @@ A regra de ouro: **conteúdo medíocre com design excelente vende mais que conte
 
 ## OS TRÊS PERGAMINHOS (Modo CM)
 
-O sistema Chave Mestra opera com três variantes visuais primárias, cada uma com propósito retórico distinto.
+O sistema Chave Mestra opera com quatro variantes visuais primárias, cada uma com propósito retórico distinto.
 
 ---
 
@@ -138,10 +138,18 @@ O sistema Chave Mestra opera com três variantes visuais primárias, cada uma co
 **Tokens visuais:**
 - Background principal: `#0a0a08` (void — preto quase absoluto)
 - Background card: `#111110` ou `#141412`
-- Texto principal: `#f5f0e8` (off-white quente, nunca branco puro)
 - Texto destaque: `#d4af37` (gold puro — elemento principal)
-- Texto secundário: `#8a8578`
 - Acento raro: `#c8a020` (gold mais escuro para profundidade)
+
+**Hierarquia de texto (4 níveis — usar os tokens abaixo):**
+| Token | Valor | Uso | Tamanho mínimo |
+|-------|-------|-----|----------------|
+| `--txt-hi` | `#f5f0e8` | Headlines, títulos, CTAs | qualquer |
+| `--txt-md` | `#b8b098` | Corpo de texto, parágrafos, citações | 15px |
+| `--txt-lo` | `#9a9080` | Labels, metadados, roles, cargos | 11px |
+| `--txt-dim` | `#5a5648` | Footer, notas de rodapé, timestamps | 11px |
+
+> **Regra de ouro:** `--txt-lo` e `--txt-dim` **nunca** abaixo de 11px. 9px e 10px são reservados para elementos puramente decorativos (ex: números watermark de fundo) — jamais para conteúdo lido.
 - Fonte título: `Cinzel Decorative` (máximo impacto, peso 700–900)
 - Fonte corpo: `IM Fell English` (serifada, elegância sombria)
 - Bordas cards: `1px solid rgba(212,175,55,0.2)` (gold sutil)
@@ -168,7 +176,8 @@ O sistema Chave Mestra opera com três variantes visuais primárias, cada uma co
 - Background: `#f5edd6` (pergaminho claro) ou `#e8d9b0` (pergaminho envelhecido)
 - Textura (quando disponível): paper texture, grain effect sutil
 - Texto principal: `#2c1f0e` (marrom escuro, como tinta antiga)
-- Texto secundário: `#5c4030`
+- Texto secundário: `#3a1800` (marrom escuro — saída da zona hue-on-hue com o parchment)
+- Corpo mínimo: **16px obrigatório** para texto corrido (nunca abaixo para parágrafos lidos)
 - Destaque: `#8b6914` (ouro queimado/âmbar)
 - Acento borda: `#c9a227` (gold médio)
 - Fonte título: `Cinzel Decorative` (peso 400–600, espaçamento generoso)
@@ -184,6 +193,93 @@ O sistema Chave Mestra opera com três variantes visuais primárias, cada uma co
 - Drop caps (inicial maiúscula estilizada) em textos longos
 - Citações com estilo de manuscrito antigo
 - Medalhas e selos (SVG) para elementos de destaque premium
+
+---
+
+### PERGAMINHO ARCANO
+**"A antiguidade que respira."**
+
+**Quando usar:** Materiais premium com sensação de artefato histórico, credenciais de autoridade profunda, dossiês e documentos de alto ticket, conteúdo filosófico com peso de manuscrito, peças que comunicam "forjado com tempo — não produzido em série". Ideal para onboarding de alta percepção de valor, metodologia proprietária em formato físico ou digital premium.
+
+**Filosofia:** O Arcano é o mais ancestral dos Pergaminhos. Onde o Dourado é transformação, o Arcano é origem. A textura de pergaminho envelhecido, a madeira escura, a caligrafia gótica como elemento decorativo — não é nostalgia. É a afirmação visual de que algumas coisas têm raiz. Fundo claro com alto contraste, moderno na estrutura, ancestral na alma. A UnifrakturMaguntia nunca aparece em texto corrido — existe apenas como drop cap, como selo, como assinatura de que este documento foi lavrado.
+
+**Tokens visuais:**
+- Background principal: `#EDE0C4` (pergaminho envelhecido — mais escuro e saturado que o Dourado)
+- Background profundidade: `#D4C4A0` (sombras, recuos, cards internos)
+- Texto principal: `#1A0A00` (marrom quase preto — contraste máximo sobre fundo claro)
+- Texto secundário: `#3D1F00` (marrom escuro — legível, fora da zona hue-on-hue)
+- Acento madeira: `#6B3A1F` (bordas, ornamentos, divisores de estrutura)
+- Acento âmbar: `#C17F24` (CTAs, destaques, elementos de foco)
+- Tinta decorativa: `#2A1500` (drop caps, ornamentos finos, ligatures)
+- Corpo mínimo: **16px obrigatório** para texto corrido
+- Fonte título: `Cinzel Decorative` (maiúsculas, espaçamento generoso — hierarquia principal)
+- Fonte corpo: `IM Fell English` (serifado histórico — texto corrido e legendas)
+- Fonte decorativa: `UnifrakturMaguntia` (gótica — **exclusivo para drop caps e selos, jamais em texto corrido**)
+- Bordas: `2px solid rgba(107,58,31,0.35)` (madeira sutil)
+- Sombras: `0 4px 24px rgba(42,21,0,0.18)` (escura quente)
+
+**Fontes (Google Fonts import para Arcano):**
+```css
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=IM+Fell+English&family=UnifrakturMaguntia&display=swap');
+```
+
+**Efeitos característicos:**
+- **Grão de papel:** pseudo-elemento com noise SVG em `opacity: 0.04–0.06` + `filter: contrast(1.03)` no container
+- **Drop cap gótico:** `::first-letter { font-family: 'UnifrakturMaguntia'; font-size: 3.5em; line-height: 0.8; float: left; color: #6B3A1F; margin-right: 0.08em; }` — nunca em mais de uma ocorrência por seção
+- **Moldura de madeira:** `border: 2px solid rgba(107,58,31,0.3)` + `box-shadow: inset 0 0 0 6px rgba(107,58,31,0.05)` — simula corte interno de madeira
+- **Divisor em âmbar:** linha horizontal `background: linear-gradient(to right, transparent, rgba(193,127,36,0.6), transparent)`
+- **Selo de cera (decorativo):** círculo 48px, `background: radial-gradient(circle, #8B0000, #5a0000)`, texto em Cinzel branco — elemento de prestígio opcional, nunca funcional
+- **Ornamentos tipográficos:** `—◆—`, `✦`, `⸻` na cor `#C17F24` — nunca na cor de texto principal
+
+**CSS base:**
+```css
+.parchment-arcano {
+  --arc-bg:        #EDE0C4;
+  --arc-bg-deep:   #D4C4A0;
+  --arc-text:      #1A0A00;
+  --arc-text-sec:  #3D1F00;
+  --arc-wood:      #6B3A1F;
+  --arc-amber:     #C17F24;
+  --arc-ink:       #2A1500;
+
+  background: var(--arc-bg);
+  color: var(--arc-text);
+  font-family: 'IM Fell English', Georgia, serif;
+  font-size: 1rem;           /* 16px base — nunca abaixo */
+  line-height: 1.75;
+}
+
+.arcano-title {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--arc-text);
+  letter-spacing: 0.06em;
+}
+
+.arcano-drop-cap::first-letter {
+  font-family: 'UnifrakturMaguntia', serif;
+  font-size: 3.5em;
+  line-height: 0.8;
+  float: left;
+  color: var(--arc-wood);
+  margin-right: 0.08em;
+  margin-bottom: 0.04em;
+}
+
+.arcano-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--arc-amber), transparent);
+  margin: var(--space-8) 0;
+  opacity: 0.6;
+}
+
+.arcano-card {
+  background: var(--arc-bg-deep);
+  border: 2px solid rgba(107,58,31,0.3);
+  box-shadow: inset 0 0 0 6px rgba(107,58,31,0.05), 0 4px 24px rgba(42,21,0,0.12);
+  border-radius: 4px;        /* angular — artefato, não app */
+  padding: var(--space-6);
+}
+```
 
 ---
 
@@ -434,6 +530,14 @@ Todos os valores centrais do sistema CM — usáveis em Modo CM.
   --ink:           #2c1f0e;
   --ink-light:     #4a4a45;
 
+  /* === HIERARQUIA DE TEXTO — Pergaminho Preto (dark) === */
+  /* Usar estes tokens para todos os outputs escuros/void */
+  --txt-hi:        #f5f0e8;   /* headlines e títulos — qualquer tamanho */
+  --txt-md:        #b8b098;   /* corpo, parágrafos, citações — mínimo 15px */
+  --txt-lo:        #9a9080;   /* labels, metadados, roles — mínimo 11px */
+  --txt-dim:       #5a5648;   /* footer, notas, timestamps — mínimo 11px */
+  /* Proibido: usar --txt-lo ou --txt-dim com font-size < 11px para conteúdo lido */
+
   /* === TIPOGRAFIA === */
   --font-display:  'Cinzel Decorative', serif;
   --font-title:    'Cinzel', serif;
@@ -654,6 +758,14 @@ Todo output visual deve passar por estes 6 filtros antes de ser entregue:
 - Gold `#d4af37` sobre black `#0a0a08`: contraste ~9:1 — excelente
 - Gold `#d4af37` sobre white `#ffffff`: contraste ~4.2:1 — cuidado com texto pequeno
 - NUNCA: texto claro sobre fundo claro, texto escuro sobre fundo escuro
+- **Atenção ao contraste perceptual:** dois tons quentes (ex: marrom sobre creme) podem passar no cálculo WCAG mas falhar perceptualmente por similaridade de matiz (hue fatigue). Ao usar textos quentes sobre fundos quentes, escurecer o texto além do mínimo calculado.
+
+**TAMANHO MÍNIMO POR CONTEXTO:**
+- Corpo de texto corrido: **mínimo 15px** (preferível 16–18px)
+- Labels, metadados, roles (`--txt-lo`): **mínimo 11px**
+- Footer, notas, timestamps (`--txt-dim`): **mínimo 11px**
+- **Proibido para conteúdo lido:** 9px e 10px — reservados para elementos decorativos watermark
+- Em carrosséis Instagram: mínimo 24px (legibilidade em mobile)
 
 **4. CARDS**
 - Cards criam separação visual sem precisar de linhas explícitas
@@ -743,6 +855,8 @@ Todo output visual deve passar por estes 6 filtros antes de ser entregue:
 | Relatório de diagnóstico | Branco | Tabelas + callouts | Cinzel + Inter |
 | Slides de apresentação | Preto | 3D depth em cards | Cinzel Decorative |
 | Conteúdo premium | Dourado | Textura + ornamentos | Cinzel + IM Fell |
+| Dossiê / artefato histórico | Arcano | Drop cap gótico + moldura madeira | Cinzel + IM Fell + UnifrakturMaguntia (drop cap) |
+| Metodologia proprietária premium | Arcano | Grão de papel + divisor âmbar | Cinzel + IM Fell |
 | Dashboard de métricas | Preto | Cards flutuantes | Inter (dados) |
 | UI de aplicativo | Tema customizado | Flat + elevação sutil | Sans-serif da marca |
 | Infográfico | Tema customizado | SVG + cor da marca | Sans-serif da marca |
@@ -773,7 +887,7 @@ Qual caminho ou instrução específica?
 ## REGRAS DO TEMA VISUAL
 
 **R1 — Pergaminho antes de conteúdo.**
-Antes de criar qualquer output visual CM, definir qual dos 3 Pergaminhos. A escolha determina tudo.
+Antes de criar qualquer output visual CM, definir qual dos 4 Pergaminhos: Branco (autoridade), Preto (impacto), Dourado (transformação), Arcano (artefato ancestral). A escolha determina tudo.
 
 **R2 — Contraste é lei, não preferência.**
 Se o texto não passa no teste 4.5:1, o design está errado. Nunca comprometer legibilidade por estética.
@@ -855,11 +969,31 @@ Antes de sugerir, verifica o contexto da sessão: que conteúdo foi estilizado, 
 
 ## Changelog
 
-- **v2.0** (Março 2026): Expansão para sistema de design universal. Adicionado: Modo CM vs Modo Cliente, Motor de Temas Customizados, Intake de Marca (7 elementos), Protocolo de Engenharia Reversa Visual, Preview em Tempo Real (Claude Code), Loop de Feedback, Capacidades Completas (UI/UX, diagramação, motion, identidade), Regras R8–R12. Preservado integralmente: 3 Pergaminhos, tokens CM, componentes, formatos, UX Principles, efeitos especiais, R1–R7.
-- **v1.0** (Março 2026): Versão inicial — 3 Pergaminhos, tokens CM, estética Chave Mestra.
+### v3.0 — Março 2026
+**Adicionado:**
+- Pergaminho Arcano (4º Pergaminho): fundo `#EDE0C4`, texto `#1A0A00`, madeira `#6B3A1F`, âmbar `#C17F24` — para artefatos históricos, dossiês premium e metodologia proprietária; inclui drop cap gótico (UnifrakturMaguntia), moldura de madeira, grão de papel, divisor âmbar, selo de cera
+- Tokens de hierarquia de texto dark (`--txt-hi`, `--txt-md`, `--txt-lo`, `--txt-hi`) com valores corrigidos para legibilidade — adicionados ao SISTEMA DE DESIGN TOKENS
+- Regras de tamanho mínimo por contexto na seção UX Principles (Contraste): corpo mínimo 15px, labels/metadados mínimo 11px, proibição de 9–10px para conteúdo lido
+- Nota sobre contraste perceptual por similaridade de matiz (hue fatigue) nos UX Principles
+
+**Modificado:**
+- Pergaminho Dourado: texto secundário `#5c4030` → `#3a1800` (saída da zona hue-on-hue)
+- Pergaminho Dourado: adicionada regra de corpo mínimo 16px
+- Pergaminho Preto: hierarquia de texto expandida de 2 para 4 níveis com tokens `--txt-*` e tamanhos mínimos documentados; `--txt-lo: #9a9080` (era `#726a58`); `--txt-dim: #5a5648` (era `#3a3830`)
+- R1: atualizado de "3 Pergaminhos" para "4 Pergaminhos" com descrição de cada um
+- MODO CM: atualizado de "3 Pergaminhos" para "4 Pergaminhos"
+- Tabela GUIA POR TIPO DE CONTEÚDO: 2 linhas novas para o Arcano
+
+**Preservado integralmente:** Pergaminhos Branco, Preto e Dourado (exceto correções documentadas), Motor de Temas, Engenharia Reversa, Preview em Tempo Real, Loop de Feedback, Capacidades Completas, R2–R12, todos os componentes, formatos e efeitos especiais.
+
+### v2.0 — Março 2026
+Expansão para sistema de design universal. Adicionado: Modo CM vs Modo Cliente, Motor de Temas Customizados, Intake de Marca (7 elementos), Protocolo de Engenharia Reversa Visual, Preview em Tempo Real (Claude Code), Loop de Feedback, Capacidades Completas (UI/UX, diagramação, motion, identidade), Regras R8–R12. Preservado integralmente: 3 Pergaminhos, tokens CM, componentes, formatos, UX Principles, efeitos especiais, R1–R7.
+
+### v1.0 — Março 2026
+Versão inicial — 3 Pergaminhos, tokens CM, estética Chave Mestra.
 
 ---
 
-*Tema Visual v2.0 — Março 2026*
+*Tema Visual v3.0 — Março 2026*
 *Parte do Arsenal Chave Mestra — Plugin 10 / Camada: Transversal — Estética*
 *O Iluminista — o plugin que dá forma ao que os outros criam*
