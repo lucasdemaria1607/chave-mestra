@@ -1,7 +1,7 @@
 {
-  "name": "chave-mestra-visual",
-  "version": "2.1.0",
-  "description": "PROACTIVELY activate for: 1. User asks for a visual output: HTML, CSS, landing page, carousel, poster, dashboard, PDF, slides, Instagram post, report; 2. User says 'aplica a estética Chave Mestra', 'usa o tema visual', 'formata isso visualmente'; 3. User wants a Pergaminho Branco (white, direct, clean), Preto (black background, bold, provocative), or Dourado (parchment, classical, transformation); 4. User asks for glassmorphism, 3D elements, floating cards, or modern+classical aesthetic; 5. User wants to format any content (copy, carousel, script, campaign) into a specific visual format; 6. User says 'cria o visual', 'formata para Instagram', 'monta o carrossel visual', 'HTML dessa copy'; 7. Any request where the output is a designed artifact — not just text.",
+  "name": "chave-mestra-iluminista",
+  "version": "2.2.0",
+  "description": "PROACTIVELY activate for: 1. User asks for any visual output — landing page, post, slide, dashboard, UI, infographic, diagram, PDF, or any HTML/CSS; 2. User wants to apply a visual style, create a brand theme, or format content visually; 3. User sends a screenshot, image, or URL and asks to replicate, clone, or analyze the visual style (engenharia reversa); 4. User asks to open a preview, see what was generated, or iterate on a design; 5. User mentions a client or external project that needs visual identity — create custom theme via Motor de Temas; 6. User asks about design, aesthetics, typography, colors, glassmorphism, or any visual concept; 7. User says 'Pergaminho Preto/Branco/Dourado', 'aplica a estética', 'cria tema pra minha marca', 'replica esse estilo', 'abre o preview', 'UI do app', or 'diagrama visual'.",
   "author": {
     "name": "Lucas De Maria (Grigo)",
     "homepage": "https://instagram.com/olucasgrigo"
@@ -13,12 +13,27 @@
     "estética",
     "HTML",
     "CSS",
-    "carrossel",
     "landing-page",
     "pergaminho",
     "glassmorphism",
     "instagram",
     "slides",
-    "dashboard"
+    "dashboard",
+    "UI",
+    "UX",
+    "tema",
+    "brand",
+    "engenharia-reversa",
+    "preview",
+    "carrossel",
+    "infografico",
+    "diagramacao",
+    "identidade-visual",
+    "motion",
+    "PDF",
+    "print",
+    "clonagem-de-estilo",
+    "modo-cliente",
+    "motor-de-temas"
   ]
 }

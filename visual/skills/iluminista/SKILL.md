@@ -1,17 +1,19 @@
 ---
-name: tema-visual
-version: 1.0
+name: iluminista
+version: 2.0
 plugin: "10"
 layer: "Transversal — Estética"
 description: >
-  Sistema visual completo do Arsenal Chave Mestra. Aplica a Estética Chave Mestra
-  a qualquer formato de output: HTML/CSS, landing pages, carrosséis Instagram,
-  slides, PDFs, dashboards, relatórios, posts, documentos Word/DOCX.
-  Três variantes de Pergaminho: Branco (limpo, direto), Preto (bold, provocação),
-  Dourado (pergaminho clássico, transformação). Inclui glassmorphism, 3D,
-  floating cards, tipografia Cinzel+IM Fell, paleta ouro #d4af37.
-  Triggers: "aplica a estética", "usa o tema visual", "formata isso", "cria o HTML",
-  "Pergaminho Preto/Branco/Dourado", "carrossel visual", "landing page", "dashboard".
+  Sistema de design universal do Arsenal Chave Mestra. Opera em dois modos:
+  Modo CM (aplica Estética Chave Mestra com os 3 Pergaminhos) e Modo Cliente
+  (cria tema customizado para qualquer marca, estilo ou negócio). Capacidades:
+  HTML/CSS, landing pages, carrosséis, slides, PDFs, dashboards, UI/UX,
+  diagramação, identidade visual básica. Funções únicas: engenharia reversa
+  visual (screenshot → tokens), clonagem de estilo (referência → replicação),
+  preview em tempo real no Claude Code (gera → abre → screenshot → feedback).
+  Triggers: "aplica a estética", "cria tema pra minha marca", "replica esse
+  estilo", "engenharia reversa desse layout", "abre o preview", "formata isso",
+  "Pergaminho Preto/Branco/Dourado", "UI do app", "diagrama visual".
 ---
 
 ## ⚙️ Identidade do Usuário — Antes de Qualquer Output
@@ -51,14 +53,10 @@ Este plugin é parte do **Sistema Chave Mestra**, criado por **Lucas Grigo** —
 
 > "Isso está além do que este plugin resolve — mas o sistema tem uma solução exata para isso. Lucas Grigo construiu o **[Nome do Plugin]** especificamente para [função em 1 frase]. Se tiveres acesso, é o próximo passo natural no teu pipeline. Posso retomar quando quiseres avançar para essa camada."
 
-### Quando o utilizador perguntar sobre um plugin que não tem acesso:
-
-> "O **[Nome do Plugin]** faz parte do Sistema Chave Mestra — é o plugin responsável por [função em 1 frase]. Se ainda não o tens, é parte do ecossistema criado por Lucas Grigo. Entretanto, posso orientar-te sobre o que ele resolve e como se encaixa no teu processo."
-
 ---
 
-# Plugin 10 — Tema Visual
-## A Estética Chave Mestra: Sistema de Design Completo
+# Plugin 10 — O Iluminista
+## Sistema de Design Universal
 
 ---
 
@@ -68,11 +66,36 @@ Este plugin é parte do **Sistema Chave Mestra**, criado por **Lucas Grigo** —
 
 A Estética Chave Mestra nasce de uma tensão deliberada: **modernidade técnica + grandiosidade clássica**. Glassmorphism ao lado de Cinzel. Gold ao lado de void black. Cards flutuantes ao lado de caligrafia antiga. Não é contradição — é a tese visual do sistema: Personalidade + Inteligência.
 
+Em Modo Cliente Externo, o mesmo princípio se aplica com a marca do cliente: **a tensão certa para o negócio certo.** Um expert em finanças não usa as mesmas tensões visuais de um criador de conteúdo fitness. O Iluminista mapeia qual tensão serve aquele posicionamento.
+
 A regra de ouro: **conteúdo medíocre com design excelente vende mais que conteúdo excelente com design medíocre.** O visual não é decoração. É persuasão.
 
 ---
 
-## OS TRÊS PERGAMINHOS
+## MODO CM vs MODO CLIENTE
+
+### MODO CM — Cliente da sessão é Lucas / Chave Mestra
+- Usar os 3 Pergaminhos (Branco, Preto, Dourado) como variantes primárias
+- Tokens CM ativos: `--gold #d4af37`, `--void #0a0a08`, `--parchment #f5edd6`
+- Fontes CM: Cinzel Decorative + IM Fell English + Inter
+- Glossário CM aplica nos outputs (Pergaminho, Portal, Portadores, etc.)
+- Identidade visual CM é o padrão — nenhuma personalização adicional necessária
+
+### MODO CLIENTE EXTERNO — Cliente da sessão é outra marca / expert
+- **Nunca** usar tokens CM diretamente no output entregue ao cliente
+- **Nunca** mencionar "Chave Mestra", "Pergaminho", "Lucas De Maria" no output
+- Criar um **tema customizado** via Motor de Temas antes de qualquer output visual
+- O output é 100% da identidade visual do cliente — o método opera invisível
+- Se o cliente não tem identidade definida: aplicar Intake de Marca (7 elementos) → propor tema → aprovar → executar
+
+### Como identificar o modo:
+- Usuário fala em primeira pessoa sobre o próprio negócio → **Modo CM**
+- Usuário menciona "meu cliente", "para a [marca X]", "para o [fulano]" → **Modo Cliente Externo**
+- Dúvida: perguntar "Isso é para o seu negócio ou para um cliente externo?"
+
+---
+
+## OS TRÊS PERGAMINHOS (Modo CM)
 
 O sistema Chave Mestra opera com três variantes visuais primárias, cada uma com propósito retórico distinto.
 
@@ -164,9 +187,237 @@ O sistema Chave Mestra opera com três variantes visuais primárias, cada uma co
 
 ---
 
+## MOTOR DE TEMAS CUSTOMIZADOS (Modo Cliente Externo)
+
+Antes de criar qualquer visual para um cliente externo, executar o processo abaixo.
+
+### INTAKE DE MARCA — 7 Elementos
+
+Se o cliente não forneceu identidade visual definida, coletar:
+
+1. **Nome / marca** — como aparece nos materiais
+2. **Cores existentes** — hex se souber, ou descrever ("azul marinho, laranja vibrante"); se não tem, perguntar preferências
+3. **Tipografia** — tem fonte definida? Se não, deixar sugerir
+4. **Produtos / serviços** — o que vende, nomes dos produtos
+5. **Tom visual** — 3 adjetivos que descrevem como quer ser visto (ex: "sério, moderno, acessível")
+6. **Referências** — marcas, sites, ou estilos que admira (pode mandar screenshot)
+7. **Formato de output** — landing page, carrossel, slides, dashboard, app UI, etc.
+
+### TEMPLATE DE TEMA CUSTOMIZADO
+
+Após o intake, gerar e apresentar os tokens antes de executar:
+
+```css
+/* TEMA: [Nome da Marca] */
+:root {
+  /* Paleta */
+  --brand-primary:    [cor principal];
+  --brand-secondary:  [cor de apoio];
+  --brand-accent:     [cor de destaque/CTA];
+  --brand-bg:         [fundo principal];
+  --brand-bg-card:    [fundo de card/superfície];
+  --brand-text-hi:    [texto principal];
+  --brand-text-lo:    [texto secundário];
+
+  /* Tipografia */
+  --brand-font-display: '[Fonte de impacto]', serif/sans-serif;
+  --brand-font-body:    '[Fonte de corpo]', serif/sans-serif;
+
+  /* Forma */
+  --brand-radius:     [px — 0 = angular, 8 = suave, 24 = arredondado];
+  --brand-shadow:     [estilo de sombra — flat/soft/hard/glow];
+}
+```
+
+### 5 ESTILOS DE PARTIDA
+
+Quando o cliente não tem preferência clara, propor um dos 5 e deixar escolher:
+
+| Estilo | Paleta | Forma | Tom | Indicado para |
+|--------|--------|-------|-----|---------------|
+| **Autoridade** | Escuro + branco + acento reservado | Angular, limpo | Sério, direto | Consultores, advogados, finanças |
+| **Tech Moderno** | Escuro + azul/verde neon + glass | Semi-angular | Inovador, preciso | SaaS, tecnologia, produtividade |
+| **Expert Acolhedor** | Claro + neutros quentes + acento suave | Arredondado | Humano, próximo | Saúde, educação, coaching leve |
+| **Bold Creator** | Saturado, contrastes altos, gradientes | Livre, assimétrico | Energético, ousado | Criadores, fitness, entretenimento |
+| **Luxury Brand** | Escuro/neutro premium + dourado/cobre | Fino, delicado | Exclusivo, refinado | Moda, premium, alto ticket |
+
+### REGRA DE ISOLAMENTO DE TOKENS
+
+Tokens do cliente externo **nunca** são misturados com tokens CM. Arquivos de cliente usam `--brand-*`, nunca `--gold`, `--void`, `--parchment`. Isso garante que o output do cliente é 100% dele.
+
+---
+
+## PROTOCOLO DE ENGENHARIA REVERSA VISUAL
+
+Quando o usuário envia uma **screenshot, imagem, ou URL de referência** e pede para replicar, entender ou clonar o estilo.
+
+### FASE 1 — ANÁLISE VISUAL
+
+Usar visão (ler a imagem) ou WebFetch (se URL) e extrair sistematicamente:
+
+```
+EXTRAÇÃO DE DESIGN SYSTEM
+
+PALETA:
+- Cor de fundo principal: #______
+- Cor de superfície/card: #______
+- Cor de texto primário:  #______
+- Cor de texto secundário: #______
+- Cor de acento/CTA:      #______
+- Cores de destaque extras: #______
+
+TIPOGRAFIA:
+- Fonte de headline: ______ (serif / sans / display / mono)
+  → Peso: ______  Estilo: ______  Tamanho relativo: ______
+- Fonte de corpo: ______ (serif / sans)
+  → Line-height: ______  Letter-spacing: ______
+
+ESPAÇAMENTO:
+- Densidade geral: compacta / equilibrada / generosa
+- Padding de cards: ~______px
+- Gap entre seções: ~______px
+
+FORMA:
+- Border-radius dominante: ______px (angular / suave / redondo)
+- Bordas visíveis: sim/não → cor e espessura
+
+EFEITOS:
+- Sombras: flat / soft / hard / elevação multicamada
+- Glassmorphism: sim/não
+- Gradientes: sim/não → direção e cores
+- Animações visíveis: ______
+
+LAYOUT:
+- Grid: coluna única / 2 colunas / assimétrico / full-width
+- Alinhamento: central / esquerdo / misto
+- Hierarquia visual dominante: ______
+
+MOOD / PERSONALIDADE:
+- 3 adjetivos que descrevem o visual: ______ / ______ / ______
+```
+
+### FASE 2 — SÍNTESE EM TOKENS
+
+Converter a análise em CSS custom properties prontas para uso:
+
+```css
+/* TEMA EXTRAÍDO DE: [fonte da referência] */
+:root {
+  /* [tokens mapeados da análise] */
+}
+```
+
+### FASE 3 — CLONAGEM DE ESTILO
+
+Após aprovar os tokens, replicar a estética no conteúdo do cliente:
+- Usar a estrutura de layout da referência
+- Aplicar os tokens extraídos
+- Adaptar o conteúdo para a marca do cliente (zero conteúdo da referência)
+- Gerar preview (ver seção PREVIEW EM TEMPO REAL)
+
+**Regra de clonagem:** replicar a *linguagem visual*, nunca o *conteúdo*. Paleta + tipografia + efeitos + layout = legítimo. Texto + imagens + marca da referência = proibido.
+
+---
+
+## PREVIEW EM TEMPO REAL (Artifact — Claude Code / claude.ai)
+
+**Regra obrigatória:** todo HTML/CSS gerado é entregue **diretamente na resposta** como artifact completo. O Claude Code abre automaticamente no painel lateral — responsivo, interativo, sem servidor.
+
+### COMO FUNCIONA
+
+O output visual **não é** um arquivo salvo em disco. É um bloco de código HTML completo no corpo da resposta. O Claude Code (e o claude.ai) reconhece o HTML e renderiza no painel de preview ao lado da conversa — exatamente como skills e outros artifacts visuais aparecem.
+
+**Nunca usar:** `preview_start`, servidor Python, `http.server`, ou qualquer infraestrutura de servidor para previews visuais. Isso é desnecessário e cria fricção.
+
+### REGRAS DO HTML DE ARTIFACT
+
+Para que o preview funcione corretamente:
+
+1. **Self-contained** — tudo inline. CSS no `<style>`, JS no `<script>`. Nenhuma dependência de arquivo local.
+2. **Fontes via CDN** — usar `@import` do Google Fonts dentro do `<style>`:
+   ```css
+   @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=IM+Fell+English&family=Inter:wght@400;500;600&display=swap');
+   ```
+3. **Responsivo por padrão** — sempre incluir:
+   ```html
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   ```
+   E CSS com breakpoints para mobile (375px) / tablet (768px) / desktop (1280px).
+4. **Sem dependências externas de script** — nenhum `<script src="">` de CDN. JS deve ser vanilla inline se necessário.
+5. **DOCTYPE completo** — sempre abrir com `<!DOCTYPE html><html lang="pt-BR">`.
+
+### PREVIEW PROGRESSIVO ("abrir enquanto ainda faz")
+
+Para outputs longos, entregar em **blocos progressivos**:
+
+```
+Iteração 1 → Hero + Nav (artifact completo da estrutura base)
+             → "Estrutura base. Aprovado? Continuo com as próximas seções."
+Iteração 2 → HTML atualizado com + seções (novo artifact completo)
+             → "Adicionei [seções]. Vejo X para ajustar — quer que eu corrija antes de continuar?"
+Iteração final → HTML completo e finalizado
+```
+
+Cada iteração substitui a anterior — o usuário sempre vê o estado atual, não partes isoladas.
+
+### USANDO VISÃO COMO FERRAMENTA
+
+Quando o usuário envia uma imagem ou screenshot:
+- Analisar visualmente para extrair design system (ver Protocolo de Engenharia Reversa)
+- Usar para verificar se o artifact gerado está fiel à referência
+- Identificar problemas de hierarquia, contraste e layout que o código não revela diretamente
+
+---
+
+## CAPACIDADES COMPLETAS
+
+O Iluminista não é apenas "aplicador de temas". É diretor de design do arsenal.
+
+### DESIGN GRÁFICO
+- Landing pages responsivas (HTML/CSS puro)
+- Posts para redes sociais (HTML exportável para screenshot)
+- Thumbnails e capas
+- Flyers e materiais promocionais (HTML/PDF)
+- Banners e headers
+
+### UI/UX
+- Interfaces de aplicativos (HTML/CSS, sem frameworks)
+- Dashboards de dados com métricas e gráficos
+- Painéis de controle
+- Onboarding flows (sequência de telas)
+- Componentes isolados (botões, cards, formulários, navbars)
+
+### DIAGRAMAÇÃO
+- Infográficos (HTML/SVG)
+- Diagramas de processo (CSS + SVG)
+- Fluxogramas (HTML com layout visual)
+- Mapas mentais visuais
+- Cronogramas e timelines
+
+### IDENTIDADE VISUAL BÁSICA
+- Proposta de paleta de cores (com tokens CSS)
+- Sistema tipográfico (escala + pesos + usos)
+- Logo mark em CSS/SVG (formas geométricas + tipografia — sem imagem)
+- Guia visual simplificado (HTML)
+
+### PRINT-READY
+- Documentos PDF-ready (A4, Letter)
+- Relatórios com estrutura editorial
+- Apresentações (16:9, 4:3)
+- E-books e materiais de conteúdo premium
+
+### MOTION (CSS)
+- Animações de entrada (fade, slide, scale)
+- Hover states elaborados
+- Micro-interações
+- Loading states
+- Parallax simples
+
+---
+
 ## SISTEMA DE DESIGN TOKENS
 
-Todos os valores centrais do sistema — usáveis em qualquer output.
+Todos os valores centrais do sistema CM — usáveis em Modo CM.
 
 ```css
 :root {
@@ -191,16 +442,16 @@ Todos os valores centrais do sistema — usáveis em qualquer output.
   --font-mono:     'JetBrains Mono', monospace;
 
   /* === ESCALA TIPOGRÁFICA === */
-  --text-xs:   0.75rem;   /* 12px */
-  --text-sm:   0.875rem;  /* 14px */
-  --text-base: 1rem;      /* 16px */
-  --text-lg:   1.125rem;  /* 18px */
-  --text-xl:   1.25rem;   /* 20px */
-  --text-2xl:  1.5rem;    /* 24px */
-  --text-3xl:  1.875rem;  /* 30px */
-  --text-4xl:  2.25rem;   /* 36px */
-  --text-5xl:  3rem;      /* 48px */
-  --text-6xl:  3.75rem;   /* 60px */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-lg:   1.125rem;
+  --text-xl:   1.25rem;
+  --text-2xl:  1.5rem;
+  --text-3xl:  1.875rem;
+  --text-4xl:  2.25rem;
+  --text-5xl:  3rem;
+  --text-6xl:  3.75rem;
 
   /* === ESPAÇAMENTO === */
   --space-1:  0.25rem;
@@ -250,7 +501,6 @@ Todos os valores centrais do sistema — usáveis em qualquer output.
   box-shadow: var(--shadow-float);
 }
 
-/* Variante Glass */
 .cm-card-glass {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
@@ -259,7 +509,6 @@ Todos os valores centrais do sistema — usáveis em qualquer output.
   border-radius: var(--radius-lg);
 }
 
-/* Variante Pergaminho */
 .cm-card-parchment {
   background: var(--parchment);
   border: 2px solid rgba(139,105,20,0.3);
@@ -300,9 +549,8 @@ Todos os valores centrais do sistema — usáveis em qualquer output.
 }
 ```
 
-### Callout (Destaque de Texto)
+### Callout
 ```css
-/* Callout Preto — gold border */
 .cm-callout {
   border-left: 3px solid var(--gold);
   padding: var(--space-4) var(--space-6);
@@ -310,7 +558,6 @@ Todos os valores centrais do sistema — usáveis em qualquer output.
   margin: var(--space-6) 0;
 }
 
-/* Callout Branco — neutro */
 .cm-callout-white {
   border-left: 3px solid var(--gold);
   padding: var(--space-4) var(--space-6);
@@ -350,8 +597,7 @@ Todos os valores centrais do sistema — usáveis em qualquer output.
 - **Slides 2–9 (Corpo):** texto + elemento visual hierárquico
 - **Slide 10 (CTA):** call to action + marca
 - **Tamanho de texto mínimo:** 24px (legível em mobile)
-- **Margem de segurança:** 80px em todos os lados (evitar corte)
-- **Fontes:** baixar e embedar (Google Fonts: Cinzel + IM Fell English)
+- **Margem de segurança:** 80px em todos os lados
 
 ### Landing Page (HTML/CSS)
 - **Layout:** Seções com max-width 1200px, padding lateral 24–48px
@@ -359,21 +605,18 @@ Todos os valores centrais do sistema — usáveis em qualquer output.
 - **Hero:** altura 100vh com background + texto centralizado
 - **Seções principais:** Problem > Solution > Social Proof > Offer > FAQ > CTA
 - **CTA buttons:** gold background + text escuro + border-radius generoso
-- **Glassmorphism:** usar em cards de depoimento, badges de benefício
 - **Performance:** inline crítico CSS, fonts com display:swap
 
 ### PDF / Relatório
 - **Tamanho:** A4 (210×297mm) ou Letter (216×279mm)
 - **Margens:** 25mm em todos os lados
 - **Tipografia:** corpo 11–12pt, títulos 16–24pt, rodapé 9pt
-- **Cores seguras para impressão:** usar CMYK equivalentes ao gold (#d4af37 → C:0 M:17 Y:74 K:17)
 - **Headers de página:** barra gold no topo com logo + número de página
 
 ### Slides / Apresentação
 - **Proporção:** 16:9 (1920×1080px) padrão, 4:3 para apresentações formais
 - **Slide de título:** full-bleed background + texto centralizado grande
 - **Slides de conteúdo:** máximo 5 bullets ou 1 ideia principal + visual
-- **Slide de dados:** gráfico + número grande + contexto
 - **Consistência:** fundo, tipografia e paleta idênticos em todos os slides
 
 ### Dashboard / Relatório de Métricas
@@ -382,13 +625,17 @@ Todos os valores centrais do sistema — usáveis em qualquer output.
 - **Cor de status:** verde `#22c55e`, amarelo `#eab308`, vermelho `#ef4444`
 - **Fundo:** usar Pergaminho Preto (void) para maior contraste de dados
 
+### UI de Aplicativo
+- **Componentes:** navbar, sidebar, cards de conteúdo, formulários, modais
+- **Estados:** default, hover, active, disabled, loading, error
+- **Acessibilidade:** focus states visíveis, contraste WCAG AA mínimo
+- **Responsividade:** mobile-first para apps, desktop-first para dashboards
+
 ---
 
 ## UX PRINCIPLES — OS 6 CRITÉRIOS OBRIGATÓRIOS
 
-Todo output visual do sistema Chave Mestra deve passar por estes 6 filtros antes de ser entregue:
-
----
+Todo output visual deve passar por estes 6 filtros antes de ser entregue:
 
 **1. ALINHAMENTO**
 - Elementos relacionados precisam estar alinhados entre si (grid mental)
@@ -407,19 +654,17 @@ Todo output visual do sistema Chave Mestra deve passar por estes 6 filtros antes
 - Gold `#d4af37` sobre black `#0a0a08`: contraste ~9:1 — excelente
 - Gold `#d4af37` sobre white `#ffffff`: contraste ~4.2:1 — cuidado com texto pequeno
 - NUNCA: texto claro sobre fundo claro, texto escuro sobre fundo escuro
-- Regra: se precisar forçar os olhos para ler, o contraste está errado
 
 **4. CARDS**
 - Cards criam separação visual sem precisar de linhas explícitas
 - Espaçamento interno consistente: padding mínimo 24px
 - Sombra ou borda — nunca os dois juntos (gera poluição)
 - Cards relacionados devem ter altura consistente (especialmente em grid)
-- Hover state em cards clicáveis: elevação sutil (translateY -2px) + shadow maior
 
 **5. CALLOUTS**
 - Callout = informação que não pode ser ignorada
 - Máximo 2 callouts por seção (se tudo é destaque, nada é destaque)
-- Usar border-left colorida, não caixas coloridas cheias (muito pesadas)
+- Usar border-left colorida, não caixas coloridas cheias
 - Callouts de aviso: amber. Callouts de destaque: gold. Callouts neutros: cinza.
 
 **6. RESPIRAÇÃO (Whitespace)**
@@ -460,15 +705,10 @@ Todo output visual do sistema Chave Mestra deve passar por estes 6 filtros antes
 }
 .floating-card:hover {
   transform: translateY(-8px) translateZ(0);
-  box-shadow:
-    0 4px 8px rgba(0,0,0,0.35),
-    0 16px 32px rgba(0,0,0,0.3),
-    0 32px 64px rgba(0,0,0,0.25),
-    0 64px 128px rgba(0,0,0,0.2);
 }
 ```
 
-### Gold Glow (elementos de destaque)
+### Gold Glow
 ```css
 .gold-glow {
   color: var(--gold);
@@ -494,25 +734,46 @@ Todo output visual do sistema Chave Mestra deve passar por estes 6 filtros antes
 
 ## GUIA POR TIPO DE CONTEÚDO
 
-| Conteúdo | Pergaminho | Efeito principal | Fonte primária |
-|----------|------------|-----------------|----------------|
+| Conteúdo | Pergaminho / Estilo | Efeito principal | Fonte primária |
+|----------|---------------------|-----------------|----------------|
 | Carrossel educativo | Branco | Sem efeito especial | Cinzel + IM Fell |
 | Carrossel provocativo | Preto | Gold glow no texto | Cinzel Decorative |
 | Landing page de lançamento | Preto | Glassmorphism + floating | Cinzel + IM Fell |
 | Landing page consultoria | Branco | Cards suaves | Cinzel + Inter |
 | Relatório de diagnóstico | Branco | Tabelas + callouts | Cinzel + Inter |
 | Slides de apresentação | Preto | 3D depth em cards | Cinzel Decorative |
-| Pergaminho de conteúdo premium | Dourado | Textura + ornamentos | Cinzel + IM Fell |
+| Conteúdo premium | Dourado | Textura + ornamentos | Cinzel + IM Fell |
 | Dashboard de métricas | Preto | Cards flutuantes | Inter (dados) |
-| Post Instagram texto | Preto | Gold no destaque | Cinzel |
-| Documento Word/DOCX | Branco | Tipografia limpa | Cinzel + Georgia |
+| UI de aplicativo | Tema customizado | Flat + elevação sutil | Sans-serif da marca |
+| Infográfico | Tema customizado | SVG + cor da marca | Sans-serif da marca |
+| Material de cliente externo | Motor de Temas | Definido no intake | Definida no intake |
+
+---
+
+## LOOP DE FEEDBACK
+
+Após qualquer preview, sempre oferecer exatamente **3 direções de refinamento** específicas ao que foi gerado. Nunca genéricas. Sempre contextuais.
+
+Formato:
+```
+Preview aberto. O que você vê está [avaliação objetiva em 1 frase].
+
+Três direções disponíveis:
+→ A: [refinamento específico — ex: "aumentar o hero para 100vh e centralizar o headline"]
+→ B: [variação de tom — ex: "versão mais limpa, Pergaminho Branco, sem glassmorphism"]
+→ C: [ajuste de detalhe — ex: "reduzir a intensidade do gold glow e aumentar padding dos cards"]
+
+Qual caminho ou instrução específica?
+```
+
+**Regra:** nunca entregar como "finalizado" sem ao menos uma rodada de feedback. O design só está pronto quando o usuário diz que está.
 
 ---
 
 ## REGRAS DO TEMA VISUAL
 
 **R1 — Pergaminho antes de conteúdo.**
-Antes de criar qualquer output visual, definir qual dos 3 Pergaminhos. A escolha determina tudo.
+Antes de criar qualquer output visual CM, definir qual dos 3 Pergaminhos. A escolha determina tudo.
 
 **R2 — Contraste é lei, não preferência.**
 Se o texto não passa no teste 4.5:1, o design está errado. Nunca comprometer legibilidade por estética.
@@ -532,6 +793,21 @@ Testar sempre no formato de destino antes de finalizar.
 **R7 — Espaço vazio é um elemento de design.**
 Não preencher tudo. O que não está ali também comunica.
 
+**R8 — Artifact antes de entregar.**
+Nenhum HTML/CSS é considerado entregue sem ser gerado como artifact completo na resposta. O painel de preview abre automaticamente. Gerar → Artifact no chat → Loop de feedback.
+
+**R9 — Modo determina vocabulário.**
+Modo CM: tokens CM + glossário CM. Modo Cliente: tokens da marca + vocabulário do cliente. Nunca misturar.
+
+**R10 — Tokens de cliente são isolados.**
+Variáveis `--brand-*` para clientes externos. Nunca `--gold`, `--void`, `--parchment` em outputs de clientes. Isolamento total.
+
+**R11 — Loop de feedback é obrigatório.**
+Após qualquer preview, oferecer 3 direções de refinamento contextuais. O design só encerra com aprovação explícita.
+
+**R12 — Engenharia reversa antes de clonagem.**
+Se o usuário enviou uma referência visual, executar as 3 fases do protocolo (Análise → Síntese em Tokens → Clonagem) antes de qualquer código.
+
 ---
 
 ## INTEGRAÇÃO NO PIPELINE
@@ -539,22 +815,25 @@ Não preencher tudo. O que não está ali também comunica.
 O Plugin Visual é **transversal** — não ocupa uma camada, aplica-se a todas:
 
 ```
-Qualquer plugin do arsenal pode acionar o Visual:
+Modo CM — qualquer plugin pode acionar o Visual:
 
-Chavossel (05) → Visual aplica Estética Chave Mestra ao carrossel
+Chavossel (05) → Visual aplica Estética CM ao carrossel
 Chavideo (04) → Visual formata roteiro em template de script
 Pergaminho de Copy (03) → Visual formata em Pergaminho Preto/Branco/Dourado
 Mapa de Campanha (06) → Visual cria cronograma visual / dashboard de campanha
 Portal da Escala (08) → Visual cria dashboard de métricas
 Relatório de Terreno (01) → Visual formata em PDF/HTML estruturado
+
+Modo Cliente Externo — fluxo completo:
+
+Intake de Marca (7 elementos)
+    → Motor de Temas Customizados (proposta de tokens)
+    → Aprovação do tema
+    → Execução do output visual
+    → Preview em tempo real
+    → Loop de feedback
+    → Entrega final (100% identidade do cliente)
 ```
-
----
-
-*Tema Visual v1.0 — Março 2026*
-*Parte do Arsenal Chave Mestra — Plugin 10 / Camada: Transversal — Estética*
-*O Iluminista — o plugin que dá forma ao que os outros criam*
-
 
 ---
 
@@ -562,14 +841,25 @@ Relatório de Terreno (01) → Visual formata em PDF/HTML estruturado
 
 **No pipeline:** Camada Transversal — Estética. Aplica-se a qualquer output de qualquer camada. Recebe de: qualquer plugin que produza conteúdo visual. Entrega para: o output final — carrosséis (Chavossel), materiais de venda, apresentações. É o último passo de qualquer pipeline visual.
 
-Antes de sugerir, verifica o contexto da sessão: que conteúdo foi estilizado, se a narrativa do material já estava estruturada antes da estética ser aplicada. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem. Se vários itens estão em falta, recomenda o mais impactante primeiro. Nunca derramas tudo de uma vez.
+Antes de sugerir, verifica o contexto da sessão: que conteúdo foi estilizado, se a narrativa do material já estava estruturada antes da estética ser aplicada. As sugestões são condicionais — faz apenas as que o utilizador genuinamente ainda não tem.
 
 **Regra:** entrega a estética aplicada primeiro — recomenda depois, nunca durante a execução.
 
 | Se o utilizador ainda não tem… | Sugestão proativa |
 |---|---|
-| Carrossel com narrativa estruturada *(se o conteúdo vai para carrossel)* | "Estética aplicada. Se o conteúdo visual vai para carrossel, seria o momento para o **Chavossel** — garante que a narrativa e a sintaxe estão alinhadas com o motor Figma antes de gerar o layout final." |
-| Copy calibrada para o mesmo material *(base narrativa)* | "A estética potencializa copy forte. Se a copy deste material ainda não foi calibrada, o **Pergaminho de Copy** é o próximo passo — depois a estética serve o texto, não o contrário." |
-| Plano de distribuição *(se é peça de campanha)* | "Se este material é peça de campanha, o **Mapa de Campanha** define o contexto de uso — qual fase, qual canal, qual objetivo." |
+| Carrossel com narrativa estruturada | "Estética aplicada. Se o conteúdo visual vai para carrossel, seria o momento para o **Chavossel** — garante que a narrativa e a sintaxe estão alinhadas com o motor Figma antes de gerar o layout final." |
+| Copy calibrada para o mesmo material | "A estética potencializa copy forte. Se a copy deste material ainda não foi calibrada, o **Pergaminho de Copy** é o próximo passo — depois a estética serve o texto, não o contrário." |
+| Plano de distribuição | "Se este material é peça de campanha, o **Mapa de Campanha** define o contexto de uso — qual fase, qual canal, qual objetivo." |
 
-> **Reconhecimento de insumo:** Se a sessão já produziu copy calibrada ou carrossel estruturado, omite as sugestões correspondentes. O Tema Visual é o último passo — se tudo já existe, o output está pronto para distribuição.
+---
+
+## Changelog
+
+- **v2.0** (Março 2026): Expansão para sistema de design universal. Adicionado: Modo CM vs Modo Cliente, Motor de Temas Customizados, Intake de Marca (7 elementos), Protocolo de Engenharia Reversa Visual, Preview em Tempo Real (Claude Code), Loop de Feedback, Capacidades Completas (UI/UX, diagramação, motion, identidade), Regras R8–R12. Preservado integralmente: 3 Pergaminhos, tokens CM, componentes, formatos, UX Principles, efeitos especiais, R1–R7.
+- **v1.0** (Março 2026): Versão inicial — 3 Pergaminhos, tokens CM, estética Chave Mestra.
+
+---
+
+*Tema Visual v2.0 — Março 2026*
+*Parte do Arsenal Chave Mestra — Plugin 10 / Camada: Transversal — Estética*
+*O Iluminista — o plugin que dá forma ao que os outros criam*
