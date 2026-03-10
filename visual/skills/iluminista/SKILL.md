@@ -1,6 +1,6 @@
 ---
 name: iluminista
-version: 3.0
+version: 3.1
 plugin: "10"
 layer: "Transversal — Estética"
 description: >
@@ -95,7 +95,7 @@ A regra de ouro: **conteúdo medíocre com design excelente vende mais que conte
 
 ---
 
-## OS TRÊS PERGAMINHOS (Modo CM)
+## OS QUATRO PERGAMINHOS (Modo CM)
 
 O sistema Chave Mestra opera com quatro variantes visuais primárias, cada uma com propósito retórico distinto.
 
@@ -156,12 +156,29 @@ O sistema Chave Mestra opera com quatro variantes visuais primárias, cada uma c
 - Sombras: `0 0 30px rgba(212,175,55,0.08)` (glow gold muito sutil)
 
 **Elementos característicos:**
-- Glassmorphism escuro: `backdrop-filter: blur(20px)` sobre background preto + `background: rgba(20,20,18,0.7)` + borda gold sutil
-- Cards flutuantes com `box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(212,175,55,0.05)`
-- Texto dourado em elementos de destaque máximo
+
+**Glassmorphism — 3 variantes (escolher conforme intensidade desejada):**
+- **Leve** `rgba(20,20,18,0.40)` + `blur(12px) saturate(150%)` + `border: 1px solid rgba(212,175,55,0.10)` — para overlays, tooltips, painéis secundários
+- **Médio** `rgba(20,20,18,0.65)` + `blur(20px) saturate(180%)` + `border: 1px solid rgba(212,175,55,0.15)` — padrão para cards de conteúdo
+- **Pesado** `rgba(20,20,18,0.85)` + `blur(28px) saturate(200%)` + `border: 1px solid rgba(212,175,55,0.22)` — modais, drawers, elementos sobre imagens
+
+**Sistema de profundidade (4 camadas):**
+- `#0a0a08` void bg → base, nunca elemento foreground
+- `#111110` card → primeira superfície, `box-shadow: 0 4px 16px rgba(0,0,0,0.4)`
+- `#141412` floating → card elevado, `box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 40px rgba(212,175,55,0.04)`
+- glass elevado → highest z, `box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 60px rgba(212,175,55,0.06)`
+
+**Motion (hover e entrada):**
+- **Hover lift:** `transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,0.6), 0 0 50px rgba(212,175,55,0.08); transition: 0.3s cubic-bezier(0.34,1.56,0.64,1)` — spring suave com intensificação do glow gold
+- **Entrada (voidReveal):** `@keyframes voidReveal { from { opacity: 0; transform: translateY(20px); filter: blur(4px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }` — blur-fade de baixo para cima
+- **Glow pulse (CTA):** `@keyframes goldPulse { 0%, 100% { box-shadow: 0 0 20px rgba(212,175,55,0.3); } 50% { box-shadow: 0 0 40px rgba(212,175,55,0.6); } }` — `animation: goldPulse 2.5s ease-in-out infinite` em botões principais
+
+**Outros elementos:**
+- Texto dourado em elementos de destaque máximo (máx. 1 por tela)
 - Separadores: linha `1px solid rgba(212,175,55,0.3)`
 - Glow sutil em elementos de CTA: `text-shadow: 0 0 20px rgba(212,175,55,0.4)`
-- Background textura (opcional): noise sutil, granulação, não liso demais
+- Background textura (opcional): noise sutil, granulação — nunca liso demais
+- Background void com gradiente radial sutil: `radial-gradient(ellipse at 20% 50%, rgba(212,175,55,0.03) 0%, transparent 50%), #0a0a08`
 
 ---
 
@@ -204,19 +221,24 @@ O sistema Chave Mestra opera com quatro variantes visuais primárias, cada uma c
 **Filosofia:** O Arcano é o mais ancestral dos Pergaminhos. Onde o Dourado é transformação, o Arcano é origem. A textura de pergaminho envelhecido, a madeira escura, a caligrafia gótica como elemento decorativo — não é nostalgia. É a afirmação visual de que algumas coisas têm raiz. Fundo claro com alto contraste, moderno na estrutura, ancestral na alma. A UnifrakturMaguntia nunca aparece em texto corrido — existe apenas como drop cap, como selo, como assinatura de que este documento foi lavrado.
 
 **Tokens visuais:**
-- Background principal: `#EDE0C4` (pergaminho envelhecido — mais escuro e saturado que o Dourado)
-- Background profundidade: `#D4C4A0` (sombras, recuos, cards internos)
-- Texto principal: `#1A0A00` (marrom quase preto — contraste máximo sobre fundo claro)
-- Texto secundário: `#3D1F00` (marrom escuro — legível, fora da zona hue-on-hue)
+- Background principal: `#C8B890` (pergaminho atmosférico — oxidado, saturado, com caráter real)
+- Background profundidade: `#B0A076` (recuos, wells, sombras internas — mais escuro)
+- Background elevado: `#D8C9A0` (superfícies flutuantes — mais claro para efeito 3D)
+- Glass surface: `rgba(220,205,165,0.50)` (frosted parchment — glassmorphism ancestral)
+- Texto principal: `#120500` (quase preto — contraste máximo sobre fundo claro)
+- Texto secundário: `#4A1E00` (texto corrido secundário — legível, fora da zona hue-on-hue)
+- Texto label/apoio: `#5C2A00` (labels, roles, suporte — **não amber**, marrom escuro legível)
 - Acento madeira: `#6B3A1F` (bordas, ornamentos, divisores de estrutura)
-- Acento âmbar: `#C17F24` (CTAs, destaques, elementos de foco)
+- Acento âmbar: `#C17F24` (**EXCLUSIVO DECORATIVO** — CTAs, ornamentos, destaques visuais; **jamais texto legível corrido**)
+- Âmbar hover: `#D4920A` (estado hover/focus do amber — mais vibrante)
 - Tinta decorativa: `#2A1500` (drop caps, ornamentos finos, ligatures)
 - Corpo mínimo: **16px obrigatório** para texto corrido
 - Fonte título: `Cinzel Decorative` (maiúsculas, espaçamento generoso — hierarquia principal)
 - Fonte corpo: `IM Fell English` (serifado histórico — texto corrido e legendas)
 - Fonte decorativa: `UnifrakturMaguntia` (gótica — **exclusivo para drop caps e selos, jamais em texto corrido**)
 - Bordas: `2px solid rgba(107,58,31,0.35)` (madeira sutil)
-- Sombras: `0 4px 24px rgba(42,21,0,0.18)` (escura quente)
+- Sombra profundidade: `0 2px 6px rgba(18,5,0,0.20), 0 10px 28px rgba(18,5,0,0.18), 0 28px 56px rgba(18,5,0,0.12)` (3 camadas — superfície + mid + ambiente)
+- Sombra flutuante: `0 12px 40px rgba(18,5,0,0.28), 0 4px 12px rgba(18,5,0,0.20)` (card elevado)
 
 **Fontes (Google Fonts import para Arcano):**
 ```css
@@ -230,17 +252,34 @@ O sistema Chave Mestra opera com quatro variantes visuais primárias, cada uma c
 - **Divisor em âmbar:** linha horizontal `background: linear-gradient(to right, transparent, rgba(193,127,36,0.6), transparent)`
 - **Selo de cera (decorativo):** círculo 48px, `background: radial-gradient(circle, #8B0000, #5a0000)`, texto em Cinzel branco — elemento de prestígio opcional, nunca funcional
 - **Ornamentos tipográficos:** `—◆—`, `✦`, `⸻` na cor `#C17F24` — nunca na cor de texto principal
+- **Glassmorphism ancestral (frosted parchment):** `background: rgba(220,205,165,0.50)` + `backdrop-filter: blur(16px) saturate(140%)` + `border: 1px solid rgba(107,58,31,0.20)` — sobre fundo com textura; sem fundo visível por baixo, perde o efeito
+- **Sistema de profundidade 3D (4 camadas):** `#B0A076` void/recesso → `#C8B890` superfície base → `#D8C9A0` card elevado → `rgba(220,205,165,0.50)` glass flutuante — cada nível com shadow tier correspondente; jamais superfícies do mesmo valor tonal adjacentes
+- **Hover spring (cards):** `transform: translateY(-8px) scale(1.01); transition: 0.35s cubic-bezier(0.34,1.56,0.64,1)` — curva spring com bounce; não usar `ease` simples (fica inerte)
+- **Animação de entrada:** `@keyframes arcanoReveal { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }` — stagger de `0.1s` por card sequencial via `animation-delay`
+- **Shimmer em CTA:** `@keyframes arcanoShimmer { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }` sobre `background: linear-gradient(90deg, #C17F24, #D4920A, #C8B890, #C17F24); background-size: 300%` — animação contínua 4s linear
 
 **CSS base:**
 ```css
 .parchment-arcano {
-  --arc-bg:        #EDE0C4;
-  --arc-bg-deep:   #D4C4A0;
-  --arc-text:      #1A0A00;
-  --arc-text-sec:  #3D1F00;
-  --arc-wood:      #6B3A1F;
-  --arc-amber:     #C17F24;
-  --arc-ink:       #2A1500;
+  /* === PALETA ARCANO v3.1 === */
+  --arc-bg:           #C8B890;   /* fundo atmosférico — oxidado, saturado */
+  --arc-bg-deep:      #B0A076;   /* recuos, wells, áreas rebaixadas */
+  --arc-bg-raised:    #D8C9A0;   /* superfícies elevadas — mais claro (3D) */
+  --arc-glass-bg:     rgba(220,205,165,0.50); /* frosted parchment glass */
+  --arc-text:         #120500;   /* quase preto — contraste máximo */
+  --arc-text-sec:     #4A1E00;   /* texto corrido secundário */
+  --arc-text-label:   #5C2A00;   /* labels, roles, apoio — NUNCA usar amber aqui */
+  --arc-wood:         #6B3A1F;   /* bordas e ornamentos de madeira */
+  --arc-amber:        #C17F24;   /* DECORATIVO APENAS — CTAs, ornamentos, não texto */
+  --arc-amber-hi:     #D4920A;   /* amber hover/focus */
+  --arc-ink:          #2A1500;   /* drop caps e ornamentos finos */
+
+  /* === SOMBRAS 3D (3 tiers) === */
+  --arc-shadow-depth: 0 2px 6px rgba(18,5,0,0.20),
+                      0 10px 28px rgba(18,5,0,0.18),
+                      0 28px 56px rgba(18,5,0,0.12);
+  --arc-shadow-float: 0 12px 40px rgba(18,5,0,0.28),
+                      0 4px 12px rgba(18,5,0,0.20);
 
   background: var(--arc-bg);
   color: var(--arc-text);
@@ -249,6 +288,7 @@ O sistema Chave Mestra opera com quatro variantes visuais primárias, cada uma c
   line-height: 1.75;
 }
 
+/* === TIPOGRAFIA === */
 .arcano-title {
   font-family: 'Cinzel Decorative', serif;
   color: var(--arc-text);
@@ -265,6 +305,7 @@ O sistema Chave Mestra opera com quatro variantes visuais primárias, cada uma c
   margin-bottom: 0.04em;
 }
 
+/* === SEPARADORES === */
 .arcano-divider {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--arc-amber), transparent);
@@ -272,13 +313,70 @@ O sistema Chave Mestra opera com quatro variantes visuais primárias, cada uma c
   opacity: 0.6;
 }
 
+/* === CARDS — SISTEMA DE PROFUNDIDADE === */
 .arcano-card {
-  background: var(--arc-bg-deep);
-  border: 2px solid rgba(107,58,31,0.3);
-  box-shadow: inset 0 0 0 6px rgba(107,58,31,0.05), 0 4px 24px rgba(42,21,0,0.12);
+  background: var(--arc-bg-raised);
+  border: 2px solid rgba(107,58,31,0.30);
+  box-shadow: inset 0 0 0 6px rgba(107,58,31,0.05), var(--arc-shadow-depth);
   border-radius: 4px;        /* angular — artefato, não app */
   padding: var(--space-6);
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow 0.35s cubic-bezier(0.34,1.56,0.64,1);
 }
+.arcano-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: inset 0 0 0 6px rgba(107,58,31,0.05), var(--arc-shadow-float);
+}
+
+.arcano-card-deep {
+  background: var(--arc-bg-deep);
+  border: 2px solid rgba(107,58,31,0.25);
+  box-shadow: inset 0 2px 12px rgba(18,5,0,0.12);
+  border-radius: 4px;
+  padding: var(--space-6);
+}
+
+/* === GLASSMORPHISM (frosted parchment) === */
+.arcano-glass {
+  background: var(--arc-glass-bg);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(107,58,31,0.20);
+  border-radius: 4px;
+  box-shadow: var(--arc-shadow-depth);
+}
+
+/* === CTA COM SHIMMER === */
+.arcano-cta {
+  background: linear-gradient(90deg, #C17F24, #D4920A, #C8B890, #C17F24);
+  background-size: 300%;
+  color: #120500;
+  font-family: 'Cinzel Decorative', serif;
+  letter-spacing: 0.08em;
+  animation: arcanoShimmer 4s linear infinite;
+  border: none;
+  padding: 0.75em 2em;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* === ANIMAÇÕES === */
+@keyframes arcanoReveal {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes arcanoShimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/*
+  USO: animation: arcanoReveal 0.6s ease forwards;
+  Stagger em lista de cards:
+  .arcano-card:nth-child(2) { animation-delay: 0.1s; }
+  .arcano-card:nth-child(3) { animation-delay: 0.2s; }
+*/
 ```
 
 ---
@@ -969,6 +1067,29 @@ Antes de sugerir, verifica o contexto da sessão: que conteúdo foi estilizado, 
 
 ## Changelog
 
+### v3.1 — Março 2026
+**Modificado — Pergaminho Arcano:**
+- Background `#EDE0C4` → `#C8B890` (oxidado, saturado, com caráter atmosférico real)
+- Adicionado token `--arc-bg-raised: #D8C9A0` (superfícies elevadas para profundidade 3D)
+- Adicionado token `--arc-glass-bg: rgba(220,205,165,0.50)` (frosted parchment glass)
+- Adicionado token `--arc-text-label: #5C2A00` (labels e roles — texto legível, não amber)
+- `--arc-text-sec` corrigido: `#3D1F00` → `#4A1E00` (mais escuro, melhor contraste)
+- Amber (`#C17F24`) declarado exclusivamente decorativo — proibido como texto legível corrido
+- Adicionado `--arc-amber-hi: #D4920A` para estados hover/focus
+- Sombras expandidas: sistema de 3 tiers (`--arc-shadow-depth` + `--arc-shadow-float`)
+- Glassmorphism ancestral documentado (frosted parchment + blur(16px) saturate(140%))
+- Sistema de profundidade 4 camadas documentado nos efeitos
+- Hover spring: `translateY(-8px) scale(1.01)` com `cubic-bezier(0.34,1.56,0.64,1)`
+- Animações: `@keyframes arcanoReveal` (fade+slide entrada) e `@keyframes arcanoShimmer` (CTA)
+- CSS base reescrito: `.arcano-card` usa bg-raised (era bg-deep), hover com spring, `.arcano-card-deep`, `.arcano-glass`, `.arcano-cta` com shimmer
+
+**Modificado — Pergaminho Preto:**
+- Glassmorphism expandido para 3 variantes (leve/médio/pesado) com valores explícitos
+- Sistema de profundidade 4 camadas documentado (void → card → floating → glass elevado)
+- Motion documentado: hover lift spring, `@keyframes voidReveal` (blur-fade), `@keyframes goldPulse` (CTA)
+
+**Preservado integralmente:** Pergaminhos Branco e Dourado, Motor de Temas, Engenharia Reversa, Preview em Tempo Real, Loop de Feedback, Capacidades Completas, UX Principles, todos os tokens de sistema, R1–R12, componentes, formatos e integração no pipeline.
+
 ### v3.0 — Março 2026
 **Adicionado:**
 - Pergaminho Arcano (4º Pergaminho): fundo `#EDE0C4`, texto `#1A0A00`, madeira `#6B3A1F`, âmbar `#C17F24` — para artefatos históricos, dossiês premium e metodologia proprietária; inclui drop cap gótico (UnifrakturMaguntia), moldura de madeira, grão de papel, divisor âmbar, selo de cera
@@ -994,6 +1115,6 @@ Versão inicial — 3 Pergaminhos, tokens CM, estética Chave Mestra.
 
 ---
 
-*Tema Visual v3.0 — Março 2026*
+*Tema Visual v3.1 — Março 2026*
 *Parte do Arsenal Chave Mestra — Plugin 10 / Camada: Transversal — Estética*
 *O Iluminista — o plugin que dá forma ao que os outros criam*
