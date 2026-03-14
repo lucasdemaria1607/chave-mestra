@@ -1,6 +1,6 @@
 # Chave Mestra — Ecossistema de Coprodução Digital
 
-Sistema de criação, estratégia e operação para qualquer expert, marca ou negócio digital. Estruturado em 7 camadas, executado por 11 plugins de IA.
+Sistema de criação, estratégia e operação para qualquer expert, marca ou negócio digital. Estruturado em 7 camadas, executado por 6 plugins de IA.
 
 **Tese central:** Personalidade + Inteligência = diferenciação real e resultados sustentáveis.
 
@@ -12,85 +12,121 @@ Sistema de criação, estratégia e operação para qualquer expert, marca ou ne
 
 ```
 CHAVE-MESTRA/
-├── 00-FUNDACAO/          → Manifesto, Mapa do Projeto, Glossário
-├── 01-SKILLS/            → SKILL.md fonte (canônico) + referências por skill
-├── 02-REFERENCIAS/       → Materiais de apoio compartilhados
-├── 03-CAMPANHAS/         → Campanhas ativas e arquivadas
+├── 00-FUNDACAO/          → Manifesto, Mapa do Projeto, Glossário, Modo Cliente
+├── 01-PLUGINS/           → Os 6 plugins com skills e referências
+│   ├── 00-chaveiro/      → Meta-manutenção + Conhecimento + Tesouro dos Erros
+│   ├── 01-cartografo/    → Diagnóstico de Mercado + Persona
+│   ├── 02-alquimista/    → Copy + Oferta + Escala + Frameworks
+│   ├── 03-bardo/         → Vídeo + Carrossel + Headlines + Scripts
+│   ├── 04-arauto/        → Campanha + Notion + Protocolo Massivo
+│   └── 05-iluminista/     → Design, UX e Produção Visual (5 skills)
 ├── 04-PERGAMINHOS/       → Conteúdo produzido (brancos/pretos/dourados)
 ├── 05-ASSETS/            → Brand kit, tema visual, prompts
-├── 06-TESOURO-DOS-ERROS/ → Registro de erros e aprendizados
-│
-├── chaveiro/             → Plugin 00 — Chaveiro (meta-manutenção)
-├── cartografo/           → Plugin 01 — Portal do Terreno (diagnóstico de mercado)
-├── oraculo/              → Plugin 02 — Forja da Persona (SZC + Alma)
-├── alquimista/           → Plugin 03 — Pergaminho de Copy (Copy 3x5 + Método Carga)
-├── bardo/                → Plugin 04 — Chavideo (roteiros de vídeo)
-├── escriba/              → Plugin 05 — Chavossel (carrosséis editoriais)
-├── estrategista/         → Plugin 06 — Mapa de Campanha (planejamento)
-├── arquiteto/            → Plugin 07 — Esteira Notion (operação no Notion)
-├── tesoureiro/           → Plugin 08 — Portal da Escala (métricas e escala)
-└── forjador/             → Plugin 09 — Forja do Conhecimento (Zettelkasten)
+└── 06-TESOURO-DOS-ERROS/ → Registro de erros e aprendizados
 ```
 
 Cada plugin tem:
 - `.claude-plugin/plugin.json` — manifesto com gatilhos de ativação
+- `README.md` — visão geral do plugin e suas skills
 - `skills/<nome>/SKILL.md` — manual técnico de operação
 - `skills/<nome>/[referências].md` — materiais de apoio co-locados
 
 ---
 
-## Os 10 Plugins
+## Os 6 Plugins
 
-| # | Nome | Diretório | Camada | Gatilhos principais |
-|---|------|-----------|--------|---------------------|
-| 00 | Chaveiro | `chaveiro/` | Meta | "chaveiro", "assimila esse livro/PDF", "atualiza o skill X", "onde isso se encaixa" |
-| 01 | Portal do Terreno | `cartografo/` | C1 — Diagnóstico | "analisa o mercado", "mapa do terreno", "pesquisa de nicho" |
-| 02 | Forja da Persona | `oraculo/` | C1 — Diagnóstico | "mapeia a persona", "SZC", "Alma da Persona", "quem é o lead" |
-| 03 | Pergaminho de Copy | `alquimista/` | C2 — Estratégia | "copy", "Copy 3x5", "Método Carga", "calibra a peça" |
-| 04 | Chavideo | `bardo/` | C3 — Criação | "roteiro de vídeo", "chavideo", "reel", "script" |
-| 05 | Chavossel | `escriba/` | C3 — Criação | "carrossel", "chavossel", "10 slides", "ensaio visual" |
-| 06 | Mapa de Campanha | `estrategista/` | C4 — Lançamento | "campanha", "lançamento", "meteórico", "desafio", "cronograma" |
-| 07 | Esteira Notion | `arquiteto/` | C5 — Operações | "popula o Notion", "MINHA ESTEIRA", "cria as tarefas no Notion" |
-| 08 | Portal da Escala | `tesoureiro/` | C6 — Escala | "diagnóstico de fase", "alavancas", "CAC", "LTV", "escala o negócio" |
-| 09 | Forja do Conhecimento | `forjador/` | C0 — Base | "Zettelkasten", "nota permanente", "Tesouro dos Erros", "atualiza plugin" |
+| # | Nome | Diretório | Camadas | Skills |
+|---|------|-----------|---------|--------|
+| 00 | Chaveiro | `01-PLUGINS/00-chaveiro/` | Meta + C0 | chaveiro, forja-do-conhecimento, tesouro-dos-erros |
+| 01 | Cartógrafo | `01-PLUGINS/01-cartografo/` | C1 — Diagnóstico | portal-do-terreno, forja-da-persona |
+| 02 | Alquimista | `01-PLUGINS/02-alquimista/` | C2 — Estratégia + C6 — Escala | pergaminho-de-copy, forja-de-oferta, portal-da-escala, frameworks-anuncios |
+| 03 | Bardo | `01-PLUGINS/03-bardo/` | C3 — Criação | chavideo, chavossel, headline-generator, script-creator, script-analyzer, copy-enhancer |
+| 04 | Arauto | `01-PLUGINS/04-arauto/` | C4 — Lançamento + C5 — Operação | mapa-de-campanha, esteira-notion, protocolo-massivo |
+| 05 | Iluminista | `01-PLUGINS/05-iluminista/` | Transversal | sistema-de-design, forja-de-imagem, arquiteto-de-experiencia, ponte-figma, publicador-visual |
 
 ---
 
-## Regras de operação
+## Gatilhos de Ativação
+
+| Gatilho | Plugin | Skill |
+|---------|--------|-------|
+| "chaveiro", "assimila esse livro/PDF", "atualiza o skill X", "onde isso se encaixa" | Chaveiro | chaveiro |
+| "Zettelkasten", "nota permanente", "modelos mentais", "documenta isso" | Chaveiro | forja-do-conhecimento |
+| "Tesouro dos Erros", "registra esse erro", "que erros existem para", "o que pode dar errado" | Chaveiro | tesouro-dos-erros |
+| "analisa o mercado", "mapa do terreno", "pesquisa de nicho", "players", "brechas" | Cartógrafo | portal-do-terreno |
+| "mapeia a persona", "SZC", "Alma da Persona", "quem é o lead", "inferno/purgatório/céu" | Cartógrafo | forja-da-persona |
+| "copy", "Copy 3x5", "Método Carga", "calibra a peça", "nível de consciência" | Alquimista | pergaminho-de-copy |
+| "cria a oferta", "stack de bônus", "equação de valor", "garantia", "oferta irresistível" | Alquimista | forja-de-oferta |
+| "diagnóstico de fase", "alavancas", "CAC", "LTV", "escala o negócio", "esteira de valor" | Alquimista | portal-da-escala |
+| "frameworks de anúncio", "templates de oferta", "Manychat" | Alquimista | frameworks-anuncios |
+| "roteiro de vídeo", "chavideo", "reel", "script", "Progymnasmata" | Bardo | chavideo |
+| "carrossel", "chavossel", "10 slides", "ensaio visual" | Bardo | chavossel |
+| "gere headlines", "headlines para", "ideias de conteúdo" | Bardo | headline-generator |
+| "cria roteiro a partir da headline", "desenvolve roteiro" | Bardo | script-creator |
+| "analisa esse roteiro viral", "engenharia reversa" | Bardo | script-analyzer |
+| "otimiza essa copy para fala", "melhora o roteiro" | Bardo | copy-enhancer |
+| "campanha", "lançamento", "meteórico", "desafio", "cronograma" | Arauto | mapa-de-campanha |
+| "popula o Notion", "MINHA ESTEIRA", "cria as tarefas no Notion" | Arauto | esteira-notion |
+| "protocolo massivo", "protocolo luxo", "protocolo urgência", "campanha intensiva" | Arauto | protocolo-massivo |
+| "tema visual", "paleta", "design system", "pergaminho branco/preto/dourado/arcano" | Iluminista | sistema-de-design |
+| "gera imagem", "forja de imagem", "nano banana", "edita imagem" | Iluminista | forja-de-imagem |
+| "UX", "hierarquia visual", "layout", "arquiteto de experiência" | Iluminista | arquiteto-de-experiencia |
+| "manda pro Figma", "ponte Figma", "Chavossel Figma", "renderiza no Figma" | Iluminista | ponte-figma |
+| "publica no Notion" (visual), "exporta visual", "galeria visual" | Iluminista | publicador-visual |
+
+---
+
+## Regras de Operação
 
 **Antes de qualquer output em uma camada:** leia o `SKILL.md` do plugin correspondente.
 
-**Para criar carrossel:** ative `escriba/` — leia `SKILL.md` + `exercicios.md` + `exemplos.md`.
+**Para criar carrossel:** ative Bardo → leia `chavossel/SKILL.md` + `exercicios.md` + `exemplos.md`.
 
-**Para criar roteiro de vídeo:** ative `bardo/` — leia `SKILL.md` + `progymnasmata-video-map.md` + `cinematicas-combinacoes.md`.
+**Para criar roteiro de vídeo:** ative Bardo → leia `chavideo/SKILL.md` + `progymnasmata-video-map.md` + `cinematicas-combinacoes.md`.
 
-**Para criar copy:** ative `alquimista/` — leia `SKILL.md` + `copy-3x5.md` + `metodo-carga.md`.
+**Para criar copy:** ative Alquimista → leia `pergaminho-de-copy/SKILL.md` + `copy-3x5.md` + `metodo-carga.md`.
 
-**Para planejar campanha:** ative `estrategista/` — leia `SKILL.md` + `modalidades.md` + `copy-campanha.md`.
+**Para criar oferta:** ative Alquimista → leia `forja-de-oferta/SKILL.md`.
 
-**Para popular Notion:** ative `arquiteto/` — leia `SKILL.md` + `notion-integracao.md`.
+**Para planejar campanha:** ative Arauto → leia `mapa-de-campanha/SKILL.md` + `modalidades.md` + `copy-campanha.md`.
 
-**Para atualizar o sistema:** ative `chaveiro/` — opera com os 5 protocolos do SKILL.md.
+**Para campanha intensiva:** ative Arauto → leia `protocolo-massivo/SKILL.md`.
+
+**Para popular Notion:** ative Arauto → leia `esteira-notion/SKILL.md` + `notion-integracao.md`.
+
+**Para diagnosticar escala:** ative Alquimista → leia `portal-da-escala/SKILL.md`.
+
+**Para atualizar o sistema:** ative Chaveiro → opera com os 5 protocolos do `chaveiro/SKILL.md`.
+
+**Para registrar/consultar erros:** ative Chaveiro → leia `tesouro-dos-erros/SKILL.md`.
+
+**Para design visual / tema:** ative Iluminista → leia `sistema-de-design/SKILL.md`.
+
+**Para gerar imagens:** ative Iluminista → leia `forja-de-imagem/SKILL.md` (usa Nano Banana Pro / Gemini API).
+
+**Para UX/layout de conteúdo:** ative Iluminista → leia `arquiteto-de-experiencia/SKILL.md`.
+
+**Para renderizar no Figma:** ative Iluminista → leia `ponte-figma/SKILL.md` (usa Figma MCP).
+
+**Para publicar visuais no Notion:** ative Iluminista → leia `publicador-visual/SKILL.md` (usa Notion MCP).
 
 ---
 
-## Fluxo natural das camadas
+## Fluxo Natural das Camadas
 
 ```
-Diagnóstico (cartografo + oraculo)
+Diagnóstico (Cartógrafo)
     ↓
-Estratégia (alquimista)
+Estratégia (Alquimista — copy + oferta)
     ↓
-Criação (bardo + escriba)
+Criação (Bardo — vídeo + carrossel)
     ↓
-Lançamento (estrategista)
+Lançamento + Operação (Arauto — campanha + Notion)
     ↓
-Operação (arquiteto → Notion)
-    ↓
-Escala (tesoureiro)
+Escala (Alquimista — métricas + alavancas)
     ↑
-Base permanente (forjador — alimenta todas as camadas)
-Meta (chaveiro — mantém o sistema coerente)
+Base permanente (Chaveiro — conhecimento + erros)
+Iluminista (transversal — design, imagem, Figma, Notion)
 ```
 
 ---
@@ -138,7 +174,8 @@ Quando o cliente da sessão é Chave Mestra / Lucas, nunca substituir termos pro
 ## Referências
 
 - `00-FUNDACAO/MANIFESTO.md` — princípios que nunca mudam
-- `00-FUNDACAO/MAPA-DO-PROJETO.md` — arquitetura completa, kits Claude Projects, fila de prioridade
+- `00-FUNDACAO/MAPA-DO-PROJETO.md` — arquitetura completa
 - `00-FUNDACAO/GLOSSARIO.md` — vocabulário proprietário completo
 - `00-FUNDACAO/MODO-CLIENTE.md` — protocolo de adaptação a clientes externos
 - `CLAUDE-PROJECTS.md` — como montar os 6 kits no claude.ai
+- `ORDENS.md` — agrupamentos estratégicos de plugins para venda

@@ -1,0 +1,31 @@
+{
+  "name": "chave-mestra-alquimista",
+  "version": "3.0.0",
+  "description": "Plugin de copy, oferta e escala: calibração de copy via Copy 3×5 + Método Carga, design de ofertas, frameworks de anúncios, e inteligência operacional de escala. Ativar para escrever copy, criar ofertas ou diagnosticar fase do negócio.",
+  "skills": [
+    {
+      "name": "pergaminho-de-copy",
+      "description": "Calibração de copy via 3 camadas × 5 níveis de consciência + engenharia de densidade narrativa (Método Carga).",
+      "path": "skills/pergaminho-de-copy/SKILL.md",
+      "triggers": ["copy", "Copy 3x5", "Método Carga", "calibra a peça", "escreve copy", "nível de consciência", "pergaminho de copy"]
+    },
+    {
+      "name": "portal-da-escala",
+      "description": "Inteligência operacional: diagnóstico de fase, 4 alavancas de crescimento, esteira de valor, painel de métricas, matriz de decisão.",
+      "path": "skills/portal-da-escala/SKILL.md",
+      "triggers": ["diagnóstico de fase", "alavancas", "CAC", "LTV", "ROAS", "escala o negócio", "esteira de valor", "portal da escala", "métricas"]
+    },
+    {
+      "name": "forja-de-oferta",
+      "description": "Análise, criação e otimização de ofertas usando Equação de Valor + estrutura de garantias + stacking de bônus.",
+      "path": "skills/forja-de-oferta/SKILL.md",
+      "triggers": ["cria uma oferta", "otimiza a oferta", "análise de oferta", "equação de valor", "bônus", "garantia", "stack de oferta", "forja de oferta"]
+    },
+    {
+      "name": "frameworks-anuncios",
+      "description": "Templates de anúncios testados + frameworks de narrativa de oferta + ativação via ManyChat.",
+      "path": "skills/frameworks-anuncios/frameworks-anuncios.md",
+      "triggers": ["framework de anúncio", "template de oferta", "narrativa de oferta", "ManyChat", "anúncio", "criativo para tráfego"]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 {
   "name": "chave-mestra",
+  "version": "3.0.0",
   "owner": {
     "name": "Lucas De Maria (Grigo)",
     "homepage": "https://instagram.com/olucasgrigo"
@@ -7,58 +8,33 @@
   "plugins": [
     {
       "name": "chave-mestra-chaveiro",
-      "source": "./chaveiro",
-      "description": "Plugin 00 — Meta-manutenção do sistema: assimilação de livros/PDFs, atualização de skills, verificação de coerência, integração de frameworks."
+      "source": "./01-PLUGINS/00-chaveiro",
+      "description": "Plugin 00 — Meta-manutenção, gestão do conhecimento (Zettelkasten) e curadoria de erros críticos (Tesouro dos Erros)."
     },
     {
       "name": "chave-mestra-cartografo",
-      "source": "./cartografo",
-      "description": "Plugin 01 — Portal do Terreno: diagnóstico estrutural de mercado com PESTEL, Porter's 5 Forces, Mapa de Sofisticação, gaps e posicionamento."
-    },
-    {
-      "name": "chave-mestra-oraculo",
-      "source": "./oraculo",
-      "description": "Plugin 02 — Forja da Persona: mapeamento profundo de avatar via SZC + Alma da Persona (Inferno/Purgatório/Paraíso)."
+      "source": "./01-PLUGINS/01-cartografo",
+      "description": "Plugin 01 — Diagnóstico: inteligência de mercado (Portal do Terreno) + mapeamento psicológico de persona (Forja da Persona + SZC + Alma)."
     },
     {
       "name": "chave-mestra-alquimista",
-      "source": "./alquimista",
-      "description": "Plugin 03 — Pergaminho de Copy: calibração e criação de copy via Copy 3x5 + Método Carga + SZC + frameworks de anúncios."
+      "source": "./01-PLUGINS/02-alquimista",
+      "description": "Plugin 02 — Estratégia + Escala: Copy 3x5 + Método Carga + Forja de Oferta (Hormozi) + Portal da Escala (métricas/alavancas) + Frameworks de Anúncios."
     },
     {
       "name": "chave-mestra-bardo",
-      "source": "./bardo",
-      "description": "Plugin 04 — Chavideo: roteiros de vídeo curto e longo com base retórica nos 14 exercícios Progymnasmata + cinemáticas."
+      "source": "./01-PLUGINS/03-bardo",
+      "description": "Plugin 03 — Criação: roteiros de vídeo (Chavideo/Progymnasmata) + carrosséis (Chavossel) + headlines virais + análise de scripts + otimização de copy."
     },
     {
-      "name": "chave-mestra-escriba",
-      "source": "./escriba",
-      "description": "Plugin 05 — Chavossel: carrosséis editoriais de 6–10 slides com arco retórico completo e sintaxe própria."
+      "name": "chave-mestra-arauto",
+      "source": "./01-PLUGINS/04-arauto",
+      "description": "Plugin 04 — Lançamento + Operação: Mapa de Campanha (4 modalidades) + Esteira Notion + Protocolo Massivo (Luxo/Urgência)."
     },
     {
-      "name": "chave-mestra-estrategista",
-      "source": "./estrategista",
-      "description": "Plugin 06 — Mapa de Campanha: planejamento completo de lançamentos com diagnóstico de modalidade, cronograma e copy por fase."
-    },
-    {
-      "name": "chave-mestra-arquiteto",
-      "source": "./arquiteto",
-      "description": "Plugin 07 — Esteira Notion: protocolo de escrita e população da MINHA ESTEIRA no Notion com copy completo por linha."
-    },
-    {
-      "name": "chave-mestra-tesoureiro",
-      "source": "./tesoureiro",
-      "description": "Plugin 08 — Portal da Escala: diagnóstico de fase, mapa de alavancas, esteira de valor, painel de métricas e matriz de decisão."
-    },
-    {
-      "name": "chave-mestra-forjador",
-      "source": "./forjador",
-      "description": "Plugin 09 — Forja do Conhecimento: Zettelkasten digital, Tesouro dos Erros e evolução de plugins com padrões confirmados."
-    },
-    {
-      "name": "chave-mestra-visual",
-      "source": "./visual",
-      "description": "Plugin 10 — O Iluminista: estética transversal Chave Mestra com Pergaminhos Branco, Preto e Dourado em HTML/CSS."
+      "name": "chave-mestra-iluminista",
+      "source": "./01-PLUGINS/05-iluminista",
+      "description": "Plugin 05 — Iluminista: design system (4 Pergaminhos), geração de imagens (Nano Banana/Gemini), UX/UI, integração Figma (Chavossel) e publicação visual no Notion."
     }
   ]
 }

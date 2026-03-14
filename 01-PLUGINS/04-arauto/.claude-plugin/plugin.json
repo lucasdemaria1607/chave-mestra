@@ -1,0 +1,25 @@
+{
+  "name": "chave-mestra-arauto",
+  "version": "3.0.0",
+  "description": "Plugin de campanha e operação: planejamento de lançamentos, cronogramas dia a dia, copy por fase, integração com Notion e protocolos massivos de campanha intensiva. Ativar para planejar, executar e documentar campanhas completas.",
+  "skills": [
+    {
+      "name": "mapa-de-campanha",
+      "description": "Planejamento completo de campanhas: 4 modalidades (Meteórico/Desafio/Interno/Protocolo Massivo), cronograma dia a dia, copy por fase.",
+      "path": "skills/mapa-de-campanha/SKILL.md",
+      "triggers": ["campanha", "lançamento", "meteórico", "desafio", "cronograma", "mapa de campanha", "planejar lançamento"]
+    },
+    {
+      "name": "esteira-notion",
+      "description": "Protocolo de integração com MINHA ESTEIRA no Notion: população de banco de dados, tarefas por dia, copy no corpo.",
+      "path": "skills/esteira-notion/SKILL.md",
+      "triggers": ["popula o Notion", "MINHA ESTEIRA", "cria as tarefas no Notion", "esteira notion", "banco de dados notion"]
+    },
+    {
+      "name": "protocolo-massivo",
+      "description": "Protocolos de campanha intensiva: Luxo (posicionamento premium) e Urgência (gerar caixa em 48-72h). Campanhas de alta pressão com narrativas específicas.",
+      "path": "skills/protocolo-massivo/SKILL.md",
+      "triggers": ["protocolo massivo", "campanha intensiva", "campanha de luxo", "gerar caixa rápido", "48 horas", "campanha urgente"]
+    }
+  ]
+}

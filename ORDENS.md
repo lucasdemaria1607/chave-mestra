@@ -19,197 +19,159 @@ Cada Ordem é um conjunto de plugins que respondem a uma fase ou necessidade esp
 ## ORDEM DO MAPA
 ### *"Antes de criar, entender."*
 
-**Plugins:** Cartógrafo (01) + Oráculo (02)
+**Plugins:** Cartógrafo (01)
 
 **Propósito:**
-Mapear o terreno antes de qualquer criação. A Ordem do Mapa responde à pergunta fundamental que todo expert ignora: *quem já está aqui, o que eles prometem, onde estão as brechas — e quem, exatamente, é a pessoa que precisa do que eu faço?*
+Mapear o terreno antes de qualquer criação. A Ordem do Mapa responde à pergunta fundamental: *quem já está aqui, o que eles prometem, onde estão as brechas — e quem, exatamente, é a pessoa que precisa do que eu faço?*
 
 **O que entrega:**
 - Relatório de Terreno completo (players, ofertas, canais, brechas, posicionamento)
-- Análise PESTEL do setor (forças macro que moldam o mercado)
-- Porter's 5 Forces (estrutura competitiva do nicho)
-- SWOT Individual do Especialista (diagnóstico pessoal de posição estratégica)
-- Diagnóstico completo de 7 perguntas do expert (habilidades, entrada, monetização, personalidade, nicho, objetivos, oferta)
 - SZC completo (Status Quo, Zeitgeist, Conclusão)
-- Alma da Persona (Inferno, Purgatório, Paraíso)
+- Alma da Persona (Inferno, Purgatório, Céu)
+- Matriz C1 3×5 de espelhamento
+
+**Skills ativadas:** portal-do-terreno, forja-da-persona
 
 **Perfil do comprador ideal:**
-Expert ou especialista que está começando no digital, trocando de nicho, lançando um produto novo, ou travado sem saber por onde entrar. Alguém que tem conhecimento mas não tem clareza sobre posicionamento.
+Expert que está começando no digital, trocando de nicho, lançando produto novo, ou travado sem clareza de posicionamento.
 
 **Resultado esperado:**
 Clareza total sobre onde entrar, para quem falar, com que ângulo se posicionar — e o que o mercado ainda não está servindo.
-
-**Sequência de ativação:**
-```
-Portal do Terreno (01) → PESTEL + Porter + SWOT → Diagnóstico do Especialista
-    ↓
-Forja da Persona (02) → SZC + Alma da Persona
-    ↓
-Insumos prontos para alimentar Pergaminho de Copy (03)
-```
 
 ---
 
 ## ORDEM DA PENA
 ### *"As palavras certas, no momento certo, para a pessoa certa."*
 
-**Plugins:** Alquimista (03) + Bardo (04) + Escriba (05)
+**Plugins:** Alquimista (02) + Bardo (03)
 
 **Propósito:**
-Transformar diagnóstico e estratégia em conteúdo real com base retórica. A Ordem da Pena cobre toda a criação — copy calibrada, roteiros de vídeo e carrosséis editoriais — usando os 14 exercícios Progymnasmata como estrutura retórica.
+Transformar diagnóstico e estratégia em conteúdo real com base retórica. A Ordem da Pena cobre toda a criação — copy calibrada, ofertas estruturadas, roteiros de vídeo, carrosséis editoriais e headlines virais.
 
 **O que entrega:**
-- Copy 3x5 calibrada por nível de consciência (N1 a N5) e tipo de Pergaminho
-- Método Carga aplicado: Branco (direto), Preto (provocação), Dourado (transformação)
-- Roteiros de vídeo curtos (Reels/TikTok/Shorts) e longos (YouTube/webinar)
-- Carrosséis de 10 slides em formato Chavossel com arco retórico completo
-- Seleção de exercício Progymnasmata ideal para cada peça
+- Copy 3x5 calibrada por nível de consciência (N1 a N5)
+- Método Carga aplicado (cargas intelectual, emocional, visual, sinalização)
+- Ofertas estruturadas via Equação de Valor (Hormozi)
+- Roteiros de vídeo curtos e longos com Progymnasmata
+- Carrosséis de 10 slides em formato Chavossel
+- Headlines virais + roteiros completos a partir de headlines
+- Análise de roteiros virais + otimização de copy para fala
+
+**Skills ativadas:** pergaminho-de-copy, forja-de-oferta, chavideo, chavossel, headline-generator, script-creator, script-analyzer, copy-enhancer
 
 **Perfil do comprador ideal:**
-Expert que já sabe para quem fala e o que vende, mas precisa de consistência e profundidade na criação de conteúdo. Alguém que quer parar de criar por intuição e ter um sistema retórico real.
+Expert que já sabe para quem fala e o que vende, mas precisa de sistema retórico real para criar conteúdo com consistência e profundidade.
 
 **Resultado esperado:**
-Peças de conteúdo com estrutura retórica sólida, calibradas para o nível de consciência do público — vídeos, carrosséis e copy que funcionam com intenção, não por acidente.
-
-**Sequência de ativação:**
-```
-Pergaminho de Copy (03) → calibra nível de consciência + seleciona carga
-    ↓
-Chavideo (04) → roteiro de vídeo com exercício Progymnasmata selecionado
-    ↑ ou ↓
-Chavossel (05) → carrossel de 10 slides com arco retórico completo
-```
+Peças de conteúdo com estrutura retórica sólida, calibradas para o nível de consciência do público — vídeos, carrosséis, copy e ofertas que funcionam com intenção, não por acidente.
 
 ---
 
 ## ORDEM DA CRUZADA
 ### *"A campanha que move. O sistema que executa."*
 
-**Plugins:** Estrategista (06) + Arquiteto (07)
+**Plugins:** Arauto (04)
 
 **Propósito:**
-Planejar e executar campanhas de lançamento completas — da escolha da modalidade à execução operacional no Notion. A Ordem da Cruzada cobre o espaço entre "tenho um produto" e "o lançamento está rodando".
+Planejar e executar campanhas de lançamento completas — da escolha da modalidade à execução operacional no Notion, incluindo protocolos intensivos de alta pressão.
 
 **O que entrega:**
 - Diagnóstico de modalidade: qual lançamento usar (Meteórico, Desafio, Interno, Protocolo Massivo)
-- Cronograma dia a dia com os 4 atos narrativos (Estabelecimento, Incidente, Jornada, Decisão)
-- Copy por fase de campanha — o que comunicar em cada dia
-- Populamento completo da MINHA ESTEIRA no Notion (uma linha por dia, copy no corpo)
+- Cronograma dia a dia com os 4 atos narrativos
+- Copy por fase de campanha
+- Protocolo Massivo (Luxo ou Urgência) para campanhas intensivas
+- Populamento completo da MINHA ESTEIRA no Notion
+
+**Skills ativadas:** mapa-de-campanha, esteira-notion, protocolo-massivo
 
 **Perfil do comprador ideal:**
-Expert que já tem produto e diagnóstico feitos, mas não sabe como estruturar um lançamento ou sempre improvisa a comunicação durante campanhas. Alguém que precisa de método, não de mais inspiração.
+Expert que já tem produto e diagnóstico, mas não sabe como estruturar um lançamento ou sempre improvisa a comunicação durante campanhas.
 
 **Resultado esperado:**
 Um lançamento planejado do zero ao fim — com modalidade certa, narrativa estruturada, copy por dia e tudo operacionalizado no Notion.
-
-**Sequência de ativação:**
-```
-Mapa de Campanha (06) → diagnóstico de modalidade + cronograma + copy por fase
-    ↓
-Esteira Notion (07) → executa no Notion: uma linha por dia com copy completo
-```
 
 ---
 
 ## ORDEM DO TESOURO
 ### *"Operar acima do operacional. Crescer com inteligência."*
 
-**Plugins:** Tesoureiro (08) + Arquiteto (07)
+**Plugins:** Alquimista (02) — skill portal-da-escala
 
 **Propósito:**
-Diagnosticar a fase atual do negócio digital, identificar as alavancas certas para o estágio certo, e executar movimentos de escala no Notion. A Ordem do Tesouro existe para quem já vende e quer crescer com método.
+Diagnosticar a fase atual do negócio digital, identificar as alavancas certas e executar movimentos de escala com método.
 
 **O que entrega:**
 - Diagnóstico de fase (Fase 1–4: validação, crescimento, escala, otimização)
 - Mapa de alavancas prioritárias por fase (Mídia, Código, Pessoas, Capital)
-- Esteira de valor mapeada com todos os produtos e pontos de entrada
-- Painel de métricas relevantes: CAC, LTV, ROAS, ticket médio, taxa de conversão
+- Esteira de valor mapeada com todos os produtos
+- Painel de métricas: CAC, LTV, ROAS, ticket médio, conversão
 - Matriz de decisão: 1 ação principal + 2 suporte + 1 parar
-- Operacionalização de movimentos estratégicos no Notion
+
+**Skills ativadas:** portal-da-escala
 
 **Perfil do comprador ideal:**
-Expert que já fatura, já tem produto validado, mas está operando no caos — sem clareza sobre o próximo movimento, sem métricas confiáveis, sem saber o que escalar e o que abandonar.
+Expert que já fatura, tem produto validado, mas está operando no caos — sem clareza sobre o próximo movimento e sem métricas confiáveis.
 
 **Resultado esperado:**
 Diagnóstico preciso de fase + clareza sobre qual alavanca ativar agora + métricas que importam + próximo movimento executável.
-
-**Sequência de ativação:**
-```
-Portal da Escala (08) → diagnóstico de fase + alavancas + métricas + matriz de decisão
-    ↓
-Esteira Notion (07) → registra movimentos estratégicos e acompanha execução
-```
 
 ---
 
 ## ORDEM DA FORJA
 ### *"O sistema que aprende. O conhecimento que não se perde."*
 
-**Plugins:** Forjador (09) + Chaveiro (00)
+**Plugins:** Chaveiro (00)
 
 **Propósito:**
-Gerir o conhecimento permanente do expert e manter o próprio sistema Chave Mestra coerente e evoluindo. A Ordem da Forja é a camada base — o que garante que o que funciona seja capturado, o que falha seja documentado, e o sistema inteiro melhore com o tempo.
+Gerir o conhecimento permanente do expert e manter o sistema Chave Mestra coerente e evoluindo. A Ordem da Forja é a camada base — garante que o que funciona seja capturado, o que falha seja documentado, e o sistema melhore com o tempo.
 
 **O que entrega:**
-- Zettelkasten digital com notas permanentes e conexões entre ideias
-- Tesouro dos Erros — registro estruturado de falhas, padrões identificados e aprendizados
-- Evolução de plugins por padrão confirmado (nunca por hipótese)
-- Mapa de evolução do sistema Chave Mestra ao longo do tempo
-- Assimilação de livros, PDFs, frameworks externos no vocabulário do sistema
+- Zettelkasten digital com notas permanentes e conexões
+- Tesouro dos Erros — registro estruturado de falhas com prevenção ativa
+- Evolução de plugins por padrão confirmado
+- Assimilação de livros, PDFs, frameworks externos
 - Auditoria de coerência entre todos os plugins
 
+**Skills ativadas:** chaveiro, forja-do-conhecimento, tesouro-dos-erros
+
 **Perfil do comprador ideal:**
-Expert ou produtor de conteúdo que quer parar de perder o que aprende — que tem insights valiosos dispersos em anotações, conversas e memória, mas nunca captura de forma sistemática. Também para quem usa o sistema Chave Mestra e quer mantê-lo atualizado.
+Expert que quer parar de perder o que aprende e manter o sistema atualizado com aprendizados reais.
 
 **Resultado esperado:**
-Um sistema de conhecimento vivo — que cresce, se corrige e alimenta todos os outros plugins com padrões reais confirmados.
-
-**Sequência de ativação:**
-```
-Forja do Conhecimento (09) → captura → nota permanente → Tesouro dos Erros → evolui plugin
-    ↑↓
-Chaveiro (00) → assimila frameworks externos → audita coerência → versiona skills
-```
+Um sistema de conhecimento vivo — que cresce, se corrige e alimenta todos os outros plugins.
 
 ---
 
 ## A GRANDE ORDEM
 ### *"O arsenal completo. Do terreno à escala."*
 
-**Plugins:** Todos os 10 — Chaveiro (00) + Cartógrafo (01) + Oráculo (02) + Alquimista (03) + Bardo (04) + Escriba (05) + Estrategista (06) + Arquiteto (07) + Tesoureiro (08) + Forjador (09)
+**Plugins:** Todos os 6 — Chaveiro (00) + Cartógrafo (01) + Alquimista (02) + Bardo (03) + Arauto (04) + Iluminista (05)
 
 **Propósito:**
 O sistema integrado completo de coprodução digital. A Grande Ordem cobre todas as 7 camadas — do diagnóstico inicial à escala sustentável — com todos os plugins operando em sinergia total.
 
 **O que entrega:**
 Tudo das 5 Ordens anteriores, integrado e sem lacunas:
-- Diagnóstico de mercado + diagnóstico pessoal do expert
-- Psicologia profunda do avatar
-- Copy calibrada por nível de consciência
-- Roteiros de vídeo com estrutura retórica real
-- Carrosséis editoriais com arco narrativo completo
-- Planejamento e execução de campanhas de lançamento
-- Operação estratégica no Notion
+- Diagnóstico de mercado + persona completa
+- Copy calibrada + ofertas estruturadas
+- Roteiros de vídeo + carrosséis + headlines virais
+- Campanhas planejadas + executadas no Notion
 - Métricas e movimentos de escala
-- Sistema de conhecimento permanente
-- Manutenção e evolução contínua do sistema
+- Sistema de conhecimento permanente + prevenção de erros
+- Design system + geração de imagens + UX + Figma + publicação visual
 
 **Perfil do comprador ideal:**
-Expert digital que quer um sistema completo de coprodução — desde entender o mercado até escalar o negócio — sem precisar de múltiplos consultores, ferramentas ou metodologias externas. Alguém que pensa a longo prazo e quer operar com inteligência integrada.
-
-**Resultado esperado:**
-Um negócio digital operando com sistema completo: diagnóstico → estratégia → criação → lançamento → escala → aprendizado contínuo.
+Expert digital que quer um sistema completo de coprodução — desde entender o mercado até escalar o negócio — sem precisar de múltiplos consultores.
 
 **As 7 camadas ativas:**
 ```
-Camada 0: Base permanente — Forjador (09)
-Camada 1: Diagnóstico — Cartógrafo (01) + Oráculo (02)
-Camada 2: Estratégia — Alquimista (03)
-Camada 3: Criação — Bardo (04) + Escriba (05)
-Camada 4: Lançamento — Estrategista (06)
-Camada 5: Operação — Arquiteto (07)
-Camada 6: Escala — Tesoureiro (08)
-Meta: Chaveiro (00) — mantém todas as camadas coerentes
+Camada 0 + Meta: Chaveiro (00) — conhecimento + erros + manutenção
+Camada 1: Cartógrafo (01) — mercado + persona
+Camada 2: Alquimista (02) — copy + oferta
+Camada 3: Bardo (03) — vídeo + carrossel + headlines
+Camada 4 + 5: Arauto (04) — campanha + Notion
+Camada 6: Alquimista (02) — escala + métricas
+Transversal: Iluminista (05) — design, imagem, UX, Figma, Notion
 ```
 
 ---
@@ -218,14 +180,14 @@ Meta: Chaveiro (00) — mantém todas as camadas coerentes
 
 | Ordem | Plugins | Para quem | Resultado |
 |-------|---------|-----------|-----------|
-| **Ordem do Mapa** | 01 + 02 | Está começando / reposicionando | Clareza de mercado + persona definida |
-| **Ordem da Pena** | 03 + 04 + 05 | Precisa criar conteúdo com estrutura | Copy + vídeos + carrosséis retóricos |
-| **Ordem da Cruzada** | 06 + 07 | Tem produto, precisa lançar | Campanha planejada + executada no Notion |
-| **Ordem do Tesouro** | 08 + 07 | Já vende, quer escalar | Diagnóstico de fase + alavancas + métricas |
-| **Ordem da Forja** | 09 + 00 | Quer capturar e evoluir | Sistema de conhecimento permanente |
-| **A Grande Ordem** | Todos os 10 | Quer o sistema completo | Do diagnóstico à escala, integrado |
+| **Ordem do Mapa** | Cartógrafo (01) | Está começando / reposicionando | Clareza de mercado + persona |
+| **Ordem da Pena** | Alquimista (02) + Bardo (03) | Precisa criar conteúdo com estrutura | Copy + ofertas + vídeos + carrosséis |
+| **Ordem da Cruzada** | Arauto (04) | Tem produto, precisa lançar | Campanha planejada + executada no Notion |
+| **Ordem do Tesouro** | Alquimista (02) | Já vende, quer escalar | Diagnóstico de fase + alavancas + métricas |
+| **Ordem da Forja** | Chaveiro (00) | Quer capturar e evoluir | Sistema de conhecimento permanente |
+| **A Grande Ordem** | Todos os 6 | Quer o sistema completo | Do diagnóstico à escala + visual, integrado |
 
 ---
 
-*ORDENS.md v1.0 — Março 2026*
+*ORDENS.md v2.0 — Março 2026*
 *Sistema Chave Mestra — Lucas De Maria (Grigo)*

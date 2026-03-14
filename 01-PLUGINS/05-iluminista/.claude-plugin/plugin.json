@@ -1,0 +1,37 @@
+{
+  "name": "chave-mestra-iluminista",
+  "version": "4.0.0",
+  "description": "Plugin de design, UX e produção visual: design system com 4 pergaminhos visuais, geração de imagens por IA (Nano Banana/Gemini), UX/UI de conteúdo, integração Figma (Chavossel) e publicação no Notion.",
+  "skills": [
+    {
+      "name": "sistema-de-design",
+      "description": "Sistema de design v3.2: 4 pergaminhos visuais com tokens completos, motor de tema customizado, engenharia visual reversa, CSS e animações.",
+      "path": "skills/sistema-de-design/SKILL.md",
+      "triggers": ["tema visual", "design system", "pergaminho branco", "pergaminho preto", "pergaminho dourado", "pergaminho arcano", "CSS", "identidade visual", "tema do cliente", "tokens"]
+    },
+    {
+      "name": "forja-de-imagem",
+      "description": "Geração de imagens por IA via Nano Banana Pro (Gemini Image API): texto-para-imagem, edição, composição multi-imagem, presets e controle de custos.",
+      "path": "skills/forja-de-imagem/SKILL.md",
+      "triggers": ["gera imagem", "cria visual", "forja de imagem", "nano banana", "edita imagem", "compõe imagens", "imagem para post", "imagem para carrossel"]
+    },
+    {
+      "name": "arquiteto-de-experiencia",
+      "description": "UX/UI de conteúdo: hierarquia visual, layouts de carrossel (30+ tipos), tipografia, efeitos visuais, regras de composição e padrões de leitura.",
+      "path": "skills/arquiteto-de-experiencia/SKILL.md",
+      "triggers": ["UX do conteúdo", "hierarquia visual", "design de experiência", "layout", "grid", "microinteração", "arquiteto"]
+    },
+    {
+      "name": "ponte-figma",
+      "description": "Integração com plugin Figma Chavossel via MCP: injeção de texto/imagens nos frames, renderização de carrosséis, leitura de design tokens, screenshots.",
+      "path": "skills/ponte-figma/SKILL.md",
+      "triggers": ["manda pro Figma", "renderiza no Figma", "ponte Figma", "Chavossel Figma", "injeta nos frames", "gera carrossel no Figma", "exporta do Figma"]
+    },
+    {
+      "name": "publicador-visual",
+      "description": "Exportação de conteúdo visual para Notion: imagens de posts, carrosséis completos, assets de campanha, galeria visual organizada.",
+      "path": "skills/publicador-visual/SKILL.md",
+      "triggers": ["publica no Notion", "exporta visual", "publicador visual", "envia imagens pro Notion", "popula visual", "imagens da campanha"]
+    }
+  ]
+}

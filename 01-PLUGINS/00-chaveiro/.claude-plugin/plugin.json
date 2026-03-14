@@ -1,0 +1,25 @@
+{
+  "name": "chave-mestra-chaveiro",
+  "version": "3.0.0",
+  "description": "Plugin meta de manutenção, gestão do conhecimento e curadoria de erros do Sistema Chave Mestra. Ativar para assimilar livros/PDFs, atualizar skills, verificar coerência, registrar erros críticos ou mapear novo conhecimento na arquitetura.",
+  "skills": [
+    {
+      "name": "chaveiro",
+      "description": "Meta-manutenção do sistema: assimilação de conhecimento, atualização de skills, verificação de coerência entre plugins.",
+      "path": "skills/chaveiro/SKILL.md",
+      "triggers": ["chaveiro", "assimila esse livro", "assimila esse PDF", "atualiza o skill", "onde isso se encaixa", "confere se o sistema está coerente", "adiciona esse framework"]
+    },
+    {
+      "name": "forja-do-conhecimento",
+      "description": "Gestão do aprendizado sistêmico: Zettelkasten digital, notas permanentes, modelos mentais, evolução de plugins.",
+      "path": "skills/forja-do-conhecimento/SKILL.md",
+      "triggers": ["Zettelkasten", "nota permanente", "modelos mentais", "registra esse aprendizado", "atualiza plugin", "documenta isso"]
+    },
+    {
+      "name": "tesouro-dos-erros",
+      "description": "Curadoria e consulta de erros críticos do sistema. Registra falhas, extrai padrões e alimenta prevenção em todos os plugins.",
+      "path": "skills/tesouro-dos-erros/SKILL.md",
+      "triggers": ["Tesouro dos Erros", "registra esse erro", "que erros existem para", "consulta erros", "erros críticos", "o que pode dar errado"]
+    }
+  ]
+}
