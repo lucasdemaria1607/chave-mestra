@@ -112,9 +112,13 @@ Com o conteúdo criado, esta camada organiza *como ele sai ao mundo* e *onde a o
 **Skills:** sistema-de-design, forja-de-imagem, arquiteto-de-experiencia, ponte-figma, publicador-visual
 **Diretório:** `01-PLUGINS/05-iluminista/`
 
-O sistema visual que alimenta todas as camadas.
+Camada transversal de design, UX e produção visual que opera sobre os outputs de todos os plugins.
 
-- **Iluminista** — 4 pergaminhos visuais: Pergaminho do Tom (paleta + tipografia + grid), Pergaminho do Símbolo (ícones + motifs + ilustrações), Pergaminho da Cena (composição + iluminação + enquadramento), Pergaminho da Transmutação (regras de adaptação cross-plataforma).
+- **Sistema de Design** — 4 Pergaminhos Visuais (Branco/Preto/Dourado/Arcano), motor de tema, CSS tokens, engenharia reversa visual
+- **Forja de Imagem** — [PRO] Geração de imagens por IA via Nano Banana Pro (Gemini API) — opcional, requer API key paga
+- **Arquiteto de Experiência** — UX/UI de conteúdo: hierarquia visual, layouts Chavossel, tipografia, efeitos, composição
+- **Ponte Figma** — Integração com plugin Figma Chavossel: leitura de design tokens, renderização via clipboard
+- **Publicador Visual** — Exportação de conteúdo visual para Notion: imagens, carrosséis, assets de campanha
 
 ---
 
