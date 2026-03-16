@@ -44,27 +44,29 @@ Camada 6  — Escala                  ← onde o negócio cresce além do operac
 ---
 
 ### Camada Meta + C0 — Chaveiro (Plugin 00)
-**Skills:** chaveiro, forja-do-conhecimento, tesouro-dos-erros
+**Skills:** chaveiro, forja-do-conhecimento, tesouro-dos-erros, ritual-da-chave
 **Diretório:** `01-PLUGINS/00-chaveiro/`
 
-O meta-plugin do sistema. Três responsabilidades:
+O meta-plugin do sistema. Quatro responsabilidades:
 
 - **Chaveiro** — manutenção: assimilação de livros/PDFs, atualização de skills, verificação de coerência, integração de novos frameworks. 5 protocolos.
 - **Forja do Conhecimento** — Zettelkasten digital + modelos mentais + evolução de plugins. O metabolismo intelectual ativo do expert.
 - **Tesouro dos Erros** — registro estruturado de erros críticos com diagnóstico de causa-raiz e ações preventivas. Consulta obrigatória antes de executar skills em áreas com histórico de falha.
+- **Ritual da Chave** — workflow operacional em 3 ciclos: Lua Cheia (planejamento mensal), Forja Semanal (pauta + persona + universo), Giro da Chave (execução diária). 5 protocolos de situação: Travou, Urgência, Reposicionamento, Novo Cliente, Estudo.
 
 ---
 
 ### Camada 1 — Cartógrafo (Plugin 01)
-**Skills:** portal-do-terreno, forja-da-persona
+**Skills:** portal-do-terreno, forja-da-persona, forja-do-universo
 **Diretório:** `01-PLUGINS/01-cartografo/`
 
-Tudo começa aqui. Antes de qualquer conteúdo, copy ou roteiro, é preciso mapear o terreno — o mercado e o ser humano que vive nele.
+Tudo começa aqui. Antes de qualquer conteúdo, copy ou roteiro, é preciso mapear o terreno — o mercado, o ser humano que vive nele, e o universo de marca.
 
 - **Portal do Terreno** — inteligência de mercado estrutural: Mapa de Sofisticação (Schwartz), análise de gaps, posicionamento, Matriz C1 3x5.
 - **Forja da Persona** — leitura de espírito do tempo e mapa psicológico: SZC (Status Quo + Zeitgeist + Conclusão) + Alma da Persona (Inferno/Purgatório/Paraíso).
+- **Forja do Universo** — construção do universo de marca via Primal Branding (Patrick Hanlon) + StoryBrand (Donald Miller) + World Building. Output: Mapa do Universo que alimenta diretamente C2 do Copy 3x5.
 
-Os dois se complementam: o Portal do Terreno entrega o *mapa de campo*. A Forja da Persona entrega o *mapa humano*. Juntos formam o diagnóstico completo.
+Os três se complementam: o Portal do Terreno entrega o *mapa de campo*. A Forja da Persona entrega o *mapa humano*. A Forja do Universo entrega o *mapa da marca*. Juntos formam o diagnóstico completo.
 
 ---
 
@@ -125,15 +127,15 @@ Camada transversal de design, UX e produção visual que opera sobre os outputs 
 ## OS 6 PLUGINS — TABELA RESUMO
 
 ```
-00 — Chaveiro       Meta + C0    Mantém o sistema + conhecimento + erros
-01 — Cartógrafo     C1           Mercado + persona
+00 — Chaveiro       Meta + C0    Mantém o sistema + conhecimento + erros + rotina
+01 — Cartógrafo     C1           Mercado + persona + universo de marca
 02 — Alquimista     C2 + C6      Copy + oferta + escala + frameworks
 03 — Bardo          C3           Vídeo + carrossel + headlines + scripts
 04 — Arauto         C4 + C5      Campanha + Notion + protocolo massivo
 05 — Iluminista     Transversal  Design, UX, imagens, Figma, Notion (5 skills)
 ```
 
-**Total: 23 skills distribuídas em 6 plugins.**
+**Total: 25 skills distribuídas em 6 plugins.**
 
 ---
 
@@ -226,13 +228,15 @@ CHAVE-MESTRA/
 │   │   └── skills/
 │   │       ├── chaveiro/SKILL.md
 │   │       ├── forja-do-conhecimento/SKILL.md + modelos-mentais.md
-│   │       └── tesouro-dos-erros/SKILL.md
+│   │       ├── tesouro-dos-erros/SKILL.md
+│   │       └── ritual-da-chave/SKILL.md
 │   ├── 01-cartografo/
 │   │   ├── .claude-plugin/plugin.json
 │   │   ├── README.md
 │   │   └── skills/
 │   │       ├── portal-do-terreno/SKILL.md
-│   │       └── forja-da-persona/SKILL.md + szc.md + alma-da-persona.md
+│   │       ├── forja-da-persona/SKILL.md + szc.md + alma-da-persona.md
+│   │       └── forja-do-universo/SKILL.md + primal-branding.md + storybrand.md + worldbuilding.md
 │   ├── 02-alquimista/
 │   │   ├── .claude-plugin/plugin.json
 │   │   ├── README.md
@@ -305,11 +309,11 @@ O sistema pode ser vendido por Ordens (bundles estratégicos):
 
 | Ordem | Plugins | Entrega |
 |-------|---------|---------|
-| Ordem do Mapa | Cartógrafo | Diagnóstico completo |
+| Ordem do Mapa | Cartógrafo | Diagnóstico + universo de marca |
 | Ordem da Pena | Alquimista + Bardo | Copy + criação |
 | Ordem da Cruzada | Arauto | Campanha completa |
 | Ordem do Tesouro | Alquimista (escala) | Escala inteligente |
-| Ordem da Forja | Chaveiro | Meta-sistema |
+| Ordem da Forja | Chaveiro | Meta-sistema + rotina operacional |
 | A Grande Ordem | Todos | Arsenal completo |
 
 → Ver `ORDENS.md` para detalhes completos.
@@ -331,13 +335,13 @@ A linguagem de marca ancora símbolos que já existem no imaginário cultural e 
 - "forjado na prática" → conhecimento com experiência real
 
 **Termos proprietários** (só para produtos e métodos):
-Chave Mestra, Chavossel, Chavideo, Chaveiro, Pergaminhos, Método Carga, Copy 3x5, SZC, Alma da Persona, Forja do Conhecimento, A Ordem.
+Chave Mestra, Chavossel, Chavideo, Chaveiro, Pergaminhos, Método Carga, Copy 3x5, SZC, Alma da Persona, Forja do Conhecimento, A Ordem, Forja do Universo, Mapa do Universo, Ritual da Chave, Lua Cheia, Forja Semanal, Giro da Chave.
 
 **Vocabulário de mercado que não muda:**
 Funil, copy, lançamento, ROI, infoproduto, esteira, branding, lead, conversão, engajamento — são indexação cultural. São o que atrai. Permanecem.
 
 ---
 
-*Versão 3.0 — Março 2026*
+*Versão 4.0 — Março 2026*
 *Este documento é vivo. Atualiza conforme o universo expande.*
 *Criado por Lucas De Maria (Grigo)*

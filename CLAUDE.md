@@ -37,8 +37,8 @@ Cada plugin tem:
 
 | # | Nome | Diretório | Camadas | Skills |
 |---|------|-----------|---------|--------|
-| 00 | Chaveiro | `01-PLUGINS/00-chaveiro/` | Meta + C0 | chaveiro, forja-do-conhecimento, tesouro-dos-erros |
-| 01 | Cartógrafo | `01-PLUGINS/01-cartografo/` | C1 — Diagnóstico | portal-do-terreno, forja-da-persona |
+| 00 | Chaveiro | `01-PLUGINS/00-chaveiro/` | Meta + C0 | chaveiro, forja-do-conhecimento, tesouro-dos-erros, ritual-da-chave |
+| 01 | Cartógrafo | `01-PLUGINS/01-cartografo/` | C1 — Diagnóstico | portal-do-terreno, forja-da-persona, forja-do-universo |
 | 02 | Alquimista | `01-PLUGINS/02-alquimista/` | C2 — Estratégia + C6 — Escala | pergaminho-de-copy, forja-de-oferta, portal-da-escala, frameworks-anuncios |
 | 03 | Bardo | `01-PLUGINS/03-bardo/` | C3 — Criação | chavideo, chavossel, headline-generator, script-creator, script-analyzer, copy-enhancer |
 | 04 | Arauto | `01-PLUGINS/04-arauto/` | C4 — Lançamento + C5 — Operação | mapa-de-campanha, esteira-notion, protocolo-massivo |
@@ -53,8 +53,10 @@ Cada plugin tem:
 | "chaveiro", "assimila esse livro/PDF", "atualiza o skill X", "onde isso se encaixa" | Chaveiro | chaveiro |
 | "Zettelkasten", "nota permanente", "modelos mentais", "documenta isso" | Chaveiro | forja-do-conhecimento |
 | "Tesouro dos Erros", "registra esse erro", "que erros existem para", "o que pode dar errado" | Chaveiro | tesouro-dos-erros |
+| "ritual da chave", "Lua Cheia", "Forja Semanal", "Giro da Chave", "planejamento mensal", "pauta da semana", "workflow", "rotina de criação" | Chaveiro | ritual-da-chave |
 | "analisa o mercado", "mapa do terreno", "pesquisa de nicho", "players", "brechas" | Cartógrafo | portal-do-terreno |
 | "mapeia a persona", "SZC", "Alma da Persona", "quem é o lead", "inferno/purgatório/céu" | Cartógrafo | forja-da-persona |
+| "worldbuilding", "universo de marca", "Primal Branding", "StoryBrand", "léxico de marca", "Forja do Universo", "Mapa do Universo", "DNA de marca" | Cartógrafo | forja-do-universo |
 | "copy", "Copy 3x5", "Método Carga", "calibra a peça", "nível de consciência" | Alquimista | pergaminho-de-copy |
 | "cria a oferta", "stack de bônus", "equação de valor", "garantia", "oferta irresistível" | Alquimista | forja-de-oferta |
 | "diagnóstico de fase", "alavancas", "CAC", "LTV", "escala o negócio", "esteira de valor" | Alquimista | portal-da-escala |
@@ -100,6 +102,10 @@ Cada plugin tem:
 
 **Para registrar/consultar erros:** ative Chaveiro → leia `tesouro-dos-erros/SKILL.md`.
 
+**Para construir universo de marca:** ative Cartógrafo → leia `forja-do-universo/SKILL.md` + `primal-branding.md` + `storybrand.md` + `worldbuilding.md`.
+
+**Para planejar rotina/workflow:** ative Chaveiro → leia `ritual-da-chave/SKILL.md`. Usar os 3 ciclos: Lua Cheia (mensal) → Forja Semanal → Giro da Chave (diário).
+
 **Para design visual / tema:** ative Iluminista → leia `sistema-de-design/SKILL.md`.
 
 **Para gerar imagens:** ative Iluminista → leia `forja-de-imagem/SKILL.md` (usa Nano Banana Pro / Gemini API).
@@ -115,7 +121,7 @@ Cada plugin tem:
 ## Fluxo Natural das Camadas
 
 ```
-Diagnóstico (Cartógrafo)
+Diagnóstico (Cartógrafo — terreno + persona + universo de marca)
     ↓
 Estratégia (Alquimista — copy + oferta)
     ↓
@@ -125,7 +131,7 @@ Lançamento + Operação (Arauto — campanha + Notion)
     ↓
 Escala (Alquimista — métricas + alavancas)
     ↑
-Base permanente (Chaveiro — conhecimento + erros)
+Base permanente (Chaveiro — conhecimento + erros + Ritual da Chave)
 Iluminista (transversal — design, imagem, Figma, Notion)
 ```
 

@@ -22,6 +22,13 @@
 | **A Ordem** | A comunidade dos que entraram no sistema. Compromisso com desenvolvimento, não clube. |
 | **Portador** | Quem carrega as chaves — o lead/cliente que está na jornada. |
 | **MINHA ESTEIRA** | Estrutura operacional no Notion — hub central de entregas, campanhas e gestão. |
+| **Forja do Universo** | Skill de construção de universo de marca. Integra Primal Branding + StoryBrand + World Building. Output: Mapa do Universo. Plugin 01 (Cartógrafo). |
+| **Mapa do Universo** | Documento completo de marca gerado pela Forja do Universo — contém Primal DNA, BrandScript StoryBrand e World Building. Alimenta C2 do Copy 3x5. |
+| **Primal DNA** | Os 7 códigos primitivos de pertencimento tribal de uma marca (Patrick Hanlon): história de criação, credo, ícones, rituais, léxico, inimigo, líder. |
+| **Ritual da Chave** | Workflow operacional do sistema em 3 ciclos: Lua Cheia (mensal), Forja Semanal, Giro da Chave (diário). Plugin 00 (Chaveiro). |
+| **Lua Cheia** | Ciclo mensal de planejamento: retrospectiva + diagnóstico de fase + campanha + calendário + Notion. |
+| **Forja Semanal** | Ciclo semanal de planejamento: review + persona + pauta + rotação de elemento Primal + Notion. |
+| **Giro da Chave** | Ciclo diário de execução: consulta pauta → ativa plugin → pré-escrita → criação → checklist. |
 
 ---
 
@@ -102,5 +109,5 @@ Funil, copy, lançamento, ROI, infoproduto, esteira, branding, lead, conversão,
 
 ---
 
-*Versão 2.0 — Março 2026*
+*Versão 3.0 — Março 2026*
 *Este glossário é vivo. Atualiza conforme o universo expande.*
