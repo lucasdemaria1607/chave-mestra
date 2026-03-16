@@ -84,9 +84,9 @@ Cada plugin tem:
 
 **Para criar carrossel:** ative Bardo → leia `chavossel/SKILL.md` + `exercicios.md` + `exemplos.md`.
 
-**Para criar roteiro de vídeo:** ative Bardo → leia `chavideo/SKILL.md` + `progymnasmata-video-map.md` + `cinematicas-combinacoes.md`.
+**Para criar roteiro de vídeo:** ative Bardo → leia `chavideo/SKILL.md` + `progymnasmata-video-map.md` + `cinematicas-combinacoes.md` + `arsenal-narrativo.md`.
 
-**Para criar copy:** ative Alquimista → leia `pergaminho-de-copy/SKILL.md` + `copy-3x5.md` + `metodo-carga.md`.
+**Para criar copy:** ative Alquimista → leia `pergaminho-de-copy/SKILL.md` + `copy-3x5.md` + `metodo-carga.md` + `arsenal-retorico.md`.
 
 **Para criar oferta:** ative Alquimista → leia `forja-de-oferta/SKILL.md`.
 
@@ -102,6 +102,12 @@ Cada plugin tem:
 
 **Para registrar/consultar erros:** ative Chaveiro → leia `tesouro-dos-erros/SKILL.md`.
 
+**Para gestão de conhecimento:** ative Chaveiro → leia `forja-do-conhecimento/SKILL.md` + `modelos-mentais.md` + `arsenal-epistemologico.md`.
+
+**Para analisar mercado:** ative Cartógrafo → leia `portal-do-terreno/SKILL.md` + `arsenal-estrategico.md`.
+
+**Para mapear persona:** ative Cartógrafo → leia `forja-da-persona/SKILL.md` + `alma-da-persona.md` + `szc.md` + `perfis-cognitivos.md`.
+
 **Para construir universo de marca:** ative Cartógrafo → leia `forja-do-universo/SKILL.md` + `primal-branding.md` + `storybrand.md` + `worldbuilding.md`.
 
 **Para planejar rotina/workflow:** ative Chaveiro → leia `ritual-da-chave/SKILL.md`. Usar os 3 ciclos: Lua Cheia (mensal) → Forja Semanal → Giro da Chave (diário).
@@ -110,7 +116,7 @@ Cada plugin tem:
 
 **Para gerar imagens:** ative Iluminista → leia `forja-de-imagem/SKILL.md` (usa Nano Banana Pro / Gemini API).
 
-**Para UX/layout de conteúdo:** ative Iluminista → leia `arquiteto-de-experiencia/SKILL.md`.
+**Para UX/layout de conteúdo:** ative Iluminista → leia `arquiteto-de-experiencia/SKILL.md` + `principios-visuais.md`.
 
 **Para renderizar no Figma:** ative Iluminista → leia `ponte-figma/SKILL.md` (usa Figma MCP).
 
