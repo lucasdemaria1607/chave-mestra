@@ -1,43 +1,43 @@
 {
   "name": "chave-mestra-bardo",
-  "version": "3.0.0",
-  "description": "Plugin de criação de conteúdo de mídia: roteiros de vídeo (Chavideo) + carrosséis editoriais (Chavossel) + geração de headlines + análise de scripts virais + otimização de copy falada + criação completa de roteiros. Ativar para qualquer produção de conteúdo audiovisual ou editorial.",
+  "version": "4.0.0",
+  "description": "A fábrica de conteúdo. Cria roteiros de vídeo, carrosséis editoriais, headlines magnéticas e scripts virais — com retórica clássica por baixo e linguagem de rua por cima. Conteúdo que prende, convence e marca.",
   "skills": [
     {
       "name": "chavideo",
-      "description": "Motor de roteiros de vídeo via 14 exercícios Progymnasmata + 20 mecanismos cinematográficos de tensão.",
+      "description": "Roteiros de vídeo com alma. Progymnasmata clássica + mecanismos cinematográficos de tensão — cada segundo justifica o próximo.",
       "path": "skills/chavideo/SKILL.md",
       "triggers": ["roteiro de vídeo", "chavideo", "reel", "script de vídeo", "Progymnasmata vídeo", "roteiro curto"]
     },
     {
       "name": "chavossel",
-      "description": "Motor de ensaios visuais: carrosséis de 6-10 slides via Progymnasmata + sintaxe Chavossel v22.",
+      "description": "Carrosséis que são ensaios visuais, não listas genéricas. 6-10 slides com arco retórico completo e sintaxe própria.",
       "path": "skills/chavossel/SKILL.md",
       "triggers": ["carrossel", "chavossel", "10 slides", "ensaio visual", "carrossel editorial"]
     },
     {
       "name": "headline-generator",
-      "description": "Geração de 30 headlines variadas e de alto impacto para conteúdo de vídeo curto.",
+      "description": "30 headlines que fazem o polegar parar. Variadas, específicas, impossíveis de ignorar — o gatilho que puxa todo o resto.",
       "path": "skills/headline-generator/SKILL.md",
       "triggers": ["gere headlines", "ideias de título", "headlines para vídeo", "30 headlines"]
     },
     {
+      "name": "script-creator",
+      "description": "Roteiros virais completos (60-90s): Hook → Intensificador → Conteúdo → Apresentação → CTA. 6 roteiros por leva, prontos pra gravar.",
+      "path": "skills/script-creator/SKILL.md",
+      "triggers": ["cria roteiro completo", "script creator", "roteiro viral", "cria 6 roteiros"]
+    },
+    {
       "name": "script-analyzer",
-      "description": "Engenharia reversa de scripts virais: análise estrutural profunda de hooks, gatilhos e mecânicas de retenção.",
+      "description": "Desmonta qualquer vídeo viral e mostra por que funcionou. Engenharia reversa de hooks, gatilhos psicológicos e mecânicas de retenção.",
       "path": "skills/script-analyzer/SKILL.md",
       "triggers": ["analisa esse script", "engenharia reversa", "por que esse vídeo viralizou", "análise de roteiro"]
     },
     {
       "name": "copy-enhancer",
-      "description": "Otimização de copy para fala/delivery: elimina verbosidade, fortalece verbos, cria cadência, equilibra carga cognitiva.",
+      "description": "Pega roteiro travado e faz fluir. Corta gordura, fortalece verbos, cria ritmo — transforma texto escrito em fala que gruda.",
       "path": "skills/copy-enhancer/SKILL.md",
       "triggers": ["otimiza esse roteiro", "melhora a copy falada", "copy enhancer", "roteiro travado", "não flui"]
-    },
-    {
-      "name": "script-creator",
-      "description": "Criação completa de roteiros virais (60-90s) com estrutura Hook→Intensificador→Conteúdo→Apresentação→CTA.",
-      "path": "skills/script-creator/SKILL.md",
-      "triggers": ["cria roteiro completo", "script creator", "roteiro viral", "cria 6 roteiros"]
     }
   ]
 }

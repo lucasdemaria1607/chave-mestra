@@ -1,29 +1,29 @@
 {
   "name": "chave-mestra-alquimista",
-  "version": "3.0.0",
-  "description": "Plugin de copy, oferta e escala: calibração de copy via Copy 3×5 + Método Carga, design de ofertas, frameworks de anúncios, e inteligência operacional de escala. Ativar para escrever copy, criar ofertas ou diagnosticar fase do negócio.",
+  "version": "4.0.0",
+  "description": "Palavras que vendem, ofertas que convertem, números que escalam. Escreve copy calibrada pro nível exato de consciência do lead, monta ofertas irresistíveis e diagnostica onde está o gargalo do crescimento.",
   "skills": [
     {
       "name": "pergaminho-de-copy",
-      "description": "Calibração de copy via 3 camadas × 5 níveis de consciência + engenharia de densidade narrativa (Método Carga).",
+      "description": "Copy que acerta na veia. Calibra cada peça em 3 camadas × 5 níveis de consciência, com densidade narrativa que prende e converte.",
       "path": "skills/pergaminho-de-copy/SKILL.md",
       "triggers": ["copy", "Copy 3x5", "Método Carga", "calibra a peça", "escreve copy", "nível de consciência", "pergaminho de copy"]
     },
     {
-      "name": "portal-da-escala",
-      "description": "Inteligência operacional: diagnóstico de fase, 4 alavancas de crescimento, esteira de valor, painel de métricas, matriz de decisão.",
-      "path": "skills/portal-da-escala/SKILL.md",
-      "triggers": ["diagnóstico de fase", "alavancas", "CAC", "LTV", "ROAS", "escala o negócio", "esteira de valor", "portal da escala", "métricas"]
-    },
-    {
       "name": "forja-de-oferta",
-      "description": "Análise, criação e otimização de ofertas usando Equação de Valor + estrutura de garantias + stacking de bônus.",
+      "description": "Monta ofertas que o lead não consegue recusar. Equação de Valor, stack de bônus, garantias que eliminam risco — engenharia de conversão.",
       "path": "skills/forja-de-oferta/SKILL.md",
       "triggers": ["cria uma oferta", "otimiza a oferta", "análise de oferta", "equação de valor", "bônus", "garantia", "stack de oferta", "forja de oferta"]
     },
     {
+      "name": "portal-da-escala",
+      "description": "Descobre em que fase o negócio está e qual alavanca puxa o crescimento. Diagnóstico + métricas + esteira de valor — pra escalar sem quebrar.",
+      "path": "skills/portal-da-escala/SKILL.md",
+      "triggers": ["diagnóstico de fase", "alavancas", "CAC", "LTV", "ROAS", "escala o negócio", "esteira de valor", "portal da escala", "métricas"]
+    },
+    {
       "name": "frameworks-anuncios",
-      "description": "Templates de anúncios testados + frameworks de narrativa de oferta + ativação via ManyChat.",
+      "description": "Templates de anúncio testados e prontos pra rodar. Frameworks de narrativa de oferta + automação via ManyChat — do criativo ao clique.",
       "path": "skills/frameworks-anuncios/frameworks-anuncios.md",
       "triggers": ["framework de anúncio", "template de oferta", "narrativa de oferta", "ManyChat", "anúncio", "criativo para tráfego"]
     }

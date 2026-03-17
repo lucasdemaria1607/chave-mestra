@@ -1,19 +1,25 @@
 {
   "name": "chave-mestra-cartografo",
-  "version": "3.0.0",
-  "description": "Plugin de pesquisa e diagnóstico: inteligência estrutural de mercado + mapeamento psicológico profundo da persona. Ativar para mapear terreno antes de criar conteúdo, copy ou campanha.",
+  "version": "4.0.0",
+  "description": "Inteligência antes da ação. Mapeia o terreno do mercado, desvenda a psicologia da persona e constrói o universo simbólico da marca — as 3 pernas do diagnóstico que separam estratégia de achismo.",
   "skills": [
     {
       "name": "portal-do-terreno",
-      "description": "Análise estrutural de mercado: players, ofertas, canais, brechas e posicionamento recomendado.",
+      "description": "Raio-X do mercado — descobre quem são os players, onde estão as brechas, o que funciona e onde ninguém está olhando.",
       "path": "skills/portal-do-terreno/SKILL.md",
       "triggers": ["analisa o mercado", "mapa do terreno", "pesquisa de nicho", "quem são os players", "onde estão as brechas", "diagnóstico do nicho", "antes de criar quero entender o terreno"]
     },
     {
       "name": "forja-da-persona",
-      "description": "Mapeamento psicológico via 3 estados existenciais (Inferno/Purgatório/Céu) + Matriz C1 3×5 + SZC + Alma da Persona.",
+      "description": "Entra na cabeça do seu lead. Mapeia o inferno que ele vive, o purgatório que tolera e o céu que deseja — e descobre exatamente o que dizer pra ele agir.",
       "path": "skills/forja-da-persona/SKILL.md",
       "triggers": ["mapeia a persona", "SZC", "Alma da Persona", "quem é o lead", "inferno particular", "purgatório", "céu particular", "Status Quo", "Zeitgeist", "forja da persona"]
+    },
+    {
+      "name": "forja-do-universo",
+      "description": "Constrói o mundo da sua marca. Worldbuilding + Primal Branding + StoryBrand — o DNA simbólico que faz o lead entrar no seu universo e nunca mais ver o mercado do mesmo jeito.",
+      "path": "skills/forja-do-universo/SKILL.md",
+      "triggers": ["worldbuilding", "universo de marca", "Primal Branding", "StoryBrand", "léxico de marca", "Forja do Universo", "Mapa do Universo", "DNA de marca", "história de origem", "cria o mundo da marca"]
     }
   ]
 }
