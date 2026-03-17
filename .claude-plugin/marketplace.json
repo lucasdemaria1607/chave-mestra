@@ -7,32 +7,32 @@
   "plugins": [
     {
       "name": "chave-mestra-chaveiro",
-      "source": "../01-PLUGINS/00-chaveiro",
+      "source": "./01-PLUGINS/00-chaveiro",
       "description": "O guardião do sistema. Absorve conhecimento, orquestra sua rotina de criação, transforma erros em lições e mantém tudo coerente enquanto você evolui."
     },
     {
       "name": "chave-mestra-cartografo",
-      "source": "../01-PLUGINS/01-cartografo",
+      "source": "./01-PLUGINS/01-cartografo",
       "description": "Inteligência antes da ação. Mapeia o mercado, desvenda a persona e constrói o universo simbólico da marca — diagnóstico que separa estratégia de achismo."
     },
     {
       "name": "chave-mestra-alquimista",
-      "source": "../01-PLUGINS/02-alquimista",
+      "source": "./01-PLUGINS/02-alquimista",
       "description": "Palavras que vendem, ofertas que convertem, números que escalam. Copy calibrada, ofertas irresistíveis e diagnóstico de crescimento — tudo num plugin."
     },
     {
       "name": "chave-mestra-bardo",
-      "source": "../01-PLUGINS/03-bardo",
+      "source": "./01-PLUGINS/03-bardo",
       "description": "A fábrica de conteúdo. Roteiros de vídeo, carrosséis editoriais, headlines magnéticas e scripts virais — retórica clássica por baixo, linguagem de rua por cima."
     },
     {
       "name": "chave-mestra-arauto",
-      "source": "../01-PLUGINS/04-arauto",
+      "source": "./01-PLUGINS/04-arauto",
       "description": "Planeja, executa e documenta campanhas inteiras. Lançamentos, cronogramas, copy por fase e integração com Notion — do plano à ação em minutos."
     },
     {
       "name": "chave-mestra-iluminista",
-      "source": "../01-PLUGINS/05-iluminista",
+      "source": "./01-PLUGINS/05-iluminista",
       "description": "A estética do sistema. Design system, geração de imagens por IA, UX de conteúdo, integração Figma e publicação automática no Notion. Tudo bonito, tudo funcional."
     }
   ]
