@@ -1,694 +1,220 @@
 # SISTEMA DE ARTEFATOS — Chave Mestra
-*O protocolo de transporte de contexto entre plugins, fases e entregas.*
+*Protocolo de transporte de contexto entre plugins, fases e entregas.*
 
 ---
 
 ## POR QUE ISSO EXISTE
 
-Cada plugin da Chave Mestra gera outputs. Mas sem um sistema padronizado:
-- O Alquimista não sabe o que o Cartógrafo descobriu
-- O Bardo escreve roteiro sem persona documentada
-- O Arauto monta campanha sem saber qual oferta existe
-- O cliente não tem nada concreto pra baixar, revisar ou compartilhar
+Cada skill já define seus próprios formatos de output (nos respectivos `SKILL.md`). O que faltava:
 
-O Sistema de Artefatos resolve isso com **3 camadas**:
+1. **Um documento-mestre** que acumula contexto fase a fase — pra nenhum plugin operar cego
+2. **Um mapa de dependências** — quem produz o quê, quem precisa do quê antes de rodar
+3. **Uma camada de entrega** — como os outputs nativos viram PDFs/compartilháveis pro cliente
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│  CAMADA 1 — DOSSIÊ CM                              │
-│  Documento-mestre que acumula contexto fase a fase  │
+│  DOSSIÊ CM                                          │
+│  Documento-mestre que acumula resumos fase a fase   │
 │  (1 por cliente/projeto — nunca se perde)            │
 ├─────────────────────────────────────────────────────┤
-│  CAMADA 2 — FICHAS DE SKILL                        │
-│  Output padronizado de cada skill individual        │
-│  (formato fixo — qualquer plugin consegue ler)       │
+│  OUTPUTS NATIVOS (definidos em cada SKILL.md)       │
+│  Cada skill produz no formato que já tem             │
+│  O Dossiê indexa e resume — não duplica              │
 ├─────────────────────────────────────────────────────┤
-│  CAMADA 3 — ENTREGÁVEIS FINAIS                     │
+│  ENTREGÁVEIS                                        │
 │  O que o cliente vê, baixa e usa                    │
-│  (roteiros, copy, visuais, PDFs, Notion)            │
+│  (PDFs, Figma, Notion, packs .md)                   │
 └─────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## CAMADA 1 — O DOSSIÊ CM
+## O DOSSIÊ CM
 
 ### O que é
-Um documento único por cliente/projeto que **viaja por todas as fases**. Começa vazio no diagnóstico e termina completo na evolução. É a "memória compartilhada" entre plugins.
+Documento único por cliente/projeto que **viaja por todas as fases**. Começa vazio no diagnóstico e acumula os resumos de cada output nativo. É a "memória compartilhada" entre plugins — nenhum plugin precisa adivinhar o que o outro já fez.
 
-### Estrutura
+### O que NÃO é
+- **Não substitui os outputs nativos.** Cada skill continua produzindo no seu formato próprio (Alma da Persona, Copy 3x5, Roteiro com timestamps, etc.).
+- **Não é onde o trabalho acontece.** É onde o trabalho é indexado. O Dossiê aponta para os outputs, não os replica.
 
-```markdown
-# DOSSIÊ CM — [Nome do Projeto / Cliente]
-Data de início: YYYY-MM-DD
-Última atualização: YYYY-MM-DD
-Nicho: [qualquer]
-Fase atual: [0-5]
+### Como funciona
 
----
+1. **O Chaveiro cria o Dossiê** no início (diagnóstico) → preenche §0
+2. **Cada plugin, ao concluir**, escreve um resumo executivo na seção correspondente + linka o output nativo completo
+3. **O próximo plugin lê o Dossiê** antes de operar → sabe o que já existe, o que falta, o que veio antes
+4. **Na Lua Cheia** (revisão mensal), o Dossiê é versionado como snapshot
 
-## 0. DIAGNÓSTICO (preenchido pelo Chaveiro)
-- D1 Identidade:  [🔴/🟡/🟢] — [observações]
-- D2 Inteligência: [🔴/🟡/🟢] — [observações]
-- D3 Estratégia:  [🔴/🟡/🟢] — [observações]
-- D4 Criação:     [🔴/🟡/🟢] — [observações]
-- D5 Operação:    [🔴/🟡/🟢] — [observações]
-- D6 Evolução:    [🔴/🟡/🟢] — [observações]
-- Roadmap: [Agora / Próximo / Contínuo]
-- Modo: [CM / Cliente Externo]
+### Template
 
----
+Ver `05-ASSETS/dossies/TEMPLATE-DOSSIE.md` — template funcional pronto pra duplicar.
 
-## 1. IDENTIDADE (preenchido pela Forja do Universo)
-- Voz (3 adjetivos):
-- Frase-guia:
-- Léxico proprietário: [lista de termos]
-- Estética: [cores, referências visuais]
-- Narrativa fundacional: [resumo em 3 linhas]
-- Validação Ritual da Chave: [✅ aprovado / ⚠️ ajustar]
+Seções:
+- §0 Diagnóstico (6 dimensões + roadmap)
+- §1 Identidade (resumo do DNA de marca)
+- §2 Inteligência (resumo do terreno + persona)
+- §3 Estratégia (resumo da oferta + campanha)
+- §4 Criação (inventário de outputs + status)
+- §5 Operação (estado da Esteira + calendário)
+- §6 Evolução (erros + notas + próxima revisão)
 
----
+### Regras
 
-## 2. INTELIGÊNCIA (preenchido pelo Cartógrafo)
-
-### Terreno
-- Nicho mapeado:
-- Top 3 concorrentes: [nome + diferencial de cada]
-- Brechas identificadas: [lista]
-- Zeitgeist: [o que está mudando agora]
-- Nível de saturação: [baixo/médio/alto]
-
-### Persona
-- Nome fictício:
-- Idade/Perfil:
-- Nível de consciência predominante: [1-5]
-- Dores (top 3):
-- Desejos (top 3):
-- Linguagem (frases que usa):
-- Onde está (plataformas):
-- Inferno/Purgatório/Paraíso: [resumo]
-
----
-
-## 3. ESTRATÉGIA (preenchido pelo Arauto + Alquimista)
-
-### Oferta
-- Nome do produto/serviço:
-- Tipo: [curso/mentoria/serviço/produto/comunidade]
-- Promessa central:
-- Stack de valor: [o que está incluído]
-- Garantia:
-- Preço:
-- Posicionamento: [frase única]
-
-### Campanha
-- Modalidade: [meteórico/desafio/orgânico/massivo]
-- Duração: [X dias/semanas]
-- Fases da campanha: [lista]
-- Meta principal: [receita/audiência/conversão]
-- Temas semanais: [lista]
-
----
-
-## 4. CRIAÇÃO (preenchido por Alquimista + Bardo + Iluminista)
-- Headlines produzidas: [quantidade + link/arquivo]
-- Roteiros produzidos: [quantidade + link/arquivo]
-- Copy produzida: [quantidade + tipos + link/arquivo]
-- Visuais produzidos: [quantidade + link/arquivo]
-- Revisão retórica: [✅ aplicada / pendente]
-
----
-
-## 5. OPERAÇÃO (preenchido pelo Arauto)
-- Esteira Notion: [✅ populada / pendente]
-- Calendário: [período coberto]
-- Tarefas ativas: [quantidade]
-- Protocolo ativo: [massivo/luxo/urgência/padrão]
-
----
-
-## 6. EVOLUÇÃO (preenchido pelo Chaveiro)
-- Erros registrados: [quantidade + resumo]
-- Notas Zettelkasten: [quantidade]
-- Modelos mentais atualizados: [lista]
-- Próxima revisão (Lua Cheia): [data]
-- Recomendação pós-ciclo: [voltar pra Fase X / escalar / manter]
-```
-
-### Regras do Dossiê
-
-1. **Todo plugin lê o Dossiê antes de operar.** Se a seção anterior está vazia, o plugin sabe que precisa pedir ou gerar aquela informação.
-2. **Todo plugin escreve no Dossiê ao concluir.** A seção correspondente é preenchida com o resumo do output.
-3. **O Dossiê nunca é apagado** — é versionado. Cada ciclo mensal (Lua Cheia) cria uma snapshot.
-4. **Em Modo Cliente Externo**, o Dossiê usa a linguagem do cliente, não o glossário CM.
-5. **Formato**: Markdown nativo (`.md`). Exportável como PDF via skill PDF.
+1. **Todo plugin lê o Dossiê antes de operar.** Seção anterior vazia = o plugin precisa pedir ou gerar aquela informação primeiro.
+2. **Todo plugin escreve no Dossiê ao concluir.** Resumo executivo + link pro output completo.
+3. **O Dossiê nunca é apagado** — versionado a cada Lua Cheia.
+4. **Em Modo Cliente Externo**, o Dossiê usa a linguagem do cliente.
+5. **Formato**: `.md` nativo. Exportável como PDF.
 
 ### Onde vive
 
 | Contexto | Local |
 |----------|-------|
 | No Claude Code | `05-ASSETS/dossies/[nome-projeto].md` |
-| No Notion | Página filha de "MINHA ESTEIRA" ou "Projetos" |
-| Para o cliente | Exportado como PDF (Camada 3) |
+| No Notion | Página filha de "Projetos" ou "MINHA ESTEIRA" |
+| Para o cliente | Exportado como PDF |
 
 ---
 
-## CAMADA 2 — FICHAS DE SKILL
+## MAPA DE DEPENDÊNCIAS
 
-Cada skill produz um output com formato padronizado. Isso permite que qualquer plugin leia o output de qualquer outro sem ambiguidade.
+Cada skill já define seu output no `SKILL.md`. O que importa pro sistema é a **cadeia**: quem precisa do output de quem antes de poder operar.
 
-### Catálogo de Fichas
+### Tabela de Dependências
+
+| Skill que PRODUZ | Output nativo (ver SKILL.md) | Skills que CONSOMEM |
+|------------------|------------------------------|---------------------|
+| **Chaveiro** (diagnóstico) | Matriz 6D + Roadmap + Mapa de Encaixe | TODOS — porta de entrada universal |
+| **Forja do Universo** | Primal DNA (7 elem.) + StoryBrand + World Building + Bridge to C2 | Alquimista (C2), Bardo (tom/léxico), Iluminista (estética), Arauto (linguagem) |
+| **Portal do Terreno** | Relatório 6 seções + Matriz de Brechas + Insumos SZC | Forja da Persona (SZC), Alquimista (ângulos), Arauto (posicionamento) |
+| **Forja da Persona** | Alma da Persona + Matriz C1 3x5 + SZC + Narrativa de Conexão | Alquimista (C1 inteiro), Bardo (hook + emoção), Chavossel (âncora), Arauto (tom) |
+| **Forja de Oferta** | Equação de Valor + Stack + Copy da Oferta + Objeções | Alquimista/copy (C3), Bardo (roteiro de venda), Arauto (campanha) |
+| **Portal da Escala** | Diagnóstico de Fase + Alavanca + Esteira de Valor + Painel | Arauto (campanha adequada à fase), Ritual da Chave (próximo ciclo) |
+| **Mapa de Campanha** | Cronograma dia-a-dia + Peças por fase + Métricas | Bardo (o que produzir), Alquimista (ângulos/fase), Iluminista (visuais), Esteira (popular) |
+| **Ritual da Chave** | Lua Cheia + Forja Semanal + Giro da Chave | TODOS — orquestra ativação sequencial dos plugins |
+| **Headline Generator** | 30 headlines em 5 grupos + Recomendação Estratégica | Script Creator, Chavideo, Chavossel (slide 1), Copy (ângulos) |
+| **Script Creator** | Análise + Roteiro 5 blocos + Nota Técnica | Copy Enhancer, Iluminista (direção visual), Esteira (agendar) |
+| **Chavideo** | Exercício Progym + Combinação Cinematográfica + Roteiro timestamped | Chavossel (versão slides), Arauto (agendar), Copy Enhancer |
+| **Chavossel** | 10 slides Sintaxe v22 (manchete/corpo/grito/corte) | Iluminista/Figma (renderizar), Arauto (agendar) |
+| **Pergaminho de Copy** | Diagnóstico Pré-Escrita + Copy Calibrada + Cargas + Checklist | Chavideo (hook), Chavossel (copy), Arauto (publicar) |
+| **Copy Enhancer** | Script otimizado + Notas de Entrega | Chavideo (gravação), Chavossel, Arauto |
+| **Script Analyzer** | 5 layers de análise + Template Replicável | Script Creator (padrões), Headline Generator (feedback) |
+| **Esteira Notion** | Database populada + Status semafórico | Portal da Escala (KPIs), Giro da Chave (tarefas do dia) |
+| **Sistema de Design** | Paleta + Tipografia + Pergaminhos visuais + Componentes | Forja de Imagem, Arquiteto, Ponte Figma, Publicador |
+| **Tesouro dos Erros** | Entrada estruturada (erro + causa-raiz + prevenção + padrão) | Ritual da Chave (Lua Cheia), TODOS (consulta preventiva) |
+| **Forja do Conhecimento** | Notas Permanentes + Modelos Mentais + Mapa de Evolução | Bardo (material), Alquimista (argumentação), Todo o sistema |
+
+### Diagrama de Fluxo
+
+```
+FASE 0                    FASE 1                    FASE 2
+┌──────────┐             ┌──────────┐              ┌──────────┐
+│ Chaveiro │─diagnóst.──▶│Cartógrafo│──terreno───▶│  Arauto   │
+│          │             │          │  persona    │ Alquimist │
+│ Forja do │──dna─────▶│ Portal   │              │          │
+│ Universo │             │ Persona  │─────────────▶│ campanha │
+└──────────┘             └──────────┘     ┌────────│ oferta   │
+     │                        │           │        └────┬─────┘
+     ▼                        ▼           │             ▼
+  DOSSIÊ §0              DOSSIÊ §1-2     │        DOSSIÊ §3
+
+FASE 3                                    │        FASE 4
+┌──────────┐                              │       ┌──────────┐
+│  Bardo   │◀── persona + dna + oferta ───┘       │  Arauto  │
+│Alquimista│                                      │ Esteira  │
+│Iluminista│──outputs nativos───────────────────▶│ Notion   │
+└──────────┘                                      └────┬─────┘
+     │                                                  │
+     ▼                                                  ▼
+  DOSSIÊ §4                                        DOSSIÊ §5
+                                                        │
+                                                        ▼
+                                                   FASE 5
+                                                   ┌──────────┐
+                                                   │ Chaveiro │
+                                           dados──▶│ Erros    │
+                                                   │ Zettel   │
+                                                   │ Lua Cheia│
+                                                   └────┬─────┘
+                                                        │
+                                               DOSSIÊ §6
+                                               recomenda → Fase X
+```
+
+### Regra de Dependência Obrigatória
+
+Antes de operar, cada plugin DEVE verificar no Dossiê:
+
+| Plugin | PRECISA existir antes |
+|--------|-----------------------|
+| Forja do Universo | §0 Diagnóstico (ao menos D1) |
+| Portal do Terreno | §0 Diagnóstico (ao menos D2) |
+| Forja da Persona | §2 Terreno (ao menos Insumos SZC) |
+| Forja de Oferta | §2 Persona + §1 DNA |
+| Mapa de Campanha | §2 Persona + §3 Oferta (se existir) |
+| Pergaminho de Copy | §2 Persona (C1) + §1 DNA (C2) |
+| Headline Generator | §2 Persona + §1 DNA |
+| Script Creator | Headlines selecionadas |
+| Chavideo | §2 Persona + §1 DNA + headline ou tema |
+| Chavossel | §2 Persona + §1 DNA + headline ou tema |
+| Esteira Notion | §3 Campanha OU §ritual (pauta semanal) |
+| Portal da Escala | §5 Métricas de operação |
+
+**Se a dependência não existe:** o plugin informa e sugere qual skill rodar antes — ou roda com o que tem, marcando `[sem dependência — a validar]`.
 
 ---
 
-#### FICHA: Diagnóstico Chaveiro
-**Skill:** Chaveiro (diagnóstico)
-**Formato:** `diagnostico-[nome].md`
-**Conteúdo:**
-```
-# Diagnóstico — [Nome]
-Data: YYYY-MM-DD
+## ENTREGÁVEIS
 
-## Matriz
-D1: [status] — [nota]
-D2: [status] — [nota]
-D3: [status] — [nota]
-D4: [status] — [nota]
-D5: [status] — [nota]
-D6: [status] — [nota]
+O que o cliente vê, baixa e usa. Gerados a partir dos outputs nativos + Dossiê.
 
-## Roadmap
-### Agora (7 dias)
-- [ ] ...
-### Próximo (30 dias)
-- [ ] ...
-### Contínuo
-- [ ] ...
-
-## Recomendações Cruzadas
-- [Plugin X] antes de [Plugin Y] porque [razão]
-```
-**Quem consome:** Todos os plugins (porta de entrada universal)
-
----
-
-#### FICHA: DNA de Marca
-**Skill:** Forja do Universo (Cartógrafo)
-**Formato:** `dna-[nome].md`
-**Conteúdo:**
-```
-# DNA de Marca — [Nome]
-Data: YYYY-MM-DD
-
-## Voz
-- 3 adjetivos:
-- Frase-guia:
-- O que NUNCA diria:
-
-## Léxico
-| Termo proprietário | Significado |
-|--------------------|-------------|
-| ... | ... |
-
-## Estética
-- Cores:
-- Referências visuais:
-- Mood:
-
-## Narrativa Fundacional
-[história de origem em 1 parágrafo]
-
-## 7 Pilares Primal Branding
-1. Origem:
-2. Credo:
-3. Ícones:
-4. Rituais:
-5. Infiéis:
-6. Palavras sagradas:
-7. Líder:
-
-## Validação
-Ritual da Chave: [✅/⚠️] — [observação]
-```
-**Quem consome:** Bardo (tom de roteiros), Alquimista (tom de copy), Iluminista (estética), Arauto (linguagem de campanha)
-
----
-
-#### FICHA: Mapa do Terreno
-**Skill:** Portal do Terreno (Cartógrafo)
-**Formato:** `terreno-[nicho].md`
-**Conteúdo:**
-```
-# Mapa do Terreno — [Nicho]
-Data: YYYY-MM-DD
-
-## Players
-| Nome | Posicionamento | Ponto forte | Ponto fraco |
-|------|---------------|-------------|-------------|
-
-## Brechas
-1. [brecha] — [por que é oportunidade]
-
-## Zeitgeist
-- Tendência ascendente:
-- Tendência descendente:
-- O que ninguém está fazendo:
-
-## Saturação: [baixo/médio/alto]
-## Veredicto: [frase de posicionamento recomendado]
-```
-**Quem consome:** Forja da Persona (entender contexto), Alquimista (ângulos de copy), Arauto (posicionar campanha)
-
----
-
-#### FICHA: Persona
-**Skill:** Forja da Persona (Cartógrafo)
-**Formato:** `persona-[nome-ficticio].md`
-**Conteúdo:**
-```
-# Persona — [Nome Fictício]
-Data: YYYY-MM-DD
-
-## Perfil
-- Idade:
-- Ocupação:
-- Nível de consciência: [1-5]
-- Tipo cognitivo: [Passageiro/Corredor/Explorador]
-
-## Dores (top 5)
-1. [dor] — [como verbaliza]
-
-## Desejos (top 5)
-1. [desejo] — [como verbaliza]
-
-## Linguagem
-- Frases que usa: ["...", "..."]
-- Jargão do universo: [...]
-- Tom: [formal/casual/técnico/emocional]
-
-## Jornada Emocional
-- Inferno: [situação atual insuportável]
-- Purgatório: [tentativas que não resolveram]
-- Paraíso: [transformação desejada]
-
-## Onde está
-- Plataforma principal:
-- Consumo de conteúdo: [formato preferido]
-- Horários ativos:
-
-## SZC
-- Status Quo:
-- Zeitgeist:
-- Conclusão:
-```
-**Quem consome:** Alquimista (calibrar copy por nível), Bardo (linguagem dos roteiros), Arauto (plataformas e timing), Iluminista (estética que ressoa)
-
----
-
-#### FICHA: Oferta
-**Skill:** Forja de Oferta (Alquimista)
-**Formato:** `oferta-[nome-produto].md`
-**Conteúdo:**
-```
-# Oferta — [Nome do Produto]
-Data: YYYY-MM-DD
-
-## Promessa Central
-[1 frase — resultado + prazo + mecanismo]
-
-## Equação de Valor
-- Resultado desejado:
-- Probabilidade percebida: [o que aumenta confiança]
-- Tempo até resultado:
-- Esforço/Sacrifício: [o que reduz atrito]
-
-## Stack de Valor
-| Item | Valor percebido | Tipo |
-|------|-----------------|------|
-| [produto principal] | R$ X | Core |
-| [bônus 1] | R$ X | Bônus |
-
-## Garantia
-- Tipo: [incondicional/condicional/reversa]
-- Prazo:
-- Condição:
-
-## Preço
-- De: R$ [âncora]
-- Por: R$ [real]
-- Parcelamento:
-
-## Posicionamento
-[1 frase que diferencia de tudo no mercado]
-```
-**Quem consome:** Alquimista/copy (argumentação), Bardo (roteiro de venda), Arauto (campanha), Iluminista (landing page)
-
----
-
-#### FICHA: Mapa de Campanha
-**Skill:** Mapa de Campanha (Arauto)
-**Formato:** `campanha-[nome]-[data].md`
-**Conteúdo:**
-```
-# Campanha — [Nome]
-Data: YYYY-MM-DD
-Modalidade: [meteórico/desafio/orgânico/massivo]
-Duração: [X dias]
-
-## Fases
-| Fase | Duração | Objetivo | Conteúdos necessários |
-|------|---------|----------|-----------------------|
-| Aquecimento | X dias | [gerar expectativa] | [tipos de conteúdo] |
-| Lançamento | X dias | [converter] | [tipos de conteúdo] |
-| Sustentação | X dias | [manter] | [tipos de conteúdo] |
-
-## Temas Semanais
-- Sem 1: [tema] — [ângulo]
-- Sem 2: ...
-
-## Metas
-- [ ] Meta 1: [receita/audiência/leads]
-
-## Conteúdos Pendentes
-- [ ] X headlines (Bardo)
-- [ ] X roteiros (Bardo)
-- [ ] X copies (Alquimista)
-- [ ] X visuais (Iluminista)
-```
-**Quem consome:** Bardo (o que produzir), Alquimista (ângulos por fase), Iluminista (peças visuais), Arauto/esteira (popular Notion)
-
----
-
-#### FICHA: Lote de Headlines
-**Skill:** Headline Generator (Bardo)
-**Formato:** `headlines-[tema]-[data].md`
-**Conteúdo:**
-```
-# Headlines — [Tema]
-Data: YYYY-MM-DD
-Persona: [nome fictício]
-Universo: [léxico aplicado]
-Quantidade: 30
-
-## Lote
-1. [headline]
-2. [headline]
-...30. [headline]
-
-## Selecionadas (pelo cliente)
-- [ ] #X — para roteiro
-- [ ] #X — para carrossel
-- [ ] #X — para copy
-```
-**Quem consome:** Script Creator (roteiros a partir de headlines selecionadas), Chavossel (carrosseis), Alquimista (ângulos de copy)
-
----
-
-#### FICHA: Roteiro
-**Skill:** Script Creator / Chavideo (Bardo)
-**Formato:** `roteiro-[titulo-curto]-[data].md`
-**Conteúdo:**
-```
-# Roteiro — [Título]
-Data: YYYY-MM-DD
-Formato: [reel 60s / reel 90s / vídeo longo / story]
-Headline de origem: [referência]
-
-## Estrutura
-### HOOK (0-3s)
-[texto exato — o que falar]
-
-### INTENSIFICADOR (3-10s)
-[texto exato]
-
-### CONTEÚDO NOTÁVEL (10-60s)
-[texto exato — quebrado em blocos]
-
-### APRESENTAÇÃO MAGNÉTICA (50-75s)
-[texto exato]
-
-### CTA (75-90s)
-[texto exato]
-
-## Direção Visual
-[indicações de câmera, cortes, B-roll]
-
-## Exercício Retórico Aplicado
-[qual exercício do Progymnasmata foi usado e como]
-
-## Status: [rascunho / otimizado / aprovado / publicado]
-```
-**Quem consome:** Copy Enhancer (otimizar pra fala), Iluminista (direção visual), Arauto (agendar)
-
----
-
-#### FICHA: Copy Calibrada
-**Skill:** Pergaminho de Copy (Alquimista)
-**Formato:** `copy-[tipo]-[data].md`
-**Conteúdo:**
-```
-# Copy — [Tipo: post/email/anúncio/landing/VSL]
-Data: YYYY-MM-DD
-Nível de consciência do lead: [1-5]
-Camada Copy 3x5: [informar]
-Método Carga aplicado: [sim/não — intensidade]
-
-## Texto
-[a copy em si]
-
-## Calibragem
-- Persona de destino: [nome fictício]
-- Ângulo: [dor/desejo/prova/oferta/urgência]
-- CTA: [ação esperada]
-- Plataforma: [Instagram/email/YouTube/landing]
-
-## Status: [rascunho / revisado / aprovado / publicado]
-```
-**Quem consome:** Arauto (publicar), Iluminista (diagramar), Bardo (se virar roteiro)
-
----
-
-#### FICHA: Carrossel
-**Skill:** Chavossel (Bardo)
-**Formato:** `carrossel-[titulo]-[data].md`
-**Conteúdo:**
-```
-# Carrossel — [Título]
-Data: YYYY-MM-DD
-Slides: 10
-Headline de origem: [referência]
-
-## Slides
-### Slide 1 — CAPA
-Texto: [...]
-Visual: [indicação]
-
-### Slide 2-9 — DESENVOLVIMENTO
-[texto + visual para cada]
-
-### Slide 10 — CTA
-Texto: [...]
-Visual: [indicação]
-
-## Exercício Retórico: [qual e como]
-## Status: [rascunho / design pendente / finalizado / publicado]
-```
-**Quem consome:** Iluminista (renderizar no Figma), Arauto (agendar)
-
----
-
-#### FICHA: Erro (Tesouro)
-**Skill:** Tesouro dos Erros (Chaveiro)
-**Formato:** `erro-[titulo-curto]-[data].md`
-**Conteúdo:**
-```
-# Erro — [Título]
-Data: YYYY-MM-DD
-Fase em que ocorreu: [0-5]
-Gravidade: [🔴 crítico / 🟡 médio / 🟢 leve]
-
-## O que aconteceu
-[descrição factual]
-
-## Causa-raiz
-[por que aconteceu — não o sintoma, a causa]
-
-## Prevenção
-[o que fazer diferente da próxima vez]
-
-## Produto do erro
-[o que esse erro ensinou — modelo mental, regra, insight]
-```
-**Quem consome:** Ritual da Chave (Lua Cheia), Todos os plugins (consulta antes de repetir)
-
----
-
-#### FICHA: Nota Zettelkasten
-**Skill:** Forja do Conhecimento (Chaveiro)
-**Formato:** `zk-[titulo-curto]-[data].md`
-**Conteúdo:**
-```
-# [Título da Nota]
-ID: ZK-YYYYMMDD-XX
-Tipo: [inbox / literatura / permanente]
-Ciência: [Psicologia/Linguagem/Filosofia/Artes/Economia/...]
-Tags: [lista]
-
-## Nota
-[insight atômico — uma ideia por nota]
-
-## Conexões
-- Relaciona com: [ZK-ID ou Modelo Mental]
-- Contradiz: [ZK-ID se aplicável]
-- Expande: [ZK-ID se aplicável]
-
-## Fonte
-[livro/artigo/experiência/conversa — referência completa]
-```
-**Quem consome:** Modelos Mentais (destilação), Bardo (material de roteiro), Alquimista (argumentação de copy)
-
----
-
-#### FICHA: Modelo Mental
-**Skill:** Forja do Conhecimento (Chaveiro)
-**Formato:** `mm-[nome-do-modelo].md`
-**Conteúdo:**
-```
-# Modelo Mental — [Nome]
-Domínio de origem: [Psicologia/Economia/Biologia/etc.]
-Ciência CM: [qual ciência do sistema]
-
-## Descrição
-[O que é, em 2-3 frases claras]
-
-## Como funciona
-[Mecanismo — por que funciona]
-
-## Quando usar
-[Situações, decisões, contextos onde se aplica]
-
-## Quando NÃO usar
-[Limites, exceções, armadilhas]
-
-## Conexões
-- Complementa: [outro MM]
-- Contradiz: [outro MM]
-- Notas ZK relacionadas: [IDs]
-```
-**Quem consome:** Todo o sistema (lente de decisão universal)
-
----
-
-## CAMADA 3 — ENTREGÁVEIS FINAIS
-
-O que o cliente vê, baixa e usa. Gerados a partir das fichas (Camada 2) + Dossiê (Camada 1).
-
-### Catálogo de Entregáveis
+### Catálogo
 
 | Entregável | Gerado por | Formato | Quando |
 |------------|-----------|---------|--------|
-| **Relatório de Diagnóstico** | Chaveiro | PDF | Após diagnóstico inicial |
-| **Brand Book** | Forja do Universo | PDF | Após Fase 0 completa |
+| **Relatório de Diagnóstico** | Chaveiro | PDF | Após diagnóstico |
+| **Brand Book** | Forja do Universo | PDF | Após Fase 0 |
 | **Relatório de Mercado** | Portal do Terreno | PDF | Após Fase 1 |
 | **Ficha de Persona** | Forja da Persona | PDF | Após Fase 1 |
 | **Proposta de Oferta** | Forja de Oferta | PDF | Após Fase 2 |
 | **Plano de Campanha** | Mapa de Campanha | PDF + Notion | Após Fase 2 |
 | **Pauta Semanal** | Ritual da Chave | PDF + Notion | Semanal |
 | **Pack de Headlines** | Headline Generator | MD / PDF | Por demanda |
-| **Pack de Roteiros** | Script Creator | MD / PDF | Por demanda |
+| **Pack de Roteiros** | Script Creator + Chavideo | MD / PDF | Por demanda |
 | **Pack de Copy** | Pergaminho de Copy | MD / PDF | Por demanda |
-| **Carrosseis (design)** | Chavossel + Iluminista | Figma / PNG | Por demanda |
+| **Carrosseis** | Chavossel + Iluminista | Figma / PNG | Por demanda |
 | **Imagens** | Forja de Imagem | PNG / JPG | Por demanda |
 | **Relatório Lua Cheia** | Ritual da Chave | PDF | Mensal |
 | **Dossiê Completo** | Todo o sistema | PDF | A qualquer momento |
 
 ### Regras de Entrega
 
-1. **Todo PDF é gerado a partir do .md correspondente** — o markdown é a fonte de verdade.
-2. **Em Modo Cliente Externo**, PDFs usam a identidade visual do CLIENTE (não da CM).
-3. **Entregáveis ficam em** `05-ASSETS/entregas/[nome-projeto]/` no repositório.
-4. **No Notion**, entregáveis são linkados como anexos na tarefa correspondente da Esteira.
-
----
-
-## FLUXO DE DADOS — COMO TUDO SE CONECTA
-
-```
-FASE 0                    FASE 1                    FASE 2
-┌──────────┐             ┌──────────┐              ┌──────────┐
-│ Chaveiro │──diagnóst──▶│Cartógrafo│──terreno────▶│  Arauto   │
-│          │  tico.md    │          │  persona.md  │ Alquimist│
-│ Forja do │──dna.md───▶│ Portal   │              │          │
-│ Universo │             │ Persona  │──────────────▶│ campanha │
-└──────────┘             └──────────┘     ┌────────│ oferta   │
-     │                        │           │        └────┬─────┘
-     │                        │           │             │
-     ▼                        ▼           │             ▼
-  DOSSIÊ §0              DOSSIÊ §1-2     │        DOSSIÊ §3
-  preenchido              preenchido      │        preenchido
-                                          │
-FASE 3                                    │        FASE 4
-┌──────────┐                              │       ┌──────────┐
-│  Bardo   │◀── persona + dna + oferta ───┘       │  Arauto  │
-│Alquimista│                                      │ Esteira  │
-│Iluminista│──roteiros.md────────────────────────▶│ Notion   │
-│          │──copy.md────────────────────────────▶│          │
-│          │──carrossel.md───────────────────────▶│ Calendár │
-│          │──visuais/───────────────────────────▶│          │
-└──────────┘                                      └────┬─────┘
-                                                       │
-                                                       ▼
-                                                  FASE 5
-                                                  ┌──────────┐
-                                                  │ Chaveiro │
-                                          dados──▶│ Erros    │
-                                      de perf.   │ Zettel   │
-                                                  │ Lua Cheia│
-                                                  └────┬─────┘
-                                                       │
-                                              atualiza DOSSIÊ §6
-                                              recomenda voltar a Fase X
-```
-
-### Tabela de Dependências
-
-| Skill que PRODUZ | Artefato | Skills que CONSOMEM |
-|------------------|----------|---------------------|
-| Chaveiro | `diagnostico.md` | TODOS (porta de entrada) |
-| Forja do Universo | `dna.md` | Bardo, Alquimista, Iluminista, Arauto |
-| Portal do Terreno | `terreno.md` | Forja da Persona, Alquimista, Arauto |
-| Forja da Persona | `persona.md` | Alquimista, Bardo, Iluminista, Arauto |
-| Forja de Oferta | `oferta.md` | Alquimista/copy, Bardo, Arauto |
-| Mapa de Campanha | `campanha.md` | Bardo, Alquimista, Iluminista, Esteira |
-| Ritual da Chave | `pauta-semanal.md` | Bardo, Alquimista |
-| Headline Generator | `headlines.md` | Script Creator, Chavossel, Copy |
-| Script Creator | `roteiro.md` | Copy Enhancer, Iluminista, Esteira |
-| Pergaminho de Copy | `copy.md` | Iluminista, Esteira |
-| Chavossel | `carrossel.md` | Iluminista/Figma, Esteira |
-| Tesouro dos Erros | `erro.md` | Ritual da Chave, Todos (consulta) |
-| Forja do Conhecimento | `zk.md`, `mm.md` | Bardo, Alquimista, Todo o sistema |
+1. **Cada output nativo (.md) é a fonte de verdade.** O PDF é derivado, nunca o contrário.
+2. **Em Modo Cliente Externo**, identidade visual do CLIENTE (não CM).
+3. **Entregáveis ficam em** `05-ASSETS/entregas/[nome-projeto]/`.
+4. **No Notion**, linkados como anexos na tarefa correspondente da Esteira.
 
 ---
 
 ## ADAPTAÇÃO POR NICHO
 
-O sistema é **niche-agnostic** por design. A adaptação acontece em 3 pontos:
+O sistema é **niche-agnostic**. A adaptação acontece em 3 pontos — todos já dentro dos skills:
 
 ### 1. No Diagnóstico (Chaveiro)
 As 6 dimensões se aplicam a qualquer profissional digital:
-- Coach, terapeuta, nutricionista → ênfase em D1 (autenticidade) e D4 (conteúdo)
-- Infoprodutor, course creator → ênfase em D3 (estratégia) e D2 (mercado)
-- Agência, freelancer → ênfase em D5 (operação) e Modo Cliente Externo
-- Artista, músico, criador → ênfase em D1 (voz) e D4 (método criativo)
-- E-commerce, SaaS → ênfase em D2 (mercado) e D3 (funil)
+- Coach, terapeuta, nutricionista → ênfase em D1 + D4
+- Infoprodutor, course creator → ênfase em D3 + D2
+- Agência, freelancer → ênfase em D5 + Modo Cliente Externo
+- Artista, músico, criador → ênfase em D1 + D4
+- E-commerce, SaaS → ênfase em D2 + D3
 
 ### 2. Na Persona (Cartógrafo)
-A Ficha de Persona captura a linguagem, dores e desejos de QUALQUER público. O formato padronizado garante que o Bardo e Alquimista ajustam tom automaticamente.
+O SZC + Alma da Persona capturam linguagem, dores e desejos de QUALQUER público. O output nativo já garante que Bardo e Alquimista ajustam tom automaticamente.
 
 ### 3. No DNA de Marca (Forja do Universo)
-O léxico proprietário muda por nicho, mas o formato é o mesmo. Um coach terá termos diferentes de um SaaS, mas ambos passam pelo mesmo processo de worldbuilding.
+O léxico muda por nicho, mas o Primal Branding + StoryBrand + World Building são universais.
 
-**O que NÃO muda:** a sequência diagnóstico → inteligência → estratégia → criação → operação → evolução. Isso vale pra qualquer nicho.
+**O que NÃO muda:** diagnóstico → inteligência → estratégia → criação → operação → evolução.
 
 ---
 
@@ -696,71 +222,44 @@ O léxico proprietário muda por nicho, mas o formato é o mesmo. Um coach terá
 
 ### Início Frio (do zero)
 ```
-Cliente não tem nada.
 → Chaveiro cria Dossiê vazio
 → Diagnóstico preenche §0
-→ Sequência completa Fase 0 → 5
-→ Dossiê vai sendo preenchido seção por seção
+→ Sequência Fase 0 → 5
+→ Dossiê preenchido seção por seção
 ```
 
 ### Início Quente (já tem material)
 ```
-Cliente já tem marca, conteúdo, audiência.
-→ Chaveiro cria Dossiê e IMPORTA o que existe:
-   - Tem logo/paleta? → preenche §1 (identidade)
-   - Tem audiência? → preenche §2 parcial (persona a validar)
-   - Tem produto? → preenche §3 parcial (oferta a estruturar)
+→ Chaveiro cria Dossiê e IMPORTA o que existe
+→ Traduz pro formato nativo do skill correspondente
+→ Marca como [importado — a validar]
 → Diagnóstico identifica lacunas
-→ Começa na fase que precisa, não na 0
+→ Começa na fase que precisa
 ```
-
-### Regra de importação
-Quando o cliente traz material existente, o Chaveiro:
-1. Lê o que existe
-2. Traduz para o formato da ficha correspondente
-3. Marca como `[importado — a validar]`
-4. O plugin da fase correspondente valida e atualiza
-
----
-
-## COMANDOS DE ARTEFATO
-
-Shortcuts que podem ser usados no Claude Code:
-
-| Comando | Ação |
-|---------|------|
-| `/dossie novo [nome]` | Cria Dossiê CM vazio |
-| `/dossie ver` | Mostra Dossiê atual |
-| `/dossie exportar` | Gera PDF do Dossiê completo |
-| `/ficha [tipo] [nome]` | Cria ficha de skill (persona, terreno, oferta, etc.) |
-| `/entregas listar` | Lista todos os entregáveis do projeto atual |
-| `/entregas exportar [tipo]` | Exporta entregável como PDF |
 
 ---
 
 ## VERSIONAMENTO
 
-Artefatos evoluem. O sistema rastreia isso:
+Outputs evoluem. O Dossiê rastreia:
 
-- **v0.1** — Rascunho (gerado pelo plugin, não revisado)
-- **v0.5** — Revisado (ajustado após feedback do cliente/Lucas)
+- **v0.1** — Rascunho (gerado pelo plugin)
+- **v0.5** — Revisado (ajustado após feedback)
 - **v1.0** — Aprovado (pronto pra usar/publicar)
-- **v1.x** — Iteração (ajuste após performance/evolução)
-
-O Dossiê registra a versão atual de cada artefato vinculado.
+- **v1.x** — Iteração (ajuste pós-performance)
 
 ---
 
 ## INTEGRAÇÃO COM O ECOSSISTEMA
 
-| Ferramenta | Papel no sistema de artefatos |
-|------------|-------------------------------|
-| **Claude Code** | Motor de geração — cria, preenche e exporta fichas e dossiê |
-| **Notion** | Operação — Esteira, calendário, tarefas vinculadas a artefatos |
-| **Figma** | Renderização — carrosseis e visuais finalizados |
+| Ferramenta | Papel |
+|------------|-------|
+| **Claude Code** | Motor — cria outputs, preenche Dossiê, exporta entregáveis |
+| **Notion** | Operação — Esteira, calendário, tarefas vinculadas |
+| **Figma** | Renderização — carrosseis e visuais via Ponte Figma |
 | **GitHub** | Versionamento — histórico de todos os .md |
 | **Google Drive** | Backup + compartilhamento com clientes |
-| **PDF** | Formato de entrega final ao cliente |
+| **PDF** | Formato de entrega final |
 
 ---
 
