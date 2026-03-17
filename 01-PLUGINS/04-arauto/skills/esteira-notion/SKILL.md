@@ -1,5 +1,6 @@
 ---
 name: esteira-notion
+description: Usar quando o usuário pedir "popula o Notion", "MINHA ESTEIRA", "cria as tarefas no Notion", "joga a campanha no Notion", "atualiza o Notion", ou qualquer operação de escrita e população de campanhas no banco de dados Notion.
 version: 1.0
 layer: Camada 4 — Lançamento (operacional)
 role: Protocolo de escrita e população do banco de dados MINHA ESTEIRA no Notion com campanhas completas

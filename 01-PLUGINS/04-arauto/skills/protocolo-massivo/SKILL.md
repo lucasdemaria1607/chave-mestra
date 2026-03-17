@@ -1,5 +1,6 @@
 ---
 name: protocolo-massivo
+description: Usar quando o usuário pedir "protocolo massivo", "protocolo luxo", "protocolo urgência", "campanha intensiva", "preciso de caixa rápido", "campanha de alta pressão", "lançamento premium", ou qualquer campanha intensiva de curta duração com narrativa de alta pressão.
 version: 1.0
 layer: Camada 4 — Lançamento
 role: Protocolos de campanha intensiva de alta pressão — Luxo (posicionamento premium) e Urgência (caixa em 48-72h)

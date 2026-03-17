@@ -1,5 +1,6 @@
 ---
 name: chavideo
+description: Usar quando o usuário pedir "roteiro de vídeo", "chavideo", "cria um reel", "roteiro para TikTok", "roteiro para Shorts", "Progymnasmata para vídeo", "roteiro com tensão cinematográfica", ou qualquer geração de roteiro audiovisual com exercícios retóricos.
 version: 1.0
 layer: Camada 3 — Criação
 role: Geração de roteiros de vídeo via 14 exercícios Progymnasmata + técnicas cinematográficas de tensão

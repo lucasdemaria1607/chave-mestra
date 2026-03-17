@@ -1,5 +1,6 @@
 ---
 name: mapa-de-campanha
+description: Usar quando o usuário pedir "planejar campanha", "lançamento", "meteórico", "desafio", "lançamento interno", "cronograma de campanha", "copy de lançamento", "arco narrativo do lançamento", ou qualquer planejamento completo de campanha com modalidade e copy por fase.
 version: 1.0
 layer: Camada 4 — Lançamento
 role: Planejamento completo de campanhas — diagnóstico de modalidade, cronograma dia a dia, copy por fase

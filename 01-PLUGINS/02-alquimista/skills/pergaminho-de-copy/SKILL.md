@@ -1,5 +1,6 @@
 ---
 name: pergaminho-de-copy
+description: Usar quando o usuário pedir "escreve copy", "Copy 3x5", "Método Carga", "calibra a peça", "nível de consciência", "proporção C1/C2/C3", "copy para landing page", "copy para email", ou qualquer escrita de copy calibrada com camadas e cargas narrativas.
 version: 1.0
 layer: Camada 2 — Estratégia de Copy
 role: Calibração de copy via 3 camadas × 5 níveis de consciência + engenharia de densidade narrativa

@@ -1,25 +1,8 @@
 {
   "name": "chave-mestra-arauto",
-  "version": "4.0.0",
-  "description": "Planeja, executa e documenta campanhas inteiras. Do lançamento meteórico ao protocolo de urgência em 48h — com cronograma dia a dia, copy por fase e tudo organizado no Notion automaticamente.",
-  "skills": [
-    {
-      "name": "mapa-de-campanha",
-      "description": "Campanha completa na mesa em minutos. 4 modalidades de lançamento, cronograma dia a dia, copy pronta por fase — só executar.",
-      "path": "skills/mapa-de-campanha/SKILL.md",
-      "triggers": ["campanha", "lançamento", "meteórico", "desafio", "cronograma", "mapa de campanha", "planejar lançamento"]
-    },
-    {
-      "name": "esteira-notion",
-      "description": "Joga tudo no Notion automaticamente. Tarefas por dia, copy no corpo, status por fase — sua esteira de execução montada e pronta.",
-      "path": "skills/esteira-notion/SKILL.md",
-      "triggers": ["popula o Notion", "MINHA ESTEIRA", "cria as tarefas no Notion", "esteira notion", "banco de dados notion"]
-    },
-    {
-      "name": "protocolo-massivo",
-      "description": "Campanha de alta pressão. Protocolo Luxo (posicionamento premium) ou Urgência (caixa em 48-72h) — narrativas intensivas pra momentos decisivos.",
-      "path": "skills/protocolo-massivo/SKILL.md",
-      "triggers": ["protocolo massivo", "campanha intensiva", "campanha de luxo", "gerar caixa rápido", "48 horas", "campanha urgente"]
-    }
-  ]
+  "description": "Planeja, executa e documenta campanhas inteiras. Lançamentos, cronogramas, copy por fase e integração com Notion — do plano à ação em minutos.",
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "email": "contato@lucasgrigo.com"
+  }
 }

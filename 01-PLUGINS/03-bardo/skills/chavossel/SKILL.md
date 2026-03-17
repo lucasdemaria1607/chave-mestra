@@ -1,5 +1,6 @@
 ---
 name: chavossel
+description: Usar quando o usuário pedir "carrossel", "chavossel", "cria um carrossel", "10 slides", "ensaio visual", "carrossel editorial", "carrossel com Progymnasmata", ou qualquer geração de roteiro de carrossel de 10 slides com retórica clássica.
 version: 1.0
 layer: Camada 3 — Criação
 role: Geração de carrosséis editoriais de 10 slides via 14 exercícios Progymnasmata + sintaxe Chavossel v22

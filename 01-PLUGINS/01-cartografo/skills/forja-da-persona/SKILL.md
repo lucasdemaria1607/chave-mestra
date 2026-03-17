@@ -1,5 +1,6 @@
 ---
 name: forja-da-persona
+description: Usar quando o usuário pedir para "mapear persona", "criar Alma da Persona", "inferno/purgatório/céu", "quem é o lead", "SZC", "dissecção do avatar", "mapear dores e desejos", ou qualquer mapeamento psicológico profundo do público-alvo.
 version: 1.0
 layer: Camada 1 — Diagnóstico
 role: Mapeamento psicológico profundo do avatar — 3 estados existenciais + matriz de espelhamento C1

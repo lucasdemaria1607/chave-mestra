@@ -1,37 +1,8 @@
 {
   "name": "chave-mestra-iluminista",
-  "version": "5.0.0",
-  "description": "A estética do sistema. Design system com identidade própria, geração de imagens por IA, UX de conteúdo que guia o olho, integração direta com Figma e publicação automática no Notion. Tudo bonito, tudo funcional.",
-  "skills": [
-    {
-      "name": "sistema-de-design",
-      "description": "Identidade visual completa em 4 pergaminhos (Branco, Preto, Dourado, Arcano). Paleta, tipografia, tokens, CSS — o DNA visual da marca.",
-      "path": "skills/sistema-de-design/SKILL.md",
-      "triggers": ["tema visual", "design system", "pergaminho branco", "pergaminho preto", "pergaminho dourado", "pergaminho arcano", "CSS", "identidade visual", "tema do cliente", "tokens"]
-    },
-    {
-      "name": "forja-de-imagem",
-      "description": "Gera imagens por IA com um comando. Texto vira visual — edição, composição, presets prontos. Sem sair do terminal.",
-      "path": "skills/forja-de-imagem/SKILL.md",
-      "triggers": ["gera imagem", "cria visual", "forja de imagem", "nano banana", "edita imagem", "compõe imagens", "imagem para post", "imagem para carrossel"]
-    },
-    {
-      "name": "arquiteto-de-experiencia",
-      "description": "O olho do leitor vai pra onde você quiser. Hierarquia visual, 30+ layouts de carrossel, tipografia, ritmo — UX que serve o conteúdo.",
-      "path": "skills/arquiteto-de-experiencia/SKILL.md",
-      "triggers": ["UX do conteúdo", "hierarquia visual", "design de experiência", "layout", "grid", "microinteração", "arquiteto"]
-    },
-    {
-      "name": "ponte-figma",
-      "description": "Do texto ao Figma em um passo. Injeta conteúdo nos frames, renderiza carrosséis, lê tokens — a ponte entre criação e design.",
-      "path": "skills/ponte-figma/SKILL.md",
-      "triggers": ["manda pro Figma", "renderiza no Figma", "ponte Figma", "Chavossel Figma", "injeta nos frames", "gera carrossel no Figma", "exporta do Figma"]
-    },
-    {
-      "name": "publicador-visual",
-      "description": "Publica tudo no Notion automaticamente. Posts, carrosséis, assets de campanha — galeria visual organizada sem trabalho manual.",
-      "path": "skills/publicador-visual/SKILL.md",
-      "triggers": ["publica no Notion", "exporta visual", "publicador visual", "envia imagens pro Notion", "popula visual", "imagens da campanha"]
-    }
-  ]
+  "description": "A estética do sistema. Design system, geração de imagens por IA, UX de conteúdo, integração Figma e publicação automática no Notion. Tudo bonito, tudo funcional.",
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "email": "contato@lucasgrigo.com"
+  }
 }

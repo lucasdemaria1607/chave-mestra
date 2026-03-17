@@ -1,5 +1,6 @@
 ---
 name: tesouro-dos-erros
+description: Usar quando o usuário pedir para "registrar erro", "Tesouro dos Erros", "o que deu errado", "documentar falha", "que erros existem para", "consultar erros", "o que pode dar errado", ou qualquer curadoria e prevenção de falhas do sistema.
 version: 1.0
 layer: Camada Meta — Chaveiro
 role: Curadoria e consulta de erros críticos do sistema — registro, categorização, extração de padrões e prevenção ativa

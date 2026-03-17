@@ -1,5 +1,6 @@
 ---
 name: forja-do-universo
+description: Usar quando o usuário pedir "worldbuilding", "universo de marca", "Primal Branding", "StoryBrand", "léxico de marca", "Forja do Universo", "Mapa do Universo", "DNA de marca", "construir marca", ou qualquer construção de identidade simbólica e narrativa de marca.
 version: 1.0
 layer: Camada 1 — Diagnóstico → alimenta C2 (Estratégia de Marca)
 role: Construção do universo de marca via World Building + Primal Branding + StoryBrand — o DNA simbólico que torna a marca incopiável

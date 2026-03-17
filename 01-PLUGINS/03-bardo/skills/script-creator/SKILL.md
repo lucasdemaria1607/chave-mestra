@@ -1,5 +1,6 @@
 ---
 name: script-creator
+description: Usar quando o usuário pedir "cria roteiro a partir da headline", "desenvolve roteiro", "transforma headline em script", "roteiro de vídeo curto", "script a partir dessa headline", ou qualquer geração de roteiro completo de 60-90s baseado em headline validada.
 version: 1.0
 layer: Camada 3 — Criação
 role: Geração de roteiros completos para vídeo curto a partir de headlines validadas

@@ -1,5 +1,6 @@
 ---
 name: portal-da-escala
+description: Usar quando o usuário pedir "diagnóstico de fase", "em que fase estou", "alavancas de crescimento", "CAC", "LTV", "ROAS", "escalar o negócio", "esteira de valor", "próximo movimento", ou qualquer análise estratégica de crescimento e métricas do negócio digital.
 version: 1.0
 layer: Camada 6 — Portal da Escala
 inputs: nicho, produto, fase atual do negócio, métricas disponíveis (opcional)

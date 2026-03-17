@@ -1,5 +1,6 @@
 ---
 name: ritual-da-chave
+description: Usar quando o usuário pedir "ritual da chave", "Lua Cheia", "Forja Semanal", "Giro da Chave", "planejamento mensal", "pauta da semana", "workflow de rotina", "rotina de criação", "o que fazer essa semana", ou qualquer planejamento operacional de execução.
 version: 1.0
 layer: Camada Meta — Opera sobre todas as camadas
 role: Workflow prático de rotina e planejamento para otimizar a operação dentro do ecossistema Chave Mestra

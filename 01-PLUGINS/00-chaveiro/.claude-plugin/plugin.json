@@ -1,31 +1,8 @@
 {
   "name": "chave-mestra-chaveiro",
-  "version": "4.0.0",
-  "description": "O guardião do sistema. Absorve livros, PDFs e ideias novas, mantém tudo coerente, transforma erros em lições e orquestra sua rotina de criação. É quem garante que a Chave Mestra evolui junto com você.",
-  "skills": [
-    {
-      "name": "chaveiro",
-      "description": "O mecânico do sistema — absorve conhecimento novo, atualiza skills, garante que todas as peças conversam entre si.",
-      "path": "skills/chaveiro/SKILL.md",
-      "triggers": ["chaveiro", "assimila esse livro", "assimila esse PDF", "atualiza o skill", "onde isso se encaixa", "confere se o sistema está coerente", "adiciona esse framework"]
-    },
-    {
-      "name": "ritual-da-chave",
-      "description": "Sua rotina de criação em 3 ciclos: Lua Cheia (mensal), Forja Semanal e Giro da Chave (diário). Transforma o sistema de coleção de ferramentas em máquina de execução.",
-      "path": "skills/ritual-da-chave/SKILL.md",
-      "triggers": ["ritual da chave", "Lua Cheia", "Forja Semanal", "Giro da Chave", "planejamento mensal", "pauta da semana", "workflow", "rotina de criação", "o que faço hoje", "próxima semana"]
-    },
-    {
-      "name": "forja-do-conhecimento",
-      "description": "Onde ideias viram armas. Captura notas soltas, conecta conceitos, cristaliza modelos mentais — o Zettelkasten que faz seu conhecimento trabalhar por você.",
-      "path": "skills/forja-do-conhecimento/SKILL.md",
-      "triggers": ["Zettelkasten", "nota permanente", "modelos mentais", "registra esse aprendizado", "atualiza plugin", "documenta isso", "quero anotar isso", "conecta esses conceitos"]
-    },
-    {
-      "name": "tesouro-dos-erros",
-      "description": "Transforma cada falha em blindagem. Registra erros, identifica padrões e garante que você nunca tropece na mesma pedra duas vezes.",
-      "path": "skills/tesouro-dos-erros/SKILL.md",
-      "triggers": ["Tesouro dos Erros", "registra esse erro", "que erros existem para", "consulta erros", "erros críticos", "o que pode dar errado"]
-    }
-  ]
+  "description": "O guardião do sistema. Absorve conhecimento, orquestra sua rotina de criação, transforma erros em lições e mantém tudo coerente enquanto você evolui.",
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "email": "contato@lucasgrigo.com"
+  }
 }

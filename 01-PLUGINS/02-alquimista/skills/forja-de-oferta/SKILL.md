@@ -1,5 +1,6 @@
 ---
 name: forja-de-oferta
+description: Usar quando o usuário pedir para "criar oferta", "montar oferta irresistível", "stack de bônus", "equação de valor", "garantia reversa", "ancoragem de preço", "otimizar oferta", ou qualquer estruturação e design de oferta com percepção de valor.
 version: 1.0
 layer: Camada 2 — Estratégia
 role: Análise, criação e otimização de ofertas irresistíveis usando Equação de Valor + estrutura de garantias + stacking de bônus

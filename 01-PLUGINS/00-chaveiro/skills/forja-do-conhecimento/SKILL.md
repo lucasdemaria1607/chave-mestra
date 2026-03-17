@@ -1,5 +1,6 @@
 ---
 name: forja-do-conhecimento
+description: Usar quando o usuário pedir para "documentar aprendizado", "criar nota permanente", "registrar insight", "Zettelkasten", "atualizar plugin", "evolução do sistema", "capturar o que funcionou", ou qualquer gestão de conhecimento acumulado do ecossistema.
 version: 1.0
 layer: Camada 0 — Meta (gestão do sistema)
 role: Gestão do aprendizado sistêmico — Zettelkasten digital, evolução de plugins, documentação de erros (Tesouro dos Erros), e manutenção da inteligência acumulada do ecossistema Chave Mestra
