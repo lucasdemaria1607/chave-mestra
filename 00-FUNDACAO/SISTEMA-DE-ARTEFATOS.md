@@ -141,26 +141,27 @@ FASE 3                                    │        FASE 4
                                                recomenda → Fase X
 ```
 
-### Regra de Dependência Obrigatória
+### Contexto Esperado (não obrigatório)
 
-Antes de operar, cada plugin DEVE verificar no Dossiê:
+Cada plugin funciona melhor com contexto prévio, mas **DEVE ser capaz de partir do zero**. Se o Dossiê tem seções anteriores preenchidas, o plugin usa. Se não tem, o plugin opera com o que o cliente trouxer na conversa — ou gera o mínimo necessário na hora.
 
-| Plugin | PRECISA existir antes |
-|--------|-----------------------|
-| Forja do Universo | §0 Diagnóstico (ao menos D1) |
-| Portal do Terreno | §0 Diagnóstico (ao menos D2) |
-| Forja da Persona | §2 Terreno (ao menos Insumos SZC) |
-| Forja de Oferta | §2 Persona + §1 DNA |
-| Mapa de Campanha | §2 Persona + §3 Oferta (se existir) |
-| Pergaminho de Copy | §2 Persona (C1) + §1 DNA (C2) |
-| Headline Generator | §2 Persona + §1 DNA |
-| Script Creator | Headlines selecionadas |
-| Chavideo | §2 Persona + §1 DNA + headline ou tema |
-| Chavossel | §2 Persona + §1 DNA + headline ou tema |
-| Esteira Notion | §3 Campanha OU §ritual (pauta semanal) |
-| Portal da Escala | §5 Métricas de operação |
+| Plugin | Contexto ideal (se existir) | Sem contexto |
+|--------|----------------------------|--------------|
+| Forja do Universo | §0 Diagnóstico | Parte da conversa com o cliente |
+| Portal do Terreno | §0 Diagnóstico | Parte do nicho informado |
+| Forja da Persona | Terreno + Insumos SZC | Constrói persona do zero via perguntas |
+| Forja de Oferta | Persona + DNA | Parte do produto/serviço informado |
+| Mapa de Campanha | Persona + Oferta | Parte do objetivo informado |
+| Pergaminho de Copy | Persona (C1) + DNA (C2) | Calibra com briefing mínimo |
+| Headline Generator | Persona + DNA | Parte do tema/nicho informado |
+| Script Creator | Headlines selecionadas | Parte de tema livre |
+| Chavideo | Persona + DNA + tema | Parte de tema livre |
+| Chavossel | Persona + DNA + tema | Parte de tema livre |
+| Esteira Notion | Campanha ou pauta | Parte de lista de tarefas |
+| Portal da Escala | Métricas de operação | Parte dos dados informados |
 
-**Se a dependência não existe:** o plugin informa e sugere qual skill rodar antes — ou roda com o que tem, marcando `[sem dependência — a validar]`.
+**Quando há contexto prévio:** o plugin puxa do Dossiê e enriquece o output.
+**Quando não há:** o plugin opera com o que tem, gera o output, e o Dossiê começa a ser preenchido a partir daí. Qualquer ponto de entrada é válido.
 
 ---
 
