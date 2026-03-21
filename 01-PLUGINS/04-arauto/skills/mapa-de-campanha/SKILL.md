@@ -179,6 +179,28 @@ Métrica de acompanhamento: [o que medir neste dia]
 
 ---
 
+## Destino do Conteúdo de Campanha
+
+O conteúdo gerado pelo Mapa de Campanha tem destinos diferentes conforme o tipo:
+
+| Tipo | Destino no Notion |
+|---|---|
+| Conteúdo de lançamento (Meteórico, Desafio, Interno) | Cronograma do produto na MINHA ESTEIRA → uma linha por dia com copy + assets no corpo |
+| Peças orgânicas de apoio (Protocolo Massivo) | Database Conteúdo → campo Origem: Protocolo Massivo |
+
+**Regra fundamental:** conteúdo de campanha de lançamento NUNCA vai na database Conteúdo. Vai DENTRO do cronograma do produto correspondente na MINHA ESTEIRA. Cada produto já carrega cronogramas para todas as modalidades (Meteórico, Desafio 7d/14d/21d, Interno) — basta popular o correto.
+
+A database Conteúdo serve exclusivamente para conteúdo orgânico (Origem: Orgânico) e peças de apoio do Protocolo Massivo (Origem: Protocolo Massivo).
+
+### Pós-campanha
+
+Ao encerrar uma campanha:
+1. Marcar `Arquivado = true` no produto da MINHA ESTEIRA (sai da vista "Ativos", aparece na vista "Arquivo")
+2. Registrar resultados no Tesouro dos Erros + Forja do Conhecimento
+3. O cronograma completo permanece preservado para consulta e reutilização como template
+
+---
+
 ## Regras
 
 1. Nunca planejar campanha sem diagnosticar modalidade primeiro
@@ -186,6 +208,7 @@ Métrica de acompanhamento: [o que medir neste dia]
 3. Urgência só funciona quando genuína — nunca fake scarcity
 4. Copy de fechamento tem 3 mensagens no último dia: manhã / tarde / noite
 5. Toda peça de campanha tem gancho + corpo + CTA único
+6. Conteúdo de campanha vai no cronograma do produto (MINHA ESTEIRA), não na database Conteúdo
 
 ---
 
@@ -195,4 +218,4 @@ Métrica de acompanhamento: [o que medir neste dia]
 - `copy-campanha.md` — templates de mensagens WhatsApp, email e post por fase
 - `alma-da-persona.md` — Inferno/Céu informa a promessa de cada fase
 - `copy-3x5.md` — calibração de camadas por nível de consciência do público em cada fase
-- `esteira-notion.md` — protocolo de população dos cronogramas no Notion
+- `esteira-notion/SKILL.md` — protocolo de população dos cronogramas no Notion (schema, archiving, separação campanha/orgânico)

@@ -147,12 +147,28 @@ MÉTRICAS DE ACOMPANHAMENTO:
 
 ---
 
+## Destino do Conteúdo — Protocolo Massivo
+
+O Protocolo Massivo gera dois tipos de conteúdo com destinos diferentes:
+
+| Tipo | Destino | Campo |
+|---|---|---|
+| Cronograma da campanha (sequência de mensagens, peças de venda) | Cronograma do produto na MINHA ESTEIRA | Populado via Esteira Notion |
+| Peças orgânicas de apoio (manifestos, stories de posicionamento, conteúdo de feed) | Database Conteúdo | Origem: Protocolo Massivo |
+
+**Protocolo Luxo** — As peças de Manifestação (Fase 1) e Seleção (Fase 2) são conteúdo orgânico de posicionamento → vão na database Conteúdo com Origem: Protocolo Massivo. As fases de Revelação, Conversão e Fechamento vão no cronograma do produto.
+
+**Protocolo Urgência** — Todo o conteúdo é direto e de venda → vai integralmente no cronograma do produto na MINHA ESTEIRA.
+
+---
+
 ## Regras Gerais
 
 1. Protocolo Massivo nunca é o primeiro lançamento de um produto — é a alavanca para produtos validados
 2. Escolha entre Luxo ou Urgência — nunca misture os dois em uma campanha
 3. A narrativa de cada fase é inegociável — pular fases quebra o arco
-4. Pós-campanha: registrar resultado no Tesouro dos Erros + Forja do Conhecimento
+4. Pós-campanha: marcar `Arquivado = true` no produto + registrar resultado no Tesouro dos Erros + Forja do Conhecimento
+5. Conteúdo de venda vai no cronograma do produto; conteúdo orgânico de apoio vai na database Conteúdo (Origem: Protocolo Massivo)
 
 ---
 
@@ -162,3 +178,4 @@ MÉTRICAS DE ACOMPANHAMENTO:
 - `copy-campanha.md` — templates de mensagens por fase
 - `portal-da-escala/SKILL.md` — Matriz de Decisão indica quando usar Protocolo Massivo
 - `forja-de-oferta/SKILL.md` — stack de oferta é desenhado antes do protocolo começar
+- `esteira-notion/SKILL.md` — protocolo de população dos cronogramas + separação campanha/orgânico

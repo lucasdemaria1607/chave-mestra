@@ -18,31 +18,49 @@ A Esteira Notion não cria campanhas. Executa a operação de escrita no banco d
 ## Arquitetura do Notion (Chave Mestra)
 
 ```
-MINHA ESTEIRA (database principal)
+MINHA ESTEIRA (database principal — campo "Arquivado" checkbox para campanhas encerradas)
+├── Vista "Ativos" (gallery — filtra Arquivado = false) ← vista padrão
+├── Vista "Arquivo" (table — filtra Arquivado = true)
 └── [Produto X] (página do produto)
     ├── Checklist de Criação (toggle)
     ├── Lançamento (toggle)
     │   ├── Lançamento Meteórico (toggle)
-    │   │   └── [sub-database: linhas = dias da campanha]
+    │   │   └── [cronograma: linhas = dias da campanha + copy completo]
     │   ├── Lançamento Interno (toggle)
-    │   │   └── [sub-database: linhas = dias da campanha]
-    │   └── Lançamento Desafio (toggle)
-    │       └── [sub-database: linhas = dias da campanha]
+    │   │   └── [cronograma: linhas = dias da campanha + copy completo]
+    │   ├── Lançamento Desafio 7d (toggle)
+    │   │   └── [cronograma: linhas = dias da campanha + copy completo]
+    │   ├── Lançamento Desafio 14d (toggle)
+    │   │   └── [cronograma: linhas = dias da campanha + copy completo]
+    │   └── Lançamento Desafio 21d (toggle)
+    │       └── [cronograma: linhas = dias da campanha + copy completo]
     ├── Meus Criativos (toggle)
     └── Depoimentos (toggle)
 ```
 
-### Schema da Sub-Database de Lançamento
+**Conteúdo de campanha vai DENTRO dos cronogramas de cada produto** — texto, imagem, data, tudo dentro da linha do dia correspondente. A database separada "Conteúdo" é exclusivamente para conteúdo orgânico e Protocolo Massivo (campo `Origem`: Orgânico / Protocolo Massivo).
+
+### Schema dos Cronogramas de Lançamento (todos os tipos)
+
+Todos os cronogramas (Meteórico, Interno, Desafio 7d/14d/21d) compartilham o mesmo schema base:
 
 | Campo | Tipo | Valores |
 |---|---|---|
 | `Nome da Tarefa` | title | Texto livre — ex: "Dia 1 — Revelação" |
 | `Fase do Lançamento` | select | Pré-pré-lançamento / Pré-lançamento / Lançamento / Pós-lançamento |
-| `data` | date | Data real do dia (ISO: YYYY-MM-DD) |
-| `Status da Tarefa` | select | A fazer / Em andamento / Concluída / Atrasada |
+| `Data` | date | Data real do dia (ISO: YYYY-MM-DD) |
+| `Status` | select | A fazer / Em andamento / Concluída / Atrasada |
 | `Template de Copy` | text | Resumo curto: canal + gancho + CTA (1–3 linhas) |
 
-Cada linha é também uma **página** com corpo completo onde fica o copy detalhado.
+Cada linha é também uma **página** com corpo completo onde fica o copy detalhado + imagens + assets do dia.
+
+### Arquivamento de Campanhas
+
+Após encerrar uma campanha:
+1. Marcar `Arquivado = true` no produto da MINHA ESTEIRA
+2. O produto sai da vista "Ativos" e aparece na vista "Arquivo"
+3. Todo o contexto (cronogramas, copy, criativos, depoimentos) é preservado intacto
+4. Registrar resultado no Tesouro dos Erros + Forja do Conhecimento
 
 ---
 
@@ -76,16 +94,16 @@ O `data-source-url` (formato `collection://[ID]`) é o parâmetro `parent.data_s
 
 ### Etapa 4 — Criar as Linhas (Uma por Dia)
 
-Para cada dia da campanha, criar uma página na sub-database:
+Para cada dia da campanha, criar uma página no cronograma:
 
 ```json
-parent: { "data_source_id": "[collection-id-da-sub-database]" }
+parent: { "data_source_id": "[collection-id-do-cronograma]" }
 properties: {
   "Nome da Tarefa": "Dia X — [Nome da ação]",
   "Fase do Lançamento": "[fase correta]",
-  "date:data:start": "YYYY-MM-DD",
-  "date:data:is_datetime": 0,
-  "Status da Tarefa": "A fazer",
+  "date:Data:start": "YYYY-MM-DD",
+  "date:Data:is_datetime": 0,
+  "Status": "A fazer",
   "Template de Copy": "[resumo 1-3 linhas: canal + gancho + CTA]"
 }
 content: "[copy completo do dia em Notion Markdown]"
@@ -150,11 +168,16 @@ Corpo de cada tarefa em Notion Markdown:
 1. Mapa de Campanha gera: modalidade + cronograma + copy por dia
 2. Esteira Notion executa:
    a. Busca o produto na MINHA ESTEIRA
-   b. Abre a página e localiza as sub-databases de lançamento
+   b. Abre a página e localiza os cronogramas de lançamento
    c. Identifica o data-source-id da modalidade correta
-   d. Cria uma linha por dia com copy completo no corpo
+   d. Cria uma linha por dia com copy completo + assets no corpo
 3. Portal da Escala monitora: métricas por fase + diagnóstico de resultado
+4. Pós-campanha: marcar Arquivado = true no produto + registrar no Tesouro dos Erros
 ```
+
+**Importante:** Conteúdo de campanha NUNCA vai na database Conteúdo. Vai DENTRO do cronograma do produto na MINHA ESTEIRA. A database Conteúdo é exclusivamente para:
+- Conteúdo orgânico (Origem: Orgânico)
+- Peças de apoio do Protocolo Massivo (Origem: Protocolo Massivo)
 
 ---
 
@@ -168,9 +191,20 @@ Corpo de cada tarefa em Notion Markdown:
 
 ---
 
+## Separação de Databases — Campanha vs. Orgânico
+
+| Tipo de conteúdo | Destino | Campo |
+|---|---|---|
+| Conteúdo de lançamento (Meteórico, Desafio, Interno) | Cronograma dentro do produto na MINHA ESTEIRA | N/A — é o próprio cronograma |
+| Conteúdo orgânico (posts, reels, carrosséis regulares) | Database Conteúdo | Origem: Orgânico |
+| Peças de apoio Protocolo Massivo (manifestos, stories) | Database Conteúdo | Origem: Protocolo Massivo |
+
+---
+
 ## Referências Cruzadas
 
 - `notion-integracao.md` — protocolo técnico completo com exemplos de calls reais
 - `modalidades.md` — estrutura de cada campanha que alimenta os dias
 - `mapa-de-campanha.md` — gera o cronograma que esta skill executa
+- `protocolo-massivo/SKILL.md` — campanhas intensivas (peças orgânicas vão na database Conteúdo)
 - `portal-da-escala.md` — recebe os resultados registrados na MINHA ESTEIRA

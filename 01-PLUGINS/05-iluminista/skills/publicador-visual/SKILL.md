@@ -36,26 +36,24 @@ O Publicador Visual é a última milha do pipeline visual. Pega imagens e peças
 
 ## FLUXOS DE PUBLICAÇÃO
 
-### Fluxo 1: Imagens de Post → Notion
+### Fluxo 1: Imagens de Post Orgânico → Database Conteúdo
 
 ```
-1. Forja de Imagem gera imagem para post
+1. Forja de Imagem gera imagem para post orgânico
 2. Imagem salva em 04-PERGAMINHOS/visuais/posts/
-3. Publicador Visual cria página no Notion:
-   - Database: buscar database de conteúdo do usuário
-   - Propriedades: título, tipo (post), status (rascunho), data
+3. Publicador Visual cria página na database Conteúdo:
+   - Propriedades: título, tipo (post), status (rascunho), data, Origem: Orgânico
    - Conteúdo: copy do post (do Bardo/Alquimista) + imagem embeddada
 ```
 
-### Fluxo 2: Carrossel Completo → Notion
+### Fluxo 2: Carrossel Orgânico → Database Conteúdo
 
 ```
 1. Bardo gera texto do carrossel
 2. Forja de Imagem gera imagens dos slides
 3. Ponte Figma renderiza no Figma
-4. Publicador Visual cria página no Notion:
-   - Database: database de conteúdo
-   - Propriedades: título, tipo (carrossel), status, data, nº slides
+4. Publicador Visual cria página na database Conteúdo:
+   - Propriedades: título, tipo (carrossel), status, data, nº slides, Origem: Orgânico
    - Conteúdo:
      - Texto de cada slide (formatado)
      - Link do Figma (se renderizado)
@@ -63,18 +61,20 @@ O Publicador Visual é a última milha do pipeline visual. Pega imagens e peças
      - Observações de design (layouts usados, estilo)
 ```
 
-### Fluxo 3: Assets de Campanha → MINHA ESTEIRA
+### Fluxo 3: Assets de Campanha → Cronograma do Produto (MINHA ESTEIRA)
 
-Quando o Arauto popula a esteira de campanha no Notion:
+Quando o Arauto popula o cronograma de campanha no Notion:
 
 ```
-1. Arauto cria linha por dia na MINHA ESTEIRA
+1. Arauto cria linha por dia no cronograma do produto (MINHA ESTEIRA)
 2. Publicador Visual enriquece cada linha com:
    - Imagem principal do dia (post/story)
    - Link para carrossel no Figma (se aplicável)
    - Preview visual (thumbnail)
-3. Resultado: esteira completa com copy + visual integrados
+3. Resultado: cronograma completo com copy + visual integrados
 ```
+
+**Importante:** conteúdo de campanha vai DENTRO do cronograma do produto na MINHA ESTEIRA, não na database Conteúdo. Apenas conteúdo orgânico e peças de apoio do Protocolo Massivo vão na database Conteúdo.
 
 ### Fluxo 4: Galeria Visual → Database Dedicada
 

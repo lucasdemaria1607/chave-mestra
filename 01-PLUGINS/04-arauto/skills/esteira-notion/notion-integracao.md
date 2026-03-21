@@ -3,31 +3,39 @@
 ## ARQUITETURA DO NOTION (Chave Mestra)
 
 ```
-MINHA ESTEIRA (database principal)
+MINHA ESTEIRA (database principal — campo "Arquivado" checkbox)
+├── Vista "Ativos" (gallery — filtra Arquivado = false) ← padrão
+├── Vista "Arquivo" (table — filtra Arquivado = true)
 └── [Produto X] (página do produto)
     ├── Checklist de Criação (toggle)
     ├── Lançamento (toggle)
     │   ├── Lançamento Meteórico (toggle)
-    │   │   └── [sub-database: linhas = dias da campanha]
+    │   │   └── [cronograma: linhas = dias da campanha + copy + assets]
     │   ├── Lançamento Interno (toggle)
-    │   │   └── [sub-database: linhas = dias da campanha]
-    │   └── Lançamento Desafio (toggle)
-    │       └── [sub-database: linhas = dias da campanha]
+    │   │   └── [cronograma: linhas = dias da campanha + copy + assets]
+    │   ├── Lançamento Desafio 7d (toggle)
+    │   │   └── [cronograma: linhas = dias da campanha + copy + assets]
+    │   ├── Lançamento Desafio 14d (toggle)
+    │   │   └── [cronograma: linhas = dias da campanha + copy + assets]
+    │   └── Lançamento Desafio 21d (toggle)
+    │       └── [cronograma: linhas = dias da campanha + copy + assets]
     ├── Meus Criativos (toggle)
     └── Depoimentos (toggle)
 ```
 
-Cada sub-database de lançamento tem o mesmo schema:
+**Conteúdo de campanha vai DENTRO dos cronogramas**, não na database Conteúdo. A database Conteúdo serve apenas para conteúdo orgânico (Origem: Orgânico) e peças de apoio do Protocolo Massivo (Origem: Protocolo Massivo).
+
+Todos os cronogramas compartilham o mesmo schema base:
 
 | Campo | Tipo | Valores possíveis |
 |---|---|---|
 | `Nome da Tarefa` | title | Texto livre — ex: "Dia 1 — Revelação" |
 | `Fase do Lançamento` | select | Pré-pré-lançamento / Pré-lançamento / Lançamento / Pós-lançamento |
-| `data` | date | Data real do dia (ISO: YYYY-MM-DD) |
-| `Status da Tarefa` | select | A fazer / Em andamento / Concluída / Atrasada |
+| `Data` | date | Data real do dia (ISO: YYYY-MM-DD) |
+| `Status` | select | A fazer / Em andamento / Concluída / Atrasada |
 | `Template de Copy` | text | Resumo curto da peça (canal + gancho + CTA) |
 
-Cada linha (tarefa) é também uma **página** com corpo completo onde fica o copy detalhado.
+Cada linha (tarefa) é também uma **página** com corpo completo onde fica o copy detalhado + imagens + assets.
 
 ---
 
@@ -72,9 +80,9 @@ parent: { "data_source_id": "[collection-id-da-sub-database]" }
 properties: {
   "Nome da Tarefa": "Dia X — [Nome da ação]",
   "Fase do Lançamento": "[fase correta]",
-  "date:data:start": "YYYY-MM-DD",
-  "date:data:is_datetime": 0,
-  "Status da Tarefa": "A fazer",
+  "date:Data:start": "YYYY-MM-DD",
+  "date:Data:is_datetime": 0,
+  "Status": "A fazer",
   "Template de Copy": "[resumo 1-3 linhas: canal + gancho + CTA]"
 }
 content: "[copy completo do dia em Notion Markdown]"
