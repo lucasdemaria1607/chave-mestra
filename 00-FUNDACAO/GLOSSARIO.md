@@ -6,7 +6,7 @@
 
 | Termo | Definição |
 |---|---|
-| **Chave Mestra** | O ecossistema completo de criação e marketing para experts e produtores digitais. 7 camadas, 10 plugins, do estudo à escala. |
+| **Chave Mestra** | Sistema operacional de pensamento e produção para experts digitais. Dois pilares (SABER + FAZER), 6 plugins, do estudo à escala. As duas chaves fundamentais: Inteligência + Personalidade. |
 | **Chavideo** | Sistema de roteiros de vídeo virais — curtos (Reels, TikTok, Shorts) e longos (YouTube). Plugin 04. |
 | **Chavossel** | Sistema de carrosséis editoriais — 10 slides = 10 atos narrativos. Plugin 05. Inclui plugin Figma com sintaxe proprietária. |
 | **Chaveiro** | Plugin meta (00). Não produz conteúdo — mantém o sistema coerente. Recebe insumos brutos, extrai conhecimento, atualiza SKILL.md. |
@@ -29,6 +29,12 @@
 | **Lua Cheia** | Ciclo mensal de planejamento: retrospectiva + diagnóstico de fase + campanha + calendário + Notion. |
 | **Forja Semanal** | Ciclo semanal de planejamento: review + persona + pauta + rotação de elemento Primal + Notion. |
 | **Giro da Chave** | Ciclo diário de execução: consulta pauta → ativa plugin → pré-escrita → criação → checklist. |
+| **Value Creation Loop** | Meta-framework empreendedor de 6 Steps: FOF → Validação → PMF → Go To Market → Scale Up → Exit/Loop. Cada saída reinicia o ciclo com vantagens compostas. Plugin 02 (Alquimista / Portal da Escala). |
+| **FOF (Founder Opportunity Fit)** | Step 1 do Value Creation Loop. Diagnóstico de alinhamento entre o expert e a oportunidade de mercado em 3 dimensões: Insight, Credibilidade, Sustentabilidade. Plugin 01 (Cartógrafo / Portal do Terreno, Seção 5). |
+| **Insumos Biográficos** | Experiências pessoais, momentos de virada, histórias vividas — tratados como matéria-prima para conteúdo, copy, posicionamento e narrativa de marca. Entram pela Forja do Conhecimento. |
+| **As Duas Chaves** | Inteligência (capacidade de processar e conectar) + Personalidade (disposição de agir de forma singular). Juntas formam a Chave Mestra. Ver FILOSOFIA.md. |
+| **Espiral Ascendente** | O ciclo SABER ↔ FAZER em progressão: cada volta mais profunda, com mais perspectiva, mais ferramentas, mais experiência acumulada. |
+| **100% Cérebro + 100% IA** | Princípio fundacional: a IA amplifica quem você se tornou, não substitui o pensamento. O expert desenvolve a mente; a IA executa e escala. |
 
 ---
 
@@ -71,20 +77,16 @@ Funil, copy, lançamento, ROI, infoproduto, esteira, branding, lead, conversão,
 
 ---
 
-## Os 10 Plugins
+## Os 6 Plugins
 
-| # | Nome | Camada | Função |
-|---|---|---|---|
-| 00 | Chaveiro | Meta | Mantém o sistema vivo e coerente |
-| 01 | Portal do Terreno | C1 | Inteligência de mercado estrutural |
-| 02 | Forja da Persona | C1 | SZC + Alma da Persona |
-| 03 | Pergaminho de Copy | C2 | Copy 3x5 + Método Carga |
-| 04 | Chavideo | C3 | Roteiros de vídeo + Progymnasmata |
-| 05 | Chavossel | C3 | Carrosséis editoriais + plugin Figma |
-| 06 | Mapa de Campanha | C4 | Modalidades + cronogramas + copy |
-| 07 | Esteira Notion | C5 | Integração direta com MINHA ESTEIRA |
-| 08 | Portal da Escala | C6 | Métricas, alavancas, oferta, equipe |
-| 09 | Forja do Conhecimento | C0 | Zettelkasten + Modelos Mentais + Estudo |
+| # | Nome | Camadas | Skills | Função |
+|---|---|---|---|---|
+| 00 | Chaveiro | Meta + C0 | chaveiro, forja-do-conhecimento, tesouro-dos-erros, ritual-da-chave | Guardião do sistema, conhecimento, prevenção de erros, planejamento |
+| 01 | Cartógrafo | C1 — Diagnóstico | portal-do-terreno, forja-da-persona, forja-do-universo | Mercado, persona, universo de marca, FOF |
+| 02 | Alquimista | C2 — Estratégia + C6 — Escala | pergaminho-de-copy, forja-de-oferta, portal-da-escala | Copy, oferta, Value Creation Loop, métricas |
+| 03 | Bardo | C3 — Criação | chavideo, chavossel, headline-generator, script-creator, script-analyzer, copy-enhancer | Vídeo, carrossel, headlines, scripts, otimização |
+| 04 | Arauto | C4 — Lançamento + C5 — Operação | mapa-de-campanha, esteira-notion, protocolo-massivo | Campanha, cronogramas Notion, protocolos intensivos |
+| 05 | Iluminista | Transversal | sistema-de-design, forja-de-imagem, arquiteto-de-experiencia, ponte-figma, publicador-visual | Design, imagem IA, UX, Figma, publicação |
 
 ---
 

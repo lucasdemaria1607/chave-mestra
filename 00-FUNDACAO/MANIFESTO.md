@@ -41,13 +41,21 @@ Para o produtor que quer escala sem perder alma. Que busca sistemas que multipli
 
 ## O Sistema
 
-7 camadas. 10 plugins. Do estudo à escala.
+Dois pilares. Seis plugins. Do estudo à escala. Do conhecimento à ação. Da ação de volta ao conhecimento.
 
-Não é um curso. É uma arquitetura de pensamento e execução que se auto-alimenta: quanto mais o expert aprende, mais o sistema produz. Quanto mais produz, mais aprende.
+Não é um curso. Não é um pack de prompts. Não é uma coleção de templates. É uma **arquitetura de pensamento e execução** que se auto-alimenta: quanto mais o expert aprende, mais o sistema produz. Quanto mais produz, mais aprende.
 
-A Forja do Conhecimento alimenta o Diagnóstico. O Diagnóstico alimenta a Estratégia. A Estratégia alimenta a Criação. A Criação alimenta o Lançamento. O Lançamento alimenta as Operações. As Operações alimentam a Escala. A Escala gera novos aprendizados que voltam para a Forja.
+**Pilar 1 — SABER:** Sistema de Conhecimento. Zettelkasten, Modelos Mentais, Tesouro dos Erros, Progymnasmata, Insumos Biográficos, Ritual da Chave. Onde a mente do expert se forja.
 
-O ciclo não para. O expert não para.
+**Pilar 2 — FAZER:** Sistema de Produção. Diagnóstico → Estratégia → Criação → Lançamento → Escala. Onde o pensamento vira ação no mundo.
+
+O ciclo SABER ↔ FAZER nunca para. O expert não para.
+
+**100% cérebro + 100% IA.** O sistema não substitui o pensamento — amplifica quem você se tornou. Se você se tornou profundo, a IA amplifica profundidade. Se você se tornou raso, a IA amplifica mediocridade.
+
+O objetivo não é produzir mais. É se tornar mais. E produzir como consequência.
+
+→ Ver `FILOSOFIA.md` para a tese completa.
 
 ---
 
