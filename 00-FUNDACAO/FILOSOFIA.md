@@ -117,22 +117,37 @@ O Sistema Chave Mestra opera em dois pilares:
 
 > *"Onde a mente do expert se forja."*
 
-Não é uma biblioteca. Não é um "segundo cérebro". É uma **oficina de pensamento** — um lugar onde ideias cruas são processadas, conectadas, testadas e transformadas em instrumentos de ação.
+Uma oficina de pensamento — um lugar onde ideias cruas são processadas, conectadas, testadas e transformadas em instrumentos de ação.
 
-**O que entra:**
+#### Os 4 Conceitos Fundacionais (ARQUITETURA)
+
+O Sistema de Conhecimento se sustenta em 4 conceitos que definem **como ele funciona** — a estrutura, não o conteúdo. São permanentes. O conteúdo muda; a arquitetura não.
+
+| Conceito | Papel funcional | O que faz |
+|----------|----------------|-----------|
+| **Zettelkasten** | Como o conhecimento é **registrado e conectado** | Notas atômicas interligadas. Cada ideia é uma nota. Notas conectadas revelam padrões que nenhuma nota sozinha mostra. Zona 0 (Inbox) → 1 (Literatura) → 2 (Permanente) → 3 (MOC). |
+| **Segundo Cérebro (PARA)** | Como o conhecimento é **organizado e acessado** | Framework de Tiago Forte adaptado: Projetos (esforços ativos de estudo), Áreas (lentes de cruzamento), Recursos (arsenal de referência), Arquivo (registro histórico). A estrutura que torna o Zettelkasten navegável e operacional. |
+| **Modelos Mentais** | Como o conhecimento é **destilado e aplicado** | Frameworks de pensamento extraídos das conexões entre notas. São as "lentes de decisão" — o **produto final** do sistema de conhecimento. Quem tem bons modelos mentais toma melhores decisões. Classificados por Domínio (origem) e Área de Impacto (aplicação). |
+| **Progymnasmata** | Como o conhecimento é **exercitado e incorporado** | Os 14 exercícios retóricos da tradição clássica, adaptados para o digital. Prática deliberada de pensamento e expressão. Não é teoria sobre escrever bem — é o treino que transforma conhecimento passivo em habilidade ativa. |
+
+**Distinção fundamental:** Esses 4 conceitos são a ARQUITETURA do sistema. Todo o resto — técnicas de leitura ativa, memorização, metacognição, pedagogia, autoeducação, hermenêutica, crítica literária, lógica, etc. — é CONTEÚDO que flui pela arquitetura. A arquitetura não muda. O conteúdo cresce infinitamente dentro dela, incrementado como aulas, notas, dicas, exercícios.
+
+#### Componentes Operacionais
+
+Além dos 4 conceitos fundacionais, o sistema opera com:
+
+- **Tesouro dos Erros** — erros não são vergonha. São os ativos mais valiosos do sistema. Um erro documentado com causa raiz, contexto e lição vale mais que dez acertos por sorte.
+- **Ritual da Chave** — disciplina de reflexão em 3 ciclos (Lua Cheia mensal, Forja Semanal, Giro da Chave diário). Sem disciplina de reflexão, experiência vira memória — não vira sabedoria.
+- **Insumos Biográficos** — experiências pessoais, momentos de virada, histórias vividas como matéria-prima para conteúdo, copy e posicionamento.
+
+#### O que entra no sistema:
+
 - Estudos formais (livros, cursos, papers, podcasts)
 - Experiências vividas (projetos, conversas, observações, viagens)
 - Insumos biográficos (história pessoal, memórias, relações, momentos formativos)
 - Erros e falhas (documentados com causa, contexto e lição)
 - Conteúdo consumido (artigos, vídeos, threads, qualquer estímulo intelectual)
 - Exercícios retóricos (Progymnasmata — prática deliberada de linguagem)
-
-**O que acontece lá dentro:**
-- **Zettelkasten** — notas atômicas que se conectam. Cada ideia é uma nota. Notas conectadas revelam padrões que nenhuma nota sozinha mostra.
-- **Modelos Mentais** — frameworks de pensamento extraídos das conexões. São as "lentes de decisão" — o produto final do sistema de conhecimento. Quem tem bons modelos mentais toma melhores decisões.
-- **Tesouro dos Erros** — erros não são vergonha. São os ativos mais valiosos do sistema. Um erro documentado com causa raiz, contexto e lição vale mais que dez acertos por sorte.
-- **Progymnasmata** — os 14 exercícios retóricos da tradição clássica, adaptados para o digital. Não é teoria sobre escrever bem — é prática deliberada de pensamento e expressão.
-- **Ritual da Chave** — disciplina de reflexão em 3 ciclos (Lua Cheia mensal, Forja Semanal, Giro da Chave diário). Sem disciplina de reflexão, experiência vira memória — não vira sabedoria.
 
 **O que sai:**
 - Notas que viram conteúdo (o expert publica o que pensa, não o que o mercado repete)

@@ -41,7 +41,20 @@ A Esteira é o motor operacional. Aqui vivem os produtos, o conteúdo, os client
 
 > *"Onde as ideias amadurecem."*
 
-O Sistema de Conhecimento é o cérebro. Aqui vivem os estudos, as notas, os modelos mentais, os exercícios de escrita e tudo que envolve **aprender, processar, conectar e amadurecer ideias**. Ele é organizado usando o framework **PARA** (Projects, Areas, Resources, Archive) adaptado para conhecimento.
+O Sistema de Conhecimento é o cérebro. Aqui vivem os estudos, as notas, os modelos mentais, os exercícios de escrita e tudo que envolve **aprender, processar, conectar e amadurecer ideias**.
+
+### Os 4 Conceitos Fundacionais (ARQUITETURA)
+
+Esses 4 conceitos definem **como o sistema funciona** — são permanentes. Todo o resto (técnicas de leitura, memorização, pedagogia, autoeducação, etc.) é conteúdo que flui pela arquitetura.
+
+| Conceito | Papel funcional |
+|----------|----------------|
+| **Zettelkasten** | Como o conhecimento é **registrado e conectado** — notas atômicas interligadas |
+| **Segundo Cérebro (PARA)** | Como o conhecimento é **organizado e acessado** — Projetos, Áreas, Recursos, Arquivo |
+| **Modelos Mentais** | Como o conhecimento é **destilado e aplicado** — frameworks de decisão (o produto final) |
+| **Progymnasmata** | Como o conhecimento é **exercitado e incorporado** — prática deliberada de pensamento e expressão |
+
+A organização abaixo usa o framework **PARA** (conceito #2) adaptado para conhecimento:
 
 ### Estrutura PARA
 
