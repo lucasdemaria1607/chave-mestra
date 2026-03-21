@@ -124,21 +124,32 @@ Cada plugin tem:
 
 ---
 
-## Fluxo Natural das Camadas
+## Fluxo Natural das Camadas (Value Creation Loop)
 
 ```
-Diagnóstico (Cartógrafo — terreno + persona + universo de marca)
-    ↓
-Estratégia (Alquimista — copy + oferta)
-    ↓
-Criação (Bardo — vídeo + carrossel)
-    ↓
-Lançamento + Operação (Arauto — campanha + Notion)
-    ↓
-Escala (Alquimista — métricas + alavancas)
-    ↑
-Base permanente (Chaveiro — conhecimento + erros + Ritual da Chave)
-Iluminista (transversal — design, imagem, Figma, Notion)
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+▼                                                         │
+Step 1: FOF — Diagnóstico (Cartógrafo — terreno + persona │
+              + universo de marca + Founder Opportunity    │
+              Fit)                                        │
+    ↓                                                     │
+Step 2-3: Validação + PMF — Estratégia (Alquimista —      │
+          copy + oferta + portal-da-escala Fase 1-2)      │
+    ↓                                                     │
+Step 4: Go To Market — Criação (Bardo — vídeo +           │
+        carrossel) + Lançamento (Arauto — campanha +      │
+        Notion)                                           │
+    ↓                                                     │
+Step 5: Scale Up — Escala (Alquimista — métricas +        │
+        alavancas, Fases 3-4)                             │
+    ↓                                                     │
+Step 6: Exit/Loop ────────────────────────────────────────┘
+        Arquivar (MINHA ESTEIRA) + Documentar (Chaveiro)
+        + Próximo tier da escada de valor
+
+Base permanente: Chaveiro (conhecimento + erros + Ritual da Chave)
+Transversal: Iluminista (design, imagem, Figma, Notion)
 ```
 
 ---

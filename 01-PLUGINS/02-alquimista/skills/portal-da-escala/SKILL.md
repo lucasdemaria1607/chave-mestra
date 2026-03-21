@@ -15,6 +15,7 @@ O Portal da Escala responde a pergunta que nenhum outro plugin do sistema toca: 
 Enquanto os outros plugins respondem "o que criar", "para quem" e "como vender", o Portal da Escala responde "o que otimizar", "onde reinvestir", "o que delegar" e "qual alavanca acionar agora". É a camada de gestão estratégica do sistema — sem ela, o criador gira em loop de produção sem construir ativo.
 
 Fundamentos deste plugin:
+- **Value Creation Loop** — o ciclo empreendedor de 6 passos (FOF → Validação → PMF → Go To Market → Scale Up → Exit/Loop)
 - **Equação de Valor de Alex Hormozi** — como aumentar o valor percebido da oferta
 - **4 Alavancas de Naval Ravikant** — como multiplicar receita sem multiplicar trabalho
 - **Value Ladder de Russell Brunson** — como construir uma esteira de produtos coerente
@@ -23,13 +24,151 @@ Fundamentos deste plugin:
 
 ---
 
+## Módulo 0 — Value Creation Loop (Meta-Framework)
+
+O Value Creation Loop é o ciclo completo da jornada empreendedora. Enquanto o Diagnóstico de Fase (Módulo 1) opera dentro do ciclo, o Loop fornece o mapa completo — inclusive o que vem antes e depois das 4 fases operacionais.
+
+Sintetizado a partir de Paul Asel (Founder Opportunity Fit), Steve Blank (Customer Development), Ash Maurya (Running Lean), Colin Campbell (Start. Scale. Exit. Repeat.) e 7-Fit Framework.
+
+### Os 6 Passos do Loop
+
+```
+    ┌──────────────────────────────────────────┐
+    │                                          │
+    ▼                                          │
+STEP 1: FOUNDER OPPORTUNITY FIT                │
+  "Eu sou a pessoa certa para este problema?"  │
+    │                                          │
+    ▼                                          │
+STEP 2: VALIDATION                             │
+  "O problema é real e pagam para resolver?"   │
+    │                                          │
+    ▼                                          │
+STEP 3: PRODUCT MARKET FIT                     │
+  "Meu produto resolve e indicam?"             │
+    │                                          │
+    ▼                                          │
+STEP 4: GO TO MARKET                           │
+  "Sei como encontrar e converter mais?"       │
+    │                                          │
+    ▼                                          │
+STEP 5: SCALE UP                               │
+  "O negócio funciona sem mim?"                │
+    │                                          │
+    ▼                                          │
+STEP 6: EXIT / LOOP ───────────────────────────┘
+  "Como capturo valor e inicio o próximo ciclo?"
+```
+
+### STEP 1 — Founder Opportunity Fit (FOF)
+
+**Antes de qualquer coisa:** o fundador/expert tem vantagem estrutural nesta oportunidade?
+
+Três dimensões de alinhamento:
+- **Insight** — Você vê algo que o mercado não vê? (produto, mercado ou estratégia)
+- **Competência funcional** — Você tem (ou recruta) as skills para executar?
+- **Sustentabilidade** — Consegue trabalhar nisso por 5+ anos sem esgotar?
+
+Para experts digitais, FOF = interseção entre expertise vivida, audiência existente e demanda de mercado. Sua reputação e história pessoal SÃO a vantagem injusta.
+
+**Diagnóstico FOF — 5 perguntas:**
+1. Você viveu o problema que vai resolver? (experiência ≠ estudo)
+2. Tem credibilidade reconhecida no nicho? (rede, resultados, reputação)
+3. Consegue nomear 10+ pessoas que têm esse problema AGORA?
+4. Existe demanda comprovável (buscas, comentários, perguntas recorrentes)?
+5. A oportunidade alinha com seus valores e energia para anos — não só meses?
+
+**Maioria SIM** → FOF confirmado, avançar para Validação.
+**Maioria NÃO** → Reconsiderar a oportunidade ou reposicionar o ângulo de entrada.
+
+**Plugin CM:** Cartógrafo (portal-do-terreno + forja-da-persona) — o FOF é confirmado pelo mapeamento de mercado e pela persona. Se a brecha identificada alinha com a autoridade do expert, o FOF é forte.
+
+### STEP 2 — Validation → Fase 1 do Diagnóstico (Módulo 1)
+
+Confirmar que existe demanda real com dinheiro na mesa. Não perguntar "você compraria?" — fazer a pessoa comprar.
+
+Sinais de validação para expert digital:
+- Workshop pago com 10+ inscritos (não gratuito — tem que haver dinheiro)
+- Lista de espera com emails qualificados (>20% de conversão)
+- Pré-venda de produto antes de criá-lo
+- Pessoas perguntando "quando abre?" sem você ter anunciado
+
+**Plugin CM:** Alquimista (forja-de-oferta para MVP) + Arauto (Meteórico para teste rápido)
+
+### STEP 3 — Product Market Fit → Transição Fase 1 → Fase 2
+
+PMF não é "vendi bastante". PMF é: **pessoas usam, completam, têm resultado e indicam.**
+
+Teste Sean Ellis: "Como você se sentiria se não pudesse mais usar este produto?"
+→ 40%+ respondendo "muito desapontado" = PMF confirmado.
+
+Sinais de PMF para expert digital:
+- Alunos completam o programa E obtêm resultado documentável
+- Testimonials chegam sem você pedir
+- >30% dos novos clientes vieram por indicação orgânica
+- Pedidos de "próximo nível" — clientes querendo mais de você
+
+**Plugin CM:** Alquimista (portal-da-escala — dashboard de métricas) + Chaveiro (tesouro-dos-erros para iterar)
+
+### STEP 4 — Go To Market → Fase 2 (Crescimento)
+
+Canal de aquisição previsível + unit economics saudável.
+
+Critério fundamental: LTV:CAC > 3:1 com payback < 6 meses.
+
+**Plugin CM:** Arauto (mapa-de-campanha — escolha de modalidade) + Bardo (conteúdo de aquisição) + Alquimista (métricas)
+
+### STEP 5 — Scale Up → Fases 3 e 4 (Escala + Otimização)
+
+Remover o fundador como gargalo. Sistematizar. Delegar. Automatizar.
+
+**Plugin CM:** Alquimista (portal-da-escala — alavancas + métricas)
+
+### STEP 6 — Exit / Loop
+
+Para experts digitais, Exit não é necessariamente vender a empresa. É **graduar um ciclo e iniciar o próximo com vantagens compostas.**
+
+Formas de Exit para expert digital:
+- **Graduar produto** — o curso/programa atingiu maturidade. Arquivar (MINHA ESTEIRA → Arquivado = true), documentar aprendizados, subir na escada de valor.
+- **Licenciar método** — transformar a metodologia em certificação que outros aplicam.
+- **Transição de marca** — construir marca que transcende o nome pessoal (método/plataforma).
+- **Venda** — vender a operação, a lista, a plataforma, a marca.
+- **Loop interno** — usar receita + audiência + aprendizados do produto A para validar produto B (próximo tier da escada de valor).
+
+**Por que é um loop:** cada saída reinicia o Step 1 com vantagens compostas:
+- Capital acumulado
+- Audiência existente (não parte do zero)
+- Reputação construída
+- Pattern recognition — erra menos, valida mais rápido
+- Rede de operadores e parceiros
+
+**Plugin CM:**
+- MINHA ESTEIRA (Arquivado = true) — preserva contexto da campanha
+- Chaveiro (tesouro-dos-erros + forja-do-conhecimento) — documenta aprendizados
+- Cartógrafo (portal-do-terreno) — mapeia próxima oportunidade com vantagens do ciclo anterior
+- Alquimista (esteira de valor) — identifica gap no próximo tier
+
+### Mapeamento Loop → Plugins CM
+
+| Step | Plugin Principal | Skill | Complementos |
+|---|---|---|---|
+| 1. FOF | Cartógrafo | portal-do-terreno + forja-da-persona | forja-do-universo |
+| 2. Validation | Alquimista + Arauto | forja-de-oferta + Meteórico | portal-da-escala (Fase 1) |
+| 3. PMF | Alquimista + Chaveiro | portal-da-escala + tesouro-dos-erros | métricas de retenção |
+| 4. Go To Market | Arauto + Bardo | mapa-de-campanha + conteúdo | esteira-notion |
+| 5. Scale Up | Alquimista | portal-da-escala (Fases 3-4) | alavancas + métricas |
+| 6. Exit/Loop | Chaveiro + Cartógrafo | tesouro-dos-erros + portal-do-terreno | MINHA ESTEIRA (archiving) |
+
+---
+
 ## Posição no Pipeline
 
 Portal do Terreno (01) e resultados de Campanha executada alimentam o Portal da Escala (08), que por sua vez informa a Esteira Notion (07) e o próximo Mapa de Campanha (06).
 
-O Portal da Escala é ativado em dois momentos:
-1. **Antes de criar** — para definir estratégia e prioridade do que construir
-2. **Depois de lançar** — para interpretar métricas e decidir o próximo movimento
+O Portal da Escala é ativado em três momentos:
+1. **Antes de começar** — FOF: diagnosticar alinhamento fundador-oportunidade (Step 1 do Loop)
+2. **Antes de criar** — para definir estratégia e prioridade do que construir (Steps 2-4)
+3. **Depois de lançar** — para interpretar métricas e decidir o próximo movimento (Steps 5-6)
 
 ---
 
@@ -37,30 +176,32 @@ O Portal da Escala é ativado em dois momentos:
 
 Todo negócio digital passa por 4 fases com lógicas completamente diferentes. A decisão errada para o estágio errado destrói mais resultado do que qualquer erro de copy.
 
+As 4 fases abaixo correspondem aos Steps 2-5 do Value Creation Loop (Módulo 0). O Step 1 (FOF) é pré-requisito — diagnosticado antes de entrar nas fases. O Step 6 (Exit/Loop) é a saída — ativado quando a Fase 4 atinge maturidade.
+
 ### As 4 Fases
 
-**FASE 1 — VALIDAÇÃO**
+**FASE 1 — VALIDAÇÃO** (Loop Step 2)
 O objetivo: confirmar que existe demanda real para esta oferta específica.
 Sinal de fase: menos de 50 clientes, sem receita recorrente, sem prova social documentada.
 O que fazer: vender de forma manual e pessoal. Conversar com cada cliente. Descobrir por que compraram exatamente. Não automatizar nada ainda.
 Não fazer: criar anúncios pagos em escala, contratar equipe, produzir muito conteúdo antes de validar a oferta.
 Métrica prioritária: número de vendas por contato direto, taxa de satisfação dos primeiros clientes.
 
-**FASE 2 — CRESCIMENTO**
+**FASE 2 — CRESCIMENTO** (Loop Steps 3-4)
 O objetivo: multiplicar o que funciona.
 Sinal de fase: 50–500 clientes, receita crescendo, pelo menos 1 canal de aquisição funcionando bem.
 O que fazer: dobrar produção de conteúdo no canal que funciona, testar campanhas pagas com orçamento baixo, construir base de email/WhatsApp, coletar depoimentos sistematicamente.
 Não fazer: diversificar canais prematuramente, criar produto novo sem esgotar o atual.
 Métrica prioritária: CPL, taxa de conversão de leads em clientes, volume de prova social documentada.
 
-**FASE 3 — ESCALA**
+**FASE 3 — ESCALA** (Loop Step 5)
 O objetivo: aumentar volume sem degradar qualidade — sistemas, automação, time cirúrgico.
 Sinal de fase: 500+ clientes, receita mensal previsível, pelo menos 1 assistente ou parceiro operacional.
 O que fazer: investir em anúncios com orçamento relevante, construir funil automatizado, contratar apoio operacional, criar produto complementar.
 Não fazer: escalar produto sem prova social robusta, delegar sem sistemas documentados.
 Métrica prioritária: ROAS, LTV, CAC por canal.
 
-**FASE 4 — OTIMIZAÇÃO**
+**FASE 4 — OTIMIZAÇÃO** (Loop Step 5 → transição para Step 6)
 O objetivo: aumentar margem e reduzir dependência do fundador.
 Sinal de fase: receita alta mas sensação de que o negócio depende demais da presença pessoal do criador.
 O que fazer: auditar onde o tempo vai, delegar funções operacionais, criar sistemas de liderança, documentar processos.
@@ -234,12 +375,18 @@ Fase 3. Alavanca: CÓDIGO mais CAPITAL. Próximo movimento: documentar processo 
 **Situação D: Receita alta, margem caindo, criador sobrecarregado**
 Fase 4. Alavanca: PESSOAS mais CAPITAL. Próximo movimento: auditoria de tempo (1 semana anotando cada tarefa), delegar tudo abaixo de R$100/hora do criador, revisar custos fixos. Campanha indicada: Protocolo Massivo (menos volume, mais margem).
 
+**Situação E: Produto maduro, resultados estáveis, criador querendo o próximo nível**
+Exit/Loop (Step 6). O produto atingiu maturidade — métricas estáveis, equipe funcional, processos documentados. Próximo movimento: arquivar a campanha (MINHA ESTEIRA → Arquivado = true), documentar aprendizados (Tesouro dos Erros + Forja do Conhecimento), identificar gap na escada de valor, reiniciar o Loop com FOF para o próximo produto/tier. A audiência e a receita do produto A financiam a validação do produto B.
+
 ---
 
 ## Formato de Output
 
 ```
 PORTAL DA ESCALA — [EXPERT / PRODUTO / NICHO]
+
+POSIÇÃO NO LOOP: [Step 1-6 do Value Creation Loop]
+FOF: [Confirmado / Parcial / A diagnosticar]
 
 DIAGNÓSTICO DE FASE: [1 / 2 / 3 / 4]
 Justificativa: [2-3 linhas]
@@ -260,6 +407,10 @@ PRÓXIMO MOVIMENTO:
 [1 coisa para parar de fazer]
 
 CAMPANHA RECOMENDADA: [Modalidade + justificativa]
+
+VISÃO DE LOOP:
+[Onde está no ciclo e qual é o próximo Step natural]
+[Se aplicável: quando considerar Exit/Loop para o próximo tier]
 ```
 
 ---
@@ -281,18 +432,22 @@ CAMPANHA RECOMENDADA: [Modalidade + justificativa]
 
 ## Regras do Portal da Escala
 
-1. **Fase antes de estratégia** — nunca recomendar escala antes de confirmar a fase atual
+1. **Loop antes de fase, fase antes de estratégia** — primeiro confirmar FOF, depois diagnosticar fase, depois recomendar ação
 2. **Uma alavanca por vez** — ativar múltiplas alavancas sem capacidade operacional é dispersão
 3. **Validar antes de automatizar** — código e capital só funcionam quando o processo manual já converteu
 4. **Esteira coerente** — cada produto deve ser tão bom que o cliente queira naturalmente o próximo
 5. **Margem é mais importante que faturamento** — crescer receita com margem caindo é construir um problema maior
 6. **Métricas informam, não decidem** — use os números para confirmar hipóteses, não para substituir julgamento
+7. **O loop é contínuo** — todo produto maduro eventualmente atinge Exit. Preparar a saída desde a Fase 3 (documentar, sistematizar, tornar transferível)
 
 ---
 
 ## Referências Cruzadas
 
-- `portal-do-terreno.md` — estado do mercado informa fase e alavanca adequada
+- `portal-do-terreno/SKILL.md` — estado do mercado informa FOF e fase; diagnóstico de alinhamento fundador-oportunidade
+- `forja-da-persona/SKILL.md` — persona confirma se a oportunidade tem fit com o expert
+- `forja-de-oferta/SKILL.md` — MVP de oferta para Step 2 (Validação)
 - `modalidades.md` — campanha recomendada pela Matriz de Decisão usa templates aqui
-- `notion-integracao.md` — painel de métricas alimenta a Esteira Notion
+- `esteira-notion/SKILL.md` — painel de métricas alimenta a Esteira Notion + archiving para Exit/Loop
+- `tesouro-dos-erros/SKILL.md` — documentação de aprendizados no Exit/Loop
 - `copy-3x5.md` — nível de consciência informado pelo estado do negócio informa proporção C1/C2/C3

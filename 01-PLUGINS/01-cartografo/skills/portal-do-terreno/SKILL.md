@@ -39,12 +39,14 @@ A diferença parece sutil. O resultado é total.
 - O SZC foi feito mas as tensões identificadas precisam de validação estrutural
 - O usuário quer saber se existe brecha real antes de criar produto
 - Um produto existente está estagnado e a causa pode ser posicionamento
+- **O expert quer validar Founder Opportunity Fit** — confirmar se tem vantagem estrutural neste mercado antes de investir (Step 1 do Value Creation Loop)
 
 **Use antes de:**
 - SZC (o terreno alimenta o Status Quo e sugere o Zeitgeist)
 - Alma da Persona (os players dominantes definem o "inimigo imaginário" da persona)
 - Qualquer campanha (o panorama de ofertas define o que você não pode prometer)
 - Qualquer produto novo (as brechas definem o que você deve prometer)
+- Portal da Escala (o terreno + persona confirmam o FOF antes do diagnóstico de fase)
 
 ---
 
@@ -64,7 +66,7 @@ Se o usuário não tiver esses dados completos, faça as perguntas acima antes d
 
 ## ESTRUTURA DO RELATÓRIO DE TERRENO
 
-O output do Portal do Terreno é o **Relatório de Terreno** — um documento de diagnóstico em 5 seções + ponte para o SZC.
+O output do Portal do Terreno é o **Relatório de Terreno** — um documento de diagnóstico em 7 seções: mapeamento estrutural (1-4), diagnóstico de alinhamento fundador-oportunidade (5), posicionamento recomendado (6), e insumos para o SZC (7).
 
 ---
 
@@ -166,7 +168,34 @@ Lista de 3–6 brechas identificadas, cada uma com:
 
 ---
 
-### SEÇÃO 5 — POSICIONAMENTO RECOMENDADO
+### SEÇÃO 5 — FOUNDER OPPORTUNITY FIT (FOF)
+
+**Objetivo:** Diagnosticar se o expert/fundador tem vantagem estrutural nesta oportunidade — antes de investir em produto, campanha ou conteúdo.
+
+Este diagnóstico corresponde ao **Step 1 do Value Creation Loop** (ver portal-da-escala/SKILL.md, Módulo 0). O FOF cruza dados do mapeamento de terreno com o perfil do expert para confirmar alinhamento.
+
+**Três dimensões de alinhamento:**
+
+**1. Insight — Você vê algo que o mercado não vê?**
+Cruzar com Seção 4 (Matriz de Brechas): as brechas identificadas alinham com a experiência única do expert? Existem padrões que só quem viveu o problema enxerga?
+
+**2. Credibilidade — O mercado te reconhece?**
+Cruzar com Seção 1 (Mapa de Players): onde o expert se posiciona na hierarquia atual? Tem rede, resultados documentados, reputação que os players reconhecem? Tem audiência existente?
+
+**3. Sustentabilidade — Você aguenta a jornada?**
+Cruzar com Seção 3 (Análise de Canais): o expert domina os canais necessários? Tem energia e interesse para produzir conteúdo neste nicho por anos?
+
+**Output esperado:**
+Diagnóstico de FOF em 3 níveis:
+- **FOF Forte** — Brecha real + credibilidade existente + energia sustentável. Avançar para Validação.
+- **FOF Parcial** — Brecha existe mas falta credibilidade, ou credibilidade existe mas brecha é fraca. Reposicionar ângulo de entrada.
+- **FOF Fraco** — Sem alinhamento estrutural. Reconsiderar oportunidade ou pivotar para subnicho onde o alinhamento seja maior.
+
+Incluir: 1-2 linhas de recomendação sobre como fortalecer o FOF se parcial (ex: "construir autoridade via conteúdo educativo por 3 meses antes de lançar produto").
+
+---
+
+### SEÇÃO 6 — POSICIONAMENTO RECOMENDADO
 
 **Objetivo:** Traduzir o mapeamento em uma hipótese de posicionamento para o usuário.
 
@@ -190,7 +219,7 @@ Finalizar com uma **Recomendação Principal** — o posicionamento com maior po
 
 ---
 
-### SEÇÃO 6 — INSUMOS PARA O SZC
+### SEÇÃO 7 — INSUMOS PARA O SZC
 
 **Objetivo:** Alimentar o SZC com dados estruturais para que as narrativas sejam ancoradas em realidade, não em impressão.
 
@@ -226,8 +255,9 @@ Antes de entregar o Relatório de Terreno, verificar:
 - [ ] Seção 2 tem preços reais ou faixas aproximadas baseadas no nicho, não estimativas genéricas
 - [ ] Seção 3 diferencia comportamento por canal — não trata todos os canais como iguais
 - [ ] Seção 4 tem pelo menos 3 brechas com evidência explícita, não especulação
-- [ ] Seção 5 (se gerada) tem posicionamentos específicos e diferenciados entre si, não variações do mesmo ângulo
-- [ ] Seção 6 está em linguagem de insumo — dados brutos, não narrativa elaborada (essa é função do SZC)
+- [ ] Seção 5 tem diagnóstico FOF claro (Forte/Parcial/Fraco) com cruzamento explícito entre brechas e perfil do expert
+- [ ] Seção 6 (se gerada) tem posicionamentos específicos e diferenciados entre si, não variações do mesmo ângulo
+- [ ] Seção 7 está em linguagem de insumo — dados brutos, não narrativa elaborada (essa é função do SZC)
 - [ ] Nenhuma seção tem linguagem genérica tipo "o mercado é muito competitivo" sem especificidade
 
 ---
@@ -277,6 +307,7 @@ O Relatório de Terreno é o documento zero. Tudo que vem depois parte dele.
 - `alma-da-persona.md` — os players e a oferta dominante definem o "inimigo" que a persona enfrenta
 - `copy-3x5.md` — o posicionamento recomendado se torna espinha de C2 (marca/símbolo)
 - `modalidades.md` — as brechas de formato informam qual modalidade de lançamento é mais estratégica
+- `portal-da-escala/SKILL.md` — o FOF diagnosticado aqui (Seção 5) é o Step 1 do Value Creation Loop que o Portal da Escala opera
 
 ---
 
