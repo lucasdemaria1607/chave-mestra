@@ -4,7 +4,7 @@
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
-import content from "./content.json" with { type: "json" };
+import content from "./content.js";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 

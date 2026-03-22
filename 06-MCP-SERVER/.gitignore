@@ -1,3 +1,4 @@
 node_modules/
 dist/
+src/content.ts
 src/content.json
