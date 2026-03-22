@@ -90,6 +90,8 @@ Experiência / Biografia → Insumo Biográfico → Conteúdo / Branding / Copy
 
 ### Views no Notion (Banco de Dados: Notas)
 
+**Views de Captura (existentes):**
+
 | View | Tipo | O que mostra |
 |---|---|---|
 | **Inbox** | Table | Notas em Zona: Inbox, ordenadas por data (mais recentes primeiro) |
@@ -99,6 +101,19 @@ Experiência / Biografia → Insumo Biográfico → Conteúdo / Branding / Copy
 | **Insumos Biograficos** | Gallery | Apenas Experiência + Biografia — seu arsenal narrativo |
 | **Timeline** | Calendar | Notas organizadas por data — veja o ritmo de captura |
 
+**Views do Ciclo da Forja (assimilação periódica):**
+
+| View | Tipo | Filtro | Propósito |
+|---|---|---|---|
+| 📥 **Inbox Pendente** | Table | Status = Capturada | O que entrou e não foi tocado |
+| 🔥 **Em Maturação** | Board (by Ciência) | Status = Em processamento | O que está sendo digerido |
+| 💎 **Prontas Não Usadas** | Table | Conectada + Incorporada = false | Tesouro adormecido — ouro parado |
+| ✅ **Já Incorporadas** | Board (by Destino) | Incorporada = true | Rastreio de uso real |
+| ⏰ **Revisão Vencida** | Table | Status ≠ Capturada + Última Revisão vazia | O que precisa de atenção |
+| 🔁 **Temas Recorrentes** | Board (by Tags) | Todas | Onde a cabeça insiste em ir |
+| 🎯 **Radar por Ciência** | Board (by Ciência) | Todas | Tendências do especialista |
+| 🌱 **Sementes de Alto Potencial** | Gallery | Potencial = Semente/Broto + não incorporada | Ideias que podem virar algo grande |
+
 ### Regras de Captura
 
 1. **Quantidade > qualidade no início** — capturar rápido e imperfeito é melhor que não capturar
@@ -107,6 +122,83 @@ Experiência / Biografia → Insumo Biográfico → Conteúdo / Branding / Copy
 4. **Formato é guia, não camisa de força** — adapte o template ao que faz sentido
 5. **Inbox é temporário** — notas em Inbox há mais de 7 dias devem ser processadas ou descartadas na Forja Semanal
 6. **Tudo volta** — toda nota capturada eventualmente alimenta conteúdo, produto, decisão ou modelo mental
+
+---
+
+## Ciclo da Forja — Assimilação Periódica
+
+O Ciclo da Forja é o sistema de revisão e incorporação que garante que nada capturado fique parado. Sem ele, o Zettelkasten vira cemitério de notas. Com ele, cada nota tem destino: vira conteúdo, copy, oferta, aula, modelo mental ou é descartada conscientemente.
+
+### Propriedades de Assimilação
+
+| Propriedade | Tipo | Função |
+|---|---|---|
+| **Incorporada** | Checkbox | A nota já foi usada em algum output real? |
+| **Destino de Uso** | Multi-select | Onde foi usada: Conteúdo, Copy, Oferta, Produto, Worldbuilding, Aula, Exercício, Insight Pessoal |
+| **Potencial** | Select | Maturidade percebida: Semente → Broto → Árvore → Fruto → Esgotado |
+| **Última Revisão** | Date | Quando a nota foi revisada pela última vez |
+| **Recorrência** | Number | Quantas vezes esse tema apareceu (incrementar a cada vez que cruza com o mesmo tema) |
+
+### As 3 Camadas de Varredura
+
+**Camada 1 — Varredura Semanal (micro) — 15-30min**
+- View: 📥 Inbox Pendente
+- Ação: classificar Tipo, Zona, Formato, Ciência, Tags
+- Mover para "Em processamento" ou descartar
+- Regra: notas em Inbox há mais de 7 dias → processar ou deletar
+
+**Camada 2 — Destilação Quinzenal (meso) — 45-60min**
+- View: 🔥 Em Maturação
+- Ação: reescrever "Na minha voz", conectar com outras notas, identificar padrão
+- Se vira Permanente → preencher Argumento + Evidência
+- Marcar Potencial (Semente/Broto/Árvore)
+- Atualizar Última Revisão
+- Incrementar Recorrência se tema já apareceu antes
+
+**Camada 3 — Incorporação Mensal (macro) — 1-2h**
+- Views: 💎 Prontas Não Usadas + 🌱 Sementes de Alto Potencial + ⏰ Revisão Vencida
+- Pergunta central: "Isso vira conteúdo? Copy? Aula? Oferta? Nada ainda?"
+- Se sim → marcar Incorporada ✅ + Destino de Uso + linkar Produto
+- Se não → manter, atualizar Potencial
+- **Radar**: usar 🎯 Radar por Ciência + 🔁 Temas Recorrentes para identificar clusters, picos e tendências
+
+### Métricas do Especialista (Radar)
+
+Com as propriedades de assimilação, o agente pode calcular sob demanda:
+
+| Métrica | Cálculo | O que revela |
+|---|---|---|
+| **Taxa de Assimilação** | % Capturada → Conectada | Quanto do que consome vira conhecimento real |
+| **Taxa de Incorporação** | % Conectada → Incorporada | Quanto do conhecimento vira output |
+| **Picos de Interesse** | Concentração de notas por Ciência (últimos 30d) | Para onde a mente está indo |
+| **Habilidades Emergentes** | Domínios com crescimento acelerado | Competências em formação |
+| **Temas Obsessivos** | Tags com Recorrência > 5 | Padrões de pensamento dominantes |
+| **Velocidade da Forja** | Tempo médio Capturada → Publicada | Eficiência do pipeline |
+
+### Integração com Rituais
+
+O Ciclo da Forja se encaixa nos rituais existentes:
+
+- **Giro da Chave (diário)** → captura rápida, 0 processamento obrigatório
+- **Forja Semanal** → Camada 1 (Varredura Semanal) integrada à pauta
+- **Lua Cheia (mensal)** → Camada 2 + 3 (Destilação + Incorporação) como parte do planejamento
+- **Agente Claude** → pode executar qualquer camada sob demanda ("varre minha inbox", "o que tenho parado?", "radar das últimas semanas")
+
+### Comandos para o Agente
+
+O agente pode executar o Ciclo da Forja via linguagem natural:
+
+| Comando | Ação |
+|---|---|
+| "varre minha inbox" / "varredura semanal" | Listar 📥 Inbox Pendente, sugerir classificações |
+| "destila as notas" / "destilação quinzenal" | Listar 🔥 Em Maturação, sugerir conexões e evolução |
+| "o que tenho parado?" / "tesouro adormecido" | Listar 💎 Prontas Não Usadas com sugestões de uso |
+| "radar do especialista" / "minhas tendências" | Calcular métricas e apresentar radar completo |
+| "o que posso usar pra conteúdo?" | Filtrar notas com Potencial alto + não incorporadas |
+| "marca como incorporada" + nota | Atualizar Incorporada ✅ + pedir Destino de Uso |
+| "revisão geral" / "incorporação mensal" | Executar Camada 3 completa |
+
+> Para documentação completa do Ciclo da Forja, ver `ciclo-da-forja.md`.
 
 ---
 
@@ -294,6 +386,7 @@ Ao encerrar qualquer campanha, executar o protocolo de captura:
 
 ## Referências Cruzadas
 
+- `ciclo-da-forja.md` — **documentação completa do Ciclo da Forja** (3 camadas, métricas, automação, integração)
 - `templates-de-captura.md` — templates de corpo para os 16 formatos de entrada
 - `modelos-mentais.md` — como criar, classificar e conectar Modelos Mentais
 - `arsenal-epistemologico.md` — ferramentas de pensamento e análise
