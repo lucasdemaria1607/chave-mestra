@@ -1,14 +1,12 @@
 /**
- * Vercel Serverless Function — MCP endpoint (stateless, JSON response mode).
+ * Vercel Serverless Function — MCP endpoint (fully stateless).
  *
- * Based on the official MCP SDK jsonResponseStreamableHttp example.
- * Each request creates a fresh server — no session persistence needed
- * since all tools are stateless reads.
+ * Based on the official MCP SDK simpleStatelessStreamableHttp example.
+ * sessionIdGenerator: undefined → no sessions, each request is self-contained.
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
-import { isInitializeRequest } from "@modelcontextprotocol/sdk/types.js";
 import { createServer } from "../src/server.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -47,12 +45,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
       const server = createServer();
       const transport = new StreamableHTTPServerTransport({
-        sessionIdGenerator: () => crypto.randomUUID(),
-        enableJsonResponse: true,
+        sessionIdGenerator: undefined,
       });
 
       await server.connect(transport);
       await transport.handleRequest(req, res, req.body);
+
+      res.on("close", () => {
+        transport.close();
+        server.close();
+      });
     } catch (err) {
       console.error("MCP handler error:", err);
       if (!res.headersSent) {
