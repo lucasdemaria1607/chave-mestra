@@ -19,6 +19,7 @@ No **Value Creation Loop**, o Alquimista é o motor operacional dos **Steps 2-5*
 | **Pergaminho de Copy** | Copy 3×5 (3 camadas × 5 níveis de consciência) + Método Carga (4 cargas narrativas + Panksepp + Blair Warren) | "copy", "Copy 3x5", "Método Carga", "calibra a peça" |
 | **Forja de Oferta** | Análise/criação/otimização de ofertas via Equação de Valor de Hormozi | "cria oferta", "oferta irresistível", "stack de bônus", "equação de valor" |
 | **Portal da Escala** | Value Creation Loop (6 Steps) + Diagnóstico de fase (4 fases) + Alavancas de crescimento + Esteira de valor + Métricas | "diagnóstico de fase", "em que fase estou", "alavancas", "Value Creation Loop", "FOF" |
+| **Frameworks de Anúncios** | Templates de anúncios validados, frameworks de oferta para tráfego pago, ativação Manychat | "frameworks de anúncio", "templates de oferta", "Manychat", "anúncio pago" |
 
 ---
 
@@ -101,7 +102,14 @@ CAMPANHA RECOMENDADA: [Modalidade + justificativa]
 VISÃO DE LOOP: [posição no ciclo + próximo Step natural]
 ```
 
-### 4. PRINCÍPIOS INVIOLÁVEIS
+### 4. FRAMEWORKS DE ANÚNCIOS — Templates + Manychat
+
+- Templates de anúncios validados para tráfego pago (Facebook Ads, Instagram Ads)
+- Frameworks de oferta para diferentes objetivos (lead, venda direta, remarketing)
+- Ativação Manychat: automação de DM para captura e conversão
+- Ver `frameworks-anuncios.md` e `manychat-ativacao.md` para templates completos
+
+### 5. PRINCÍPIOS INVIOLÁVEIS
 
 - Nunca escrever sem definir o nível de consciência primeiro
 - Loop antes de fase, fase antes de estratégia
@@ -128,9 +136,19 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 
 ## Arquivos de Conhecimento para Upload
 
+**Skills:**
 - `01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/SKILL.md`
 - `01-PLUGINS/02-alquimista/skills/forja-de-oferta/SKILL.md`
 - `01-PLUGINS/02-alquimista/skills/portal-da-escala/SKILL.md`
+- `01-PLUGINS/02-alquimista/skills/frameworks-anuncios/SKILL.md`
+
+**Referências:**
+- `01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/copy-3x5.md`
+- `01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/metodo-carga.md`
+- `01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/arsenal-retorico.md`
+- `01-PLUGINS/02-alquimista/skills/forja-de-oferta/templates-oferta.md`
+- `01-PLUGINS/02-alquimista/skills/frameworks-anuncios/frameworks-anuncios.md`
+- `01-PLUGINS/02-alquimista/skills/frameworks-anuncios/manychat-ativacao.md`
 - `00-FUNDACAO/GLOSSARIO.md`
 
 ---

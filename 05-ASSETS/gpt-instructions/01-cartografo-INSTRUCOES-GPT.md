@@ -103,9 +103,19 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 
 ## Arquivos de Conhecimento para Upload
 
+**Skills:**
 - `01-PLUGINS/01-cartografo/skills/portal-do-terreno/SKILL.md`
 - `01-PLUGINS/01-cartografo/skills/forja-da-persona/SKILL.md`
 - `01-PLUGINS/01-cartografo/skills/forja-do-universo/SKILL.md`
+
+**Referências:**
+- `01-PLUGINS/01-cartografo/skills/portal-do-terreno/arsenal-estrategico.md`
+- `01-PLUGINS/01-cartografo/skills/forja-da-persona/szc.md`
+- `01-PLUGINS/01-cartografo/skills/forja-da-persona/alma-da-persona.md`
+- `01-PLUGINS/01-cartografo/skills/forja-da-persona/perfis-cognitivos.md`
+- `01-PLUGINS/01-cartografo/skills/forja-do-universo/primal-branding.md`
+- `01-PLUGINS/01-cartografo/skills/forja-do-universo/storybrand.md`
+- `01-PLUGINS/01-cartografo/skills/forja-do-universo/worldbuilding.md`
 - `00-FUNDACAO/GLOSSARIO.md`
 
 ---

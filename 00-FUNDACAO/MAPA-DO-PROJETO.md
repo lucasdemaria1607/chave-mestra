@@ -155,18 +155,18 @@ O que muda: a camada C2 do Pergaminho de Copy (linguagem de tribo, léxico propr
 
 | Função | Ferramenta | Plugin(s) |
 |---|---|---|
-| Sistema de conhecimento | Obsidian | 00 — Chaveiro |
-| Criação e IA | Claude Projects | todos |
+| Sistema de conhecimento (Zettelkasten) | Notion | 00 — Chaveiro |
+| Criação e IA | Claude (Code + Projects + MCP) | todos |
 | Armazenamento e referências | Google Drive | todos |
-| Organização e operação | Notion | 04 — Arauto |
+| Organização e operação (MINHA ESTEIRA) | Notion | 04 — Arauto |
 | Design de carrosséis | Figma + Plugin Chavossel | 03 — Bardo |
 | Design e produção visual | Figma MCP + Nano Banana Pro | 05 — Iluminista |
 | Edição de vídeo curto | CapCut / Edits | 03 — Bardo |
 | Gravação YouTube | OBS | 03 — Bardo |
 | Geração de imagem IA | Nano Banana Pro (Gemini API) | 05 — Iluminista |
 | Distribuição DM | Manychat | 04 — Arauto |
-| Venda low-ticket | Cakto | 04 — Arauto |
-| Comunidade flagship | Hotmart Comunidade | 04 — Arauto |
+| Venda (todas as faixas) | Cakto / Hotmart | 04 — Arauto |
+| Comunidade (A Ordem) | Hotmart Comunidade | 04 — Arauto |
 
 ---
 
@@ -181,31 +181,57 @@ O que muda: a camada C2 do Pergaminho de Copy (linguagem de tribo, léxico propr
 
 ---
 
-## HIERARQUIA DE PRODUTOS
+## HIERARQUIA DE PRODUTOS (Escada de Valor)
 
-### Gratuito — Topo de Funil
-**Pergaminhos Brancos** — conteúdo orgânico de valor
+A escada de valor define o que é PRODUTO — o que se vende. Abaixo dela existe conteúdo orgânico (Pergaminhos Brancos) que atrai, mas não é produto.
+
+### Conteúdo Orgânico — Topo de Funil (não é produto)
+**Pergaminhos Brancos** — conteúdo gratuito de valor
 Carrosséis (Chavossel), Reels e vídeos curtos (Chavideo), posts
-*Função: atrair portadores, criar curiosidade, filtrar afinidade*
+*Função: atrair portadores, criar curiosidade, filtrar afinidade. Não monetiza diretamente.*
 
-### Low-Ticket — Cakto (R$27–R$97)
-**Pergaminhos Pretos** — materiais prontos para usar
-Templates, roteiros, sistemas específicos, diagnósticos, coleções temáticas
-*Função: entrada na Ordem, monetização de conhecimento pontual*
+### Tier 1 — Pergaminhos Avulsos (R$47–R$197)
+**Pergaminhos Pretos** — materiais específicos prontos para usar
+Templates, roteiros, sistemas pontuais, diagnósticos, mini-frameworks
+*Função: primeira compra. Entrada monetária. Teste de comprometimento.*
 
-### Mid-Ticket (R$197–R$497)
-**Coleções Temáticas** — conjuntos coerentes com propósito definido
-Ex: Coleção Chavideo (sistema completo de roteiros), Coleção Cruzada 7 Dias
-*Função: aprofundamento, compromisso maior do portador*
+### Tier 2 — Arsenal Starter (R$297–R$497)
+**Coleções temáticas** — bundles coerentes por Ordem
+Ex: Ordem do Mapa (diagnóstico completo), Ordem da Pena (criação completa)
+*Função: aprofundamento. O portador compra uma etapa inteira da jornada.*
 
-### High-Ticket — Hotmart Comunidade
-**A Chave Mestra Completa**
-Sistema no Notion, acesso à Ordem, Pergaminhos Dourados em liberação progressiva, acompanhamento e expansão contínua
-*Função: pertencimento total ao universo, receita recorrente*
+### Tier 3 — A Ordem (R$1.997–R$3.997, vitalício ou anual)
+**Pergaminhos Dourados** + acesso ao sistema completo + comunidade
+Sistema no Notion, acesso à Ordem, Pergaminhos Dourados em liberação progressiva, acompanhamento contínuo
+*Função: pertencimento total ao universo. Receita concentrada (NÃO assinatura mensal).*
 
-### Tesouro dos Erros
+### Tier 4 — Implementação (R$5.000–R$15.000)
+**Coprodução assistida** — o sistema aplicado ao negócio do cliente
+Diagnóstico, estratégia, criação e lançamento operados em conjunto
+*Função: done-with-you. Alto ticket, alta entrega.*
+
+### Tier 5 — Certificação (R$25.000+)
+**Licenciamento do método** — formação de operadores Chave Mestra
+O portador aprende a aplicar o sistema para seus clientes
+*Função: escalabilidade via pessoas. O método replica sem o criador.*
+
+### Tesouro dos Erros (transversal — não é tier)
 Tudo que não funcionou — documentado, lapidado, transformado em pergaminho.
 O fracasso como ativo. A jornada como produto.
+
+---
+
+## SEPARAÇÃO: SISTEMA INTERNO vs FRAMEWORK vs PRODUTO
+
+O Sistema Chave Mestra opera em 3 camadas de uso:
+
+| Camada | O que é | Exemplo | Vendável? |
+|--------|---------|---------|-----------|
+| **Sistema interno** | Ferramentas operacionais do Lucas/Grigo | MINHA ESTEIRA, Zettelkasten Notion, rituais | Não — é infraestrutura |
+| **Framework replicável** | Metodologias aplicáveis a qualquer expert | Value Creation Loop, Copy 3x5, Progymnasmata, SZC | Sim — é a lógica vendida nos produtos |
+| **Produto empacotado** | O que o portador compra | Pergaminhos, Arsenal, A Ordem, Implementação | Sim — é o que gera receita |
+
+**MINHA ESTEIRA** é operação interna. O Value Creation Loop é framework vendável. A Ordem é produto. Nunca confundir as três camadas.
 
 ---
 
@@ -291,7 +317,7 @@ CHAVE-MESTRA/
 ### Claude Projects
 
 ```
-ARSENAL COMPLETO        ← todos os 19 SKILL.md + referências completas
+ARSENAL COMPLETO        ← todos os 25 SKILL.md + referências completas
 KIT DIAGNÓSTICO         ← Cartógrafo + Alquimista (copy)
 KIT CRIAÇÃO             ← Alquimista (copy) + Bardo
 KIT LANÇAMENTO          ← Arauto + Alquimista (oferta)

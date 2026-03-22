@@ -110,12 +110,20 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 
 ## Arquivos de Conhecimento para Upload
 
+**Skills:**
 - `01-PLUGINS/03-bardo/skills/chavideo/SKILL.md`
 - `01-PLUGINS/03-bardo/skills/chavossel/SKILL.md`
 - `01-PLUGINS/03-bardo/skills/headline-generator/SKILL.md`
 - `01-PLUGINS/03-bardo/skills/script-creator/SKILL.md`
 - `01-PLUGINS/03-bardo/skills/script-analyzer/SKILL.md`
 - `01-PLUGINS/03-bardo/skills/copy-enhancer/SKILL.md`
+
+**Referências:**
+- `01-PLUGINS/03-bardo/skills/chavideo/progymnasmata-video-map.md`
+- `01-PLUGINS/03-bardo/skills/chavideo/cinematicas-combinacoes.md`
+- `01-PLUGINS/03-bardo/skills/chavideo/arsenal-narrativo.md`
+- `01-PLUGINS/03-bardo/skills/chavossel/exercicios.md`
+- `01-PLUGINS/03-bardo/skills/chavossel/exemplos.md`
 - `00-FUNDACAO/GLOSSARIO.md`
 
 ---

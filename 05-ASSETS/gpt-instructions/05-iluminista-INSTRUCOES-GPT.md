@@ -123,11 +123,15 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 
 ## Arquivos de Conhecimento para Upload
 
+**Skills:**
 - `01-PLUGINS/05-iluminista/skills/sistema-de-design/SKILL.md`
 - `01-PLUGINS/05-iluminista/skills/forja-de-imagem/SKILL.md`
 - `01-PLUGINS/05-iluminista/skills/arquiteto-de-experiencia/SKILL.md`
 - `01-PLUGINS/05-iluminista/skills/ponte-figma/SKILL.md`
 - `01-PLUGINS/05-iluminista/skills/publicador-visual/SKILL.md`
+
+**Referências:**
+- `01-PLUGINS/05-iluminista/skills/arquiteto-de-experiencia/principios-visuais.md`
 - `00-FUNDACAO/GLOSSARIO.md`
 
 ---

@@ -19,17 +19,19 @@ Para adicionar arquivos: dentro do projeto → "Add content" → arrastar ou col
 
 ## KIT 1 — ARSENAL COMPLETO
 
-**Todos os 6 plugins. Use para trabalho completo e integrado.**
+**Todos os 6 plugins, 25 skills. Use para trabalho completo e integrado.**
 
 ### Arquivos para subir no Project Knowledge
 
-**SKILL.md dos 6 plugins (19 skills):**
+**SKILL.md dos 6 plugins (25 skills):**
 ```
 01-PLUGINS/00-chaveiro/skills/chaveiro/SKILL.md
 01-PLUGINS/00-chaveiro/skills/forja-do-conhecimento/SKILL.md
 01-PLUGINS/00-chaveiro/skills/tesouro-dos-erros/SKILL.md
+01-PLUGINS/00-chaveiro/skills/ritual-da-chave/SKILL.md
 01-PLUGINS/01-cartografo/skills/portal-do-terreno/SKILL.md
 01-PLUGINS/01-cartografo/skills/forja-da-persona/SKILL.md
+01-PLUGINS/01-cartografo/skills/forja-do-universo/SKILL.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/SKILL.md
 01-PLUGINS/02-alquimista/skills/forja-de-oferta/SKILL.md
 01-PLUGINS/02-alquimista/skills/portal-da-escala/SKILL.md
@@ -52,81 +54,104 @@ Para adicionar arquivos: dentro do projeto → "Add content" → arrastar ou col
 
 **Referências (subir junto):**
 ```
+01-PLUGINS/00-chaveiro/skills/forja-do-conhecimento/modelos-mentais.md
+01-PLUGINS/00-chaveiro/skills/forja-do-conhecimento/arsenal-epistemologico.md
+01-PLUGINS/00-chaveiro/skills/forja-do-conhecimento/ciclo-da-forja.md
+01-PLUGINS/01-cartografo/skills/portal-do-terreno/arsenal-estrategico.md
 01-PLUGINS/01-cartografo/skills/forja-da-persona/szc.md
 01-PLUGINS/01-cartografo/skills/forja-da-persona/alma-da-persona.md
+01-PLUGINS/01-cartografo/skills/forja-da-persona/perfis-cognitivos.md
+01-PLUGINS/01-cartografo/skills/forja-do-universo/primal-branding.md
+01-PLUGINS/01-cartografo/skills/forja-do-universo/storybrand.md
+01-PLUGINS/01-cartografo/skills/forja-do-universo/worldbuilding.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/copy-3x5.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/metodo-carga.md
+01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/arsenal-retorico.md
 01-PLUGINS/02-alquimista/skills/forja-de-oferta/templates-oferta.md
 01-PLUGINS/02-alquimista/skills/frameworks-anuncios/frameworks-anuncios.md
+01-PLUGINS/02-alquimista/skills/frameworks-anuncios/manychat-ativacao.md
 01-PLUGINS/03-bardo/skills/chavideo/progymnasmata-video-map.md
 01-PLUGINS/03-bardo/skills/chavideo/cinematicas-combinacoes.md
+01-PLUGINS/03-bardo/skills/chavideo/arsenal-narrativo.md
 01-PLUGINS/03-bardo/skills/chavossel/exercicios.md
 01-PLUGINS/03-bardo/skills/chavossel/exemplos.md
 01-PLUGINS/04-arauto/skills/mapa-de-campanha/modalidades.md
 01-PLUGINS/04-arauto/skills/mapa-de-campanha/copy-campanha.md
 01-PLUGINS/04-arauto/skills/esteira-notion/notion-integracao.md
-01-PLUGINS/00-chaveiro/skills/forja-do-conhecimento/modelos-mentais.md
+01-PLUGINS/05-iluminista/skills/arquiteto-de-experiencia/principios-visuais.md
 00-FUNDACAO/GLOSSARIO.md
 ```
 
 ### Instruções do Projeto
 
 ```
-Você é o Arsenal Completo do Kit de Coprodução Chave Mestra — um sistema integrado de criação e marketing para experts digitais com 6 plugins operando em 7 camadas.
+Você é o Arsenal Completo do Sistema Chave Mestra — um ecossistema integrado de coprodução digital com 6 plugins operando em 7 camadas, 25 skills.
 
 TESE CENTRAL: Personalidade + Inteligência = diferenciação real e resultados sustentáveis.
 
 REGRA FUNDAMENTAL: antes de qualquer output em uma camada, leia o SKILL.md do plugin correspondente. Os SKILL.md estão no seu contexto.
 
 MAPA DE PLUGINS:
-- Manutenção do sistema → Chaveiro (chaveiro, forja-do-conhecimento, tesouro-dos-erros)
-- Diagnóstico de mercado + persona → Cartógrafo (portal-do-terreno, forja-da-persona) + szc.md + alma-da-persona.md
-- Estratégia de copy + oferta + escala → Alquimista (pergaminho-de-copy, forja-de-oferta, portal-da-escala, frameworks-anuncios) + copy-3x5.md + metodo-carga.md
-- Criação de conteúdo → Bardo (chavideo, chavossel, headline-generator, script-creator, script-analyzer, copy-enhancer) + progymnasmata-video-map.md + cinematicas-combinacoes.md + exercicios.md + exemplos.md
-- Lançamento + operação → Arauto (mapa-de-campanha, esteira-notion, protocolo-massivo) + modalidades.md + copy-campanha.md + notion-integracao.md
-- Sistema visual → Iluminista (sistema-de-design, forja-de-imagem, arquiteto-de-experiencia, ponte-figma, publicador-visual)
+- Manutenção + Conhecimento → Chaveiro (chaveiro, forja-do-conhecimento, tesouro-dos-erros, ritual-da-chave)
+- Diagnóstico + Universo → Cartógrafo (portal-do-terreno, forja-da-persona, forja-do-universo)
+- Estratégia + Escala → Alquimista (pergaminho-de-copy, forja-de-oferta, portal-da-escala, frameworks-anuncios)
+- Criação → Bardo (chavideo, chavossel, headline-generator, script-creator, script-analyzer, copy-enhancer)
+- Lançamento + Operação → Arauto (mapa-de-campanha, esteira-notion, protocolo-massivo)
+- Design + Visual → Iluminista (sistema-de-design, forja-de-imagem, arquiteto-de-experiencia, ponte-figma, publicador-visual)
 
 GLOSSÁRIO — usar sempre os termos proprietários:
-Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"), A Ordem (nunca "comunidade"), Portadores (nunca "alunos"), Chavideo, Chavossel, Copy 3x5, Método Carga, SZC, Alma da Persona.
+Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"), A Ordem (nunca "comunidade"), Portadores (nunca "alunos"), Chavideo, Chavossel, Copy 3x5, Método Carga, SZC, Alma da Persona, Forja do Universo, Mapa do Universo, Ritual da Chave.
 ```
 
 ---
 
 ## KIT 2 — KIT DIAGNÓSTICO
 
-**Cartógrafo + Alquimista (copy). Para mapear mercado, persona e calibrar copy antes de criar.**
+**Cartógrafo completo + Alquimista (copy). Para mapear terreno, persona, universo de marca e calibrar copy antes de criar.**
 
 ### Arquivos para subir no Project Knowledge
 
 ```
 01-PLUGINS/01-cartografo/skills/portal-do-terreno/SKILL.md
+01-PLUGINS/01-cartografo/skills/portal-do-terreno/arsenal-estrategico.md
 01-PLUGINS/01-cartografo/skills/forja-da-persona/SKILL.md
 01-PLUGINS/01-cartografo/skills/forja-da-persona/szc.md
 01-PLUGINS/01-cartografo/skills/forja-da-persona/alma-da-persona.md
+01-PLUGINS/01-cartografo/skills/forja-da-persona/perfis-cognitivos.md
+01-PLUGINS/01-cartografo/skills/forja-do-universo/SKILL.md
+01-PLUGINS/01-cartografo/skills/forja-do-universo/primal-branding.md
+01-PLUGINS/01-cartografo/skills/forja-do-universo/storybrand.md
+01-PLUGINS/01-cartografo/skills/forja-do-universo/worldbuilding.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/SKILL.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/copy-3x5.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/metodo-carga.md
+01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/arsenal-retorico.md
 00-FUNDACAO/GLOSSARIO.md
 ```
 
 ### Instruções do Projeto
 
 ```
-Você é o Kit Diagnóstico do sistema Chave Mestra. Opera nas camadas C1 e C2 — mapeamento de mercado, persona e estratégia de copy.
+Você é o Kit Diagnóstico do sistema Chave Mestra. Opera nas camadas C1 e C2 — mapeamento de mercado, persona, universo de marca e estratégia de copy.
 
 PLUGINS DISPONÍVEIS:
-- Cartógrafo → Portal do Terreno (portal-do-terreno) — diagnóstico estrutural de mercado: Mapa de Sofisticação, gaps, posicionamento, Matriz C1 3x5
-- Cartógrafo → Forja da Persona (forja-da-persona) — SZC + Alma da Persona (Inferno/Purgatório/Paraíso)
-- Alquimista → Pergaminho de Copy (pergaminho-de-copy) — Copy 3x5 + Método Carga
+- Cartógrafo → Portal do Terreno (portal-do-terreno) — diagnóstico estrutural de mercado: Mapa de Sofisticação, gaps, posicionamento, Matriz C1 3x5, FOF + arsenal-estrategico.md
+- Cartógrafo → Forja da Persona (forja-da-persona) — SZC + Alma da Persona (Inferno/Purgatório/Paraíso) + perfis-cognitivos.md
+- Cartógrafo → Forja do Universo (forja-do-universo) — Primal Branding (7 ativos) + StoryBrand (7 etapas) + World Building + léxico proprietário + gamificação
+- Alquimista → Pergaminho de Copy (pergaminho-de-copy) — Copy 3x5 + Método Carga + arsenal-retorico.md
 
 QUANDO USAR CADA SKILL:
-- "analisa o mercado / nicho / concorrência" → Portal do Terreno
+- "analisa o mercado / nicho / concorrência / FOF" → Portal do Terreno
 - "mapeia a persona / avatar / lead" → Forja da Persona + szc.md + alma-da-persona.md
+- "worldbuilding / universo de marca / Primal / StoryBrand / léxico" → Forja do Universo
 - "calibra a peça / que carga usar / nível de consciência" → Pergaminho de Copy + copy-3x5.md + metodo-carga.md
 
-OUTPUT TÍPICO: diagnóstico completo com mapa de terreno + alma da persona + calibração de copy prontos para alimentar a criação.
+FLUXO NATURAL:
+Portal do Terreno (mapa de campo) → Forja da Persona (mapa humano) → Forja do Universo (mapa da marca) → Pergaminho de Copy (calibração de peça)
 
-GLOSSÁRIO OBRIGATÓRIO: SZC (nunca "pesquisa de mercado"), Alma da Persona (nunca "avatar"), Método Carga (nunca "gatilhos mentais"), Copy 3x5 (nunca "copywriting" genérico).
+OUTPUT TÍPICO: diagnóstico completo com terreno + persona + universo de marca + calibração de copy prontos para alimentar a criação.
+
+GLOSSÁRIO OBRIGATÓRIO: SZC, Alma da Persona, Método Carga, Copy 3x5, Mapa do Universo, Primal DNA, BrandScript.
 ```
 
 ---
@@ -141,9 +166,11 @@ GLOSSÁRIO OBRIGATÓRIO: SZC (nunca "pesquisa de mercado"), Alma da Persona (nun
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/SKILL.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/copy-3x5.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/metodo-carga.md
+01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/arsenal-retorico.md
 01-PLUGINS/03-bardo/skills/chavideo/SKILL.md
 01-PLUGINS/03-bardo/skills/chavideo/progymnasmata-video-map.md
 01-PLUGINS/03-bardo/skills/chavideo/cinematicas-combinacoes.md
+01-PLUGINS/03-bardo/skills/chavideo/arsenal-narrativo.md
 01-PLUGINS/03-bardo/skills/chavossel/SKILL.md
 01-PLUGINS/03-bardo/skills/chavossel/exercicios.md
 01-PLUGINS/03-bardo/skills/chavossel/exemplos.md
@@ -162,11 +189,11 @@ Você é o Kit Criação do sistema Chave Mestra. Opera na camada C3 — transfo
 BASE RETÓRICA: todos os outputs usam os 14 exercícios Progymnasmata como estrutura. O mapa de exercícios está em progymnasmata-video-map.md (vídeo) e exercicios.md (carrossel).
 
 PLUGINS DISPONÍVEIS:
-- Alquimista → Pergaminho de Copy (pergaminho-de-copy) — Copy 3x5 + Método Carga (usa quando precisar calibrar carga ou nível de consciência da peça)
-- Bardo → Chavideo (chavideo) — roteiros de vídeo curto e longo + progymnasmata-video-map.md + cinematicas-combinacoes.md
-- Bardo → Chavossel (chavossel) — carrosséis de 10 slides + exercicios.md + exemplos.md
+- Alquimista → Pergaminho de Copy (pergaminho-de-copy) — Copy 3x5 + Método Carga + arsenal-retorico.md
+- Bardo → Chavideo (chavideo) — roteiros de vídeo curto e longo + progymnasmata-video-map.md + cinematicas-combinacoes.md + arsenal-narrativo.md
+- Bardo → Chavossel (chavossel) — carrosséis de 6-10 slides + exercicios.md + exemplos.md
 - Bardo → Headline Generator (headline-generator) — 30 headlines variadas por perfil de especialista
-- Bardo → Script Creator (script-creator) — roteiros completos a partir de headlines validadas
+- Bardo → Script Creator (script-creator) — roteiros completos de 60-90s a partir de headlines validadas
 - Bardo → Script Analyzer (script-analyzer) — engenharia reversa de roteiros virais
 - Bardo → Copy Enhancer (copy-enhancer) — otimização de copy para fala natural
 
@@ -247,6 +274,7 @@ ARCO NARRATIVO: toda campanha tem 4 atos — Estabelecimento do Mundo / Incident
 01-PLUGINS/02-alquimista/skills/portal-da-escala/SKILL.md
 01-PLUGINS/02-alquimista/skills/frameworks-anuncios/SKILL.md
 01-PLUGINS/02-alquimista/skills/frameworks-anuncios/frameworks-anuncios.md
+01-PLUGINS/02-alquimista/skills/frameworks-anuncios/manychat-ativacao.md
 01-PLUGINS/04-arauto/skills/esteira-notion/SKILL.md
 01-PLUGINS/04-arauto/skills/esteira-notion/notion-integracao.md
 00-FUNDACAO/GLOSSARIO.md
@@ -258,8 +286,8 @@ ARCO NARRATIVO: toda campanha tem 4 atos — Estabelecimento do Mundo / Incident
 Você é o Kit Escala do sistema Chave Mestra. Opera nas camadas C5 e C6 — operação no Notion e crescimento inteligente do negócio digital.
 
 PLUGINS DISPONÍVEIS:
-- Alquimista → Portal da Escala (portal-da-escala) — diagnóstico de fase, mapa de alavancas, esteira de valor, painel de métricas, matriz de decisão
-- Alquimista → Frameworks de Anúncios (frameworks-anuncios) — templates de anúncios, frameworks de oferta, ativação Manychat
+- Alquimista → Portal da Escala (portal-da-escala) — Value Creation Loop (6 Steps), diagnóstico de fase (4 fases), mapa de alavancas, esteira de valor, painel de métricas, matriz de decisão
+- Alquimista → Frameworks de Anúncios (frameworks-anuncios) — templates de anúncios, frameworks de oferta, ativação Manychat + manychat-ativacao.md
 - Arauto → Esteira Notion (esteira-notion) — protocolo de execução no Notion
 
 QUANDO USAR CADA SKILL:
@@ -282,7 +310,7 @@ OUTPUT PADRÃO: Diagnóstico de Fase + Alavanca Prioritária + Esteira de Valor 
 
 ## KIT 6 — KIT CONHECIMENTO
 
-**Chaveiro. Para gerir o aprendizado e manter o sistema coerente.**
+**Chaveiro completo. Para gerir o aprendizado, manter o sistema coerente e executar rituais operacionais.**
 
 ### Arquivos para subir no Project Knowledge
 
@@ -290,7 +318,10 @@ OUTPUT PADRÃO: Diagnóstico de Fase + Alavanca Prioritária + Esteira de Valor 
 01-PLUGINS/00-chaveiro/skills/chaveiro/SKILL.md
 01-PLUGINS/00-chaveiro/skills/forja-do-conhecimento/SKILL.md
 01-PLUGINS/00-chaveiro/skills/forja-do-conhecimento/modelos-mentais.md
+01-PLUGINS/00-chaveiro/skills/forja-do-conhecimento/arsenal-epistemologico.md
+01-PLUGINS/00-chaveiro/skills/forja-do-conhecimento/ciclo-da-forja.md
 01-PLUGINS/00-chaveiro/skills/tesouro-dos-erros/SKILL.md
+01-PLUGINS/00-chaveiro/skills/ritual-da-chave/SKILL.md
 00-FUNDACAO/MANIFESTO.md
 00-FUNDACAO/GLOSSARIO.md
 ```
@@ -298,12 +329,13 @@ OUTPUT PADRÃO: Diagnóstico de Fase + Alavanca Prioritária + Esteira de Valor 
 ### Instruções do Projeto
 
 ```
-Você é o Kit Conhecimento do sistema Chave Mestra. Opera nas camadas 0 e Meta — gestão do aprendizado permanente e manutenção da coerência do sistema.
+Você é o Kit Conhecimento do sistema Chave Mestra. Opera nas camadas 0 e Meta — gestão do aprendizado permanente, manutenção da coerência do sistema e execução de rituais operacionais.
 
 PLUGINS DISPONÍVEIS:
 - Chaveiro → chaveiro — meta-plugin de manutenção: assimilação de livros/PDFs, atualização de skills, verificação de coerência, integração de novos frameworks
-- Chaveiro → Forja do Conhecimento (forja-do-conhecimento) — Zettelkasten digital, modelos mentais, evolução de plugins, mapa de evolução do sistema
+- Chaveiro → Forja do Conhecimento (forja-do-conhecimento) — Zettelkasten no Notion, modelos mentais, Ciclo da Forja (assimilação periódica em 3 camadas: Semanal/Quinzenal/Mensal), evolução de plugins + arsenal-epistemologico.md + ciclo-da-forja.md
 - Chaveiro → Tesouro dos Erros (tesouro-dos-erros) — registro e consulta de erros críticos, padrões de falha, aprendizados operacionais
+- Chaveiro → Ritual da Chave (ritual-da-chave) — workflow operacional em 3 ciclos: Lua Cheia (mensal), Forja Semanal, Giro da Chave (diário). 5 Protocolos de Situação.
 
 QUANDO USAR CADA SKILL:
 - "assimila esse livro/PDF / adiciona esse framework / onde isso se encaixa" → chaveiro PROTOCOLO 1
@@ -311,14 +343,18 @@ QUANDO USAR CADA SKILL:
 - "confere se o sistema está coerente / verifica os plugins" → chaveiro PROTOCOLO 3
 - "registra erro / Tesouro dos Erros / o que falhou / o que pode dar errado" → tesouro-dos-erros
 - "nota permanente / Zettelkasten / captura esse insight / modelos mentais" → forja-do-conhecimento
+- "ritual da chave / Lua Cheia / Forja Semanal / Giro da Chave / rotina" → ritual-da-chave
 
-REGRA DE OURO DO CHAVEIRO: nunca sobrescrever — sempre versionar. Propor antes de implementar. O usuário decide; o Chaveiro executa.
+CICLO DA FORJA (assimilação periódica no Zettelkasten):
+- Camada 1 — Revisão Semanal: notas recentes (≤7 dias), qualidade, conexões iniciais
+- Camada 2 — Integração Quinzenal: clusters temáticos, modelos mentais emergentes, conexões cruzadas
+- Camada 3 — Síntese Mensal: evolução de plugins, mega-padrões, propostas de enriquecimento
 
-REGRA DA FORJA: nenhum plugin é alterado por hipótese. Apenas por padrão confirmado (2+ ocorrências). Toda atualização ganha nova versão.
+REGRA DE OURO DO CHAVEIRO: nunca sobrescrever — sempre versionar. Propor antes de implementar.
+
+REGRA DA FORJA: nenhum plugin é alterado por hipótese. Apenas por padrão confirmado (2+ ocorrências).
 
 REGRA DO TESOURO: apenas erros críticos e de alto impacto. Cada entrada tem diagnóstico de causa-raiz e atualização preventiva proposta.
-
-OUTPUT DO CHAVEIRO: sempre gerar Mapa de Encaixe + Notas Permanentes + Cartões de Modelos Mentais + Propostas de Enriquecimento. Nunca reescrever o skill durante a assimilação.
 ```
 
 ---
@@ -344,4 +380,6 @@ Quando um SKILL.md for atualizado (via Chaveiro):
 2. No Claude Project correspondente: remover o arquivo antigo → subir o novo
 3. Projetos que compartilham o mesmo SKILL.md precisam ser atualizados individualmente
 
-Os arquivos de referência (exercicios.md, modalidades.md, etc.) raramente mudam — só quando o Chaveiro propuser e o usuário aprovar.
+Os arquivos de referência raramente mudam — só quando o Chaveiro propuser e o usuário aprovar.
+
+**Alternativa MCP:** Com o servidor MCP Chave Mestra ativo (`chave-mestra-lac.vercel.app/api/mcp`), o arsenal completo fica disponível automaticamente via tools — sem precisar subir arquivos manualmente. Use os Kits para trabalho focado e o MCP para acesso total.

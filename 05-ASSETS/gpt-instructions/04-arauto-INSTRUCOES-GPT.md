@@ -104,9 +104,15 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 
 ## Arquivos de Conhecimento para Upload
 
+**Skills:**
 - `01-PLUGINS/04-arauto/skills/mapa-de-campanha/SKILL.md`
 - `01-PLUGINS/04-arauto/skills/esteira-notion/SKILL.md`
 - `01-PLUGINS/04-arauto/skills/protocolo-massivo/SKILL.md`
+
+**Referências:**
+- `01-PLUGINS/04-arauto/skills/mapa-de-campanha/modalidades.md`
+- `01-PLUGINS/04-arauto/skills/mapa-de-campanha/copy-campanha.md`
+- `01-PLUGINS/04-arauto/skills/esteira-notion/notion-integracao.md`
 - `00-FUNDACAO/GLOSSARIO.md`
 
 ---
