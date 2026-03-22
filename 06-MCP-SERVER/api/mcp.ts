@@ -1,7 +1,8 @@
 /**
  * Vercel Serverless Function — MCP endpoint.
  *
- * This is the entry point when deployed on Vercel.
+ * Stateless mode: no sessions, JSON responses (not SSE).
+ * Each request creates a fresh server+transport, responds, and closes.
  * URL: https://your-project.vercel.app/api/mcp
  */
 
@@ -34,16 +35,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  // MCP protocol on POST
+  // MCP protocol on POST — stateless, no sessions
   try {
     const server = createServer();
     const transport = new StreamableHTTPServerTransport({
-      sessionIdGenerator: () => crypto.randomUUID(),
+      sessionIdGenerator: undefined, // Stateless: no session tracking
+      enableJsonResponse: true,      // JSON instead of SSE (serverless-friendly)
+    });
+
+    res.on("close", () => {
+      transport.close();
+      server.close();
     });
 
     await server.connect(transport);
-
-    // The transport expects raw Node.js req/res
     await transport.handleRequest(req, res);
   } catch (err) {
     console.error("MCP handler error:", err);
