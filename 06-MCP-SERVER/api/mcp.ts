@@ -1,13 +1,14 @@
 /**
- * Vercel Serverless Function — MCP endpoint.
+ * Vercel Serverless Function — MCP endpoint (stateless, JSON response mode).
  *
- * Stateless mode: no sessions, JSON responses (not SSE).
- * Each request creates a fresh server+transport, responds, and closes.
- * URL: https://your-project.vercel.app/api/mcp
+ * Based on the official MCP SDK jsonResponseStreamableHttp example.
+ * Each request creates a fresh server — no session persistence needed
+ * since all tools are stateless reads.
  */
 
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
+import { isInitializeRequest } from "@modelcontextprotocol/sdk/types.js";
 import { createServer } from "../src/server.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -35,25 +36,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
-  // MCP protocol on POST — stateless, no sessions
-  try {
-    const server = createServer();
-    const transport = new StreamableHTTPServerTransport({
-      sessionIdGenerator: undefined, // Stateless: no session tracking
-      enableJsonResponse: true,      // JSON instead of SSE (serverless-friendly)
-    });
-
-    res.on("close", () => {
-      transport.close();
-      server.close();
-    });
-
-    await server.connect(transport);
-    await transport.handleRequest(req, res);
-  } catch (err) {
-    console.error("MCP handler error:", err);
-    if (!res.headersSent) {
-      res.status(500).json({ error: "Internal server error" });
-    }
+  // DELETE — close session (no-op for stateless)
+  if (req.method === "DELETE") {
+    res.status(200).json({ ok: true });
+    return;
   }
+
+  // POST — MCP protocol
+  if (req.method === "POST") {
+    try {
+      const server = createServer();
+      const transport = new StreamableHTTPServerTransport({
+        sessionIdGenerator: () => crypto.randomUUID(),
+        enableJsonResponse: true,
+      });
+
+      await server.connect(transport);
+      await transport.handleRequest(req, res, req.body);
+    } catch (err) {
+      console.error("MCP handler error:", err);
+      if (!res.headersSent) {
+        res.status(500).json({
+          jsonrpc: "2.0",
+          error: { code: -32603, message: "Internal server error" },
+          id: null,
+        });
+      }
+    }
+    return;
+  }
+
+  res.status(405).json({ error: "Method not allowed" });
 }
