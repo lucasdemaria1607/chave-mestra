@@ -427,11 +427,32 @@ function handleRpc(rpc: any): any | null {
 
 // ─── Vercel Handler ─────────────────────────────────────────────────────────
 
+// ─── Auth ───────────────────────────────────────────────────────────────────
+
+function checkAuth(req: VercelRequest, res: VercelResponse): boolean {
+  const apiKey = process.env.MCP_API_KEY;
+  // If no key configured, server is open (dev mode)
+  if (!apiKey) return true;
+
+  const auth = req.headers.authorization;
+  if (!auth || auth !== `Bearer ${apiKey}`) {
+    res.status(401).json({
+      jsonrpc: "2.0",
+      error: { code: -32000, message: "Unauthorized — invalid or missing API key" },
+      id: null,
+    });
+    return false;
+  }
+  return true;
+}
+
+// ─── Vercel Handler ─────────────────────────────────────────────────────────
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // CORS
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, mcp-session-id");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, mcp-session-id, Authorization");
   res.setHeader("Access-Control-Expose-Headers", "mcp-session-id");
 
   if (req.method === "OPTIONS") {
@@ -439,17 +460,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return;
   }
 
+  // Health check is always public
   if (req.method === "GET") {
     res.status(200).json({
       name: "chave-mestra-mcp",
       version: "1.0.0",
       status: "ok",
+      auth: process.env.MCP_API_KEY ? "required" : "open",
       tools: TOOL_DEFS.length,
       prompts: 11,
       resources: `${Object.keys(bundle.foundation).length + Object.keys(bundle.skills).length + Object.keys(bundle.references).length}`,
     });
     return;
   }
+
+  // All other methods require auth
+  if (!checkAuth(req, res)) return;
 
   if (req.method === "DELETE") {
     res.status(200).json({ ok: true });
