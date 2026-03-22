@@ -1,0 +1,27 @@
+{
+  "name": "chave-mestra-mcp",
+  "version": "1.0.0",
+  "description": "MCP Server do Sistema Chave Mestra — 6 plugins de coprodução digital acessíveis em qualquer cliente MCP",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build:content": "node scripts/bundle-content.js",
+    "build:ts": "tsc",
+    "build": "npm run build:content && npm run build:ts",
+    "dev": "npm run build:content && tsx src/index.ts",
+    "start": "node dist/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "@types/node": "^22.0.0"
+  },
+  "author": {
+    "name": "Lucas De Maria (Grigo)",
+    "email": "contato@lucasgrigo.com"
+  },
+  "license": "MIT"
+}

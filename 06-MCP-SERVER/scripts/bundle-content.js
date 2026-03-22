@@ -1,0 +1,156 @@
+/**
+ * Bundle all SKILL.md files and foundation docs into a single JSON file
+ * that the MCP server embeds at build time.
+ *
+ * Output: src/content.json
+ */
+
+import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'fs';
+import { join, relative, basename, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, '..', '..');
+
+// Foundation docs
+const FOUNDATION_FILES = [
+  '00-FUNDACAO/FILOSOFIA.md',
+  '00-FUNDACAO/MANIFESTO.md',
+  '00-FUNDACAO/GLOSSARIO.md',
+  '00-FUNDACAO/GUIA-DO-SISTEMA.md',
+  '00-FUNDACAO/MODO-CLIENTE.md',
+  'CLAUDE.md',
+];
+
+// Plugin directories
+const PLUGINS_DIR = join(ROOT, '01-PLUGINS');
+
+function findSkillFiles(dir) {
+  const results = [];
+  const entries = readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results.push(...findSkillFiles(fullPath));
+    } else if (entry.name === 'SKILL.md') {
+      results.push(fullPath);
+    }
+  }
+  return results;
+}
+
+function findReferenceFiles(skillDir) {
+  const results = [];
+  if (!existsSync(skillDir)) return results;
+  const entries = readdirSync(skillDir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'SKILL.md') {
+      results.push(join(skillDir, entry.name));
+    }
+  }
+  return results;
+}
+
+function parseSkillFrontmatter(content) {
+  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  if (!match) return {};
+  const fm = {};
+  for (const line of match[1].split('\n')) {
+    const [key, ...rest] = line.split(':');
+    if (key && rest.length) {
+      fm[key.trim()] = rest.join(':').trim();
+    }
+  }
+  return fm;
+}
+
+function getPluginName(pluginDir) {
+  const pluginJsonPath = join(pluginDir, '.claude-plugin', 'plugin.json');
+  if (existsSync(pluginJsonPath)) {
+    const json = JSON.parse(readFileSync(pluginJsonPath, 'utf-8'));
+    return json.name;
+  }
+  return basename(pluginDir);
+}
+
+// Build content bundle
+const bundle = {
+  foundation: {},
+  plugins: {},
+  skills: {},
+  references: {},
+};
+
+// Foundation docs
+for (const relPath of FOUNDATION_FILES) {
+  const fullPath = join(ROOT, relPath);
+  if (existsSync(fullPath)) {
+    const name = basename(relPath, '.md').toLowerCase();
+    bundle.foundation[name] = {
+      path: relPath,
+      content: readFileSync(fullPath, 'utf-8'),
+    };
+  }
+}
+
+// Plugins and skills
+const pluginDirs = readdirSync(PLUGINS_DIR, { withFileTypes: true })
+  .filter(d => d.isDirectory())
+  .map(d => join(PLUGINS_DIR, d.name))
+  .sort();
+
+for (const pluginDir of pluginDirs) {
+  const pluginName = getPluginName(pluginDir);
+  const pluginNumber = basename(pluginDir).split('-')[0];
+
+  // Find all SKILL.md files
+  const skillFiles = findSkillFiles(pluginDir);
+
+  for (const skillPath of skillFiles) {
+    const content = readFileSync(skillPath, 'utf-8');
+    const frontmatter = parseSkillFrontmatter(content);
+    const skillDirPath = dirname(skillPath);
+    const skillSlug = basename(skillDirPath);
+    const skillId = `${pluginName}/${skillSlug}`;
+
+    bundle.skills[skillId] = {
+      plugin: pluginName,
+      pluginNumber,
+      slug: skillSlug,
+      name: frontmatter.name || skillSlug,
+      description: frontmatter.description || '',
+      content,
+    };
+
+    // Find reference files co-located with SKILL.md
+    const refs = findReferenceFiles(skillDirPath);
+    for (const refPath of refs) {
+      const refName = basename(refPath, '.md');
+      const refId = `${skillId}/${refName}`;
+      bundle.references[refId] = {
+        skill: skillId,
+        name: refName,
+        content: readFileSync(refPath, 'utf-8'),
+      };
+    }
+  }
+
+  bundle.plugins[pluginName] = {
+    number: pluginNumber,
+    directory: basename(pluginDir),
+    skills: Object.keys(bundle.skills).filter(k => k.startsWith(pluginName + '/')),
+  };
+}
+
+// Write bundle
+const outPath = join(__dirname, '..', 'src', 'content.json');
+writeFileSync(outPath, JSON.stringify(bundle, null, 2), 'utf-8');
+
+const stats = {
+  foundation: Object.keys(bundle.foundation).length,
+  plugins: Object.keys(bundle.plugins).length,
+  skills: Object.keys(bundle.skills).length,
+  references: Object.keys(bundle.references).length,
+};
+console.log(`✅ Content bundled: ${stats.foundation} docs, ${stats.plugins} plugins, ${stats.skills} skills, ${stats.references} references`);
+console.log(`   Output: ${outPath}`);
