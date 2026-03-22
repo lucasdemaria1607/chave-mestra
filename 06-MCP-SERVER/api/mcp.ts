@@ -434,16 +434,20 @@ function checkAuth(req: VercelRequest, res: VercelResponse): boolean {
   // If no key configured, server is open (dev mode)
   if (!apiKey) return true;
 
-  const auth = req.headers.authorization;
-  if (!auth || auth !== `Bearer ${apiKey}`) {
-    res.status(401).json({
-      jsonrpc: "2.0",
-      error: { code: -32000, message: "Unauthorized — invalid or missing API key" },
-      id: null,
-    });
-    return false;
+  // Accept key via Authorization header OR ?key= query parameter
+  const authHeader = req.headers.authorization;
+  const queryKey = req.query?.key as string | undefined;
+
+  if (authHeader === `Bearer ${apiKey}` || queryKey === apiKey) {
+    return true;
   }
-  return true;
+
+  res.status(401).json({
+    jsonrpc: "2.0",
+    error: { code: -32000, message: "Unauthorized — invalid or missing API key" },
+    id: null,
+  });
+  return false;
 }
 
 // ─── Vercel Handler ─────────────────────────────────────────────────────────
