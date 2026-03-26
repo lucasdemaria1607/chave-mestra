@@ -64,13 +64,13 @@ function parseSkillFrontmatter(content) {
   return fm;
 }
 
-function getPluginName(pluginDir) {
+function getPluginInfo(pluginDir) {
   const pluginJsonPath = join(pluginDir, '.claude-plugin', 'plugin.json');
   if (existsSync(pluginJsonPath)) {
     const json = JSON.parse(readFileSync(pluginJsonPath, 'utf-8'));
-    return json.name;
+    return { name: json.name, description: json.description || '' };
   }
-  return basename(pluginDir);
+  return { name: basename(pluginDir), description: '' };
 }
 
 // Build content bundle
@@ -100,8 +100,11 @@ const pluginDirs = readdirSync(PLUGINS_DIR, { withFileTypes: true })
   .sort();
 
 for (const pluginDir of pluginDirs) {
-  const pluginName = getPluginName(pluginDir);
+  const pluginInfo = getPluginInfo(pluginDir);
+  const pluginName = pluginInfo.name;
   const pluginNumber = basename(pluginDir).split('-')[0];
+  // Short alias: "chave-mestra-bardo" → "bardo"
+  const pluginAlias = pluginName.replace('chave-mestra-', '');
 
   // Find all SKILL.md files
   const skillFiles = findSkillFiles(pluginDir);
@@ -138,6 +141,8 @@ for (const pluginDir of pluginDirs) {
   bundle.plugins[pluginName] = {
     number: pluginNumber,
     directory: basename(pluginDir),
+    alias: pluginAlias,
+    description: pluginInfo.description,
     skills: Object.keys(bundle.skills).filter(k => k.startsWith(pluginName + '/')),
   };
 }

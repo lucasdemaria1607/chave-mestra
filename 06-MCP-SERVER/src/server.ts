@@ -28,9 +28,17 @@ interface FoundationEntry {
   content: string;
 }
 
+interface PluginEntry {
+  number: string;
+  directory: string;
+  alias: string;
+  description: string;
+  skills: string[];
+}
+
 interface ContentBundle {
   foundation: Record<string, FoundationEntry>;
-  plugins: Record<string, { number: string; directory: string; skills: string[] }>;
+  plugins: Record<string, PluginEntry>;
   skills: Record<string, SkillEntry>;
   references: Record<string, ReferenceEntry>;
 }
@@ -99,20 +107,33 @@ export function createServer(): McpServer {
 
   server.tool(
     "listar-plugins",
-    "Lista todos os plugins e skills disponíveis no Sistema Chave Mestra",
+    "Lista todos os 6 plugins do Sistema Chave Mestra com suas skills. Use SEMPRE no início da conversa para apresentar o sistema completo ao usuário.",
     {},
     async () => {
-      const lines: string[] = ["# Plugins do Sistema Chave Mestra\n"];
+      const lines: string[] = [
+        "# Sistema Chave Mestra — 6 Plugins, 24 Skills\n",
+        "Ecossistema de coprodução digital. Personalidade + Inteligência = diferenciação real.\n",
+        "---\n",
+      ];
       for (const [pluginName, plugin] of Object.entries(bundle.plugins)) {
-        lines.push(`## ${plugin.number} — ${pluginName}`);
+        const displayName = pluginName.replace("chave-mestra-", "").toUpperCase();
+        lines.push(`## ${plugin.number} — ${displayName}`);
+        lines.push(`> ${plugin.description}\n`);
+        lines.push(`**Para ativar:** use \`ativar-plugin\` com slug \`${plugin.alias}\` (carrega TODAS as skills)\n`);
+        lines.push("**Skills:**");
         for (const skillId of plugin.skills) {
           const skill = bundle.skills[skillId];
           if (skill) {
-            lines.push(`  - **${skill.name}**: ${skill.description.slice(0, 120)}...`);
+            const desc = skill.description ? skill.description.slice(0, 150) : "(sem descrição)";
+            lines.push(`  - \`${skill.slug}\` — ${desc}`);
           }
         }
         lines.push("");
       }
+      lines.push("---\n");
+      lines.push("**Como usar:** `ativar-plugin` com o nome do plugin (ex: `bardo`, `alquimista`) ou slug da skill específica (ex: `chavideo`, `pergaminho-de-copy`).");
+      lines.push("**Buscar:** use `buscar` com qualquer termo para encontrar conteúdo em todo o sistema.");
+      lines.push("**Fundação:** use `ler-fundacao` com `filosofia`, `manifesto`, `glossario`, `guia-do-sistema`, `modo-cliente` ou `claude`.");
       return { content: [{ type: "text", text: lines.join("\n") }] };
     }
   );
@@ -199,27 +220,62 @@ export function createServer(): McpServer {
 
   server.tool(
     "ativar-plugin",
-    "Carrega todo o contexto de um plugin: skill principal + referências + glossário. Equivalente ao que o Claude Code faz automaticamente.",
-    { slug: z.string().describe("Slug da skill a ativar (ex: 'pergaminho-de-copy', 'chavideo')") },
+    "Carrega o contexto completo de um plugin ou skill. Aceita nome do PLUGIN (ex: 'bardo', 'alquimista', 'cartografo') para carregar TODAS as skills do plugin, ou slug de uma skill específica (ex: 'chavideo', 'pergaminho-de-copy'). Use o nome do plugin para contexto completo.",
+    { slug: z.string().describe("Nome do plugin (ex: 'bardo', 'chaveiro', 'cartografo', 'alquimista', 'arauto', 'iluminista') ou slug da skill (ex: 'chavideo', 'pergaminho-de-copy')") },
     async ({ slug }) => {
-      const entry = Object.entries(bundle.skills).find(([_, s]) => s.slug === slug);
-      if (!entry) {
-        const available = Object.values(bundle.skills).map(s => s.slug).join(", ");
-        return {
-          content: [{ type: "text", text: `Skill "${slug}" não encontrada. Disponíveis: ${available}` }],
-          isError: true,
-        };
+      const slugLower = slug.toLowerCase().trim();
+
+      // 1. Try to match as plugin alias (e.g. "bardo" → "chave-mestra-bardo")
+      const pluginEntry = Object.entries(bundle.plugins).find(
+        ([name, p]) => p.alias === slugLower || name === slugLower || name === `chave-mestra-${slugLower}`
+      );
+
+      if (pluginEntry) {
+        const [pluginName, plugin] = pluginEntry;
+        const displayName = pluginName.replace("chave-mestra-", "").toUpperCase();
+        const parts: string[] = [
+          `# Plugin ${displayName} — ${plugin.description}\n`,
+          `*${plugin.skills.length} skills carregadas:*\n`,
+        ];
+
+        for (const skillId of plugin.skills) {
+          const skill = bundle.skills[skillId];
+          if (!skill) continue;
+          parts.push(`\n\n${"=".repeat(80)}\n\n# SKILL: ${skill.name} (${skill.slug})\n\n${skill.content}`);
+          const refs = Object.entries(bundle.references).filter(([_, r]) => r.skill === skillId);
+          for (const [_, ref] of refs) {
+            parts.push(`\n\n---\n\n## Referência: ${ref.name}\n\n${ref.content}`);
+          }
+        }
+
+        if (bundle.foundation["glossario"]) {
+          parts.push(`\n\n${"=".repeat(80)}\n\n# Glossário CM\n\n${bundle.foundation["glossario"].content}`);
+        }
+        return { content: [{ type: "text", text: parts.join("") }] };
       }
-      const [skillId, skill] = entry;
-      const parts: string[] = [`# ${skill.name} (${skill.plugin})\n\n${skill.content}`];
-      const refs = Object.entries(bundle.references).filter(([_, r]) => r.skill === skillId);
-      for (const [_, ref] of refs) {
-        parts.push(`\n\n---\n\n# Referência: ${ref.name}\n\n${ref.content}`);
+
+      // 2. Try to match as skill slug
+      const skillEntry = Object.entries(bundle.skills).find(([_, s]) => s.slug === slugLower);
+      if (skillEntry) {
+        const [skillId, skill] = skillEntry;
+        const parts: string[] = [`# ${skill.name} (${skill.plugin})\n\n${skill.content}`];
+        const refs = Object.entries(bundle.references).filter(([_, r]) => r.skill === skillId);
+        for (const [_, ref] of refs) {
+          parts.push(`\n\n---\n\n# Referência: ${ref.name}\n\n${ref.content}`);
+        }
+        if (bundle.foundation["glossario"]) {
+          parts.push(`\n\n---\n\n# Glossário CM\n\n${bundle.foundation["glossario"].content}`);
+        }
+        return { content: [{ type: "text", text: parts.join("") }] };
       }
-      if (bundle.foundation["glossario"]) {
-        parts.push(`\n\n---\n\n# Glossário CM\n\n${bundle.foundation["glossario"].content}`);
-      }
-      return { content: [{ type: "text", text: parts.join("") }] };
+
+      // 3. Not found
+      const pluginAliases = Object.values(bundle.plugins).map(p => p.alias).join(", ");
+      const skillSlugs = Object.values(bundle.skills).map(s => s.slug).join(", ");
+      return {
+        content: [{ type: "text", text: `"${slug}" não encontrado.\n\n**Plugins:** ${pluginAliases}\n**Skills:** ${skillSlugs}` }],
+        isError: true,
+      };
     }
   );
 
@@ -227,23 +283,67 @@ export function createServer(): McpServer {
 
   server.prompt(
     "sistema-chave-mestra",
-    "Prompt completo do Sistema Chave Mestra — transforma qualquer conversa Claude no ecossistema CM",
+    "Prompt completo do Sistema Chave Mestra — transforma qualquer conversa Claude no ecossistema CM com todos os 6 plugins disponíveis",
     {},
     async () => {
+      // Build plugin map for the system prompt
+      const pluginMap: string[] = [];
+      for (const [pluginName, plugin] of Object.entries(bundle.plugins)) {
+        const displayName = pluginName.replace("chave-mestra-", "").toUpperCase();
+        const skillList = plugin.skills.map(sid => {
+          const s = bundle.skills[sid];
+          return s ? `${s.slug}` : "";
+        }).filter(Boolean).join(", ");
+        pluginMap.push(`- **${displayName}** (ativar: \`${plugin.alias}\`): ${plugin.description} → Skills: ${skillList}`);
+      }
+
       const systemContent = [
         bundle.foundation["claude"]?.content || "",
         "\n\n---\n\n",
         bundle.foundation["filosofia"]?.content || "",
         "\n\n---\n\n",
         bundle.foundation["manifesto"]?.content || "",
+        "\n\n---\n\n",
+        bundle.foundation["modo-cliente"]?.content || "",
       ].join("");
+
+      const instructions = `Use o seguinte sistema como base para TODAS as interações:
+
+${systemContent}
+
+---
+
+# Seus 6 Plugins (24 Skills)
+
+${pluginMap.join("\n")}
+
+---
+
+# Como Operar
+
+Você agora é o **Sistema Chave Mestra**. Siga estas regras:
+
+1. **ANTES de qualquer output criativo**, use \`ativar-plugin\` para carregar o contexto da skill relevante.
+2. **Identifique o plugin correto** pelo que o usuário pede:
+   - Mercado/persona/marca → **cartografo**
+   - Copy/oferta/escala → **alquimista**
+   - Vídeo/carrossel/headlines → **bardo**
+   - Campanha/Notion/lançamento → **arauto**
+   - Design/imagem/UX/Figma → **iluminista**
+   - Conhecimento/erros/rotina → **chaveiro**
+3. **Modo Cliente**: se o cliente não é Lucas/Chave Mestra, capture os 5 elementos antes de produzir.
+4. **Glossário CM**: use termos proprietários (Pergaminho, Portal, Forja, etc.) apenas em Modo CM.
+5. Use \`buscar\` para encontrar qualquer conteúdo no sistema.
+6. Use \`ler-fundacao\` para acessar documentos fundacionais (filosofia, manifesto, glossário, etc.).
+
+Quando o usuário perguntar "o que você pode fazer" ou "quais plugins tem", use \`listar-plugins\` e apresente o sistema completo de forma organizada.`;
 
       return {
         messages: [{
           role: "user" as const,
           content: {
             type: "text" as const,
-            text: `Use o seguinte sistema como base para todas as interações:\n\n${systemContent}\n\nVocê agora opera como o Sistema Chave Mestra. Quando precisar de uma skill específica, use a tool "ativar-plugin" para carregar o contexto completo. Quando receber uma solicitação, identifique qual skill é relevante e ative-a antes de responder.`,
+            text: instructions,
           },
         }],
       };
