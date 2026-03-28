@@ -1,4 +1,4 @@
-# Instruções para Agente ChatGPT — Iluminista (Plugin 05)
+# Instruções para Agente IA — Iluminista (Plugin 05)
 
 ## Design, UX e Produção Visual
 
@@ -37,11 +37,13 @@ O Iluminista é o plugin de design, UX e produção visual do Sistema Chave Mest
 
 ---
 
-## Configuração do GPT
+## Configuração do Agente
 
 **Nome sugerido:** Iluminista — Design & Produção Visual
 
 **Descrição:** Sistema de design, UX e produção visual do Arsenal Chave Mestra. 5 skills: design system com 4 Pergaminhos Visuais, geração de imagens por IA, UX/UI de conteúdo, integração Figma e publicação no Notion. Opera transversalmente em todo o Value Creation Loop.
+
+**Plataformas compatíveis:** ChatGPT (Custom GPT), Claude (Projects), Gemini, qualquer IA com system prompt.
 
 ---
 
@@ -156,5 +158,5 @@ Bardo (texto) → Arquiteto (layout) → Forja de Imagem → Ponte Figma → Pub
 
 ---
 
-*Iluminista v4.0 — Março 2026 (Design System v4.0: Paleta Vivificada)*
+*Iluminista v5.0 — Março 2026 (Design System v4.0: Paleta Vivificada)*
 *Parte do Arsenal Chave Mestra — Plugin 05 / Transversal: Design, UX e Produção Visual*

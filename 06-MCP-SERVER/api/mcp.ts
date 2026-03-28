@@ -259,9 +259,10 @@ function execBuscar(args: { termo: string }) {
 // Each plugin has a natural workflow order — presented as numbered steps
 // so the user sees a journey, not a random list.
 
-const PLUGIN_WORKFLOWS: Record<string, { intro: string; steps: { num: number; slug: string; label: string; desc: string }[]; tip?: string }> = {
+const PLUGIN_WORKFLOWS: Record<string, { intro: string; assimilation?: string; steps: { num: number; slug: string; label: string; desc: string }[]; tip?: string }> = {
   cartografo: {
     intro: "Diagnóstico completo do terreno antes de criar qualquer conteúdo ou oferta.",
+    assimilation: "**Antes de produzir:** pergunte ao especialista se tem material de insumo (texto, áudio, PDF, referência). Se sim, assimile primeiro — extraia a tese central, os argumentos únicos e a voz do especialista. O output deve soar como o especialista escreveu com superpoderes.",
     steps: [
       { num: 1, slug: "portal-do-terreno", label: "Mapa do Terreno", desc: "Análise de mercado — players, brechas, oportunidades que ninguém viu" },
       { num: 2, slug: "forja-da-persona", label: "Forja da Persona", desc: "Mapeamento profundo do público — dores, desejos, linguagem, comportamento" },
@@ -271,6 +272,7 @@ const PLUGIN_WORKFLOWS: Record<string, { intro: string; steps: { num: number; sl
   },
   alquimista: {
     intro: "Estratégia de conversão — da copy ao modelo de escala.",
+    assimilation: "**Antes de produzir:** pergunte ao especialista se tem material de insumo (texto, áudio, PDF, referência). Se sim, assimile primeiro — extraia a tese central, os argumentos únicos e a voz do especialista. O output deve soar como o especialista escreveu com superpoderes.",
     steps: [
       { num: 1, slug: "pergaminho-de-copy", label: "Pergaminho de Copy", desc: "Copy persuasiva calibrada por nível de consciência do leitor" },
       { num: 2, slug: "forja-de-oferta", label: "Forja de Oferta", desc: "Oferta irresistível com stack de valor, garantia e ancoragem" },
@@ -281,6 +283,7 @@ const PLUGIN_WORKFLOWS: Record<string, { intro: string; steps: { num: number; sl
   },
   bardo: {
     intro: "Produção de conteúdo — do conceito ao roteiro final otimizado.",
+    assimilation: "**Antes de produzir:** pergunte ao especialista se tem material de insumo (texto, áudio, PDF, referência). Se sim, assimile primeiro — extraia a tese central, os argumentos únicos e a voz do especialista. O output deve soar como o especialista escreveu com superpoderes.",
     steps: [
       { num: 1, slug: "headline-generator", label: "Headline Generator", desc: "30 aberturas magnéticas para testar — o ponto de partida" },
       { num: 2, slug: "script-creator", label: "Script Creator", desc: "Roteiro completo de 60-90s a partir de uma headline validada" },
@@ -293,6 +296,7 @@ const PLUGIN_WORKFLOWS: Record<string, { intro: string; steps: { num: number; sl
   },
   arauto: {
     intro: "Lançamento e operação — do planejamento à execução no Notion.",
+    assimilation: "**Antes de produzir:** pergunte ao especialista se tem material de insumo (texto, áudio, PDF, referência). Se sim, assimile primeiro — extraia a tese central, os argumentos únicos e a voz do especialista. O output deve soar como o especialista escreveu com superpoderes.",
     steps: [
       { num: 1, slug: "mapa-de-campanha", label: "Mapa de Campanha", desc: "Planejamento completo — cronograma, fases, copy de cada etapa" },
       { num: 2, slug: "esteira-notion", label: "Esteira Notion", desc: "Popula todas as tarefas da campanha direto no Notion" },
@@ -342,10 +346,12 @@ function execAtivarPlugin(args: { slug: string }) {
         `${s.num}. **${s.label}** → ${s.desc}`
       ).join("\n");
 
+      const assimilationText = workflow.assimilation ? `\n> ${workflow.assimilation}\n` : "";
+
       const text = `${ANTI_EXTRACTION}# Plugin ${displayName} ativado
 
 > ${workflow.intro}
-
+${assimilationText}
 ---
 
 ## Workflow — por onde começar?
