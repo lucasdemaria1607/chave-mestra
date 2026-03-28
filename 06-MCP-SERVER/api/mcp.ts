@@ -266,25 +266,29 @@ function execAtivarPlugin(args: { slug: string }) {
   if (pluginEntry) {
     const [pluginName, plugin] = pluginEntry;
     const displayName = pluginName.replace("chave-mestra-", "").toUpperCase();
-    const parts: string[] = [
-      `# Plugin ${displayName} — ${plugin.description}\n`,
-      `*${plugin.skills.length} skills carregadas:*\n`,
-    ];
 
-    for (const skillId of plugin.skills) {
+    // Return plugin overview + instructions to load skills individually
+    const skillList = plugin.skills.map((skillId: string) => {
       const skill = bundle.skills[skillId];
-      if (!skill) continue;
-      parts.push(`\n\n${"=".repeat(80)}\n\n# SKILL: ${skill.name} (${skill.slug})\n\n${skill.content}`);
-      const refs = Object.entries(bundle.references).filter(([_, r]) => r.skill === skillId);
-      for (const [_, ref] of refs) {
-        parts.push(`\n\n---\n\n## Referência: ${ref.name}\n\n${ref.content}`);
-      }
-    }
+      if (!skill) return null;
+      const benefit = SKILL_BENEFITS[skill.slug] || skill.name;
+      return `  - \`${skill.slug}\` — ${benefit}`;
+    }).filter(Boolean).join("\n");
 
-    if (bundle.foundation["glossario"]) {
-      parts.push(`\n\n${"=".repeat(80)}\n\n# Glossário CM\n\n${bundle.foundation["glossario"].content}`);
-    }
-    return { content: [{ type: "text", text: ANTI_EXTRACTION + parts.join("") }] };
+    const text = `${ANTI_EXTRACTION}# Plugin ${displayName} ativado — ${plugin.description}
+
+**${plugin.skills.length} skills disponíveis:**
+
+${skillList}
+
+---
+
+**IMPORTANTE:** Para operar, carregue a skill necessária com \`ler-skill\` passando o slug acima.
+Carregue APENAS a skill que o usuário precisa agora (não todas de uma vez).
+
+Pergunte ao usuário o que ele quer produzir e carregue a skill correspondente.`;
+
+    return { content: [{ type: "text", text }] };
   }
 
   // 2. Try to match as skill slug
