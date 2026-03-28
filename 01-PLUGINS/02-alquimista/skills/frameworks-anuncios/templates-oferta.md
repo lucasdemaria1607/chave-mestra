@@ -14,6 +14,50 @@
 
 ---
 
+## Estrutura de Página de Vendas
+
+Template de referência para montar páginas de vendas. Cada seção tem uma função específica no fluxo de conversão.
+
+| Seção | Nome | O que vai aqui |
+|-------|------|----------------|
+| 1 | Barra Superior / Timer | Elemento de urgência visual — countdown, frase de escassez ou benefício-chave em destaque |
+| 2 | Hero Section | Headline principal + subheadline de reforço + CTA primário. Primeira impressão — decide se o visitante fica |
+| 3 | Benefícios 1 (Dores) | Lista das dores que o produto resolve. Espelha a linguagem do público — o visitante precisa se reconhecer aqui |
+| 4 | Benefícios 2 (Transformações) | O que muda na vida do comprador. Foco no depois — resultados concretos e verificáveis |
+| 5 | Módulos / Conteúdo | O que está incluído — módulos, entregas, materiais. Stack de valor visível e organizado |
+| 6 | Pricebox | Ancoragem de preço + stack resumido + preço real + parcelamento + CTA de compra |
+| 7 | Garantia | Tipo de garantia (incondicional, condicional, híbrida) + prazo + condições claras |
+| 8 | Bio do Especialista | Credenciais, história e autoridade do expert. Por que essa pessoa pode ensinar isso |
+| 9 | FAQ / Perguntas Frequentes | Objeções disfarçadas de perguntas — cada resposta é uma mini-copy de conversão |
+| 10 | Rodapé / CTA Final | Último CTA + reforço de garantia ou escassez. Captura quem leu tudo e ainda não clicou |
+
+---
+
+## 16 Narrativas de Oferta
+
+Mapeamento de narrativas por nível de consciência do público e posição no funil. Usar para escolher o ângulo certo de comunicação em cada etapa.
+
+| # | Narrativa | Nível de Consciência | Posição no Funil | Propósito |
+|---|-----------|---------------------|------------------|-----------|
+| 1 | Histórias que Espelham | Inconsciente | Topo | Conexão emocional |
+| 2 | Provocações do Cotidiano | Inconsciente | Topo | Planta dúvida |
+| 3 | Acordando pra Realidade | Consciente do Problema | Topo/Meio | Valida a dor |
+| 4 | Luzes no Túnel | Consciente do Problema | Meio | Inspira esperança |
+| 5 | Pílulas de Conhecimento | Consciente da Solução | Meio | Ensina algo útil |
+| 6 | Quebre o Ciclo | Consciente da Solução | Meio | Motiva ação |
+| 7 | A Origem da Virada | Consciente do Produto | Meio | História do produto |
+| 8 | Por Dentro do Produto | Consciente do Produto | Meio/Fundo | Mostra funcionamento |
+| 9 | O Custo de Ficar Parado | Consciente da Oferta | Fundo | Cria urgência |
+| 10 | Objeções no Chão | Consciente da Oferta | Fundo | Derruba dúvidas |
+| 11 | A Oferta na Mesa | Consciente da Oferta | Fundo | Vende direto |
+| 12 | Primeiros Passos | Pós-Compra | Pós-venda | Guia o uso |
+| 13 | Celebre Sua Vitória | Pós-Compra | Pós-venda | Reforça a compra |
+| 14 | Além do Esperado | Pós-Compra | Pós-venda | Fideliza |
+| 15 | Lembrando Quem Você Pode Ser | Reengajamento | Pós-venda | Reaquece |
+| 16 | O Produto Ainda Tá Aqui | Reengajamento | Pós-venda | Relembra |
+
+---
+
 ## Ângulo 1 — Autoridade / Educação
 
 **Quando usar:** Público que ainda não conhece o produto. Constrói autoridade antes de vender.
@@ -515,9 +559,99 @@ Se você chegou até aqui, provavelmente é o perfil certo.
 
 ---
 
+## Efeito de Enquadramento
+
+Princípio operacional: a mesma oferta pode converter ou afastar dependendo de como é apresentada.
+
+- **Enquadrar como ganho, não como perda.** O público responde melhor a "o que você ganha" do que a "o que você evita" — na apresentação dos benefícios.
+- **Aversão à perda:** a dor de perder é psicologicamente mais forte que o prazer de ganhar. Usar isso a favor — não contra o público.
+- **Frames positivos** para benefícios e transformações (o que muda, o que abre, o que se torna possível).
+- **Frames negativos** para o custo de não agir (o que continua igual, o que se perde com o tempo, o que piora).
+
+> Regra prática: benefícios em frame de ganho. Urgência em frame de perda.
+
+---
+
+## Pré-venda — Modelo Turma Fundadora
+
+Modelo operacional para lançar produtos novos com validação e receita antecipada.
+
+### Conceito
+Grupo de pioneiros que entram antes de todo mundo — com vantagens irrepetíveis (preço, bônus exclusivos, proximidade direta com o expert).
+
+### 4 Pilares
+1. **Pertencimento** — "você é um dos primeiros, isso tem peso"
+2. **Escassez real** — vagas limitadas de verdade, não gatilho vazio
+3. **Transparência** — o produto está sendo construído, o fundador participa da construção
+4. **Prova em tempo real** — resultados dos fundadores viram depoimentos antes do lançamento público
+
+### Arquitetura Rápida
+1. **Naming** — nome da turma (ex: "Turma Fundadora", "Primeira Forja", "Os Primeiros")
+2. **Promessa** — o que os fundadores ganham que ninguém mais ganha
+3. **Escopo MVP** — o que será entregue nesta primeira versão (sem overdelivery)
+4. **Bônus fundadores** — exclusivos, irrepetíveis, ligados à proximidade
+5. **Preço** — 30-50% abaixo do preço futuro (ancorar o preço cheio)
+6. **Escassez** — número exato de vagas + prazo de fechamento
+
+### Cronograma 7 Dias
+
+| Dia | Ação | Objetivo |
+|-----|------|----------|
+| D1 | Convocação | Anuncia a turma fundadora, planta curiosidade |
+| D2-D4 | Presell | Aquece com conteúdo de dor, prova e visão |
+| D5 | Oferta | Abre as vagas com todos os detalhes |
+| D6 | Objeções | Derruba dúvidas, mostra bastidores |
+| D7 | Fechamento | Última chamada, escassez real |
+
+### Copy de Batalha — 4 Templates
+
+**Presell DOR (D2)**
+```
+Você já [SITUAÇÃO DE DOR RECORRENTE]?
+
+Não é falta de esforço. É falta de [MECANISMO].
+
+Nos próximos dias, vou abrir algo que resolve isso na raiz. Fica ligado.
+```
+
+**Presell PROVA (D3)**
+```
+[RESULTADO CONCRETO] — foi isso que aconteceu quando [EU / PORTADOR] aplicou [MÉTODO].
+
+Não foi sorte. Foi método. E esse método vai estar disponível para um grupo pequeno em breve.
+```
+
+**Presell VISÃO (D4)**
+```
+Imagina [SITUAÇÃO DEPOIS DO RESULTADO].
+
+Não como fantasia. Como plano real, com passo a passo, com acompanhamento.
+
+Amanhã eu abro as portas. Só para os primeiros.
+```
+
+**Abertura (D5)**
+```
+Tá aberto.
+
+[NOME DA TURMA FUNDADORA] — [NÚMERO] vagas para quem quer [RESULTADO PRINCIPAL] com [VANTAGEM EXCLUSIVA].
+
+O que os fundadores ganham:
+- [BÔNUS 1]
+- [BÔNUS 2]
+- [BÔNUS 3]
+- Preço de fundador: [PREÇO] (valor futuro: [PREÇO CHEIO])
+
+Vagas limitadas. Quando fechar, não volta nesse formato.
+
+→ [LINK / PALAVRA-CHAVE]
+```
+
+---
+
 ## Referências Cruzadas
 
-- `copy-3x5.md` — camada (C1/C2/C3) de cada ângulo
+- `copy-3x5.md` — camadas de copy aplicáveis a cada ângulo
 - `metodo-carga.md` — calibração de intensidade emocional por ângulo
 - `manychat-ativacao.md` — ativar os templates via comentário → DM
 - `frameworks-anuncios.md` — estruturas narrativas para construir o post de ativação

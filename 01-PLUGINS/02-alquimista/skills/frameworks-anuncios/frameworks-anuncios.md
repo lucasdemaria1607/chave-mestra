@@ -21,20 +21,52 @@
 
 ## Tabela de Seleção
 
-| Framework | Situação ideal | Canal |
+### Tabela A — Quando usar
+
+| Framework | Nível de Consciência | Funil | Situação ideal | Canal |
+|---|---|---|---|---|
+| AIDA | Inconsciente / Consciente do Problema | Topo | Apresentação de produto novo para público frio | Anúncio pago, carrossel |
+| PAS | Consciente do Problema | Topo / Meio | Público com dor ativa e específica | Stories, reel, post |
+| BAB | Consciente da Solução | Meio | Transformação verificável | Carrossel, vídeo de prova |
+| DIC | Inconsciente | Topo | Ruptura de atenção | Reel, anúncio de interrupção |
+| PASTOR | Consciente do Produto / Oferta | Meio / Fundo | Produto complexo, high ticket | Carrossel longo, email, página |
+| FAB | Consciente do Produto | Meio | Produto com entregáveis tangíveis | Post de lista, carrossel |
+| STAR | Consciente da Solução / Produto | Meio | Resultado demonstrável | Carrossel de caso |
+| HEART | Consciente do Problema | Topo / Meio | Público cético, conexão necessária | Stories, vídeo de rapport |
+| 4P | Consciente da Oferta | Fundo | Venda direta com urgência | CTA de lançamento, anúncio |
+| Feel-Felt-Found | Consciente da Oferta | Fundo | Quebra de objeção via empatia | DM, stories |
+| STORYSELLING | Inconsciente / Consciente do Problema | Topo / Meio | Autoridade por narrativa | Carrossel, vídeo |
+| QUEST | Consciente da Solução / Produto | Meio / Fundo | Público qualificado não decidido | Email, carrossel |
+
+### Tabela B — Como combinar
+
+| Framework | Narrativa compatível | Ângulo de oferta compatível |
 |---|---|---|
-| AIDA | Apresentação de produto novo para público frio | Anúncio pago, carrossel de autoridade |
-| PAS | Público com dor ativa e específica | Stories, reel, post direto |
-| BAB | Transformação de vida/negócio verificável | Carrossel, vídeo de prova |
-| DIC | Público que precisa de ruptura para prestar atenção | Reel, anúncio de interrupção |
-| PASTOR | Produto complexo, ticket alto, ciclo longo | Carrossel longo, e-mail, página de venda |
-| FAB | Produto com entregáveis tangíveis | Post de lista, carrossel de features |
-| STAR | Resultado demonstrável por história | Carrossel de caso, storytelling |
-| HEART | Público cético, conexão emocional necessária | Stories sequenciais, vídeo de rapport |
-| 4P | Copy de venda direta com urgência | CTA final de lançamento, anúncio de fundo |
-| Feel-Felt-Found | Quebra de objeção via empatia | DM, stories de resposta, comentários |
-| STORYSELLING | Autoridade por narrativa pessoal | Carrossel de origem, vídeo de posicionamento |
-| QUEST | Público qualificado mas não decidido | Sequência de e-mail, carrossel de decisão |
+| AIDA | Provocações do Cotidiano, Histórias que Espelham | Autoridade / Educação |
+| PAS | Acordando pra Realidade | Medo / Dor |
+| BAB | Luzes no Túnel, Quebre o Ciclo | Transformação |
+| DIC | Provocações do Cotidiano | (qualquer — é gancho) |
+| PASTOR | A Origem da Virada, Por Dentro do Produto | Autoridade / Educação, Storytelling |
+| FAB | Por Dentro do Produto | Promessa Específica |
+| STAR | Luzes no Túnel, A Origem da Virada | Prova Social |
+| HEART | Histórias que Espelham, Acordando pra Realidade | Storytelling |
+| 4P | A Oferta na Mesa, O Custo de Ficar Parado | Urgência / Escassez |
+| Feel-Felt-Found | Objeções no Chão | Quebra de Objeção |
+| STORYSELLING | Histórias que Espelham, A Origem da Virada | Storytelling |
+| QUEST | Quebre o Ciclo, Por Dentro do Produto | Contraste / Comparação |
+
+---
+
+## Mapa de Contexto — Como Tudo Se Conecta
+
+Os frameworks deste arquivo são uma de quatro engrenagens que operam juntas. Cada uma responde a uma pergunta diferente:
+
+- **Frameworks de Anúncios** = estrutura da copy — **COMO** escrever a peça.
+- **Ângulos de Oferta** = posicionamento do produto — **O QUE** apresentar ao público. Ver `templates-oferta.md`.
+- **Narrativas** = história calibrada pelo nível de consciência — **PARA QUEM** falar. Ver `templates-oferta.md`.
+- **ManyChat** = ativação automática — **COMO** entregar a peça ao lead. Ver `manychat-ativacao.md`.
+
+**Fluxo de montagem:** escolher a **Narrativa** (pelo nível de consciência do público) → escolher o **Framework** (pela estrutura desejada para a peça) → escolher o **Ângulo de Oferta** (pelo posicionamento do produto) → ativar via **ManyChat** (pelo canal de entrega). As tabelas acima mapeiam exatamente quais combinações funcionam juntas.
 
 ---
 
@@ -377,7 +409,7 @@ Comenta [PALAVRA-CHAVE] que eu explico na DM.
 
 ## Referências Cruzadas
 
-- `copy-3x5.md` — qual camada (C1/C2/C3) cada framework serve
-- `metodo-carga.md` — calibração de intensidade emocional
-- `manychat-ativacao.md` — ativação dos frameworks via comentário → DM
-- `templates-oferta.md` — ângulos narrativos por tipo de produto
+- `copy-3x5.md` — sistema de camadas de copy e onde cada framework se encaixa
+- `metodo-carga.md` — calibração de intensidade emocional por peça
+- `manychat-ativacao.md` — fluxos de ativação automática (comentário → DM → destino)
+- `templates-oferta.md` — narrativas por nível de consciência e ângulos de oferta por posicionamento

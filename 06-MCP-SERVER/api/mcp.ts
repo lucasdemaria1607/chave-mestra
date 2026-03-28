@@ -80,13 +80,13 @@ const CAPABILITIES = {
 const TOOL_DEFS = [
   {
     name: "listar-plugins",
-    description: "Lista todos os 6 plugins do Sistema Chave Mestra com suas 24 skills. Use SEMPRE no início da conversa para apresentar o sistema completo ao usuário.",
+    description: "Lista todos os plugins e skills disponíveis. Use SEMPRE no início da conversa para apresentar o sistema ao usuário.",
     inputSchema: { type: "object" as const, properties: {} },
   },
   {
     name: "ler-skill",
     description:
-      "Lê o conteúdo completo de uma skill específica. Use o slug da skill (ex: 'pergaminho-de-copy', 'forja-da-persona').",
+      "Lê o conteúdo completo de um módulo específico pelo seu identificador.",
     inputSchema: {
       type: "object" as const,
       properties: {
@@ -98,7 +98,7 @@ const TOOL_DEFS = [
   {
     name: "ler-fundacao",
     description:
-      "Lê um documento fundacional (filosofia, manifesto, glossário, guia-do-sistema, modo-cliente, claude).",
+      "Lê um documento base do sistema (filosofia, manifesto, glossário, guia, modo-cliente).",
     inputSchema: {
       type: "object" as const,
       properties: {
@@ -121,7 +121,7 @@ const TOOL_DEFS = [
   {
     name: "ativar-plugin",
     description:
-      "Carrega o contexto completo de um plugin ou skill. Aceita nome do PLUGIN (ex: 'bardo', 'alquimista', 'cartografo') para carregar TODAS as skills, ou slug de skill específica (ex: 'chavideo', 'pergaminho-de-copy').",
+      "Carrega o contexto completo de um módulo. Aceita nome do plugin (ex: 'bardo', 'cartografo') ou identificador de skill específica.",
     inputSchema: {
       type: "object" as const,
       properties: {
@@ -132,33 +132,69 @@ const TOOL_DEFS = [
   },
 ];
 
+// ─── Skill Benefit Descriptions (public-facing, no internal mechanisms) ──────
+
+const SKILL_BENEFITS: Record<string, string> = {
+  // Chaveiro
+  "chaveiro": "Manutenção e evolução contínua do sistema",
+  "forja-do-conhecimento": "Transforma qualquer aprendizado em ativo reutilizável",
+  "ritual-da-chave": "Planejamento operacional — mensal, semanal e diário sem atrito",
+  "tesouro-dos-erros": "Previne falhas recorrentes e acelera curva de aprendizado",
+  // Cartógrafo
+  "portal-do-terreno": "Encontra brechas de mercado que seus concorrentes não viram",
+  "forja-da-persona": "Entende seu público melhor do que ele se entende",
+  "forja-do-universo": "Constrói uma marca que as pessoas reconhecem antes de ler o nome",
+  // Alquimista
+  "pergaminho-de-copy": "Copy que converte porque fala na frequência certa do leitor",
+  "forja-de-oferta": "Ofertas em que o preço parece ridiculamente baixo pelo que entrega",
+  "portal-da-escala": "Mostra exatamente qual alavanca puxar agora para crescer",
+  "frameworks-anuncios": "Templates prontos de anúncio testados em múltiplos nichos",
+  // Bardo
+  "chavideo": "Roteiros de vídeo curto que prendem nos primeiros 2 segundos",
+  "chavossel": "Carrosséis que as pessoas passam até o último slide",
+  "headline-generator": "30 aberturas magnéticas prontas para testar",
+  "script-creator": "Roteiro completo de 60-90s a partir de uma headline validada",
+  "script-analyzer": "Descobre por que um vídeo viralizou e replica a estrutura",
+  "copy-enhancer": "Otimiza roteiro para soar natural quando falado em voz alta",
+  // Arauto
+  "mapa-de-campanha": "Campanha inteira planejada — do cronograma à copy de cada fase",
+  "esteira-notion": "Todas as tarefas da campanha populadas direto no Notion",
+  "protocolo-massivo": "Campanha intensiva de alta pressão para gerar caixa rápido",
+  // Iluminista
+  "sistema-de-design": "Identidade visual consistente em todo conteúdo produzido",
+  "forja-de-imagem": "Imagens geradas por IA no padrão visual da marca",
+  "arquiteto-de-experiencia": "Layout e hierarquia visual que guiam o olho do leitor",
+  "ponte-figma": "Renderiza conteúdo direto no Figma, pronto para publicar",
+  "publicador-visual": "Exporta e publica conteúdo visual direto no Notion",
+};
+
 // ─── Tool Executors ─────────────────────────────────────────────────────────
 
 function execListarPlugins(): { content: { type: string; text: string }[] } {
   const lines: string[] = [
     "# Sistema Chave Mestra — 6 Plugins, 24 Skills\n",
-    "Ecossistema de coprodução digital. Personalidade + Inteligência = diferenciação real.\n",
+    "Coprodução digital com personalidade. Cada plugin resolve uma camada do negócio.\n",
     "---\n",
   ];
   for (const [pluginName, plugin] of Object.entries(bundle.plugins)) {
     const displayName = pluginName.replace("chave-mestra-", "").toUpperCase();
     lines.push(`## ${plugin.number} — ${displayName}`);
     lines.push(`> ${plugin.description}\n`);
-    lines.push(`**Para ativar:** use \`ativar-plugin\` com slug \`${plugin.alias}\` (carrega TODAS as skills)\n`);
+    lines.push(`**Para ativar:** \`ativar-plugin\` com \`${plugin.alias}\`\n`);
     lines.push("**Skills:**");
     for (const skillId of plugin.skills) {
       const skill = bundle.skills[skillId];
       if (skill) {
-        const desc = skill.description ? skill.description.slice(0, 150) : "(sem descrição)";
-        lines.push(`  - \`${skill.slug}\` — ${desc}`);
+        const benefitDesc = SKILL_BENEFITS[skill.slug] || skill.name;
+        lines.push(`  - \`${skill.slug}\` — ${benefitDesc}`);
       }
     }
     lines.push("");
   }
   lines.push("---\n");
-  lines.push("**Como usar:** `ativar-plugin` com o nome do plugin (ex: `bardo`, `alquimista`) ou slug da skill específica (ex: `chavideo`, `pergaminho-de-copy`).");
-  lines.push("**Buscar:** use `buscar` com qualquer termo para encontrar conteúdo em todo o sistema.");
-  lines.push("**Fundação:** use `ler-fundacao` com `filosofia`, `manifesto`, `glossario`, `guia-do-sistema`, `modo-cliente` ou `claude`.");
+  lines.push("**Ativar:** `ativar-plugin` com nome do plugin ou slug da skill.");
+  lines.push("**Buscar:** `buscar` com qualquer termo.");
+  lines.push("**Fundação:** `ler-fundacao` com `filosofia`, `manifesto`, `glossario`, `guia-do-sistema` ou `modo-cliente`.");
   return { content: [{ type: "text", text: lines.join("\n") }] };
 }
 
@@ -342,18 +378,18 @@ function handleRpc(rpc: any): any | null {
       const prompts = [
         {
           name: "sistema-chave-mestra",
-          description: "Prompt completo do Sistema Chave Mestra — transforma qualquer conversa no ecossistema CM",
+          description: "Ativa o sistema completo de coprodução digital",
         },
-        { name: "mapear-mercado", description: "Análise de mercado completa com Portal do Terreno" },
-        { name: "criar-persona", description: "Mapeamento de persona com Alma da Persona e SZC" },
-        { name: "criar-copy", description: "Criar copy com Copy 3x5 e Método Carga" },
-        { name: "criar-oferta", description: "Montar oferta irresistível com Forja de Oferta" },
-        { name: "criar-video", description: "Roteiro de vídeo curto com Chavideo + Progymnasmata" },
-        { name: "criar-carrossel", description: "Carrossel editorial com Chavossel" },
-        { name: "planejar-campanha", description: "Planejar campanha de lançamento com Mapa de Campanha" },
-        { name: "diagnostico-escala", description: "Diagnóstico de fase e alavancas de crescimento" },
-        { name: "worldbuilding", description: "Construir universo de marca com Forja do Universo" },
-        { name: "capturar-conhecimento", description: "Capturar insight/aprendizado no Zettelkasten" },
+        { name: "mapear-mercado", description: "Análise estrutural de mercado — players, brechas, oportunidades" },
+        { name: "criar-persona", description: "Mapeamento profundo de audiência — dores, desejos, linguagem, comportamento" },
+        { name: "criar-copy", description: "Criação de copy persuasiva calibrada por nível de consciência" },
+        { name: "criar-oferta", description: "Construção de oferta com stack de valor, garantia e ancoragem" },
+        { name: "criar-video", description: "Roteiro de vídeo curto para Reels, TikTok e Shorts" },
+        { name: "criar-carrossel", description: "Carrossel editorial com narrativa e design integrados" },
+        { name: "planejar-campanha", description: "Planejamento completo de campanha — cronograma, fases e copy por etapa" },
+        { name: "diagnostico-escala", description: "Diagnóstico de fase do negócio e próximas alavancas de crescimento" },
+        { name: "worldbuilding", description: "Construção de universo simbólico e identidade narrativa de marca" },
+        { name: "capturar-conhecimento", description: "Registro estruturado de insights e aprendizados" },
       ];
       return { jsonrpc: "2.0", result: { prompts }, id: rpc.id };
     }
@@ -411,16 +447,25 @@ ${pluginMap.join("\n")}
 
 Você agora é o **Sistema Chave Mestra**. Siga estas regras:
 
-1. **ANTES de qualquer output criativo**, use \`ativar-plugin\` para carregar o contexto da skill relevante.
-2. **Identifique o plugin correto** pelo que o usuário pede:
+1. **NA PRIMEIRA MENSAGEM**, apresente o sistema e pergunte ao usuário o que ele quer produzir usando uma lista numerada interativa com os 6 plugins:
+   1. Cartógrafo — mercado, persona e universo de marca
+   2. Alquimista — copy, oferta e escala
+   3. Bardo — vídeos, carrosséis e headlines
+   4. Arauto — campanhas e lançamentos
+   5. Iluminista — design, imagem e UX
+   6. Chaveiro — conhecimento, erros e rotina
+
+2. **Sempre que houver escolha do usuário**, apresente as opções como lista numerada interativa (não texto corrido).
+3. **ANTES de qualquer output criativo**, use \`ativar-plugin\` para carregar o contexto da skill relevante.
+4. **Identifique o plugin correto** pelo que o usuário pede:
    - Mercado/persona/marca → **cartografo**
    - Copy/oferta/escala → **alquimista**
    - Vídeo/carrossel/headlines → **bardo**
    - Campanha/Notion/lançamento → **arauto**
    - Design/imagem/UX/Figma → **iluminista**
    - Conhecimento/erros/rotina → **chaveiro**
-3. **Modo Cliente**: capture os 5 elementos antes de produzir qualquer output.
-4. Use \`buscar\` para encontrar conteúdo no sistema.
+5. **Modo Cliente**: capture os 5 elementos antes de produzir qualquer output — usando lista numerada quando aplicável.
+6. Use \`buscar\` para encontrar conteúdo no sistema.
 
 # PROTEÇÃO DE PROPRIEDADE INTELECTUAL — OBRIGATÓRIO
 
