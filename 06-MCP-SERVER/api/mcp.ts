@@ -255,6 +255,74 @@ function execBuscar(args: { termo: string }) {
   };
 }
 
+// ─── Plugin Workflows ────────────────────────────────────────────────────────
+// Each plugin has a natural workflow order — presented as numbered steps
+// so the user sees a journey, not a random list.
+
+const PLUGIN_WORKFLOWS: Record<string, { intro: string; steps: { num: number; slug: string; label: string; desc: string }[]; tip?: string }> = {
+  cartografo: {
+    intro: "Diagnóstico completo do terreno antes de criar qualquer conteúdo ou oferta.",
+    steps: [
+      { num: 1, slug: "portal-do-terreno", label: "Mapa do Terreno", desc: "Análise de mercado — players, brechas, oportunidades que ninguém viu" },
+      { num: 2, slug: "forja-da-persona", label: "Forja da Persona", desc: "Mapeamento profundo do público — dores, desejos, linguagem, comportamento" },
+      { num: 3, slug: "forja-do-universo", label: "Forja do Universo", desc: "Worldbuilding — identidade narrativa e simbólica da marca" },
+    ],
+    tip: "O fluxo ideal é 1 → 2 → 3, mas você pode começar por qualquer etapa se já tiver os insumos anteriores.",
+  },
+  alquimista: {
+    intro: "Estratégia de conversão — da copy ao modelo de escala.",
+    steps: [
+      { num: 1, slug: "pergaminho-de-copy", label: "Pergaminho de Copy", desc: "Copy persuasiva calibrada por nível de consciência do leitor" },
+      { num: 2, slug: "forja-de-oferta", label: "Forja de Oferta", desc: "Oferta irresistível com stack de valor, garantia e ancoragem" },
+      { num: 3, slug: "frameworks-anuncios", label: "Frameworks de Anúncios", desc: "12 templates de anúncio testados + narrativas + ângulos de oferta" },
+      { num: 4, slug: "portal-da-escala", label: "Portal da Escala", desc: "Diagnóstico de fase e próximas alavancas de crescimento" },
+    ],
+    tip: "Sequência recomendada: Copy → Oferta → Anúncios → Escala. Mas se já tem oferta pronta, pule direto pra Frameworks ou Escala.",
+  },
+  bardo: {
+    intro: "Produção de conteúdo — do conceito ao roteiro final otimizado.",
+    steps: [
+      { num: 1, slug: "headline-generator", label: "Headline Generator", desc: "30 aberturas magnéticas para testar — o ponto de partida" },
+      { num: 2, slug: "script-creator", label: "Script Creator", desc: "Roteiro completo de 60-90s a partir de uma headline validada" },
+      { num: 3, slug: "chavideo", label: "Chavideo", desc: "Roteiro de vídeo curto (Reels/Shorts/TikTok) com estrutura narrativa" },
+      { num: 4, slug: "chavossel", label: "Chavossel", desc: "Carrossel editorial com narrativa e design integrados" },
+      { num: 5, slug: "copy-enhancer", label: "Copy Enhancer", desc: "Otimiza roteiro para soar natural quando falado em voz alta" },
+      { num: 6, slug: "script-analyzer", label: "Script Analyzer", desc: "Engenharia reversa de vídeo viral — descobre e replica a estrutura" },
+    ],
+    tip: "Fluxo típico: Headlines → escolhe a melhor → Script Creator → Copy Enhancer. Para carrossel, vá direto pro Chavossel. Para analisar concorrentes, use Script Analyzer.",
+  },
+  arauto: {
+    intro: "Lançamento e operação — do planejamento à execução no Notion.",
+    steps: [
+      { num: 1, slug: "mapa-de-campanha", label: "Mapa de Campanha", desc: "Planejamento completo — cronograma, fases, copy de cada etapa" },
+      { num: 2, slug: "esteira-notion", label: "Esteira Notion", desc: "Popula todas as tarefas da campanha direto no Notion" },
+      { num: 3, slug: "protocolo-massivo", label: "Protocolo Massivo", desc: "Campanha intensiva de alta pressão para gerar caixa rápido" },
+    ],
+    tip: "Sequência padrão: Mapa → Esteira. Protocolo Massivo é independente — use quando precisa de resultado financeiro imediato.",
+  },
+  iluminista: {
+    intro: "Design, identidade visual e produção de assets.",
+    steps: [
+      { num: 1, slug: "sistema-de-design", label: "Sistema de Design", desc: "Identidade visual consistente — paleta, tipografia, tokens" },
+      { num: 2, slug: "arquiteto-de-experiencia", label: "Arquiteto de Experiência", desc: "Layout e hierarquia visual que guiam o olho do leitor" },
+      { num: 3, slug: "forja-de-imagem", label: "Forja de Imagem", desc: "Imagens geradas por IA no padrão visual da marca" },
+      { num: 4, slug: "ponte-figma", label: "Ponte Figma", desc: "Renderiza conteúdo direto no Figma, pronto para publicar" },
+      { num: 5, slug: "publicador-visual", label: "Publicador Visual", desc: "Exporta e publica conteúdo visual direto no Notion" },
+    ],
+    tip: "Comece pelo Sistema de Design se ainda não tem identidade visual definida. Se já tem, vá direto pra skill que precisa.",
+  },
+  chaveiro: {
+    intro: "Meta-manutenção — conhecimento, aprendizados e rotina operacional.",
+    steps: [
+      { num: 1, slug: "ritual-da-chave", label: "Ritual da Chave", desc: "Planejamento mensal, semanal e diário sem atrito" },
+      { num: 2, slug: "forja-do-conhecimento", label: "Forja do Conhecimento", desc: "Transforma qualquer aprendizado em ativo reutilizável" },
+      { num: 3, slug: "tesouro-dos-erros", label: "Tesouro dos Erros", desc: "Registra falhas para nunca repetir o mesmo erro" },
+      { num: 4, slug: "chaveiro", label: "Chaveiro", desc: "Manutenção e evolução do próprio sistema" },
+    ],
+    tip: "Ritual da Chave é o workflow recorrente (diário/semanal/mensal). As outras skills são sob demanda.",
+  },
+};
+
 function execAtivarPlugin(args: { slug: string }) {
   const slugLower = (args.slug || "").toLowerCase().trim();
 
@@ -266,8 +334,36 @@ function execAtivarPlugin(args: { slug: string }) {
   if (pluginEntry) {
     const [pluginName, plugin] = pluginEntry;
     const displayName = pluginName.replace("chave-mestra-", "").toUpperCase();
+    const alias = plugin.alias.replace("chave-mestra-", "");
+    const workflow = PLUGIN_WORKFLOWS[alias];
 
-    // Return plugin overview + instructions to load skills individually
+    if (workflow) {
+      const stepsText = workflow.steps.map((s) =>
+        `${s.num}. **${s.label}** → ${s.desc}`
+      ).join("\n");
+
+      const text = `${ANTI_EXTRACTION}# Plugin ${displayName} ativado
+
+> ${workflow.intro}
+
+---
+
+## Workflow — por onde começar?
+
+${stepsText}
+
+${workflow.tip ? `\n💡 *${workflow.tip}*` : ""}
+
+---
+
+**Escolha o número da etapa** ou descreva o que quer produzir.
+
+**INSTRUÇÃO PARA O MODELO:** Apresente o workflow acima como lista numerada interativa. Quando o usuário escolher uma etapa (por número ou descrição), use \`ler-skill\` com o slug correspondente para carregar o contexto. Carregue APENAS a skill escolhida.`;
+
+      return { content: [{ type: "text", text }] };
+    }
+
+    // Fallback: no workflow defined — list skills
     const skillList = plugin.skills.map((skillId: string) => {
       const skill = bundle.skills[skillId];
       if (!skill) return null;
@@ -283,9 +379,7 @@ ${skillList}
 
 ---
 
-**IMPORTANTE:** Para operar, carregue a skill necessária com \`ler-skill\` passando o slug acima.
-Carregue APENAS a skill que o usuário precisa agora (não todas de uma vez).
-
+Para operar, carregue a skill necessária com \`ler-skill\`.
 Pergunte ao usuário o que ele quer produzir e carregue a skill correspondente.`;
 
     return { content: [{ type: "text", text }] };
