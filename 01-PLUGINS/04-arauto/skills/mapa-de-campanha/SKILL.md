@@ -215,7 +215,8 @@ Ao encerrar uma campanha:
 ## Referências Cruzadas
 
 - `modalidades.md` — cronogramas detalhados e variações de cada modalidade
-- `copy-campanha.md` — templates de mensagens WhatsApp, email e post por fase
+- `copy-campanha.md` — templates de mensagens WhatsApp, email e post por fase (narrativa e frameworks)
+- `mensagens-operacionais.md` — templates operacionais por momento tático (lembretes CPL, sustentação de carrinho, reoferta, upsell/downsell, quebra de objeção, pós-compra)
 - `alma-da-persona.md` — Inferno/Céu informa a promessa de cada fase
 - `copy-3x5.md` — calibração de camadas por nível de consciência do público em cada fase
 - `esteira-notion/SKILL.md` — protocolo de população dos cronogramas no Notion (schema, archiving, separação campanha/orgânico)

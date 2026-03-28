@@ -233,6 +233,7 @@ O Protocolo Massivo gera dois tipos de conteúdo com destinos diferentes:
 
 - `mapa-de-campanha/SKILL.md` — o Protocolo Massivo é a 4a modalidade do Mapa
 - `copy-campanha.md` — templates de mensagens por fase
+- `negociacao-1x1.md` — roteiro de venda direta high-ticket via DM (alinhado com Protocolo Luxo — Fase 4)
 - `portal-da-escala/SKILL.md` — Matriz de Decisão indica quando usar Protocolo Massivo
 - `forja-de-oferta/SKILL.md` — stack de oferta é desenhado antes do protocolo começar
 - `esteira-notion/SKILL.md` — protocolo de população dos cronogramas + separação campanha/orgânico
