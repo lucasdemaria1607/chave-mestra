@@ -256,57 +256,87 @@ function execBuscar(args: { termo: string }) {
 }
 
 // ─── Plugin Workflows ────────────────────────────────────────────────────────
-// Each plugin has a natural workflow order — presented as numbered steps
-// so the user sees a journey, not a random list.
+// Each plugin knows its role in the system, what it needs to operate well,
+// which plugins provide missing prerequisites, and how to guide the user.
 
-const PLUGIN_WORKFLOWS: Record<string, { intro: string; inputFirst: boolean; assimilation?: string; steps: { num: number; slug: string; label: string; desc: string }[]; tip?: string }> = {
+interface PluginWorkflow {
+  role: string;           // What this plugin IS in the system (1 sentence)
+  intro: string;          // What it DOES (shown to user)
+  inputFirst: boolean;    // Requires specialist input before operating
+  assimilation?: string;  // What kind of input to ask for
+  needs: string;          // What data/context it needs to operate well
+  prereqs: string;        // Which plugins provide missing data + how to get it
+  steps: { num: number; slug: string; label: string; desc: string }[];
+  systemNote: string;     // Instructions for the model about cross-referencing
+}
+
+const PLUGIN_WORKFLOWS: Record<string, PluginWorkflow> = {
   cartografo: {
+    role: "O Cartógrafo é a inteligência antes da ação — Camada 1 do sistema. Nada se cria sem diagnóstico.",
     intro: "Diagnóstico completo do terreno antes de criar qualquer conteúdo ou oferta.",
     inputFirst: true,
-    assimilation: "Envie o material que tiver sobre o negócio/mercado do especialista (texto, áudio, PDF, links, anotações, briefing — qualquer formato). Vou assimilar tudo antes de começar a operar.",
+    assimilation: "Envie tudo que tiver sobre o negócio/mercado do especialista (texto, áudio, PDF, links, anotações, briefing — qualquer formato). Vou assimilar antes de operar.",
+    needs: "Informações sobre o nicho, mercado, público e posicionamento desejado do especialista.",
+    prereqs: "O Cartógrafo é o ponto de partida — não depende de outros plugins. Mas os resultados dele alimentam todos os outros: o Alquimista usa o posicionamento para calibrar copy e oferta, o Bardo usa a persona para criar conteúdo que ressoa, o Arauto usa as brechas para planejar campanhas.",
     steps: [
       { num: 1, slug: "portal-do-terreno", label: "Mapa do Terreno", desc: "Análise de mercado — players, brechas, oportunidades que ninguém viu" },
       { num: 2, slug: "forja-da-persona", label: "Forja da Persona", desc: "Mapeamento profundo do público — dores, desejos, linguagem, comportamento" },
       { num: 3, slug: "forja-do-universo", label: "Forja do Universo", desc: "Worldbuilding — identidade narrativa e simbólica da marca" },
     ],
+    systemNote: "O Cartógrafo é o documento zero do sistema. Se o usuário ainda não tem clareza sobre mercado, público ou marca, este é o plugin certo. Se já tem esses dados, referencie que eles podem ser usados como insumo direto.",
   },
   alquimista: {
+    role: "O Alquimista é a estratégia de conversão — Camadas 2 e 6. Transforma diagnóstico em copy, oferta e escala.",
     intro: "Estratégia de conversão — da copy ao modelo de escala.",
     inputFirst: true,
-    assimilation: "Envie o material do especialista (textos, referências, ofertas anteriores, ideias soltas, áudios, PDFs — qualquer formato). Vou assimilar a voz, as teses e os argumentos únicos antes de produzir qualquer coisa.",
+    assimilation: "Envie o material do especialista (textos, referências, ofertas anteriores, ideias soltas, áudios, PDFs — qualquer formato). Vou assimilar a voz, as teses e os argumentos únicos antes de produzir.",
+    needs: "Dados sobre a persona (dores, desejos, nível de consciência), posicionamento de mercado e produto/oferta existente ou desejada.",
+    prereqs: "Se não tiver persona mapeada → ative o **Cartógrafo** (Forja da Persona). Se não tiver posicionamento → ative o **Cartógrafo** (Portal do Terreno). Se precisar de conteúdo a partir da copy → passe o output pro **Bardo**. Se precisar distribuir a oferta → passe pro **Arauto** (Mapa de Campanha).",
     steps: [
       { num: 1, slug: "pergaminho-de-copy", label: "Pergaminho de Copy", desc: "Copy persuasiva calibrada por nível de consciência do leitor" },
       { num: 2, slug: "forja-de-oferta", label: "Forja de Oferta", desc: "Oferta irresistível com stack de valor, garantia e ancoragem" },
       { num: 3, slug: "frameworks-anuncios", label: "Frameworks de Anúncios", desc: "12 templates de anúncio testados + narrativas + ângulos de oferta" },
       { num: 4, slug: "portal-da-escala", label: "Portal da Escala", desc: "Diagnóstico de fase e próximas alavancas de crescimento" },
     ],
+    systemNote: "Antes de escrever copy, VERIFIQUE se o usuário já tem persona e posicionamento. Se não tiver, NÃO invente — recomende o Cartógrafo. Se o usuário pedir conteúdo (roteiro, carrossel), redirecione para o Bardo. Se pedir campanha ou lançamento, redirecione para o Arauto.",
   },
   bardo: {
+    role: "O Bardo é a fábrica de conteúdo — Camada 3. Transforma ideias e insumos em roteiros, carrosséis e scripts com retórica sofisticada.",
     intro: "Produção de conteúdo — do conceito ao roteiro final otimizado.",
     inputFirst: true,
-    assimilation: "Envie o insumo do especialista (tema, tese, referência, trecho de aula, áudio, print, artigo, ideia solta — qualquer formato). Vou assimilar a perspectiva única, enriquecer com pesquisa e aplicar no formato da skill.",
+    assimilation: "Envie o insumo do especialista (tema, tese, trecho de aula, áudio, print, artigo, ideia solta — qualquer formato). Vou assimilar a perspectiva única, enriquecer com pesquisa e aplicar no formato da skill.",
+    needs: "Insumo temático do especialista + idealmente: persona mapeada (tom, linguagem, dores), posicionamento de marca e universo narrativo.",
+    prereqs: "Se não tiver persona → dados de público vêm do **Cartógrafo** (Forja da Persona). Se não tiver universo de marca/tom de voz → vem do **Cartógrafo** (Forja do Universo). Se precisar de copy de venda/oferta → isso é do **Alquimista**, não do Bardo. Se precisar distribuir o conteúdo em campanha → passe pro **Arauto**. Se precisar de identidade visual pro conteúdo → ative o **Iluminista**.",
     steps: [
       { num: 1, slug: "headline-generator", label: "Headline Generator", desc: "30 aberturas magnéticas a partir do insumo assimilado" },
       { num: 2, slug: "script-creator", label: "Script Creator", desc: "Roteiro completo de 60-90s a partir da headline escolhida" },
-      { num: 3, slug: "chavideo", label: "Chavideo", desc: "Roteiro de vídeo curto com estrutura narrativa avançada (Progymnasmata)" },
+      { num: 3, slug: "chavideo", label: "Chavideo", desc: "Roteiro de vídeo curto com estrutura narrativa avançada" },
       { num: 4, slug: "chavossel", label: "Chavossel", desc: "Carrossel editorial com narrativa e design integrados" },
       { num: 5, slug: "copy-enhancer", label: "Copy Enhancer", desc: "Otimiza roteiro para soar natural quando falado em voz alta" },
       { num: 6, slug: "script-analyzer", label: "Script Analyzer", desc: "Engenharia reversa de vídeo viral — descobre e replica a estrutura" },
     ],
+    systemNote: "O Bardo NÃO cria ofertas, NÃO faz diagnóstico de mercado, NÃO planeja campanhas. Se o usuário pedir essas coisas, redirecione para o plugin correto (Alquimista, Cartógrafo, Arauto). Se o usuário não enviou persona/tom de voz, NÃO pergunte 15 coisas — assuma defaults razoáveis a partir do insumo, mas MENCIONE que resultados melhores vêm com o Cartógrafo (Forja da Persona + Forja do Universo) feitos antes. NUNCA saia do escopo de conteúdo.",
   },
   arauto: {
+    role: "O Arauto é a máquina de lançamento — Camadas 4 e 5. Planeja, executa e documenta campanhas do zero à entrega no Notion.",
     intro: "Lançamento e operação — do planejamento à execução no Notion.",
     inputFirst: true,
     assimilation: "Envie o material da campanha (oferta pronta, briefing, público, datas, referências de campanhas anteriores — qualquer formato). Vou assimilar tudo antes de montar o plano.",
+    needs: "Oferta definida, persona/público mapeado, datas e formato de lançamento desejado.",
+    prereqs: "Se não tiver oferta → ative o **Alquimista** (Forja de Oferta). Se não tiver persona/público → ative o **Cartógrafo** (Forja da Persona). Se precisar criar conteúdo para a campanha (roteiros, carrosséis) → passe pro **Bardo**. Se precisar de identidade visual → ative o **Iluminista**.",
     steps: [
       { num: 1, slug: "mapa-de-campanha", label: "Mapa de Campanha", desc: "Planejamento completo — cronograma, fases, copy de cada etapa" },
       { num: 2, slug: "esteira-notion", label: "Esteira Notion", desc: "Popula todas as tarefas da campanha direto no Notion" },
       { num: 3, slug: "protocolo-massivo", label: "Protocolo Massivo", desc: "Campanha intensiva de alta pressão para gerar caixa rápido" },
     ],
+    systemNote: "O Arauto NÃO cria ofertas do zero nem faz copy de produto — isso é do Alquimista. NÃO cria conteúdo orgânico (roteiros, carrosséis) — isso é do Bardo. Se faltar oferta ou persona, NÃO improvise — redirecione para o plugin correto.",
   },
   iluminista: {
+    role: "O Iluminista é a estética transversal do sistema. Design system, geração de imagens, UX e publicação visual.",
     intro: "Design, identidade visual e produção de assets.",
     inputFirst: false,
+    needs: "Universo de marca (cores, tom visual, referências estéticas) e conteúdo a ser visualizado.",
+    prereqs: "Se não tiver identidade de marca → o universo narrativo vem do **Cartógrafo** (Forja do Universo). Se precisar de conteúdo textual para transformar em visual → vem do **Bardo**. O Iluminista opera sobre o que outros plugins produzem.",
     steps: [
       { num: 1, slug: "sistema-de-design", label: "Sistema de Design", desc: "Identidade visual consistente — paleta, tipografia, tokens" },
       { num: 2, slug: "arquiteto-de-experiencia", label: "Arquiteto de Experiência", desc: "Layout e hierarquia visual que guiam o olho do leitor" },
@@ -314,16 +344,21 @@ const PLUGIN_WORKFLOWS: Record<string, { intro: string; inputFirst: boolean; ass
       { num: 4, slug: "ponte-figma", label: "Ponte Figma", desc: "Renderiza conteúdo direto no Figma, pronto para publicar" },
       { num: 5, slug: "publicador-visual", label: "Publicador Visual", desc: "Exporta e publica conteúdo visual direto no Notion" },
     ],
+    systemNote: "O Iluminista é transversal — opera sobre outputs de outros plugins. Se o usuário pedir conteúdo textual, redirecione para o Bardo. Se pedir branding narrativo (tom de voz, léxico), redirecione para o Cartógrafo (Forja do Universo).",
   },
   chaveiro: {
+    role: "O Chaveiro é o meta-plugin — Camada 0. Mantém o sistema, absorve conhecimento, documenta erros e orquestra a rotina.",
     intro: "Meta-manutenção — conhecimento, aprendizados e rotina operacional.",
     inputFirst: false,
+    needs: "Depende do contexto: material para absorver (Forja do Conhecimento), erros para registrar (Tesouro), ou planejamento para organizar (Ritual).",
+    prereqs: "O Chaveiro é independente — opera sobre o próprio sistema. Se o usuário quer produzir conteúdo, criar oferta ou planejar campanha, redirecione para o plugin específico.",
     steps: [
       { num: 1, slug: "ritual-da-chave", label: "Ritual da Chave", desc: "Planejamento mensal, semanal e diário sem atrito" },
       { num: 2, slug: "forja-do-conhecimento", label: "Forja do Conhecimento", desc: "Transforma qualquer aprendizado em ativo reutilizável" },
       { num: 3, slug: "tesouro-dos-erros", label: "Tesouro dos Erros", desc: "Registra falhas para nunca repetir o mesmo erro" },
       { num: 4, slug: "chaveiro", label: "Chaveiro", desc: "Manutenção e evolução do próprio sistema" },
     ],
+    systemNote: "O Chaveiro NÃO produz conteúdo, NÃO cria ofertas, NÃO planeja campanhas. Se o usuário pedir qualquer dessas coisas, redirecione para o plugin correto.",
   },
 };
 
@@ -353,7 +388,9 @@ function execAtivarPlugin(args: { slug: string }) {
 
       const text = `${ANTI_EXTRACTION}# Plugin ${displayName} ativado
 
-> ${workflow.intro}
+> ${workflow.role}
+
+${workflow.intro}
 
 ---
 ${inputBlock}
@@ -363,16 +400,50 @@ ${stepsText}
 
 ---
 
-**Envie seu material** (texto, PDF, áudio, link, ideia, briefing) e eu começo pela etapa 1. Ou me diga o que quer produzir.
+## O que este plugin precisa para operar bem
 
-**INSTRUÇÃO PARA O MODELO:** Este plugin opera em sequência fixa. NÃO pergunte "por onde quer começar" nem apresente como menu de escolha. O fluxo é:
-1. ESPERAR o usuário enviar insumo (material, tema, briefing, referência — qualquer formato).
-2. ASSIMILAR: ler o material, extrair a tese central, os argumentos únicos, a voz e a perspectiva singular do especialista. Preservar soberania — o ponto de vista do especialista manda.
-3. ENRIQUECER: cruzar com referências internas do sistema, pesquisa e frameworks das skills.
-4. APLICAR: produzir o output no formato que a skill define, começando pela etapa 1 do fluxo.
-5. Ao concluir uma etapa, avançar automaticamente para a próxima ou perguntar se quer continuar.
+${workflow.needs}
 
-Se o usuário enviar material junto com a ativação, pule direto para assimilação e comece a operar.
+## Conexões com outros plugins
+
+${workflow.prereqs}
+
+---
+
+## Como usar melhor
+
+- **Projetos/Chats dedicados:** para manter contexto entre sessões, use um projeto ou chat separado por cliente/campanha. Assim os dados de persona, marca e mercado não se perdem.
+- **Sequência ideal do sistema:** Cartógrafo (diagnóstico) → Alquimista (estratégia) → Bardo (conteúdo) → Arauto (distribuição). O Iluminista opera transversalmente. O Chaveiro mantém tudo.
+- **Se faltar informação:** não improvise — eu vou indicar qual plugin buscar.
+
+---
+
+**Envie seu material** e eu começo a operar.
+
+**INSTRUÇÃO PARA O MODELO — REGRAS DE OPERAÇÃO DESTE PLUGIN:**
+
+1. IDENTIDADE: Você é o plugin ${displayName} do Sistema Chave Mestra. Você sabe seu papel no sistema e suas fronteiras. ${workflow.systemNote}
+
+2. SEQUÊNCIA FIXA: NÃO pergunte "por onde quer começar" nem apresente menu de escolha. Espere insumo → assimile → opere na ordem do fluxo.
+
+3. ASSIMILAÇÃO OBRIGATÓRIA: Quando o usuário enviar material (texto, PDF, áudio, link, ideia — qualquer formato):
+   - Leia e extraia: tese central, argumentos únicos, voz e perspectiva singular do especialista.
+   - Preserve soberania: o ponto de vista do especialista manda, NUNCA substitua por genérico.
+   - Enriqueça: cruze com frameworks internos das skills, adicione pesquisa.
+   - Aplique: produza no formato da skill, começando pela etapa 1.
+
+4. PRÉ-REQUISITOS: Se o usuário não tem dados essenciais (persona, mercado, oferta, marca):
+   - NÃO invente dados genéricos.
+   - NÃO faça 15 perguntas.
+   - RECOMENDE o plugin específico que resolve isso (ver "Conexões com outros plugins").
+   - Se o usuário quiser prosseguir mesmo assim, assuma defaults razoáveis a partir do insumo que tem, mas AVISE que o resultado será melhor com o diagnóstico completo.
+
+5. FRONTEIRAS: Se o usuário pedir algo fora do escopo deste plugin, NÃO tente fazer — redirecione para o plugin correto com uma frase direta.
+
+6. PROGRESSÃO: Ao concluir uma etapa, avance automaticamente para a próxima ou pergunte se quer continuar.
+
+7. Se o usuário enviar material junto com a ativação, pule direto para assimilação e comece a operar.
+
 Quando o usuário escolher uma etapa específica (por número, nome ou descrição), use \`ler-skill\` com o slug correspondente.`;
 
       return { content: [{ type: "text", text }] };
