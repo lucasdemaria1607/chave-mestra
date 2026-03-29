@@ -308,6 +308,7 @@ O Relatório de Terreno é o documento zero. Tudo que vem depois parte dele.
 - `copy-3x5.md` — o posicionamento recomendado se torna espinha de C2 (marca/símbolo)
 - `modalidades.md` — as brechas de formato informam qual modalidade de lançamento é mais estratégica
 - `portal-da-escala/SKILL.md` — o FOF diagnosticado aqui (Seção 5) é o Step 1 do Value Creation Loop que o Portal da Escala opera
+- `BLUEPRINT-PESSOA-CHAVE.md` — hierarquia dos 3 níveis (Iniciante → Trabalhador → Pessoa-Chave) + diagnóstico dos 5 P's orienta onde o especialista precisa de mais investimento na escalada vertical
 
 ---
 

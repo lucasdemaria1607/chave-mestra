@@ -237,3 +237,4 @@ O Protocolo Massivo gera dois tipos de conteúdo com destinos diferentes:
 - `portal-da-escala/SKILL.md` — Matriz de Decisão indica quando usar Protocolo Massivo
 - `forja-de-oferta/SKILL.md` — stack de oferta é desenhado antes do protocolo começar
 - `esteira-notion/SKILL.md` — protocolo de população dos cronogramas + separação campanha/orgânico
+- `BLUEPRINT-PESSOA-CHAVE.md` — P5 (Parcerias): negociação 1x1 high-ticket do Protocolo Luxo é o eixo de multiplicação da Pessoa-Chave

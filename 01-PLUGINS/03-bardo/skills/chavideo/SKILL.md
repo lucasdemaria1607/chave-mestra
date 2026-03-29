@@ -204,3 +204,4 @@ Efeito retórico pretendido: [o que o roteiro deve fazer ao público]
 - `copy-3x5.md` / `metodo-carga.md` — calibração de cargas narrativas
 - `alma-da-persona.md` — Inferno/Céu alimenta Dramatic Question e Catharsis
 - `szc.md` — Zeitgeist alimenta Rising Stakes e Identity Threat
+- `BLUEPRINT-PESSOA-CHAVE.md` — P1 (Pitch) e P2 (Publicação): todo roteiro é um pitch; volume de publicação consistente constrói autoridade

@@ -451,3 +451,4 @@ VISÃO DE LOOP:
 - `esteira-notion/SKILL.md` — painel de métricas alimenta a Esteira Notion + archiving para Exit/Loop
 - `tesouro-dos-erros/SKILL.md` — documentação de aprendizados no Exit/Loop
 - `copy-3x5.md` — nível de consciência informado pelo estado do negócio informa proporção C1/C2/C3
+- `BLUEPRINT-PESSOA-CHAVE.md` — Flywheel dos 5 P's (Pitch → Publicação → Produtos → Perfil → Parcerias) é o motor estratégico que o Portal da Escala operacionaliza por fase

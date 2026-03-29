@@ -171,3 +171,4 @@ OBJEÇÕES TRATADAS:
 - `forja-da-persona/SKILL.md` — Inferno/Céu alimentam a promessa e as objeções
 - `pergaminho-de-copy/SKILL.md` — calibração C1/C2/C3 da copy da oferta
 - `mapa-de-campanha/SKILL.md` — modalidade informa formato e timing de apresentação da oferta
+- `BLUEPRINT-PESSOA-CHAVE.md` — P3 (Produtos): ecossistema de ofertas escaláveis (Presente → Entrada → Core → Recorrência) é a arquitetura que a Forja constrói
