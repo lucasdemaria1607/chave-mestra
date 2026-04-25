@@ -30,6 +30,11 @@ Tom: nunca falar como coach motivacional. Profundidade, inteligência, sem eufem
 Se rodando como agente com acesso a repositório Git:
 - Leia `06-ROTINAS/config/CONFIG-GLOBAL.md` para preencher o contexto acima automaticamente
 - Leia o DNA de Marca mais recente em `02-IDENTIDADE/dna-de-marca.md` se existir
+- Leia `06-ROTINAS/config/FEEDBACK-ROTINAS.md` — seção "Temas em Alta":
+  → Aplique os "Critérios de seleção ajustados" na curadoria dos temas
+  → Evite repetir o que foi marcado como "fraco ou genérico"
+  → Incorpore os "Ajustes para os próximos ciclos" antes de gerar o output
+  → Se não houver feedback ainda, use os critérios padrão do arquivo
 
 PESQUISA:
 Use ferramentas de busca para investigar HOJE:

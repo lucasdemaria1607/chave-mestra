@@ -67,11 +67,26 @@ formato_nota: markdown (.md)
 ## Rotinas ativas
 
 ```
-rotina_temas: ativa
-rotina_nicho: ativa
-rotina_accountability: ativa
-rotina_conteudo: ativa
+rotina_temas: ativa           # Seg/Qua/Sex 09h Bahia
+rotina_nicho: ativa           # Dia 1 e 15, 08h Bahia
+rotina_accountability: pausada # Reativar em 25/05 — aguardando acúmulo de notas
+rotina_conteudo: pausada      # Reativar em 25/05 — depende de accountability ativa
 ```
+
+---
+
+## Notion — IDs das bases de dados
+
+```
+notion_page_rotinas: 34dfc122-de3b-818b-aaec-f7b048ad7262
+notion_db_temas: collection://1a57e551-298e-4bbd-9153-2495d9d88531
+notion_db_nicho: collection://2b09a2d4-36b2-40b2-a0f3-d6f3e43f85f6
+notion_db_conteudo: collection://25cfc122-de3b-81c2-a76a-000bcf8453f4
+notion_db_zettelkasten: collection://6e4c8442-1596-4eab-ab69-a7917e93e046
+```
+
+> Quando MCP do Notion estiver disponível nas rotinas remotas, usar esses IDs para escrever
+> outputs diretamente no Notion além do commit no git.
 
 ---
 

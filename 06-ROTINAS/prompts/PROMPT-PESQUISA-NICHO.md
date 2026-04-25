@@ -25,6 +25,11 @@ Se rodando como agente com acesso a repositório Git:
 - Leia `06-ROTINAS/config/CONFIG-GLOBAL.md` para nicho e concorrentes
 - Leia o relatório de terreno mais recente em `06-ROTINAS/outputs/nicho/` para ter o baseline
 - Se não houver relatório anterior, considerar que é a primeira execução
+- Leia `06-ROTINAS/config/FEEDBACK-ROTINAS.md` — seção "Pesquisa de Nicho":
+  → Aplique o "Foco atual" nas buscas (o que o usuário quer que seja monitorado)
+  → Aprofunde o que foi marcado como "superficial" em execuções anteriores
+  → Incorpore os "Ajustes para os próximos ciclos" antes de gerar o relatório
+  → Se não houver feedback ainda, use os critérios padrão do arquivo
 
 [CONTEXTO DO NICHO]
 Nicho principal: [preencher]
