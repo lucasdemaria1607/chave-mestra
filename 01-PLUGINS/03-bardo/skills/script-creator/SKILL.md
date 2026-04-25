@@ -33,6 +33,20 @@ Função: amplificar a promessa do hook e eliminar a tentação de sair.
 Técnicas:
 - Contraste rápido: "A maioria faz X. Os que ganham dinheiro fazem Y."
 - Prova imediata: "Isso me custou R$30 mil pra descobrir."
+
+---
+
+## GATEKEEPING — Pré-Requisitos
+
+Antes de criar roteiro, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Headline validada | Headline Generator output | ⚠️ O Script Creator opera a partir de headline aprovada. Se não houver, sugerir Headline Generator primeiro ou aceitar headline informada na conversa. |
+| Persona mapeada | §2 > Persona | ⚠️ Sem persona, o roteiro perde calibragem emocional. Pode operar com público descrito na conversa. |
+| DNA de Marca | §1 > DNA de Marca | ⚡ Desejável para tom. Não bloqueia. |
+
+**Ao concluir:** registrar no §4 do Dossiê (Inventário de Outputs > Roteiros vídeo).
 - Loop aberto: "E o terceiro ponto é o que muda tudo — mas antes..."
 - Espelho emocional: descrever sensação que o público reconhece
 

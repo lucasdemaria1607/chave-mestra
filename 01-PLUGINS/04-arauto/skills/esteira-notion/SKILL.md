@@ -15,6 +15,21 @@ A Esteira Notion não cria campanhas. Executa a operação de escrita no banco d
 
 ---
 
+## GATEKEEPING — Pré-Requisitos
+
+Antes de popular o Notion, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Campanha planejada | §3 > Campanha | 🔴 **Crítico.** A Esteira executa — não planeja. Sem cronograma do Mapa de Campanha, não há o que popular. Redirecionar para Mapa de Campanha primeiro. |
+| Oferta definida | §3 > Oferta | ⚠️ Sem oferta, as tarefas de campanha ficam sem contexto de produto. Alertar e sugerir. |
+
+**Exceção:** se o usuário quer popular uma pauta semanal (não campanha), a Esteira pode operar com lista de tarefas informadas diretamente.
+
+**Ao concluir:** registrar no §5 do Dossiê (Operação — Esteira Notion populada + período coberto).
+
+---
+
 ## Arquitetura do Notion (Chave Mestra)
 
 ```

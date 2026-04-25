@@ -17,6 +17,20 @@ O Chavideo não gera scripts. Gera peças retóricas audiovisuais. Cada roteiro 
 
 ---
 
+## GATEKEEPING — Pré-Requisitos
+
+Antes de gerar roteiro, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Persona mapeada | §2 > Persona | ⚠️ Sem persona, o hook e a emoção do roteiro perdem calibragem. Alertar: "O roteiro será mais genérico sem Alma da Persona. Recomendo Forja da Persona antes." Pode operar com público descrito na conversa. |
+| DNA de Marca | §1 > DNA de Marca | ⚠️ Sem DNA, o tom e léxico do roteiro ficam genéricos. Alertar e sugerir. Pode operar com tom informado na conversa. |
+| Tema / headline | Conversa ou Headline Generator | ⚡ Se não houver tema, sugerir Headline Generator primeiro para gerar insumos. Não bloqueia se o usuário informar tema diretamente. |
+
+**Ao concluir:** registrar no §4 do Dossiê (Inventário de Outputs > Roteiros vídeo).
+
+---
+
 ## Anatomia do Roteiro Chavideo
 
 Cada roteiro tem 5 camadas obrigatórias:

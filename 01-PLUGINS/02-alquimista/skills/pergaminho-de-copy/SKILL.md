@@ -17,6 +17,20 @@ O Pergaminho de Copy integra dois frameworks em sequência: **Copy 3×5** (arqui
 
 ---
 
+## GATEKEEPING — Pré-Requisitos
+
+Antes de calibrar copy, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Persona mapeada (C1) | §2 > Persona | 🔴 **Crítico.** Sem persona, C1 opera no vazio. Alertar: "Copy calibrada exige a Alma da Persona. Sem ela, C1 será genérica. Recomendo Forja da Persona antes." Se o usuário insistir, fazer briefing mínimo de persona na conversa. |
+| DNA de Marca (C2) | §1 > DNA de Marca | ⚠️ Sem DNA, C2 será genérica. Alertar: "Sem universo de marca definido, a copy não terá reframing nem léxico proprietário. Recomendo Forja do Universo antes." Pode operar com tom de voz informado na conversa. |
+| Oferta definida (se copy de venda) | §3 > Oferta | ⚠️ Para copy de conversão/venda, a oferta precisa existir. Alertar e redirecionar para Forja de Oferta se necessário. |
+
+**Ao concluir:** registrar no §4 do Dossiê o inventário de copy produzida + nível de consciência alvo + camada principal.
+
+---
+
 ## PARTE 1 — COPY 3×5
 
 ### As 3 Camadas

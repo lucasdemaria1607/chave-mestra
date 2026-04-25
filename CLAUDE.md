@@ -50,7 +50,8 @@ Cada plugin tem:
 
 | Gatilho | Plugin | Skill |
 |---------|--------|-------|
-| "chaveiro", "assimila esse livro/PDF", "atualiza o skill X", "onde isso se encaixa" | Chaveiro | chaveiro |
+| "diagnóstico", "me avalia", "quero começar", "novo projeto", "novo cliente", "de onde eu começo", "por onde eu começo" | Chaveiro | chaveiro (Protocolo 0) |
+| "chaveiro", "assimila esse livro/PDF", "atualiza o skill X", "onde isso se encaixa" | Chaveiro | chaveiro (Protocolos 1-5) |
 | "Zettelkasten", "nota permanente", "modelos mentais", "documenta isso" | Chaveiro | forja-do-conhecimento |
 | "Tesouro dos Erros", "registra esse erro", "que erros existem para", "o que pode dar errado" | Chaveiro | tesouro-dos-erros |
 | "ritual da chave", "Lua Cheia", "Forja Semanal", "Giro da Chave", "planejamento mensal", "pauta da semana", "workflow", "rotina de criação" | Chaveiro | ritual-da-chave |
@@ -80,6 +81,33 @@ Cada plugin tem:
 
 ## Regras de Operação
 
+### Regra Zero — Diagnóstico Antes de Tudo
+
+**Quando o usuário inicia um novo projeto, cliente ou diz "quero começar":**
+1. Ative o Chaveiro → execute o **Protocolo 0 (Diagnóstico Interativo)** do `chaveiro/SKILL.md`
+2. Conduza o exame das 6 dimensões (D1-D6)
+3. Gere a Matriz de Diagnóstico (🔴🟡🟢)
+4. Identifique o tipo de jornada
+5. Crie o Dossiê CM a partir do template em `05-ASSETS/dossies/TEMPLATE-DOSSIE.md`
+6. Gere o roadmap personalizado em 3 horizontes (AGORA / PRÓXIMO / CONTÍNUO)
+7. Despache para o primeiro plugin indicado
+
+**Jornada padrão (Starter Pack — do zero):**
+```
+Fase 0: Fundação     → Forja do Universo + Ritual da Chave (§1 do Dossiê)
+Fase 1: Inteligência → Portal do Terreno + Forja da Persona (§2 do Dossiê)
+Fase 2: Estratégia   → Forja de Oferta + Mapa de Campanha (§3 do Dossiê)
+Fase 3: Criação      → Alquimista + Bardo + Iluminista (§4 do Dossiê)
+Fase 4: Operação     → Esteira Notion + Giro da Chave (§5 do Dossiê)
+Fase 5: Evolução     → Tesouro dos Erros + Forja do Conhecimento + Lua Cheia (§6 do Dossiê)
+```
+
+**Cada plugin tem gatekeeping.** Antes de operar, verificar no Dossiê CM se os pré-requisitos da fase anterior existem. Se não existirem → alertar o usuário e sugerir o plugin correto primeiro. O plugin PODE operar sem pré-requisitos se o usuário pedir explicitamente, mas marca o output como `[gerado sem contexto prévio — a validar]`.
+
+**O Dossiê CM é a memória compartilhada.** Todo plugin lê o Dossiê antes de operar e escreve nele ao concluir. Ver `00-FUNDACAO/SISTEMA-DE-ARTEFATOS.md` para o protocolo completo.
+
+### Regra de Ativação de Skill
+
 **Antes de qualquer output em uma camada:** leia o `SKILL.md` do plugin correspondente.
 
 **Para criar carrossel:** ative Bardo → leia `chavossel/SKILL.md` + `exercicios.md` + `exemplos.md`.
@@ -98,7 +126,9 @@ Cada plugin tem:
 
 **Para diagnosticar escala:** ative Alquimista → leia `portal-da-escala/SKILL.md`.
 
-**Para atualizar o sistema:** ative Chaveiro → opera com os 5 protocolos do `chaveiro/SKILL.md`.
+**Para diagnosticar / iniciar projeto:** ative Chaveiro → execute Protocolo 0 do `chaveiro/SKILL.md` (diagnóstico 6D + Dossiê CM + roadmap).
+
+**Para atualizar o sistema:** ative Chaveiro → opera com os Protocolos 1-5 do `chaveiro/SKILL.md`.
 
 **Para registrar/consultar erros:** ative Chaveiro → leia `tesouro-dos-erros/SKILL.md`.
 

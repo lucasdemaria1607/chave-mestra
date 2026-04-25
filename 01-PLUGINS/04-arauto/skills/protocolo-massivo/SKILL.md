@@ -27,6 +27,18 @@ Dois modos de operação. Filosofias opostas. Intensidade máxima em ambos.
 
 > Se algum item acima não está marcado, use o Mapa de Campanha (lançamento convencional) em vez do Protocolo Massivo.
 
+### GATEKEEPING — Dossiê CM
+
+Além dos pré-requisitos acima, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Persona mapeada | §2 > Persona | 🔴 **Crítico.** Campanha intensiva sem público definido desperdiça a base quente. |
+| Oferta estruturada | §3 > Oferta | 🔴 **Crítico.** Stack + garantia precisam existir antes do protocolo. Redirecionar para Forja de Oferta. |
+| DNA de Marca | §1 > DNA de Marca | ⚠️ Para Protocolo Luxo especificamente, o universo de marca é essencial para o tom de exclusividade. |
+
+**Ao concluir:** registrar no §5 do Dossiê + sinalizar dados para Portal da Escala (§6 pós-campanha).
+
 ---
 
 ## MODO 1 — PROTOCOLO LUXO (Posicionamento Premium)

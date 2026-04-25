@@ -17,6 +17,22 @@ A Forja da Persona não produz inventário de dores. É engenharia de espelhamen
 
 ---
 
+## GATEKEEPING — Pré-Requisitos
+
+Antes de iniciar a Forja da Persona, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Diagnóstico feito (§0) | §0 — Diagnóstico | ⚠️ Acionar **Protocolo 0 do Chaveiro** antes. |
+| Terreno mapeado (fortemente recomendado) | §2 > Terreno | ⚠️ A persona sem terreno perde ancoragem de mercado. Alertar: "A persona será mais precisa se o Portal do Terreno for feito antes — os insumos SZC do terreno alimentam diretamente a Alma da Persona." Se o usuário optar por prosseguir, operar com nicho informado. |
+| Nicho + produto | §0 ou conversa | ⚡ Perguntar diretamente ao usuário. Mínimo para operar. |
+
+**Se o Dossiê não existir:** operar com informações da conversa, mas marcar output como `[gerado sem Dossiê — a validar]`.
+
+**Ao concluir:** escrever resumo executivo em §2 > Persona do Dossiê + linkar output completo. Sinalizar que C1 do Copy 3x5 está pronto para o Alquimista.
+
+---
+
 ## Os 3 Estados
 
 ### INFERNO PARTICULAR

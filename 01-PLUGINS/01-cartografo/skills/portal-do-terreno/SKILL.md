@@ -31,6 +31,21 @@ A diferença parece sutil. O resultado é total.
 
 ---
 
+## GATEKEEPING — Pré-Requisitos
+
+Antes de iniciar o Portal do Terreno, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Diagnóstico feito (§0) | §0 — Diagnóstico | ⚠️ Acionar **Protocolo 0 do Chaveiro** antes. O terreno precisa de um nicho e direção definidos no diagnóstico. |
+| Nicho identificado | §0 > Nicho | ⚡ Perguntar diretamente ao usuário: "Qual nicho/mercado analisar?" — preencher §0 mínimo com a resposta. |
+
+**Se o Dossiê não existir:** o Portal do Terreno pode operar com nicho informado na conversa, mas alertar: "Recomendo fazer o diagnóstico completo (Protocolo 0 do Chaveiro) para que o terreno alimente persona e estratégia de forma integrada."
+
+**Ao concluir:** escrever resumo executivo em §2 > Terreno do Dossiê + linkar output completo. Sinalizar insumos SZC prontos para Forja da Persona.
+
+---
+
 ## QUANDO USAR
 
 **Use o Portal do Terreno quando:**

@@ -28,6 +28,21 @@ O Mapa de Campanha não é planilha de tarefas. É o arco dramático completo do
 
 **Quando NÃO usar:**
 - Audiência fria sem aquecimento
+
+---
+
+## GATEKEEPING — Pré-Requisitos
+
+Antes de planejar campanha, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Persona mapeada | §2 > Persona | 🔴 **Crítico.** Campanha sem público definido é tiro no escuro. Alertar: "Sem persona, a campanha não tem tom, narrativa nem ângulo. Recomendo Forja da Persona antes." |
+| Oferta definida | §3 > Oferta | 🔴 **Crítico.** Campanha sem oferta não tem o que vender. Alertar: "Sem oferta estruturada, a campanha não tem o que entregar. Recomendo Forja de Oferta antes." |
+| DNA de Marca (recomendado) | §1 > DNA de Marca | ⚠️ Sem DNA, a campanha perde arco narrativo proprietário. Alertar e sugerir. |
+| Diagnóstico de fase (recomendado) | Portal da Escala | ⚡ Para escolher a modalidade certa. Sem diagnóstico, perguntar diretamente: ticket, tamanho de audiência, tempo disponível. |
+
+**Ao concluir:** escrever resumo executivo em §3 > Campanha do Dossiê + linkar cronograma completo. Sinalizar peças necessárias para Bardo + Alquimista + Iluminista.
 - Produto novo sem prova social
 - Ticket acima de R$2.000
 

@@ -35,6 +35,19 @@ If insufficient info provided, ask for the above before generating.
 
 ---
 
+## GATEKEEPING — Pré-Requisitos
+
+Antes de gerar headlines, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Persona mapeada | §2 > Persona | ⚠️ Sem persona, as headlines não calibram emoção, dor nem nível de consciência. Alertar: "Headlines genéricas sem Alma da Persona. Recomendo Forja da Persona antes." Pode operar com público descrito na conversa (item 2 do Specialist Profile acima). |
+| DNA de Marca | §1 > DNA de Marca | ⚡ Desejável para calibrar tom (item 4 do Specialist Profile). Não bloqueia. |
+
+**Ao concluir:** registrar no §4 do Dossiê (Inventário de Outputs > Headlines). Sinalizar que headlines estão prontas para Script Creator / Chavideo / Chavossel.
+
+---
+
 ## Generation Logic
 
 ### The 14 Progymnasmata × Hook Types

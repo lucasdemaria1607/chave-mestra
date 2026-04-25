@@ -30,6 +30,22 @@ A Forja do Universo é a terceira perna do diagnóstico. Sem ela, C2 opera no v�
 
 ---
 
+## GATEKEEPING — Pré-Requisitos
+
+Antes de iniciar a Forja do Universo, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Diagnóstico feito (§0) | §0 — Diagnóstico | ⚠️ Acionar **Protocolo 0 do Chaveiro** antes. Sem diagnóstico, a construção de marca perde direção. |
+| Terreno mapeado (recomendado) | §2 — Inteligência > Terreno | ⚡ Pode prosseguir, mas alertar: "Sem terreno mapeado, o posicionamento pode ignorar brechas do mercado. Recomendo Portal do Terreno antes ou em paralelo." |
+| Persona mapeada (recomendado) | §2 — Inteligência > Persona | ⚡ Pode prosseguir, mas alertar: "Sem persona, o universo de marca pode não espelhar o público real." |
+
+**Se o Dossiê não existir:** criar um via Protocolo 0 do Chaveiro, ou — se o usuário pedir explicitamente para pular — operar com o contexto da conversa e registrar como `[gerado sem Dossiê — a validar]`.
+
+**Ao concluir:** escrever resumo executivo em §1 do Dossiê + linkar output completo.
+
+---
+
 ## OS 3 FRAMEWORKS INTEGRADOS
 
 A skill sintetiza três frameworks em uma única arquitetura:

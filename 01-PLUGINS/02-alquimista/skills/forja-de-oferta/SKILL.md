@@ -17,6 +17,20 @@ A Forja de Oferta não cria "páginas de vendas". Projeta sistemas de percepçã
 
 ---
 
+## GATEKEEPING — Pré-Requisitos
+
+Antes de criar a oferta, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Persona mapeada | §2 > Persona | 🔴 **Crítico.** A equação de valor depende de entender o dream outcome do público. Alertar: "Sem persona, a oferta será projetada no escuro. Recomendo Forja da Persona antes." |
+| Terreno mapeado (recomendado) | §2 > Terreno | ⚠️ Sem terreno, não há benchmarks de preço/concorrência. Alertar e sugerir Portal do Terreno. Pode operar com informações da conversa. |
+| DNA de Marca (recomendado) | §1 > DNA de Marca | ⚡ A oferta fica mais forte com universo de marca para naming e posicionamento. Não bloqueia. |
+
+**Ao concluir:** escrever resumo executivo em §3 > Oferta do Dossiê + linkar output completo. Sinalizar que a copy da oferta está pronta para o Pergaminho de Copy e que o Mapa de Campanha pode usar a oferta.
+
+---
+
 ## A Equação de Valor (Hormozi)
 
 ```

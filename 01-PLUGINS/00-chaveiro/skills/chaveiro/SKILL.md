@@ -55,6 +55,191 @@ TRANSVERSAL — VISUAL (Plugin 05)
 
 ---
 
+## PROTOCOLO 0 — Diagnóstico Interativo (Porta de Entrada Universal)
+
+Use quando o usuário iniciar um novo projeto, quando disser "diagnóstico", "me avalia", "quero começar", "preciso de um plano", ou quando qualquer interação sugerir que é o primeiro contato com o sistema. **Este é o protocolo que antecede todos os outros.** Nenhum plugin opera sem que o Chaveiro tenha examinado primeiro — a menos que o usuário explicitamente peça uma skill isolada.
+
+**Analogia:** um médico não receita sem examinar. O Chaveiro é a consulta antes do tratamento.
+
+### Fase 1: Identificar Modo de Operação
+
+Antes de tudo, determinar:
+
+- **Modo CM** → Cliente é Lucas / Chave Mestra → vocabulário CM integral
+- **Modo Cliente Externo** → Capturar os 5 elementos obrigatórios:
+  1. Nome / marca do cliente
+  2. Produtos (nome + tipo para cada um)
+  3. Como chama sua audiência
+  4. Nome da comunidade (ou "não tem")
+  5. Tom de voz — 3 adjetivos + 1 frase que nunca diria
+
+### Fase 2: Exame das 6 Dimensões
+
+Conduzir uma conversa diagnóstica rápida. Cada dimensão = uma fase do workflow + plugin responsável.
+
+```
+DIMENSÃO         │ O QUE AVALIA                              │ PLUGIN
+─────────────────┼───────────────────────────────────────────┼──────────────
+D1 — Identidade  │ Voz, valores, universo simbólico, marca   │ Cartógrafo (Forja do Universo)
+D2 — Inteligência│ Conhecimento do mercado e do público      │ Cartógrafo (Portal + Persona)
+D3 — Estratégia  │ Plano, campanha, calendário, metas        │ Arauto + Alquimista
+D4 — Criação     │ Método de produção, qualidade, frequência │ Alquimista + Bardo + Iluminista
+D5 — Operação    │ Organização, tarefas, tracking, Notion    │ Arauto (Esteira Notion)
+D6 — Evolução    │ Aprendizado, reflexão, documentação       │ Chaveiro (Forja + Tesouro + Ritual)
+```
+
+**Perguntas-chave por dimensão:**
+
+**D1 — Identidade**
+- Você tem uma marca ou está começando do zero?
+- Consegue descrever sua voz em 3 adjetivos?
+- Tem um universo simbólico (nomes, vocabulário, estética própria)?
+- Já fez algum exercício de posicionamento ou worldbuilding?
+
+**D2 — Inteligência**
+- Sabe quem são seus 3 maiores concorrentes e o que os diferencia?
+- Conhece as dores, desejos e linguagem do seu público?
+- Já mapeou o zeitgeist do seu mercado (o que está mudando agora)?
+- Tem uma persona documentada ou trabalha no instinto?
+
+**D3 — Estratégia**
+- Tem um plano de conteúdo para os próximos 30 dias?
+- Sabe qual é a próxima campanha/lançamento?
+- Tem metas definidas (receita, audiência, conversão)?
+- Consegue explicar sua esteira de valor (do gratuito ao premium)?
+
+**D4 — Criação**
+- Produz conteúdo com algum método ou vai no feeling?
+- Qual a sua frequência de publicação?
+- Usa frameworks de copy ou escreve intuitivamente?
+- Tem identidade visual definida (paleta, tipografia, estilo)?
+
+**D5 — Operação**
+- Suas tarefas e projetos estão organizados em algum sistema?
+- Consegue ver de relance o que precisa fazer hoje/semana?
+- Tem um calendário de conteúdo funcional?
+- Seu processo é repetível ou muda toda semana?
+
+**D6 — Evolução**
+- Documenta o que aprende (notas, insights, conexões)?
+- Registra erros e o que aprendeu com eles?
+- Tem uma rotina de reflexão (semanal, mensal)?
+- Estuda ativamente algo que alimenta seu trabalho?
+
+### Fase 3: Gerar Matriz de Diagnóstico
+
+Classificar cada dimensão:
+
+| Status | Significado | Ação |
+|--------|-------------|------|
+| 🔴 Ausente | Não existe nada nessa dimensão | **Prioridade alta** — criar do zero |
+| 🟡 Fraco | Existe algo, mas informal/inconsistente | **Prioridade média** — estruturar e fortalecer |
+| 🟢 Sólido | Funciona bem, tem método | **Manutenção** — otimizar e conectar |
+
+**Apresentar ao usuário no formato:**
+```
+D1 Identidade   → [🔴/🟡/🟢] — [observação]
+D2 Inteligência → [🔴/🟡/🟢] — [observação]
+D3 Estratégia   → [🔴/🟡/🟢] — [observação]
+D4 Criação      → [🔴/🟡/🟢] — [observação]
+D5 Operação     → [🔴/🟡/🟢] — [observação]
+D6 Evolução     → [🔴/🟡/🟢] — [observação]
+```
+
+### Fase 4: Aplicar Regras de Prioridade (Motor de Recomendação)
+
+Não recomendar tudo de uma vez. Seguir a lógica de dependências:
+
+```
+REGRA 1: Identidade antes de tudo
+  Se D1 = 🔴 → Forja do Universo + Ritual da Chave PRIMEIRO
+  Razão: sem voz definida, todo conteúdo será genérico
+
+REGRA 2: Inteligência antes de Estratégia
+  Se D2 = 🔴 → Cartógrafo (Portal + Persona) antes do Arauto/Alquimista
+  Razão: sem conhecer o terreno, qualquer plano é chute
+
+REGRA 3: Estratégia antes de Criação em volume
+  Se D3 = 🔴 e D4 = 🟡/🟢 → Mapa de Campanha antes de mais conteúdo
+  Razão: produzir sem rumo é gastar energia sem resultado
+
+REGRA 4: Criação precisa de método, não só de vontade
+  Se D4 = 🔴/🟡 → Alquimista (Copy 3x5) + Bardo (estruturas) como fundação
+  Razão: método é o que separa conteúdo de barulho
+
+REGRA 5: Operação é o que sustenta tudo
+  Se D5 = 🔴 → Esteira Notion em paralelo com qualquer fase
+  Razão: sem organização, o sistema não escala
+
+REGRA 6: Evolução é o diferencial de longo prazo
+  Se D6 = 🔴 → Forja do Conhecimento + Tesouro dos Erros como hábito
+  Razão: quem não aprende com o que faz, repete os mesmos erros
+
+REGRA 7: Sempre identificar combinações não-óbvias
+  - Quer roteiro → mas não tem persona? Cartógrafo ANTES do Bardo
+  - Quer copy → mas a voz é genérica? Ritual da Chave ANTES do Alquimista
+  - Produz muito → mas nunca analisa? Tesouro dos Erros como UPGRADE
+  - Quer escalar → mas não tem método? Alquimista ANTES do Portal da Escala
+```
+
+### Fase 5: Identificar Tipo de Jornada
+
+Com base no diagnóstico, classificar a jornada:
+
+- [ ] **Starter Pack** — do zero → Fase 0 → 1 → 2 → 3 → 4 → 5
+- [ ] **Já tem marca** — pula Fase 0 se identidade sólida → Fase 1 → 2 → 3
+- [ ] **Já produz, quer escalar** — Fase 5 (analisar) → Portal da Escala → Fase 2 → 3
+- [ ] **Já produz, quer qualidade** — Fase 3 (instalar método) → Fase 5 (feedback loop)
+- [ ] **Cliente Externo** — diagnóstico + captura 5 elementos → fluxo completo
+
+### Fase 6: Gerar Roadmap Personalizado (3 Horizontes)
+
+```
+AGORA (próximos 7 dias)
+  → O que precisa ser resolvido ANTES de qualquer produção
+  → Geralmente: D1 (identidade) ou D2 (inteligência)
+  → Plugins: Forja do Universo, Portal do Terreno, Forja da Persona
+
+PRÓXIMO (próximos 30 dias)
+  → Montar a estrutura que sustenta a operação
+  → Geralmente: D3 (estratégia) + D5 (operação)
+  → Plugins: Mapa de Campanha, Esteira Notion, Ritual da Chave
+
+CONTÍNUO (permanente)
+  → O que mantém o sistema vivo e evoluindo
+  → Sempre: D4 (criação com método) + D6 (evolução)
+  → Plugins: Alquimista + Bardo + Iluminista + Forja do Conhecimento
+```
+
+### Fase 7: Criar o Dossiê CM
+
+1. Duplicar o template de `05-ASSETS/dossies/TEMPLATE-DOSSIE.md`
+2. Nomear como `05-ASSETS/dossies/[nome-projeto].md`
+3. Preencher §0 com: matriz de diagnóstico, tipo de jornada, roadmap personalizado, recomendações cruzadas
+4. Salvar — este documento viajará por todas as fases subsequentes
+
+### Fase 8: Despachar para o Primeiro Plugin
+
+Com base nas regras de prioridade, indicar ao usuário:
+- Qual plugin ativar primeiro
+- Por que (justificativa baseada no diagnóstico)
+- O que esperar como output
+- O que vem depois
+
+**Regra de ouro:** o diagnóstico nunca é feito uma vez e esquecido. Revisitar na Lua Cheia (mensal), pós-campanha, ou quando algo travar.
+
+### Gatilhos de Revisão do Diagnóstico
+
+| Gatilho | Quando | O que recalibra |
+|---------|--------|-----------------|
+| **Lua Cheia** | Todo mês (Ritual da Chave) | Reavalia todas as 6 dimensões |
+| **Novo Cliente** | Ao iniciar trabalho com cliente externo | Diagnóstico completo do cliente |
+| **Pós-Campanha** | Ao finalizar um lançamento | D3 + D4 + D6 |
+| **Crise/Travou** | Quando algo não funciona | Identifica qual dimensão quebrou |
+| **Escala** | Quando quer crescer além do atual | D3 + D5 + Portal da Escala |
+
+---
+
 ## PROTOCOLO 1 — Assimilação de Livros e PDFs
 
 Use quando o usuário enviar um livro, PDF ou material longo para incorporar ao sistema.

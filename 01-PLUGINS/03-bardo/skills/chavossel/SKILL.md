@@ -17,6 +17,20 @@ O Chavossel não gera carrosséis. Gera ensaios visuais. A missão é adaptar a 
 
 ---
 
+## GATEKEEPING — Pré-Requisitos
+
+Antes de gerar carrossel, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto].md`):
+
+| Pré-requisito | Seção do Dossiê | Se não existir |
+|---------------|-----------------|----------------|
+| Persona mapeada | §2 > Persona | ⚠️ Sem persona, slide 1 (âncora) e o tom perdem calibragem. Alertar: "Sem Alma da Persona, o carrossel não espelha o público real. Recomendo Forja da Persona antes." Pode operar com público descrito na conversa. |
+| DNA de Marca | §1 > DNA de Marca | ⚠️ Sem DNA, narrativa e símbolos ficam genéricos. Alertar e sugerir. Pode operar com tom informado na conversa. |
+| Tema / headline | Conversa ou Headline Generator | ⚡ Se não houver tema, sugerir Headline Generator primeiro. Não bloqueia. |
+
+**Ao concluir:** registrar no §4 do Dossiê (Inventário de Outputs > Carrosséis).
+
+---
+
 ## Sintaxe Chavossel v22 (OBRIGATÓRIA)
 
 | Ferramenta | Sintaxe | Efeito Visual |
