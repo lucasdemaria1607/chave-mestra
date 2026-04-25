@@ -295,6 +295,46 @@
 
 ---
 
+## §7 — KIT DE ENTREGA AO CLIENTE
+
+> **Preenchido por:** qualquer plugin ao concluir uma fase
+> **Gatilho:** "prepara a entrega", "exporta fase X", "o que entrego pro cliente"
+> **Regra:** output de entrega usa linguagem DO CLIENTE — zero terminologia CM, zero notas internas, zero semáforos operacionais
+
+### Checklist de Entrega por Fase
+
+| Fase | Status | Arquivos prontos | Entregue em |
+|------|--------|-----------------|-------------|
+| Fase 0 — Fundação (DNA + Universo de Marca) | [ ] | | |
+| Fase 1 — Inteligência (Terreno + Persona) | [ ] | | |
+| Fase 2 — Estratégia (Oferta + Campanha) | [ ] | | |
+| Fase 3 — Criação (Peças prontas) | [ ] | | |
+| Fase 4 — Operação (Calendário + Notion) | [ ] | | |
+| Fase 5 — Evolução (Relatório pós-ciclo) | [ ] | | |
+
+### Formato de cada entrega
+
+**Fase 0:** DNA de Marca (narrativa + valores + voz + léxico) + Mapa do Universo (Primal Branding + BrandScript + estética). Documento único, tom da marca do cliente.
+
+**Fase 1:** Relatório de Terreno (nicho + saturação + zeitgeist + concorrentes + brechas) + Alma da Persona (Inferno → Purgatório → Paraíso + linguagem real + objeção principal). Dois documentos separados.
+
+**Fase 2:** Proposta de Oferta (nome + promessa + equação de valor + stack + garantia + preço) + Guia de Campanha (modalidade + cronograma + copy por fase + peças necessárias). Oferta como documento comercial, campanha como guia operacional.
+
+**Fase 3:** Inventário de peças prontas (headlines + roteiros + carrosséis + copy), organizado por canal e data de publicação.
+
+**Fase 4:** Relatório de período (o que foi publicado, engajamento, desvios do plano) + calendário atualizado no Notion.
+
+**Fase 5:** Relatório pós-ciclo (hipóteses confirmadas/refutadas + o que repetir + o que parar + o que testar + recomendação estratégica). Documento de decisão, não de justificativa.
+
+### Alertas antes de entregar
+
+- [ ] Linguagem do cliente revisada (sem termos CM)
+- [ ] Notas operacionais internas removidas
+- [ ] Versão do Dossiê atualizada no histórico
+- [ ] Cliente orientado sobre próxima fase
+
+---
+
 ## HISTÓRICO DE VERSÕES
 
 | Versão | Data | Fase atualizada | O que mudou |

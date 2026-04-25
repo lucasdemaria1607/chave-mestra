@@ -106,6 +106,69 @@ Fase 5: Evolução     → Tesouro dos Erros + Forja do Conhecimento + Lua Cheia
 
 **O Dossiê CM é a memória compartilhada.** Todo plugin lê o Dossiê antes de operar e escreve nele ao concluir. Ver `00-FUNDACAO/SISTEMA-DE-ARTEFATOS.md` para o protocolo completo.
 
+### Protocolo Anti-Impulso — Alerta de Maturidade Empreendedora
+
+**GATILHO:** quando o usuário quer criar oferta, campanha ou lançamento SEM ter passado pelas fases 0–1, OU quando estes sinais aparecem:
+- Nenhuma persona ou pesquisa de mercado documentada
+- Nenhum histórico de publicação ou entrega anterior
+- Urgência artificial ("preciso faturar logo", "quero lançar essa semana")
+- Zero dado de engajamento ou validação prévia
+- Calendário comprimido, sem margem para conteúdo de aquecimento
+
+**Aplicar 5 perguntas de diagnóstico antes de prosseguir:**
+1. "Você já vendeu algo para esse público? Tem prova de entrega?"
+2. "Tem pelo menos 30 dias de conteúdo publicado nesse nicho? A audiência sabe quem você é?"
+3. "A oferta foi testada informalmente — conversa 1x1, pesquisa, beta — ou é só uma ideia?"
+4. "Sua audiência sabe que tem o problema que você resolve? Ou precisa ser educada primeiro?"
+5. "Tem 2–4 semanas disponíveis para produzir conteúdo de aquecimento antes de abrir vendas?"
+
+**Mapa de riscos — apresentar ao usuário quando houver flags:**
+
+| Flag | Risco real |
+|------|-----------|
+| 🔴 Lançar sem aquecer audiência | Falar com desconhecidos. Conversão próxima a zero. Queima reputação. |
+| 🔴 Oferta sem validação prévia | Aposta, não estratégia. Semanas estruturando algo que o mercado não quer. |
+| 🔴 Sem elevar nível de consciência | Vender para quem não entende o que compra → frustração, reembolso, churn. |
+| 🔴 Sem histórico de entrega documentado | Promessa sem âncora. Difícil justificar o preço. Objeção máxima. |
+| 🔴 Calendário comprimido | Sem margem para ajuste. Cada peça fica ruim por falta de tempo. Erros se acumulam. |
+
+**Decisão baseada nas flags:**
+- 3+ flags 🔴 → sugerir fortemente Fase 0–1 antes de qualquer campanha
+- 1–2 flags 🔴 → alertar riscos específicos, prosseguir com plano de mitigação explícito
+- 0 flags → prosseguir normalmente
+
+**Regra:** nunca bloquear completamente — o usuário decide. Mas o risco deve ser nomeado com clareza cirúrgica antes de qualquer output.
+
+### Protocolo de Entrega ao Cliente
+
+**GATILHO:** "prepara a entrega", "exporta os resultados da fase X", "o que entrego para o cliente agora", "compartilha com o cliente".
+
+Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referências internas ao sistema CM, sem semáforos operacionais, sem notas de método. Apenas o conteúdo que o cliente recebe.
+
+| Fase | O que entregar | Formato |
+|------|---------------|---------|
+| Fase 0 — Fundação | DNA de Marca (narrativa + valores + voz + léxico) + Mapa do Universo (Primal Branding + StoryBrand) | Documento único, linguagem do cliente |
+| Fase 1 — Inteligência | Relatório de Terreno (nicho + concorrentes + brechas) + Alma da Persona (dores + linguagem real + jornada) | Dois documentos separados |
+| Fase 2 — Estratégia | Oferta Estruturada (equação de valor + stack + garantia + preço) + Cronograma de Campanha (fases + copy) | Oferta como proposta comercial, campanha como guia operacional |
+| Fase 3 — Criação | Inventário de peças prontas (headlines + roteiros + carrosséis + copy) | Pasta por tipo de conteúdo |
+| Fase 4 — Operação | Relatório de publicação + calendário do período | Acesso ao board Notion + resumo executivo |
+| Fase 5 — Evolução | Relatório pós-ciclo (o que funcionou, o que não funcionou, próximos movimentos) | Documento de decisão estratégica |
+
+**Ao gerar o Kit de Entrega:** usar a linguagem, os nomes de produto e o tom de voz DO CLIENTE. Zero terminologia CM nos outputs de entrega.
+
+### Regra de Comunicação Visual
+
+**Em toda resposta no chat:**
+- Usar **tabelas** quando houver comparação, seleção de opções, mapeamento ou listas com mais de 2 atributos
+- Usar **diagramas ASCII/texto** para mostrar fluxos, hierarquias, dependências ou sequências
+- Usar **tabelas interativas de seleção** quando a pergunta exige que o usuário escolha entre opções — apresentar as opções com descrição, pros/cons e recomendação explícita
+- Usar **blocos estruturados** (com títulos em negrito, separadores ---) para qualquer análise ou diagnóstico
+- Conceitos complexos → sempre visualizar antes de explicar em texto corrido
+
+**O que NÃO é regra de comunicação visual:**
+- Artefatos (documentos, roteiros, carrosséis, relatórios completos) → esses seguem o formato de output de cada SKILL.md, não esta regra
+- Esta regra é apenas para a **conversa no chat** — como o sistema explica, orienta e apresenta opções ao usuário
+
 ### Regra de Ativação de Skill
 
 **Antes de qualquer output em uma camada:** leia o `SKILL.md` do plugin correspondente.

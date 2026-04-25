@@ -43,6 +43,27 @@ Antes de planejar campanha, verificar no **Dossiê CM** (`05-ASSETS/dossies/[pro
 | Diagnóstico de fase (recomendado) | Portal da Escala | ⚡ Para escolher a modalidade certa. Sem diagnóstico, perguntar diretamente: ticket, tamanho de audiência, tempo disponível. |
 
 **Ao concluir:** escrever resumo executivo em §3 > Campanha do Dossiê + linkar cronograma completo. Sinalizar peças necessárias para Bardo + Alquimista + Iluminista.
+
+### Alerta de Maturidade — Diagnóstico Anti-Impulso
+
+Antes de montar o cronograma, verificar sinais de campanha prematura:
+
+| Sinal de risco | Consequência real |
+|---------------|-------------------|
+| 🔴 Audiência fria, sem aquecimento prévio | Lançar para desconhecidos. Conversão próxima a zero. Desgaste de lista sem retorno. |
+| 🔴 Sem conteúdo publicado nos 30 dias anteriores | Audiência não aquecida = não reconhece autoridade = não compra. A campanha começa com déficit de confiança. |
+| 🔴 Calendário comprimido (< 7 dias de aquecimento) | Sem margem para elevar nível de consciência. O cliente não entende o que está comprando. Alta objeção, baixa conversão. |
+| 🔴 Oferta sem validação prévia | Campanha de algo que o mercado ainda não confirmou que quer. Risco duplo: sem venda E sem aprendizado útil. |
+| 🟡 Sem CTA claro ou mecanismo de conversão definido | Campanha gera atenção mas não direciona para ação. Energia desperdiçada. |
+| 🟡 Meta de receita sem base histórica | Meta chutada = expectativa irrealista = frustração garantida. Calcular pela lista real + taxa conservadora. |
+
+**Perguntas para fazer antes de prosseguir:**
+- "Qual foi sua última publicação? Há quantos dias?"
+- "A audiência que vai ver essa campanha já conhece você ou é fria?"
+- "Quanto tempo você tem antes de precisar abrir o carrinho?"
+- "A oferta foi testada de alguma forma antes dessa campanha?"
+
+**Se 2+ sinais 🔴 estiverem ativos:** apresentar diagnóstico antes de montar o cronograma. O usuário decide — mas com plena consciência dos pontos cegos. Marcar output como `[campanha planejada sem base de aquecimento — risco alto de conversão baixa]` se avançar assim mesmo.
 - Produto novo sem prova social
 - Ticket acima de R$2.000
 

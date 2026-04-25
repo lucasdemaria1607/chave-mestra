@@ -29,6 +29,20 @@ Antes de criar a oferta, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projet
 
 **Ao concluir:** escrever resumo executivo em §3 > Oferta do Dossiê + linkar output completo. Sinalizar que a copy da oferta está pronta para o Pergaminho de Copy e que o Mapa de Campanha pode usar a oferta.
 
+### Alerta de Maturidade — Diagnóstico Anti-Impulso
+
+Antes de projetar a oferta, verificar sinais de oferta prematura:
+
+| Sinal de risco | Consequência real |
+|---------------|-------------------|
+| 🔴 Sem histórico de entrega documentado | Promessa sem âncora — o mercado não tem razão para acreditar. Objeção máxima. |
+| 🔴 Produto nunca vendido antes (sem beta/validação 1x1) | Você pode passar semanas estruturando algo que o público não quer comprar. |
+| 🔴 Sem prova social ou casos de resultado | A equação de valor travada no "probabilidade de sucesso". Preço justificável apenas por comparação, não por evidência. |
+| 🟡 Ticket alto sem autoridade construída | O preço funciona quando a autoridade precede. Sem conteúdo histórico, o ticket alto quebra na objeção. |
+| 🟡 Oferta complexa para audiência fria | Complexidade aumenta o atrito cognitivo. Audiência fria precisa de oferta simples, resultado claro. |
+
+**Se 2+ sinais 🔴 estiverem ativos:** apresentar ao usuário antes de prosseguir. Não bloquear — nomear o risco com precisão e perguntar se quer mitigar ou avançar assim mesmo. Se avançar, marcar output como `[oferta gerada sem validação prévia — validar com mercado antes de escalar]`.
+
 ---
 
 ## A Equação de Valor (Hormozi)
