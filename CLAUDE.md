@@ -81,6 +81,25 @@ Cada plugin tem:
 
 ## Regras de Operação
 
+### Regra Menos Um — Detecção de Ambiente
+
+Antes de qualquer coisa, identificar o tier de operação do Dossiê:
+
+| Sinal | Tier | Modo Dossiê |
+|-------|------|-------------|
+| Ferramentas `Read`/`Write`/`Edit` disponíveis | **Tier 1** | Ler/escrever `dossie.md` automaticamente |
+| Ferramentas `notion-*` disponíveis | **Tier 1** | Ler/escrever via Notion MCP |
+| Project Knowledge presente, sem file tools | **Tier 2** | Ler do contexto; gerar Estado Compacto ao final |
+| Nenhuma ferramenta de arquivo ou MCP | **Tier 3** | Verificar se usuário colou Estado Dossiê |
+
+**Tier 3 sem Estado Dossiê colado:** perguntar → *"Tem um Estado Dossiê desse projeto para colar? Ou quer iniciar um novo?"*
+
+**Tier 3 com Estado Dossiê colado:** confirmar → *"Contexto carregado: [Projeto], Fase [N]. Continuando de onde parou."*
+
+**Ao final de toda sessão em Tier 2 ou 3:** gerar automaticamente o **Estado Dossiê Compacto** atualizado e orientar o usuário a salvar. Formato completo em `05-ASSETS/templates-cliente/PROTOCOLO-DOSSIE.md`.
+
+---
+
 ### Regra Zero — Diagnóstico Antes de Tudo
 
 **Quando o usuário inicia um novo projeto, cliente ou diz "quero começar":**

@@ -1,6 +1,6 @@
-# Protocolo do Dossiê CM — Como o Contexto Viaja
+# Protocolo do Dossiê CM — Transporte de Contexto Multi-Ambiente
 
-> O Dossiê é o único documento que existe por projeto. Não é copiado, não é duplicado. Todo plugin lê dele e escreve nele. É a memória viva do projeto.
+> O Dossiê é a memória viva do projeto. O princípio não muda entre ambientes — o que muda é o mecanismo de transporte. Este protocolo define os 3 tiers de operação e o formato portátil que funciona em qualquer IA.
 
 ---
 
@@ -8,7 +8,7 @@
 
 **O Dossiê não vai ao plugin — o plugin vai ao Dossiê.**
 
-Cada plugin tem seções pré-alocadas. Ao iniciar, lê as seções relevantes. Ao concluir, escreve sua seção. O próximo plugin encontra tudo atualizado.
+Cada plugin tem seções pré-alocadas. Ao iniciar, lê as seções relevantes. Ao concluir, atualiza sua seção. O próximo plugin encontra tudo atualizado — independente de onde o Dossiê vive.
 
 ```
 SEÇÕES POR RESPONSÁVEL
@@ -25,129 +25,242 @@ SEÇÕES POR RESPONSÁVEL
 
 ---
 
-## Onde o Dossiê vive
+## O problema real: o modelo "arquivo local" não porta
 
-### Modo local (Claude Code)
+O modelo onde o plugin lê/escreve diretamente em um `.md` funciona **apenas no Claude Code**. Em qualquer outro ambiente — claude.ai, ChatGPT, Gemini, APIs sem file tools — não há acesso a arquivos.
 
-```
-[CLIENTE-NOME]/
-└── 00-DOSSIE/
-    └── dossie.md          ← arquivo único, versionado no Git
-```
+| Ambiente | Acesso a arquivos | Sem solução fica |
+|----------|------------------|-----------------|
+| Claude Code | ✅ Leitura + escrita | Funciona normalmente |
+| Claude.ai + Notion MCP | ✅ Via API Notion | Funciona via notion-fetch / notion-update-page |
+| Claude.ai Projects (sem MCP) | ⚠️ Só leitura | Dossiê fica desatualizado |
+| Qualquer IA sem MCP | ❌ Nenhum | Contexto zerado a cada sessão |
+| ChatGPT / Gemini / outros | ❌ Nenhum | Sem memória de projeto |
 
-O Claude Code lê e escreve diretamente neste arquivo. Nenhum plugin cria um arquivo separado de contexto.
-
-### Modo Notion (claude.ai / MCP ativo)
-
-O Dossiê vive como uma página Notion na seção do cliente. O MCP do Notion (`notion-update-page`, `notion-fetch`) é o mecanismo de leitura e escrita.
-
-Estrutura Notion sugerida:
-```
-ESTEIRA DO CLIENTE
-└── [NOME DO CLIENTE]
-    ├── 🗂 Dossiê CM          ← página master com as seções §0–§7
-    ├── 📁 Identidade
-    ├── 📁 Inteligência
-    ├── 📁 Estratégia
-    ├── 📁 Criação
-    ├── 📁 Entregas
-    └── 📁 Evolução
-```
-
-### Modo híbrido (recomendado para trabalho real com clientes)
-
-| Contexto | Onde o Dossiê vive | Mecanismo |
-|---------|-------------------|-----------|
-| Desenvolvimento / Claude Code | Local `.md` | Leitura/escrita direta de arquivo |
-| Sessão claude.ai (sem Code) | Colado no chat | Handoff Note + paste manual |
-| Operação com cliente | Notion | MCP Notion (leitura e escrita automática) |
-| Entrega ao cliente | Google Drive | Export do §7 como documento limpo |
+**Solução:** 3 tiers de transporte. O Dossiê é sempre o mesmo — só o mecanismo muda.
 
 ---
 
-## Protocolo de leitura por plugin
+## Os 3 Tiers de Transporte
 
-Ao iniciar qualquer skill, o plugin lê:
+### Tier 1 — Automático (Claude Code ou Notion MCP ativo)
 
-| Plugin | Seções que lê obrigatoriamente | Seções que lê opcionalmente |
-|--------|-------------------------------|----------------------------|
-| Cartógrafo — Portal do Terreno | §0 (diagnóstico) | §1 (identidade se existir) |
-| Cartógrafo — Forja da Persona | §0, §2 > Terreno | §1 |
-| Cartógrafo — Forja do Universo | §0 | §2 |
-| Alquimista — Pergaminho de Copy | §1, §2 | §3 > Oferta |
-| Alquimista — Forja de Oferta | §0, §2 | §1, §3 > Campanha |
-| Alquimista — Portal da Escala | §0, §3, §6 | §2 |
-| Bardo — qualquer skill | §1 (voz), §2 (persona) | §3 (tema/campanha) |
-| Arauto — Mapa de Campanha | §0, §2, §3 > Oferta | §1 |
-| Arauto — Esteira Notion | §3 > Campanha | §4 |
-| Arauto — Protocolo Massivo | §0, §2, §3 | §1 |
-| Iluminista — Sistema de Design | §1 (DNA/estética) | §3 |
-| Chaveiro — qualquer skill | §0 sempre | todos os §§ relevantes |
+O plugin lê e escreve diretamente. Nenhuma ação manual do usuário.
+
+**Claude Code:**
+```
+[CLIENTE-NOME]/00-DOSSIE/dossie.md
+→ Plugin usa Read para ler, Edit/Write para atualizar
+→ Versionado no Git — histórico automático
+```
+
+**Notion MCP:**
+```
+Página Notion do cliente → Dossiê CM
+→ Plugin usa notion-fetch para ler
+→ Plugin usa notion-update-page para escrever
+→ Funciona em qualquer sessão que tenha o MCP ativo
+```
+
+**Comportamento ao final da sessão (Tier 1):**
+Atualizar o arquivo/página e registrar nova versão no HISTÓRICO. Nenhum output especial para o usuário.
 
 ---
 
-## Nota de Handoff — troca de sessão ou plugin
+### Tier 2 — Semi-automático (Claude.ai Projects sem MCP)
 
-Quando uma sessão encerra (ou quando o usuário vai trocar de plugin em uma nova conversa), o plugin ativo gera uma **Nota de Handoff**. O usuário cola isso no início da próxima sessão.
+O Dossiê vive no **Project Knowledge** (read-only). O plugin lê normalmente, mas não consegue salvar de volta.
 
-### Formato padrão
-
-```
-═══════════════════════════════════════════════
-HANDOFF — [Plugin/Skill saindo] → [Plugin/Skill entrando]
-Cliente: [nome]
-Fase concluída: [Fase X — nome]
-Seções do Dossiê atualizadas: §X, §Y
-─────────────────────────────────────────────
-O que foi feito:
-• [bullet 1]
-• [bullet 2]
-• [bullet 3]
-─────────────────────────────────────────────
-O próximo plugin precisa saber:
-• [informação crítica específica]
-• [decisão tomada que afeta o próximo passo]
-─────────────────────────────────────────────
-Arquivos gerados: [lista com caminhos]
-Dossiê em: [caminho/notion-url]
-Próxima ação recomendada: [específico]
-═══════════════════════════════════════════════
-```
-
-### Exemplo real
+**Comportamento:**
+- Ao iniciar: ler o Dossiê do Project Knowledge normalmente
+- Durante a sessão: trabalhar normalmente
+- Ao encerrar: gerar o **Estado Dossiê Compacto** atualizado e instruir o usuário a substituir o arquivo no Project Knowledge
 
 ```
-═══════════════════════════════════════════════
-HANDOFF — Cartógrafo (Forja da Persona) → Alquimista (Forja de Oferta)
-Cliente: Studio Beatriz Lima
-Fase concluída: Fase 1 — Inteligência
-Seções do Dossiê atualizadas: §2 (Terreno + Persona)
-─────────────────────────────────────────────
-O que foi feito:
-• Terreno mapeado: nicho de dança para adultos 35-55 anos, saturação média, brecha em método para iniciantes
-• Persona: Carla, 42 anos, Purgatório (quer dançar mas acha que é tarde demais), linguagem "nunca fui coordenada"
-• SZC: mercado tratando adultos como versão menor dos jovens → brecha na abordagem "seu ritmo, sua fase"
-─────────────────────────────────────────────
-O próximo plugin precisa saber:
-• Objeção principal da persona: "já passei da idade pra aprender"
-• A brecha principal é método de ensino progressivo para adultos — a oferta precisa atacar diretamente esse ponto
-• Ticket sugerido baseado no terreno: R$197–R$297 para entrada
-─────────────────────────────────────────────
-Arquivos gerados: 00-DOSSIE/dossie.md (§2 atualizado), 03-INTELIGENCIA/alma-da-persona.md
-Dossiê em: 00-DOSSIE/dossie.md
-Próxima ação recomendada: Forja de Oferta com foco em "método para adultos começando do zero"
-═══════════════════════════════════════════════
+⚠️ Claude.ai Projects — ao final de cada sessão:
+O sistema gera o Estado Dossiê atualizado.
+O usuário: baixa o arquivo → substitui no Project Knowledge → próxima sessão começa atualizada.
 ```
+
+---
+
+### Tier 3 — Manual / Portátil (qualquer IA, qualquer chat)
+
+Sem arquivo. Sem MCP. Apenas texto na janela de conversa.
+
+**Comportamento:**
+- Ao iniciar: o usuário cola o **Estado Dossiê Compacto** no início da mensagem
+- O sistema lê o Estado e reconstrói o contexto do projeto
+- Durante a sessão: opera normalmente com o contexto carregado
+- Ao encerrar: gera o **Estado Dossiê Compacto** atualizado para o usuário salvar
+
+```
+Fluxo Tier 3:
+[usuário cola Estado Dossiê] → [sessão com contexto completo] → [sistema gera Estado atualizado] → [usuário salva]
+```
+
+O Estado Dossiê é intencionalmente compacto (~30 linhas) para caber em qualquer janela de contexto de qualquer IA.
+
+---
+
+## Estado Dossiê Compacto — Formato Portátil Universal
+
+Este é o formato que funciona em qualquer ambiente. Comprime as informações essenciais do Dossiê completo em um bloco estruturado de ~30 linhas.
+
+### Formato
+
+```
+╔══════════════════════════════════════════════════════════╗
+║  ESTADO DOSSIÊ — [PROJETO/CLIENTE]                       ║
+║  v[N] · [YYYY-MM-DD] · Fase atual: [N — nome]            ║
+╠══════════════════════════════════════════════════════════╣
+║ CLIENTE                                                  ║
+║  Marca: [nome da marca]                                  ║
+║  Produtos: [nome (tipo)] · [nome (tipo)]                 ║
+║  Audiência: [como chama]                                 ║
+║  Tom: [adj1], [adj2], [adj3] · nunca diria: "[frase]"    ║
+╠══════════════════════════════════════════════════════════╣
+║ DIAGNÓSTICO 6D                                           ║
+║  D1 Identidade   [🔴/🟡/🟢] [observação em 1 linha]      ║
+║  D2 Inteligência [🔴/🟡/🟢] [observação em 1 linha]      ║
+║  D3 Estratégia   [🔴/🟡/🟢] [observação em 1 linha]      ║
+║  D4 Criação      [🔴/🟡/🟢] [observação em 1 linha]      ║
+║  D5 Operação     [🔴/🟡/🟢] [observação em 1 linha]      ║
+║  D6 Evolução     [🔴/🟡/🟢] [observação em 1 linha]      ║
+║  Jornada: [Starter Pack / Já tem marca / etc.]           ║
+╠══════════════════════════════════════════════════════════╣
+║ CONTEXTO ATIVO                                           ║
+║  DNA: [voz + posicionamento em 1 linha]                  ║
+║  Persona: [quem é + dor principal em 1 linha]            ║
+║  Oferta: [o que vende + promessa em 1 linha]             ║
+║  Campanha: [o que está ativo ou "nenhuma"]               ║
+╠══════════════════════════════════════════════════════════╣
+║ PROGRESSO DAS FASES                                      ║
+║  ✅ Fase 0 Fundação: [resumo em 1 linha ou "pendente"]   ║
+║  ✅ Fase 1 Inteligência: [resumo ou "pendente"]          ║
+║  🔄 Fase 2 Estratégia: em andamento — [onde parou]       ║
+║  ⏳ Fase 3 Criação: pendente                             ║
+║  ⏳ Fase 4 Operação: pendente                            ║
+║  ⏳ Fase 5 Evolução: pendente                            ║
+╠══════════════════════════════════════════════════════════╣
+║ PRÓXIMA AÇÃO                                             ║
+║  Plugin: [nome]  Skill: [nome]                           ║
+║  Objetivo: [o que fazer nesta sessão]                    ║
+║  Contexto crítico: [o que o plugin precisa saber]        ║
+╚══════════════════════════════════════════════════════════╝
+```
+
+### Exemplo preenchido
+
+```
+╔══════════════════════════════════════════════════════════╗
+║  ESTADO DOSSIÊ — STUDIO BEATRIZ LIMA                     ║
+║  v1.2 · 2026-04-28 · Fase atual: 2 — Estratégia         ║
+╠══════════════════════════════════════════════════════════╣
+║ CLIENTE                                                  ║
+║  Marca: Studio Beatriz Lima                              ║
+║  Produtos: Dança Adulta Online (curso) · Aula Avulsa     ║
+║  Audiência: suas bailarinas                              ║
+║  Tom: acolhedora, precisa, vibrante · nunca diria:       ║
+║       "não importa a técnica, o que vale é se divertir"  ║
+╠══════════════════════════════════════════════════════════╣
+║ DIAGNÓSTICO 6D                                           ║
+║  D1 Identidade   🟡 Tem marca mas sem universo simbólico  ║
+║  D2 Inteligência 🟢 Terreno e persona mapeados           ║
+║  D3 Estratégia   🔴 Sem plano de campanha ou oferta      ║
+║  D4 Criação      🟡 Produz no feeling, sem método        ║
+║  D5 Operação     🔴 Tudo na cabeça, sem calendário       ║
+║  D6 Evolução     🔴 Não documenta nada                   ║
+║  Jornada: Já tem marca (pulou Fase 0, iniciou na Fase 1) ║
+╠══════════════════════════════════════════════════════════╣
+║ CONTEXTO ATIVO                                           ║
+║  DNA: voz acolhedora + posição "dança para adultos       ║
+║       que nunca dançaram"                                ║
+║  Persona: Carla, 42 anos — quer dançar mas acha que      ║
+║           é tarde demais, objeção "não tenho ritmo"      ║
+║  Oferta: ainda não estruturada (próxima ação)            ║
+║  Campanha: nenhuma ativa                                 ║
+╠══════════════════════════════════════════════════════════╣
+║ PROGRESSO DAS FASES                                      ║
+║  ✅ Fase 0 Fundação: pulada — identidade já existia      ║
+║  ✅ Fase 1 Inteligência: terreno + persona concluídos    ║
+║  🔄 Fase 2 Estratégia: iniciando — oferta pendente       ║
+║  ⏳ Fase 3 Criação: pendente                             ║
+║  ⏳ Fase 4 Operação: pendente                            ║
+║  ⏳ Fase 5 Evolução: pendente                            ║
+╠══════════════════════════════════════════════════════════╣
+║ PRÓXIMA AÇÃO                                             ║
+║  Plugin: Alquimista  Skill: Forja de Oferta              ║
+║  Objetivo: estruturar oferta do curso Dança Adulta Online ║
+║  Contexto crítico: objeção "é tarde demais", ticket      ║
+║  sugerido R$197-297, brecha é método progressivo         ║
+╚══════════════════════════════════════════════════════════╝
+```
+
+---
+
+## Detecção de ambiente pelo sistema
+
+Ao iniciar qualquer sessão, identificar o tier:
+
+| Sinal detectado | Tier | Ação imediata |
+|----------------|------|---------------|
+| Ferramentas Read/Write/Edit disponíveis | Tier 1 | Ler `dossie.md` automaticamente |
+| Ferramentas `notion-*` disponíveis | Tier 1 | Ler Dossiê via `notion-fetch` |
+| Nenhuma ferramenta de arquivo, mas há Project Knowledge | Tier 2 | Ler do contexto; gerar Estado ao final |
+| Nenhuma ferramenta, nenhum Project Knowledge | Tier 3 | Verificar se usuário colou Estado Dossiê |
+
+**Se Tier 3 e o usuário não colou Estado Dossiê:**
+→ Perguntar: *"Tem um Estado Dossiê desse projeto para colar? Ou quer iniciar um novo?"*
+
+**Se Tier 3 e o usuário colou Estado Dossiê:**
+→ Confirmar: *"Contexto carregado: [Projeto], Fase [N]. Continuando de onde parou."*
+
+**Ao final de toda sessão em Tier 2 ou 3:**
+→ Gerar automaticamente o Estado Dossiê atualizado e orientar o usuário a salvar.
+
+---
+
+## Dossiê completo vs. Estado Compacto — quando usar cada um
+
+| Formato | Quando usar | Onde vive |
+|---------|------------|-----------|
+| **Dossiê completo** (`dossie.md`) | Tier 1 — Claude Code ou Notion MCP. Referência completa do projeto. | Arquivo local ou Notion |
+| **Estado Dossiê Compacto** | Tier 2 e 3 — pontes de sessão, ambientes sem arquivo. | Colado no chat, salvo em nota ou Google Docs |
+| **Nota de Handoff** | Qualquer tier — troca de plugin dentro de uma mesma sessão. Descartável após uso. | Apenas no chat |
 
 ---
 
 ## Regra anti-duplicação
 
-- **Nunca criar um "resumo do projeto" separado do Dossiê.** O Dossiê já é o resumo.
-- **Nunca criar um "briefing do plugin" separado.** O plugin lê o Dossiê e extrai o que precisa.
-- **A Nota de Handoff não é um novo documento.** É uma mensagem temporária para pontes de sessão — não se salva, não se arquiva.
-- **Se o Dossiê precisar de um campo novo**, atualizar o `TEMPLATE-DOSSIE.md` via Chaveiro (Protocolo 2 — Atualização), não criar arquivo separado.
+- **Nunca criar um "resumo do projeto" separado.** O Estado Dossiê já é o resumo.
+- **O Estado Compacto substitui o Dossiê no chat — não é um documento adicional.**
+- **A Nota de Handoff não é salva.** É temporária, existe só para pontes de sessão.
+- **Se o Dossiê precisar de um campo novo**, atualizar o `TEMPLATE-DOSSIE.md` via Chaveiro (Protocolo 2).
 
 ---
 
-*Protocolo do Dossiê CM — Sistema Chave Mestra. Um arquivo. Uma verdade.*
+## Protocolo de leitura por plugin
+
+Ao iniciar qualquer skill, o plugin lê as seções do Dossiê (ou campos equivalentes no Estado Compacto):
+
+| Plugin | Lê obrigatoriamente | Lê opcionalmente |
+|--------|--------------------|--------------------|
+| Cartógrafo — Portal do Terreno | §0 / Diagnóstico | §1 / DNA |
+| Cartógrafo — Forja da Persona | §0, §2>Terreno / Diagnóstico + Terreno | §1 / DNA |
+| Cartógrafo — Forja do Universo | §0 / Diagnóstico | §2 / Persona |
+| Alquimista — Pergaminho de Copy | §1, §2 / DNA + Persona | §3>Oferta |
+| Alquimista — Forja de Oferta | §0, §2 / Diagnóstico + Persona | §1 / DNA |
+| Alquimista — Portal da Escala | §0, §3, §6 / Diagnóstico + Estratégia | §2 |
+| Bardo — qualquer skill | §1, §2 / DNA + Persona | §3>Campanha |
+| Arauto — Mapa de Campanha | §0, §2, §3>Oferta / Diagnóstico + Oferta | §1 / DNA |
+| Arauto — Esteira Notion | §3>Campanha / Campanha | §4 |
+| Arauto — Protocolo Massivo | §0, §2, §3 / Diagnóstico + Oferta | §1 |
+| Iluminista — Sistema de Design | §1>estética / DNA | §3 |
+| Chaveiro — qualquer skill | §0 sempre | todos os §§ relevantes |
+
+*Em ambientes Tier 2/3, os §§ correspondem aos campos do Estado Dossiê Compacto.*
+
+---
+
+*Protocolo do Dossiê CM — Sistema Chave Mestra. O conteúdo é a memória. O mecanismo é o que muda.*
