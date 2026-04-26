@@ -91,6 +91,13 @@ notion_db_tarefas_hub: collection://00cfc122-de3b-83a0-ad2a-87e3bd2d78ed
 
 # Conteúdo — Peças geradas pela Transformação em Conteúdo vão aqui (ESTEIRA)
 notion_db_conteudo: collection://25cfc122-de3b-81c2-a76a-000bcf8453f4
+
+# Agenda — Dashboard unificado (calendário + listas de Conteúdo e Tarefas)
+# Campos do banco Conteúdo: Título, Status, Data de Publicação, Plataforma, Tipo de Post,
+#   Tipo de conteúdo, Produto, Origem, Propósito, Campanha, Etapas, Tarefas, Arquivo, Notas & Briefing
+# Origem opções: Organico | Protocolo Massivo | Temas em Alta | Pesquisa de Nicho | Manual | Ideia Própria
+# Propósito opções: Awareness | Autoridade | Conversão | Relacionamento | Nutrição
+notion_page_agenda: 34efc122-de3b-8106-8a36-d8ca827f428c
 ```
 
 ## Mapeamento: rotina → base Notion
@@ -100,7 +107,10 @@ temas_em_alta      → zettelkasten (Tipo: Flash, Zona: Inbox, Tags: conteúdo, 
 pesquisa_de_nicho  → zettelkasten (Tipo: Flash, Zona: Output, Tags: mercado, Destino: Conteúdo)
                    + tarefas_hub (Nome: Ação Recomendada, Feito: false, Data: data do output, Origem: "Pesquisa de Nicho")
 accountability     → tarefas_hub (Nome: alerta de captura, Feito: false, Data: data do output, Origem: "Accountability")
-transformacao      → conteudo (Status: Rascunho, Origem: Orgânico, Notas & Briefing: conteúdo gerado)
+transformacao      → conteudo (Status: Rascunho, Origem: Orgânico, Notas & Briefing: conteúdo gerado,
+                               Propósito: inferir do tipo de conteúdo gerado,
+                               Campanha: preencher se o conteúdo pertence a uma campanha ativa,
+                               Etapas: ["Ideia captada"] ao criar, atualizar conforme produção avança)
 ```
 
 > Sync ocorre via comando "sincroniza rotinas no notion" em sessão direta Claude Code.
