@@ -98,7 +98,8 @@ notion_db_conteudo: collection://25cfc122-de3b-81c2-a76a-000bcf8453f4
 ```
 temas_em_alta      → zettelkasten (Tipo: Flash, Zona: Inbox, Tags: conteúdo, Destino: Conteúdo)
 pesquisa_de_nicho  → zettelkasten (Tipo: Flash, Zona: Output, Tags: mercado, Destino: Conteúdo)
-                   + tarefas_hub (Ação Recomendada como tarefa, Feito: false)
+                   + tarefas_hub (Nome: Ação Recomendada, Feito: false, Data: data do output, Origem: "Pesquisa de Nicho")
+accountability     → tarefas_hub (Nome: alerta de captura, Feito: false, Data: data do output, Origem: "Accountability")
 transformacao      → conteudo (Status: Rascunho, Origem: Orgânico, Notas & Briefing: conteúdo gerado)
 ```
 
