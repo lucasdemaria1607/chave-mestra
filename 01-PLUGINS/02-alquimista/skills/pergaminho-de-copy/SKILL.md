@@ -27,7 +27,16 @@ Antes de calibrar copy, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto
 | DNA de Marca (C2) | §1 > DNA de Marca | ⚠️ Sem DNA, C2 será genérica. Alertar: "Sem universo de marca definido, a copy não terá reframing nem léxico proprietário. Recomendo Forja do Universo antes." Pode operar com tom de voz informado na conversa. |
 | Oferta definida (se copy de venda) | §3 > Oferta | ⚠️ Para copy de conversão/venda, a oferta precisa existir. Alertar e redirecionar para Forja de Oferta se necessário. |
 
-**Ao concluir:** registrar no §4 do Dossiê o inventário de copy produzida + nível de consciência alvo + camada principal.
+**Ao concluir:**
+1. Registrar no §4 do Dossiê o inventário de copy produzida + nível de consciência alvo + camada principal.
+2. **Publicar no Notion via Publicador Visual** — criar página na database Conteúdo com o template adequado:
+   - Copy de post/legenda → **Template Post de Texto** (`Tipo de Post`: Post Estático)
+   - Copy de anúncio → **Template Anúncio** (`Tipo de Post`: Anúncio, `Propósito`: Conversão)
+   - `Origem`: Manual / Protocolo Massivo / Temas em Alta (conforme contexto)
+   - `Produto`: obrigatório se for copy de conversão
+   - `Campanha`: obrigatório se for anúncio vinculado a campanha
+   - `Etapas`: ["Ideia captada", "Roteiro feito"]
+   → Ver `publicador-visual/SKILL.md` — Fluxos 3 e 4 para protocolo completo.
 
 ---
 

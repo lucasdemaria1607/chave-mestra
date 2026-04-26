@@ -27,7 +27,15 @@ Antes de gerar carrossel, verificar no **Dossiê CM** (`05-ASSETS/dossies/[proje
 | DNA de Marca | §1 > DNA de Marca | ⚠️ Sem DNA, narrativa e símbolos ficam genéricos. Alertar e sugerir. Pode operar com tom informado na conversa. |
 | Tema / headline | Conversa ou Headline Generator | ⚡ Se não houver tema, sugerir Headline Generator primeiro. Não bloqueia. |
 
-**Ao concluir:** registrar no §4 do Dossiê (Inventário de Outputs > Carrosséis).
+**Ao concluir:**
+1. Registrar no §4 do Dossiê (Inventário de Outputs > Carrosséis).
+2. **Publicar no Notion via Publicador Visual** — criar página na database Conteúdo usando o **Template Carrossel**:
+   - `Tipo de Post`: Carrossel
+   - `Propósito`: inferir do argumento do ensaio (Awareness/Autoridade/Conversão/Relacionamento/Nutrição)
+   - `Origem`: Orgânico / Temas em Alta / Pesquisa de Nicho / Manual (conforme a fonte do tema)
+   - `Etapas`: ["Ideia captada", "Roteiro feito"]
+   - Corpo da página: texto de cada slide numerado (Slide 1 a Slide 10) no template
+   → Ver `publicador-visual/SKILL.md` — Fluxo 2 para protocolo completo.
 
 ---
 

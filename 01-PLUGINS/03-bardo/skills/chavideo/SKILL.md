@@ -27,7 +27,15 @@ Antes de gerar roteiro, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto
 | DNA de Marca | §1 > DNA de Marca | ⚠️ Sem DNA, o tom e léxico do roteiro ficam genéricos. Alertar e sugerir. Pode operar com tom informado na conversa. |
 | Tema / headline | Conversa ou Headline Generator | ⚡ Se não houver tema, sugerir Headline Generator primeiro para gerar insumos. Não bloqueia se o usuário informar tema diretamente. |
 
-**Ao concluir:** registrar no §4 do Dossiê (Inventário de Outputs > Roteiros vídeo).
+**Ao concluir:**
+1. Registrar no §4 do Dossiê (Inventário de Outputs > Roteiros vídeo).
+2. **Publicar no Notion via Publicador Visual** — criar página na database Conteúdo usando o **Template Reel/Vídeo**:
+   - `Tipo de Post`: Video ou Reel
+   - `Propósito`: inferir do objetivo do roteiro (Awareness/Autoridade/Conversão/Relacionamento/Nutrição)
+   - `Origem`: Orgânico / Temas em Alta / Pesquisa de Nicho / Manual (conforme a fonte do tema)
+   - `Etapas`: ["Ideia captada", "Roteiro feito"]
+   - Corpo da página: roteiro completo no campo Desenvolvimento do template
+   → Ver `publicador-visual/SKILL.md` — Fluxo 1 para protocolo completo.
 
 ---
 
