@@ -29,13 +29,11 @@ Antes de gerar carrossel, verificar no **Dossiê CM** (`05-ASSETS/dossies/[proje
 
 **Ao concluir:**
 1. Registrar no §4 do Dossiê (Inventário de Outputs > Carrosséis).
-2. **Publicar no Notion via Publicador Visual** — criar página na database Conteúdo usando o **Template Carrossel**:
-   - `Tipo de Post`: Carrossel
-   - `Propósito`: inferir do argumento do ensaio (Awareness/Autoridade/Conversão/Relacionamento/Nutrição)
-   - `Origem`: Orgânico / Temas em Alta / Pesquisa de Nicho / Manual (conforme a fonte do tema)
-   - `Etapas`: ["Ideia captada", "Roteiro feito"]
-   - Corpo da página: texto de cada slide numerado (Slide 1 a Slide 10) no template
-   → Ver `publicador-visual/SKILL.md` — Fluxo 2 para protocolo completo.
+2. **Publicar no Notion via Publicador Visual** — adicionar seção 🗂️ Carrossel na entrada do dia na database Conteúdo:
+   - Buscar entrada onde `date:Data de Publicação:start` = [data planejada]
+   - Se não existe: criar entrada do dia (Título = "📅 [DD/MM] — [tema]", Status = Rascunho, data = [data])
+   - Adicionar seção com diagnóstico Chavossel (exercício, N-level, proporção C1/C2/C3) + roteiro dos 10 slides com sintaxe v22 + nota técnica
+   → Ver `publicador-visual/SKILL.md` para o fluxo completo.
 
 ---
 

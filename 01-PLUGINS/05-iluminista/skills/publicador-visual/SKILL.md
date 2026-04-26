@@ -1,294 +1,223 @@
 ---
 name: publicador-visual
-version: 2.0
+version: 3.0
 plugin: "05-iluminista"
 layer: "Transversal — Publicação Visual"
 description: >
-  Publicação de conteúdo criativo na database Conteúdo do Notion.
-  Aplica template estruturado por tipo (Carrossel, Reel, Post, Anúncio).
-  Integra imagens geradas (Forja de Imagem) e frames renderizados (Ponte Figma).
+  Publicação de conteúdo criativo na database Conteúdo (Agenda).
+  Modelo: UMA PÁGINA POR DIA — cada entrada na Conteúdo DB representa um dia de publicação,
+  com todas as peças do dia organizadas como seções dentro dessa página.
   Triggers: "publica no Notion", "exporta visual", "publicador visual",
   "envia imagens pro Notion", "popula visual", "salva no Notion", "joga no calendário".
 ---
 
 # Publicador Visual — Publicação na Database Conteúdo
 
-O Publicador Visual é a última milha de qualquer pipeline criativo. Toda peça produzida
-pelos plugins — roteiro do Bardo, copy do Alquimista, imagem do Iluminista — precisa
-aterrissar no Notion como um documento completo, pronto para uso: propriedades preenchidas,
-corpo com o conteúdo pronto para copiar, produção rastreável.
+O Publicador Visual opera sobre um princípio único: **um dia = uma página**. Cada entrada na database Conteúdo representa um dia de publicação. Dentro dessa página estão todas as peças do dia — carrossel, reel, post, anúncio — organizadas como seções e prontas para copiar.
 
-**Regra de ouro:** a página aberta no calendário deve ter tudo. Contexto, conteúdo, status.
-Sem precisar ir a outro lugar.
+A visão de calendário na Agenda mostra uma entrada por dia. Ao clicar num dia, a página abre com todo o conteúdo pronto.
+
+**Regra de ouro:** nunca criar mais de uma entrada por dia na database Conteúdo. Todo conteúdo de um mesmo dia entra como nova seção na página daquele dia.
 
 ---
 
 ## DESTINOS DE PUBLICAÇÃO
 
-| Tipo de conteúdo | Destino no Notion |
+| Tipo de conteúdo | Destino |
 |---|---|
-| Orgânico (posts, reels, carrosséis regulares) | **Database Conteúdo** — `collection://25cfc122-de3b-81c2-a76a-000bcf8453f4` |
-| Peças de apoio do Protocolo Massivo | **Database Conteúdo** — Origem: Protocolo Massivo |
-| Conteúdo de campanha/lançamento (Meteórico, Desafio, Interno) | **MINHA ESTEIRA** — dentro do cronograma do produto (ver esteira-notion) |
+| Orgânico (posts, reels, carrosséis regulares) | **Database Conteúdo** — uma entrada por dia — `collection://25cfc122-de3b-81c2-a76a-000bcf8453f4` |
+| Conteúdo de campanha/lançamento | **MINHA ESTEIRA** — dentro do cronograma do produto (ver esteira-notion) |
 
 ---
 
-## PROPRIEDADES OBRIGATÓRIAS — DATABASE CONTEÚDO
+## FLUXO PADRÃO — Adicionando conteúdo ao dia
 
-Ao criar qualquer página na database Conteúdo, preencher:
+Para qualquer peça gerada (Carrossel, Reel, Post, Anúncio):
 
-| Propriedade | Tipo | Instrução |
-|---|---|---|
-| `Título` | title | Nome descritivo da peça |
-| `Status` | status | Sempre iniciar em **Rascunho** |
-| `Data de Publicação` | date | Data planejada para publicar |
-| `Plataforma` | select | Instagram / YouTube / TikTok / Substack / LinkedIn / etc. |
-| `Tipo de Post` | select | Carrossel / Video / Reel / Post Estático / Anúncio / Story |
-| `Tipo de conteúdo` | select | Social Media / Email / Blog Post / Podcast |
-| `Propósito` | select | **Inferir do conteúdo:** Awareness / Autoridade / Conversão / Relacionamento / Nutrição |
-| `Origem` | select | Orgânico / Protocolo Massivo / Temas em Alta / Pesquisa de Nicho / Manual / Ideia Própria |
-| `Produto` | relation | Vincular ao produto da MINHA ESTEIRA se o conteúdo tiver produto |
-| `Campanha` | text | Nome da campanha, se a peça pertence a uma |
-| `Etapas` | multi-select | Iniciar com **["Ideia captada"]** — atualizar conforme produção avança |
+```
+1. Identificar a data de publicação planejada
 
----
+2. Buscar na database Conteúdo:
+   WHERE "date:Data de Publicação:start" = [data]
 
-## TEMPLATES DE PÁGINA — CORPO POR TIPO
+3. SE entrada existe:
+   → Usar notion-update-page com update_content
+   → Adicionar nova seção ## ao final da página existente
 
-### 🎠 Template: Carrossel
-
-```markdown
-## 📍 Contexto
-> **Origem:** [fonte — Temas em Alta / Pesquisa de Nicho / Manual / etc.]
-> **Propósito:** [Awareness / Autoridade / Conversão / Relacionamento / Nutrição]
-> **Campanha:** [nome da campanha ou —]
-> **Produto vinculado:** [nome do produto ou —]
-
----
-
-## 📲 Slides
-
-**Slide 1 — Capa**
-[manchete de impacto — texto da capa]
-
-**Slide 2**
-[texto do slide]
-
-**Slide 3**
-[texto do slide]
-
-**Slide 4**
-[texto do slide]
-
-**Slide 5**
-[texto do slide]
-
-**Slide 6**
-[texto do slide]
-
-**Slide 7**
-[texto do slide]
-
-**Slide 8**
-[texto do slide]
-
-**Slide 9**
-[texto do slide]
-
-**Slide 10 — CTA**
-[chamada para ação — o que o leitor deve fazer agora]
-
----
-
-## ✅ Produção
-- [ ] Roteiro aprovado
-- [ ] Diagramado no Figma
-- [ ] Assets exportados
-- [ ] Publicado
-
----
-
-## 📝 Notas
-[exercício Progymnasmata usado, ângulo escolhido, referências, observações]
+4. SE entrada não existe:
+   → Criar nova página com notion-create-pages
+   → Propriedades: Título = "📅 [DD/MM] — [tema/campanha]", Status = Rascunho,
+     data:Data de Publicação:start = [data], Origem = [inferir], Campanha = [se aplicável]
+   → Corpo = template de dia completo (ver seção TEMPLATE DA PÁGINA DIÁRIA abaixo)
+   → Preencher a seção correspondente ao tipo de peça
 ```
 
 ---
 
-### 🎬 Template: Reel / Vídeo
+## PROPRIEDADES DA ENTRADA DIÁRIA
 
-```markdown
-## 📍 Contexto
-> **Origem:** [fonte]
-> **Propósito:** [Awareness / Autoridade / Conversão / Relacionamento / Nutrição]
-> **Campanha:** [nome da campanha ou —]
-> **Produto vinculado:** [nome do produto ou —]
+| Propriedade | Instrução |
+|---|---|
+| `Título` | "📅 [DD/MM] — [tema ou campanha do dia]" |
+| `Status` | Iniciar em **Rascunho** |
+| `Data de Publicação` | Data do dia de publicação |
+| `Origem` | Orgânico / Protocolo Massivo / Temas em Alta / Manual |
+| `Campanha` | Nome da campanha, se aplicável |
+| `Produto` | Vincular ao produto da MINHA ESTEIRA, se aplicável |
 
----
-
-## 🎬 Roteiro
-
-**Hook (0–3s)**
-[frase de abertura — captura ou enterra em 1 linha]
-
-**Desenvolvimento**
-[corpo do roteiro — linha a linha, com indicações de corte/cena quando necessário]
-
-**Fechamento / CTA**
-[chamada para ação — implícita ou explícita conforme objetivo]
+*Propriedades como Tipo de Post, Propósito, Plataforma são irrelevantes na entrada diária — cada seção interna tem seu próprio diagnóstico.*
 
 ---
 
-## ✅ Produção
-- [ ] Roteiro aprovado
-- [ ] Gravado
-- [ ] Editado
-- [ ] Thumbnail feita (se YouTube/TikTok)
-- [ ] Publicado
+## TEMPLATE DA PÁGINA DIÁRIA
+
+Usado quando a entrada do dia ainda não existe na database:
+
+```
+## 🗓️ Visão Geral
+
+> **Rotina:** [Orgânico / Protocolo Massivo / Lançamento]
+> **Campanha:** —
+> **Produto:** —
+> **Objetivo do dia:** [Awareness / Autoridade / Conversão / Relacionamento / Nutrição]
 
 ---
 
-## 📝 Notas
-[exercício Progymnasmata, combinação cinematográfica, nível de consciência do público, observações]
+## 🗂️ Carrossel
+
+[seção preenchida pelo Chavossel]
+
+---
+
+## 🎬 Reel / Vídeo
+
+[seção preenchida pelo Chavideo]
+
+---
+
+## ✍️ Post de Texto
+
+[seção preenchida pelo Pergaminho de Copy]
+
+---
+
+## 📢 Anúncio
+
+[seção preenchida pelo Pergaminho de Copy — apenas se aplicável]
+
+---
+
+## ✅ Checklist do Dia
+
+- [ ] Carrossel publicado
+- [ ] Reel publicado
+- [ ] Post publicado
+- [ ] Anúncio ativo
 ```
 
 ---
 
-### ✍️ Template: Post de Texto / Legenda
+## ESTRUTURA DE CADA SEÇÃO
 
-```markdown
-## 📍 Contexto
-> **Origem:** [fonte]
-> **Propósito:** [Awareness / Autoridade / Conversão / Relacionamento / Nutrição]
-> **Campanha:** [nome da campanha ou —]
-> **Produto vinculado:** [nome do produto ou —]
+### 🗂️ Seção Carrossel (gerada pelo Chavossel)
+
+```
+## 🗂️ Carrossel
+
+> **Exercício:** [exercício Progymnasmata]
+> **N-level:** N[X] — **Proporção:** C1__% / C2__% / C3__% — **Objetivo:** [atenção / posicionamento / conversão]
+> Sintaxe: # Título longo = Manchete · Texto >20 palavras sem título = Immersive Reader
+>          # Título curto + slide vazio = O Grito · --- = Corte
+> Lei do Ritmo: nunca 3 slides iguais seguidos
+
+**Slide 1 — Abertura**
+# [título]
+[subtítulo]
 
 ---
-
-## ✍️ Copy
-
-[texto completo do post — pronto para copiar e colar]
+**Slide 2 — A Ponte**
+[immersive reader — texto puro, sem título, >20 palavras]
 
 ---
-
-## ✅ Produção
-- [ ] Copy aprovado
-- [ ] Visual criado (se necessário)
-- [ ] Publicado
+**Slides 3–9** [corpo do exercício]
+[conteúdo dos beats com Lei do Ritmo]
 
 ---
+**Slide 10 — Fechamento**
+[conclusão + CTA único]
 
-## 📝 Notas
-[nível de consciência, método de copy usado, gancho, observações]
+*Nota técnica — Exercício: [___] · Ritmo: [___] · Efeito retórico: [___]*
 ```
 
----
-
-### 📢 Template: Anúncio
-
-```markdown
-## 📍 Contexto
-> **Origem:** [fonte]
-> **Propósito:** Conversão
-> **Campanha:** [nome da campanha]
-> **Produto vinculado:** [nome do produto]
-> **Objetivo do anúncio:** [conversão / tráfego / remarketing / reconhecimento]
-
----
-
-## 📢 Copy do Anúncio
-
-**Headline**
-[linha principal — deve parar o scroll]
-
-**Texto Principal**
-[copy completo do anúncio — pronto para colar no gerenciador]
-
-**CTA**
-[texto do botão / chamada direta]
-
----
-
-## ✅ Produção
-- [ ] Copy aprovado
-- [ ] Criativo feito
-- [ ] Subido no gerenciador de anúncios
-- [ ] Ativo
-
----
-
-## 📝 Notas
-[público-alvo, segmentação prevista, orçamento sugerido, variações testadas]
-```
-
----
-
-## FLUXOS DE PUBLICAÇÃO
-
-### Fluxo 1 — Reel / Vídeo → Database Conteúdo
+### 🎬 Seção Reel / Vídeo (gerada pelo Chavideo)
 
 ```
-1. Chavideo gera roteiro completo
-2. Publicador Visual cria página na database Conteúdo:
-   - Propriedades: Título, Status: Rascunho, Data de Publicação, Plataforma,
-     Tipo de Post: Video/Reel, Propósito (inferido), Origem: Orgânico/Temas em Alta,
-     Produto (se aplicável), Campanha (se aplicável), Etapas: ["Ideia captada", "Roteiro feito"]
-   - Corpo: Template Reel/Vídeo com roteiro completo no campo "Desenvolvimento"
-3. Se a Forja de Imagem gerou thumbnail: adicionar ao campo Arquivo
+## 🎬 Reel / Vídeo
+
+> **Exercício:** [exercício] — **Objetivo:** [objetivo]
+> **Combinação:** [mecanismos cinematográficos usados] — **Formato:** vertical 60–90s
+> **Carga:** Intelectual [___] · Emocional [___] · Visual [congruente/ruído] · Sinalização [___]
+
+CHAVIDEO — [EXERCÍCIO] × [OBJETIVO] · N[X] · vertical 60–90s
+
+**[00–03s] HOOK** [texto]
+**[03–10s] AMPLIFICAÇÃO** [texto]
+**[10–50s] CORPO** [beats do exercício]
+**[50–70s] CLÍMAX** [texto]
+**[70–90s] PAYOFF + CTA** [texto]
+
+*Nota técnica — Exercício: [___] · Mecânica: [___] · Efeito retórico: [___]*
 ```
 
-### Fluxo 2 — Carrossel → Database Conteúdo
+### ✍️ Seção Post de Texto (gerada pelo Pergaminho de Copy)
 
 ```
-1. Chavossel gera roteiro dos 10 slides
-2. Publicador Visual cria página na database Conteúdo:
-   - Propriedades: Título, Status: Rascunho, Data de Publicação, Plataforma,
-     Tipo de Post: Carrossel, Propósito (inferido), Origem, Produto, Campanha,
-     Etapas: ["Ideia captada", "Roteiro feito"]
-   - Corpo: Template Carrossel com texto de cada slide numerado
-3. Se Ponte Figma renderizou: adicionar link Figma nas Notas
-4. Quando Forja de Imagem gerar os slides: atualizar Etapas → + "Diagramado"
+## ✍️ Post de Texto
+
+> **N-level:** N[X] — **Proporção:** C1__% / C2__% / C3__% — **Objetivo:** [atenção / posicionamento / conversão]
+> **Panksepp:** [sistema] · **Warren:** [ativador] · **Moeda:** [Insider / Virtude / Status]
+> **Framework:** [framework escolhido]
+
+**Abertura** *(Warren aqui — para o scroll)*
+[...]
+
+*C1 — Persona* · [conexão emocional — Show Don't Tell, Mirroring, JTBD]
+*C2 — Marca* · [reframing simbólico — léxico proprietário]
+*C3 — CTA* · [único próximo passo, se aplicável]
 ```
 
-### Fluxo 3 — Post / Legenda → Database Conteúdo
+### 📢 Seção Anúncio (gerada pelo Pergaminho de Copy)
 
 ```
-1. Pergaminho de Copy (Alquimista) ou Bardo gera copy do post
-2. Publicador Visual cria página na database Conteúdo:
-   - Propriedades: Título, Status: Rascunho, Data de Publicação, Plataforma,
-     Tipo de Post: Post Estático, Propósito (inferido), Origem, Produto, Campanha,
-     Etapas: ["Ideia captada", "Roteiro feito"]
-   - Corpo: Template Post com copy completo pronto para colar
-```
+## 📢 Anúncio
 
-### Fluxo 4 — Anúncio → Database Conteúdo
+> **N-level:** N[X] — **Proporção:** C1__% / C2__% / C3__% — **Framework:** [framework]
+> **Panksepp:** [sistema] · **Warren:** [ativador] · **Moeda:** [Insider / Virtude / Status]
+> **Campanha:** [nome — obrigatório] · **Produto:** [nome — obrigatório]
 
-```
-1. Pergaminho de Copy (Alquimista) gera copy do anúncio
-2. Publicador Visual cria página na database Conteúdo:
-   - Propriedades: Título, Status: Rascunho, Plataforma, Tipo de Post: Anúncio,
-     Propósito: Conversão, Origem: Manual ou Protocolo Massivo, Produto: [obrigatório],
-     Campanha: [obrigatório para anúncio], Etapas: ["Ideia captada", "Roteiro feito"]
-   - Corpo: Template Anúncio com headline, texto e CTA separados
-```
+**Headline** *(Warren aqui — para o scroll)*
+[...]
 
-### Fluxo 5 — Assets de Campanha → MINHA ESTEIRA (não altera)
+*C1 — Persona* · [...]
+*C2 — Marca* · [...]
+*C3 — Oferta* · [...]
 
-```
-Conteúdo de lançamento (Meteórico, Desafio, Interno) continua indo para
-o cronograma do produto dentro da MINHA ESTEIRA via esteira-notion.
-O Publicador Visual enriquece cada linha com visuais se necessário.
+**CTA** *(único próximo passo)*
+[...]
+
+*Cargas — Intelectual: [___] · Emocional: [___] · Visual: [___] · Sinalização: [___]*
+*Resistência — [ ] Reatância · [ ] Desconfiança · [ ] Escrutínio · [ ] Inércia*
 ```
 
 ---
 
 ## REGRAS DE EXECUÇÃO
 
-1. **Status sempre em Rascunho** ao criar — nunca iniciar em outro status
-2. **Propósito é obrigatório** — inferir do conteúdo se não for informado explicitamente
-3. **Corpo sempre preenchido** — a página sem o conteúdo pronto é inútil. O objetivo é abrir e copiar.
-4. **Sem databases embutidas** — não criar sub-databases ou blocos relacionados inline na página de conteúdo
-5. **Nunca hardcode IDs** — buscar data-source-id dinamicamente se necessário
-6. **Etapas refletem o estado real** — atualizar conforme a produção avança, não deixar como ["Ideia captada"] para sempre
+1. **Uma entrada por dia** — nunca criar duas páginas para o mesmo dia
+2. **Buscar antes de criar** — sempre verificar se já existe entrada para a data antes de criar nova
+3. **Status sempre em Rascunho** ao criar
+4. **Seções são aditivas** — adicionar nova seção sem apagar as existentes
+5. **Corpo sempre preenchido** — página sem conteúdo pronto é inútil
 
 ---
 
@@ -296,12 +225,11 @@ O Publicador Visual enriquece cada linha com visuais se necessário.
 
 | Plugin | O que entrega ao Publicador Visual |
 |---|---|
-| **Bardo / Chavideo** | Roteiro completo de reel/vídeo → Fluxo 1 |
-| **Bardo / Chavossel** | Roteiro dos 10 slides → Fluxo 2 |
-| **Alquimista / Pergaminho de Copy** | Copy de post ou anúncio → Fluxos 3 e 4 |
-| **Forja de Imagem** | Imagens e thumbnails geradas → complementa qualquer fluxo |
-| **Ponte Figma** | Links de frames renderizados → complementa Fluxo 2 |
-| **Arauto / Esteira Notion** | Campanhas de lançamento → Fluxo 5 (MINHA ESTEIRA, não interfere) |
+| **Bardo / Chavideo** | Roteiro completo → seção 🎬 Reel/Vídeo no dia |
+| **Bardo / Chavossel** | Roteiro dos 10 slides → seção 🗂️ Carrossel no dia |
+| **Alquimista / Pergaminho de Copy** | Copy calibrada → seção ✍️ Post ou 📢 Anúncio no dia |
+| **Forja de Imagem** | Imagens e thumbnails → campo Arquivo na entrada do dia |
+| **Arauto / Esteira Notion** | Campanhas de lançamento → MINHA ESTEIRA (não entra no Conteúdo DB) |
 
 ---
 
@@ -311,4 +239,4 @@ Em Modo Cliente Externo, o Publicador Visual:
 - Usa o workspace Notion do cliente
 - Adapta nomes de databases à nomenclatura do cliente
 - Não menciona "Pergaminho", "Chave Mestra" ou termos proprietários
-- Os templates de página mantêm a estrutura mas com nomenclatura do cliente
+- Mantém o modelo de uma entrada por dia

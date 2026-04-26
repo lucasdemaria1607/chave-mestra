@@ -29,13 +29,11 @@ Antes de gerar roteiro, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto
 
 **Ao concluir:**
 1. Registrar no §4 do Dossiê (Inventário de Outputs > Roteiros vídeo).
-2. **Publicar no Notion via Publicador Visual** — criar página na database Conteúdo usando o **Template Reel/Vídeo**:
-   - `Tipo de Post`: Video ou Reel
-   - `Propósito`: inferir do objetivo do roteiro (Awareness/Autoridade/Conversão/Relacionamento/Nutrição)
-   - `Origem`: Orgânico / Temas em Alta / Pesquisa de Nicho / Manual (conforme a fonte do tema)
-   - `Etapas`: ["Ideia captada", "Roteiro feito"]
-   - Corpo da página: roteiro completo no campo Desenvolvimento do template
-   → Ver `publicador-visual/SKILL.md` — Fluxo 1 para protocolo completo.
+2. **Publicar no Notion via Publicador Visual** — adicionar seção 🎬 Reel/Vídeo na entrada do dia na database Conteúdo:
+   - Buscar entrada onde `date:Data de Publicação:start` = [data planejada]
+   - Se não existe: criar entrada do dia (Título = "📅 [DD/MM] — [tema]", Status = Rascunho, data = [data])
+   - Adicionar seção com diagnóstico Chavideo (exercício, objetivo, combinação, formato, carga) + roteiro timecoded completo + nota técnica
+   → Ver `publicador-visual/SKILL.md` para o fluxo completo.
 
 ---
 

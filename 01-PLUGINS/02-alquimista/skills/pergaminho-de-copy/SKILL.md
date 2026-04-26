@@ -29,14 +29,12 @@ Antes de calibrar copy, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto
 
 **Ao concluir:**
 1. Registrar no §4 do Dossiê o inventário de copy produzida + nível de consciência alvo + camada principal.
-2. **Publicar no Notion via Publicador Visual** — criar página na database Conteúdo com o template adequado:
-   - Copy de post/legenda → **Template Post de Texto** (`Tipo de Post`: Post Estático)
-   - Copy de anúncio → **Template Anúncio** (`Tipo de Post`: Anúncio, `Propósito`: Conversão)
-   - `Origem`: Manual / Protocolo Massivo / Temas em Alta (conforme contexto)
-   - `Produto`: obrigatório se for copy de conversão
-   - `Campanha`: obrigatório se for anúncio vinculado a campanha
-   - `Etapas`: ["Ideia captada", "Roteiro feito"]
-   → Ver `publicador-visual/SKILL.md` — Fluxos 3 e 4 para protocolo completo.
+2. **Publicar no Notion via Publicador Visual** — adicionar seção ✍️ Post ou 📢 Anúncio na entrada do dia na database Conteúdo:
+   - Buscar entrada onde `date:Data de Publicação:start` = [data planejada]
+   - Se não existe: criar entrada do dia (Título = "📅 [DD/MM] — [tema]", Status = Rascunho, data = [data])
+   - Copy de post → seção ✍️ Post de Texto (diagnóstico Copy 3×5 + copy calibrada C1/C2/C3)
+   - Copy de anúncio → seção 📢 Anúncio (diagnóstico + copy + checklist de resistência; Produto e Campanha obrigatórios)
+   → Ver `publicador-visual/SKILL.md` para o fluxo completo.
 
 ---
 
