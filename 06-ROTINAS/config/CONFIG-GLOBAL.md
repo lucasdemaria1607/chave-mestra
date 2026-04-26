@@ -75,18 +75,35 @@ rotina_conteudo: pausada      # Reativar em 25/05 — depende de accountability 
 
 ---
 
-## Notion — IDs das bases de dados
+## Notion — IDs para sync de outputs
 
 ```
-notion_page_rotinas: 34dfc122-de3b-818b-aaec-f7b048ad7262
-notion_db_temas: collection://1a57e551-298e-4bbd-9153-2495d9d88531
-notion_db_nicho: collection://2b09a2d4-36b2-40b2-a0f3-d6f3e43f85f6
-notion_db_conteudo: collection://25cfc122-de3b-81c2-a76a-000bcf8453f4
+# HUB — Sistema de Conhecimento (onde os outputs das rotinas aparecem)
+notion_hub_sistema_conhecimento: 11afc122-de3b-8259-ae9c-81c6c0b45688
+
+# Zettelkasten — Temas em Alta e Pesquisa de Nicho viram notas aqui
+# Visível na view "Notas" do hub
 notion_db_zettelkasten: collection://6e4c8442-1596-4eab-ab69-a7917e93e046
+
+# Tarefas — Ações recomendadas da Pesquisa de Nicho viram tarefas aqui
+# Visível na view "Tarefas" do hub
+notion_db_tarefas_hub: collection://00cfc122-de3b-83a0-ad2a-87e3bd2d78ed
+
+# Conteúdo — Peças geradas pela Transformação em Conteúdo vão aqui (ESTEIRA)
+notion_db_conteudo: collection://25cfc122-de3b-81c2-a76a-000bcf8453f4
 ```
 
-> Quando MCP do Notion estiver disponível nas rotinas remotas, usar esses IDs para escrever
-> outputs diretamente no Notion além do commit no git.
+## Mapeamento: rotina → base Notion
+
+```
+temas_em_alta      → zettelkasten (Tipo: Flash, Zona: Inbox, Tags: conteúdo, Destino: Conteúdo)
+pesquisa_de_nicho  → zettelkasten (Tipo: Flash, Zona: Output, Tags: mercado, Destino: Conteúdo)
+                   + tarefas_hub (Ação Recomendada como tarefa, Feito: false)
+transformacao      → conteudo (Status: Rascunho, Origem: Orgânico, Notas & Briefing: conteúdo gerado)
+```
+
+> Sync ocorre via comando "sincroniza rotinas no notion" em sessão direta Claude Code.
+> Quando MCP estiver disponível nas rotinas remotas, o sync será automático.
 
 ---
 
