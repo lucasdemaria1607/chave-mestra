@@ -26,6 +26,7 @@ Antes de calibrar copy, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto
 | Persona mapeada (C1) | §2 > Persona | 🔴 **Crítico.** Sem persona, C1 opera no vazio. Alertar: "Copy calibrada exige a Alma da Persona. Sem ela, C1 será genérica. Recomendo Forja da Persona antes." Se o usuário insistir, fazer briefing mínimo de persona na conversa. |
 | DNA de Marca (C2) | §1 > DNA de Marca | ⚠️ Sem DNA, C2 será genérica. Alertar: "Sem universo de marca definido, a copy não terá reframing nem léxico proprietário. Recomendo Forja do Universo antes." Pode operar com tom de voz informado na conversa. |
 | Oferta definida (se copy de venda) | §3 > Oferta | ⚠️ Para copy de conversão/venda, a oferta precisa existir. Alertar e redirecionar para Forja de Oferta se necessário. |
+| **Brief de Oferta do produto** (se copy de produto específico) | 🎯 OFERTA em **MINHA ESTEIRA** > [nome do produto] | ⚠️ Sem o brief da oferta (Mecanismo Único, Promessa Central, Inimigo Narrativo, N-level do público, Objeções Principais, Provas Disponíveis), C2 fica genérico e C3 não tem argumento de conversão. **Antes de escrever qualquer copy de venda ou anúncio para um produto específico:** buscar a entrada do produto em MINHA ESTEIRA e ler a seção 🎯 OFERTA. Se não existir, preencher o brief mínimo na conversa antes de calibrar. |
 
 **Ao concluir:**
 1. Registrar no §4 do Dossiê o inventário de copy produzida + nível de consciência alvo + camada principal.
