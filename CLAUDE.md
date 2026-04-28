@@ -89,6 +89,7 @@ Antes de qualquer coisa, identificar o tier de operação do Dossiê:
 |-------|------|-------------|
 | Ferramentas `Read`/`Write`/`Edit` disponíveis | **Tier 1** | Ler/escrever `dossie.md` automaticamente |
 | Ferramentas `notion-*` disponíveis | **Tier 1** | Ler/escrever via Notion MCP |
+| Ferramentas `drive-*` disponíveis | **Tier 1** | Ler/escrever via Drive MCP — buscar `CLIENTES/[nome]/00-DOSSIE/DOSSIE.md`. Auto-salvar cada output na subpasta correspondente durante a sessão. |
 | Project Knowledge presente, sem file tools | **Tier 2** | Ler do contexto; gerar Estado Compacto ao final |
 | Nenhuma ferramenta de arquivo ou MCP | **Tier 3** | Verificar se usuário colou Estado Dossiê |
 
@@ -97,6 +98,41 @@ Antes de qualquer coisa, identificar o tier de operação do Dossiê:
 **Tier 3 com Estado Dossiê colado:** confirmar → *"Contexto carregado: [Projeto], Fase [N]. Continuando de onde parou."*
 
 **Ao final de toda sessão em Tier 2 ou 3:** gerar automaticamente o **Estado Dossiê Compacto** atualizado e orientar o usuário a salvar. Formato completo em `05-ASSETS/templates-cliente/PROTOCOLO-DOSSIE.md`.
+
+---
+
+### Protocolo de Auto-Gravação — Drive MCP
+
+**GATILHO:** ferramentas `drive-*` detectadas (Google Drive MCP conectado).
+
+**Início de sessão:**
+1. Buscar pasta do cliente: `search_files "[nome-cliente] DOSSIE"` ou navegar em `CLIENTES/[nome-cliente]/`
+2. Se pasta existe → ler `00-DOSSIE/DOSSIE.md` → carregar contexto
+3. Se pasta não existe → executar `SOP-DRIVE-SETUP.md` para criar a estrutura
+4. Confirmar ao usuário: *"Contexto carregado: [Cliente], Fase [N]. [Última ação]. Continuando."*
+
+**Durante a sessão — após gerar cada output, salvar automaticamente:**
+
+| Output gerado | Salvar em |
+|---|---|
+| Roteiro de vídeo (Chavideo) | `05-CRIACAO/roteiros/[YYYY-MM-DD]-[tema].md` |
+| Carrossel (Chavossel) | `05-CRIACAO/carrosseis/[YYYY-MM-DD]-[tema].md` |
+| Copy — post | `05-CRIACAO/copy/posts/[YYYY-MM-DD]-[tema].md` |
+| Copy — e-mail | `05-CRIACAO/copy/emails/[YYYY-MM-DD]-[tema].md` |
+| Copy — anúncio | `05-CRIACAO/copy/ads/[YYYY-MM-DD]-[tema].md` |
+| Headlines | `05-CRIACAO/headlines/headlines-[YYYY-MM].md` (append) |
+| DNA / Universo de Marca | `02-IDENTIDADE/dna-de-marca.md` |
+| Alma da Persona / Terreno | `03-INTELIGENCIA/[alma-da-persona | relatorio-de-terreno].md` |
+| Oferta estruturada | `04-ESTRATEGIA/oferta-estruturada.md` |
+| Mapa de campanha | `04-ESTRATEGIA/mapa-de-campanha.md` |
+| Entrega ao cliente | `08-ENTREGAS/entrega-fase-[N].md` |
+| Relatório de ciclo | `09-EVOLUCAO/relatorio-[YYYY-MM].md` |
+
+**Fim de sessão:**
+1. Atualizar `00-DOSSIE/DOSSIE.md`: fase atual + novos outputs registrados + próxima ação
+2. Confirmar ao usuário: *"Drive atualizado. Próxima sessão retoma de: [ponto exato]."*
+
+**Regra:** nunca esperar o fim da sessão para salvar. Cada output vai ao Drive imediatamente após gerado — se a sessão cair, nada é perdido.
 
 ---
 

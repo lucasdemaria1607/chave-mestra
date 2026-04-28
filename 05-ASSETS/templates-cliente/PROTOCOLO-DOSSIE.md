@@ -43,7 +43,7 @@ O modelo onde o plugin lê/escreve diretamente em um `.md` funciona **apenas no 
 
 ## Os 3 Tiers de Transporte
 
-### Tier 1 — Automático (Claude Code ou Notion MCP ativo)
+### Tier 1 — Automático (Claude Code, Notion MCP ou Drive MCP ativo)
 
 O plugin lê e escreve diretamente. Nenhuma ação manual do usuário.
 
@@ -60,6 +60,25 @@ Página Notion do cliente → Dossiê CM
 → Plugin usa notion-fetch para ler
 → Plugin usa notion-update-page para escrever
 → Funciona em qualquer sessão que tenha o MCP ativo
+```
+
+**Drive MCP:**
+```
+CLIENTES/[nome-cliente]/
+├── 00-DOSSIE/DOSSIE.md      ← lido no início de cada sessão
+├── 02-IDENTIDADE/            ← DNA, universo, léxico
+├── 03-INTELIGENCIA/          ← terreno, persona
+├── 04-ESTRATEGIA/            ← oferta, campanha
+├── 05-CRIACAO/               ← roteiros, carrosséis, copy, headlines
+├── 08-ENTREGAS/              ← kits de entrega por fase
+└── 09-EVOLUCAO/              ← relatórios mensais
+
+→ Plugin usa drive-search para localizar pasta do cliente
+→ Plugin usa drive-read para ler DOSSIE.md
+→ Plugin usa drive-create/drive-update para salvar cada output gerado
+→ DOSSIE.md atualizado ao final de cada sessão com inventário + próxima ação
+→ Cada output é salvo IMEDIATAMENTE após gerado — sessão pode cair sem perda
+→ Ver SOP-DRIVE-SETUP.md para criação da estrutura inicial
 ```
 
 **Comportamento ao final da sessão (Tier 1):**
@@ -207,6 +226,7 @@ Ao iniciar qualquer sessão, identificar o tier:
 |----------------|------|---------------|
 | Ferramentas Read/Write/Edit disponíveis | Tier 1 | Ler `dossie.md` automaticamente |
 | Ferramentas `notion-*` disponíveis | Tier 1 | Ler Dossiê via `notion-fetch` |
+| Ferramentas `drive-*` disponíveis | Tier 1 | Buscar `CLIENTES/[nome]/00-DOSSIE/DOSSIE.md` via Drive MCP + auto-salvar outputs durante sessão |
 | Nenhuma ferramenta de arquivo, mas há Project Knowledge | Tier 2 | Ler do contexto; gerar Estado ao final |
 | Nenhuma ferramenta, nenhum Project Knowledge | Tier 3 | Verificar se usuário colou Estado Dossiê |
 
