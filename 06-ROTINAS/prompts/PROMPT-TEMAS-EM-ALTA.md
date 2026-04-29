@@ -1,6 +1,6 @@
 # Prompt — Temas em Alta e Pertinentes
 
-**Frequência:** 3x/semana (seg, qua, sex)
+**Frequência:** 1x/semana (segunda-feira)
 **Modo automático:** rotina remota Claude Code
 **Modo manual:** colar este prompt em qualquer IA, ajustando o bloco de contexto
 
@@ -84,3 +84,4 @@ Se rodando manualmente, copie o output e salve neste caminho no repositório.
 - Em Modo Automático: a rotina lê o CONFIG-GLOBAL.md e preenche o contexto sozinha
 - Em Modo Manual: preencher os campos entre colchetes antes de enviar
 - Os temas gerados alimentam diretamente a Rotina de Transformação em Conteúdo
+- **Git:** a rotina faz `git pull --rebase origin main` antes do `git push` para evitar rejeição por commits novos no remoto
