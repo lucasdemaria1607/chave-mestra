@@ -9,7 +9,7 @@
 
 | Rotina | O que faz | Frequência | Precisa de internet |
 |--------|-----------|-----------|-------------------|
-| **Temas em Alta** | Pesquisa trending topics relevantes para o nicho e gera banco de temas prontos | 3x/semana | Sim |
+| **Temas em Alta** | Pesquisa trending topics relevantes para o nicho e gera banco de temas prontos | 1x/semana (segunda) | Sim |
 | **Pesquisa de Nicho** | Mapeia novos players, movimentos de concorrentes e brechas emergentes | Quinzenal | Sim |
 | **Accountability de Notas** | Executa Ciclo da Forja — revisa notas, encontra conexões, alerta quando o sistema esfria | Semanal | Não |
 | **Transformação em Conteúdo** | Pega insights e temas da semana e gera roteiros, carrosséis e headlines | Semanal | Não (usa inputs das outras) |
@@ -71,21 +71,19 @@ Nenhuma. Só os arquivos de prompt desta pasta.
 ## Fluxo semanal recomendado
 
 ```
-DOMINGO (noite)
+DOMINGO (noite) — automático
   → Rotina de Accountability de Notas
-  → Revisar o relatório gerado em outputs/forja-semanal/
+  → Revisar o relatório em outputs/forja-semanal/
 
-SEGUNDA (manhã)
-  → Rotina de Temas em Alta (1ª execução da semana)
-  → Rotina de Transformação em Conteúdo (usa temas + notas do domingo)
+SEGUNDA (manhã) — automático
+  → Rotina de Temas em Alta (09h Bahia)
+  → Rotina de Transformação em Conteúdo (11h Bahia — usa temas do dia + notas exportadas)
 
-QUARTA
-  → Rotina de Temas em Alta (2ª execução)
+SEGUNDA (a qualquer hora) — manual, Claude Code local
+  → "sincroniza rotinas" → publica outputs novos no Notion
+  → "exporta notas" → puxa notas recentes do Notion para git (alimenta próximo ciclo)
 
-SEXTA
-  → Rotina de Temas em Alta (3ª execução)
-
-1º E 15 DE CADA MÊS
+1º E 15 DE CADA MÊS — automático
   → Rotina de Pesquisa de Nicho
 ```
 
@@ -188,7 +186,7 @@ As rotinas lerão automaticamente o contexto do cliente ativo.
 
 | Rotina | Schedule | UTC | Bahia |
 |--------|---------|-----|-------|
-| Temas em Alta | Seg, Qua, Sex | 12:00 | 09:00 |
+| Temas em Alta | Segunda | 12:00 | 09:00 |
 | Accountability de Notas | Domingo | 23:00 | 20:00 |
 | Transformação em Conteúdo | Segunda | 14:00 | 11:00 |
 | Pesquisa de Nicho | Dia 1 e 15 | 11:00 | 08:00 |

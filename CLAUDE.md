@@ -287,14 +287,27 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 | Temas em Alta | `outputs/temas/temas-[data].md` | Zettelkasten (`collection://6e4c8442-1596-4eab-ab69-a7917e93e046`) | Nota: "Temas em Alta — YYYY-MM-DD", Tipo: Flash, Zona: Inbox, Tags: conteúdo, Destino: Conteúdo, Potencial: Semente, Formato: Ideia, Data: data do arquivo |
 | Pesquisa de Nicho | `outputs/nicho/nicho-update-[data].md` | Zettelkasten | Nota: "Pesquisa de Nicho — YYYY-MM-DD", Tipo: Flash, Zona: Output, Tags: mercado, Destino: Conteúdo, Potencial: Semente, Formato: Ideia |
 | Pesquisa de Nicho (ação) | seção "Ação Recomendada" do mesmo arquivo | Tarefas (`collection://00cfc122-de3b-83a0-ad2a-87e3bd2d78ed`) | Nome: texto da ação, Feito: false, Data: data do output |
+| Transformação em Conteúdo | `outputs/conteudo/conteudo-[data].md` | DB Conteúdo (`collection://25cfc122-de3b-81c2-a76a-000bcf8453f4`) | 1 página por peça — campos do MANIFESTO DE PRODUÇÃO + corpo completo em "Notas & Briefing" |
+
+**Campos DB Conteúdo ao criar cada peça:**
+- `Título` — título da peça
+- `Status` — "Rascunho"
+- `Tipo de Post` — conforme manifesto: Video | Reel | Carrossel | Post Estático
+- `Plataforma` — conforme manifesto: Instagram | YouTube | TikTok | LinkedIn
+- `Tipo de conteúdo` — "Social Media"
+- `Propósito` — conforme manifesto: Awareness | Autoridade | Conversão | Relacionamento | Nutrição
+- `Origem` — conforme manifesto: Temas em Alta | Pesquisa de Nicho | Ideia Própria
+- `Etapas` — `["Roteiro feito"]`
+- `Notas & Briefing` — conteúdo completo da peça (roteiro + carrossel + headlines)
 
 **Passos:**
 1. Ler `06-ROTINAS/config/SYNC-STATE.md` — identificar arquivos sem `✅ sincronizado`
 2. Para cada arquivo pendente:
    a. Ler o conteúdo completo
-   b. Criar 1 única página Notion com todo o conteúdo dentro (não 1 página por tema)
-   c. Para nicho: criar também a tarefa de Ação Recomendada nas Tarefas
-3. Atualizar SYNC-STATE.md com ID gerado e status `✅ sincronizado`
+   b. **Temas / Nicho:** criar 1 única página com todo o conteúdo (não 1 página por tema)
+   c. **Conteúdo:** ler bloco MANIFESTO DE PRODUÇÃO → criar 1 página por peça no DB Conteúdo com campos preenchidos e corpo completo em "Notas & Briefing"
+   d. **Nicho:** criar também tarefa de Ação Recomendada nas Tarefas
+3. Atualizar SYNC-STATE.md com IDs gerados e status `✅ sincronizado`
 4. `git add 06-ROTINAS/config/SYNC-STATE.md && git commit -m "sync: rotinas → Notion [YYYY-MM-DD]" && git pull --rebase origin main && git push`
 
 ---

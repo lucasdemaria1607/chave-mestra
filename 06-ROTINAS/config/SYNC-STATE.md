@@ -54,6 +54,14 @@
 
 ---
 
+## Transformação em Conteúdo → DB Conteúdo
+
+| Arquivo | Data Output | Data Sync | Status | Páginas criadas |
+|---------|-------------|-----------|--------|-----------------|
+| *(nenhum output ainda)* | — | — | — | — |
+
+---
+
 ## Notas Notion → Git (`exporta notas`)
 
 | Data Export | Notas exportadas | Arquivos gerados |
