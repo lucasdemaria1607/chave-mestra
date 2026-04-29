@@ -36,6 +36,13 @@ Se rodando como agente com acesso a repositório Git:
   → Incorpore os "Ajustes para os próximos ciclos" antes de gerar o output
   → Se não houver feedback ainda, use os critérios padrão do arquivo
 
+INPUTS ADICIONAIS (leia antes de pesquisar):
+Verificar se existem arquivos em `06-ROTINAS/inputs/notas/` com data recente (últimos 14 dias).
+Se existirem, leia-os como contexto adicional:
+- Use as ideias, reflexões e conexões das notas para calibrar os ângulos dos temas
+- Prefira temas que se conectam naturalmente ao que já está sendo pensado
+- Mencione "conecta com nota de [data]" no ângulo quando relevante
+
 PESQUISA:
 Use ferramentas de busca para investigar HOJE:
 1. "temas virais [nicho] semana" — o que está gerando debate no nicho

@@ -76,6 +76,8 @@ Cada plugin tem:
 | "UX", "hierarquia visual", "layout", "arquiteto de experiência" | Iluminista | arquiteto-de-experiencia |
 | "manda pro Figma", "ponte Figma", "Chavossel Figma", "renderiza no Figma" | Iluminista | ponte-figma |
 | "publica no Notion" (visual), "exporta visual", "galeria visual" | Iluminista | publicador-visual |
+| "sincroniza rotinas", "sincroniza no notion", "publica outputs no notion" | Sync | Protocolo Sync Rotinas → Notion |
+| "exporta notas", "exporta do notion", "traz notas pro git" | Sync | Protocolo Export Notas → Git |
 
 ---
 
@@ -269,6 +271,50 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 **Para renderizar no Figma:** ative Iluminista → leia `ponte-figma/SKILL.md` (usa Figma MCP).
 
 **Para publicar visuais no Notion:** ative Iluminista → leia `publicador-visual/SKILL.md` (usa Notion MCP).
+
+---
+
+### Protocolo Sync Rotinas → Notion
+
+**GATILHO:** "sincroniza rotinas", "sincroniza no notion", "publica outputs no notion".
+
+**O que faz:** lê outputs novos em `06-ROTINAS/outputs/` que ainda não foram sincronizados (consultar `06-ROTINAS/config/SYNC-STATE.md`), cria **1 página por arquivo** no Notion com todos os temas/insights dentro dela, atualiza SYNC-STATE.md.
+
+**Mapeamento de destino:**
+
+| Tipo de output | Arquivo | Notion DB | Propriedades da página |
+|---|---|---|---|
+| Temas em Alta | `outputs/temas/temas-[data].md` | Zettelkasten (`collection://6e4c8442-1596-4eab-ab69-a7917e93e046`) | Nota: "Temas em Alta — YYYY-MM-DD", Tipo: Flash, Zona: Inbox, Tags: conteúdo, Destino: Conteúdo, Potencial: Semente, Formato: Ideia, Data: data do arquivo |
+| Pesquisa de Nicho | `outputs/nicho/nicho-update-[data].md` | Zettelkasten | Nota: "Pesquisa de Nicho — YYYY-MM-DD", Tipo: Flash, Zona: Output, Tags: mercado, Destino: Conteúdo, Potencial: Semente, Formato: Ideia |
+| Pesquisa de Nicho (ação) | seção "Ação Recomendada" do mesmo arquivo | Tarefas (`collection://00cfc122-de3b-83a0-ad2a-87e3bd2d78ed`) | Nome: texto da ação, Feito: false, Data: data do output |
+
+**Passos:**
+1. Ler `06-ROTINAS/config/SYNC-STATE.md` — identificar arquivos sem `✅ sincronizado`
+2. Para cada arquivo pendente:
+   a. Ler o conteúdo completo
+   b. Criar 1 única página Notion com todo o conteúdo dentro (não 1 página por tema)
+   c. Para nicho: criar também a tarefa de Ação Recomendada nas Tarefas
+3. Atualizar SYNC-STATE.md com ID gerado e status `✅ sincronizado`
+4. `git add 06-ROTINAS/config/SYNC-STATE.md && git commit -m "sync: rotinas → Notion [YYYY-MM-DD]" && git pull --rebase origin main && git push`
+
+---
+
+### Protocolo Export Notas → Git
+
+**GATILHO:** "exporta notas", "exporta do notion", "traz notas pro git".
+
+**O que faz:** lê notas recentes do Zettelkasten que ainda não foram exportadas (`Incorporada ≠ true`), salva em `06-ROTINAS/inputs/notas/` como `.md`, marca `Incorporada: true` no Notion, faz commit + push. As rotinas remotas lerão essas notas como input adicional no próximo ciclo.
+
+**Passos:**
+1. Buscar no Zettelkasten notas com `Incorporada` = false/null e `date:Data:start` ≥ 14 dias atrás
+2. Para cada nota encontrada:
+   a. Formatar como Markdown com YAML front-matter (título, tipo, zona, tags, data)
+   b. Salvar em `06-ROTINAS/inputs/notas/[YYYY-MM-DD]-[titulo-slug].md`
+   c. Atualizar nota no Notion: `Incorporada: true`
+3. `git add 06-ROTINAS/inputs/notas/ && git commit -m "chore: exporta notas Notion → git [YYYY-MM-DD]" && git pull --rebase origin main && git push`
+4. Confirmar: *"X notas exportadas para `inputs/notas/`. Rotinas vão usá-las como input no próximo ciclo."*
+
+**Naming:** `[YYYY-MM-DD]-[titulo-40-chars-sem-acento-hifenizado].md`
 
 ---
 

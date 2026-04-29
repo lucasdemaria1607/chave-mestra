@@ -40,6 +40,12 @@ Concorrentes principais: [preencher — nome e posicionamento de cada]
 
 ---
 
+INPUTS ADICIONAIS (leia antes de pesquisar):
+Verificar se existem arquivos em `06-ROTINAS/inputs/notas/` com data recente (últimos 14 dias).
+Se existirem, leia-os:
+- Priorize investigar brechas e movimentos que se conectam ao que está sendo estudado
+- Use os temas e reflexões das notas para calibrar o que aprofundar na pesquisa
+
 PESQUISA — execute buscas sobre cada área:
 
 1. NOVOS PLAYERS

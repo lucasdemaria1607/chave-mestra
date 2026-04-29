@@ -67,7 +67,7 @@ formato_nota: markdown (.md)
 ## Rotinas ativas
 
 ```
-rotina_temas: ativa           # Seg/Qua/Sex 09h Bahia
+rotina_temas: ativa           # 1x/semana — Seg 09h Bahia
 rotina_nicho: ativa           # Dia 1 e 15, 08h Bahia
 rotina_accountability: pausada # Reativar em 25/05 — aguardando acúmulo de notas
 rotina_conteudo: pausada      # Reativar em 25/05 — depende de accountability ativa
