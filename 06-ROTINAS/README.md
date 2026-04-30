@@ -13,6 +13,7 @@
 | **Pesquisa de Nicho** | Mapeia novos players, movimentos de concorrentes e brechas emergentes | Quinzenal | Sim |
 | **Accountability de Notas** | Executa Ciclo da Forja — revisa notas, encontra conexões, alerta quando o sistema esfria | Semanal | Não |
 | **Transformação em Conteúdo** | Pega insights e temas da semana e gera roteiros, carrosséis e headlines | Semanal | Não (usa inputs das outras) |
+| **Lua Cheia — Ciclo de Expansão** | Tria notas acumuladas em 3 trajetórias (Aprofundar/Criar/Produtizar), detecta padrões intelectuais e gera curadoria ativa de leituras, filmes e especialistas | Mensal (ao atingir 8 notas) | Sim (WebSearch para curadoria) |
 
 ---
 
@@ -85,6 +86,11 @@ SEGUNDA (a qualquer hora) — manual, Claude Code local
 
 1º E 15 DE CADA MÊS — automático
   → Rotina de Pesquisa de Nicho
+
+1x/MÊS (ou ao atingir 8 notas novas) — manual, Claude Code local
+  → "ciclo de expansão" → Lua Cheia — Ciclo de Expansão
+     Tria notas, situa em campos do saber, detecta padrões, gera curadoria ativa
+     Output: página MOC no Zettelkasten + git commit
 ```
 
 ---
@@ -105,8 +111,12 @@ SEGUNDA (a qualquer hora) — manual, Claude Code local
 │   ├── ALERTA-[YYYY-MM-DD].md       ← sem notas por 7+ dias
 │   └── ALERTA-CRITICO-[YYYY-MM-DD].md ← sem notas por 21+ dias
 │
-└── conteudo/                         ← (índice dos conteúdos gerados)
-    └── INDEX.md                      ← os arquivos ficam em 05-CRIACAO/
+├── conteudo/                         ← (índice dos conteúdos gerados)
+│   └── conteudo-[YYYY-MM-DD].md     ← manifesto + roteiros + carrosséis + headlines
+│
+└── expansao/                         ← outputs da Lua Cheia — Ciclo de Expansão
+    ├── lua-cheia-[YYYY-MM].md        ← triage + padrão + curadoria (ciclo completo)
+    └── lua-cheia-[YYYY-MM]-volume-insuficiente.md ← log quando threshold não atingido
 ```
 
 ---

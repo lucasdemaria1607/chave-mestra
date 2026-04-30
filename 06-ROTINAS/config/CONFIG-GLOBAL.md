@@ -60,6 +60,10 @@ notas_path: sistema-de-conhecimento/notas/
 alert_threshold_days: 7
 critical_threshold_days: 21
 formato_nota: markdown (.md)
+
+# Lua Cheia — Ciclo de Expansão
+lua_cheia_threshold: 8      # mínimo de notas novas para rodar o ciclo
+lua_cheia_last_run: null    # atualizado automaticamente após cada execução
 ```
 
 ---
@@ -71,6 +75,7 @@ rotina_temas: ativa           # 1x/semana — Seg 09h Bahia
 rotina_nicho: ativa           # Dia 1 e 15, 08h Bahia
 rotina_accountability: pausada # Reativar em 25/05 — aguardando acúmulo de notas
 rotina_conteudo: pausada      # Reativar em 25/05 — depende de accountability ativa
+rotina_lua_cheia: manual      # 1x/mês ou ao atingir lua_cheia_threshold notas novas
 ```
 
 ---

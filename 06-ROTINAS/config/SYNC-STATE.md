@@ -62,6 +62,17 @@
 
 ---
 
+## Lua Cheia — Ciclo de Expansão → Zettelkasten
+
+| Arquivo | Período | Data Execução | Status | ID Notion |
+|---------|---------|---------------|--------|-----------|
+| *(nenhum ciclo ainda)* | — | — | — | — |
+
+> Ciclo roda quando `lua_cheia_threshold` (padrão: 8) notas novas acumuladas.
+> Cada execução cria 1 página MOC no Zettelkasten (Zona: Estrutura, Tipo: MOC).
+
+---
+
 ## Notas Notion → Git (`exporta notas`)
 
 | Data Export | Notas exportadas | Arquivos gerados |

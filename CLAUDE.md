@@ -55,6 +55,7 @@ Cada plugin tem:
 | "Zettelkasten", "nota permanente", "modelos mentais", "documenta isso" | Chaveiro | forja-do-conhecimento |
 | "Tesouro dos Erros", "registra esse erro", "que erros existem para", "o que pode dar errado" | Chaveiro | tesouro-dos-erros |
 | "ritual da chave", "Lua Cheia", "Forja Semanal", "Giro da Chave", "planejamento mensal", "pauta da semana", "workflow", "rotina de criação" | Chaveiro | ritual-da-chave |
+| "lua cheia expansão", "ciclo de expansão", "roda o lua cheia", "ciclo mensal de notas" | Chaveiro | lua-cheia-expansao |
 | "analisa o mercado", "mapa do terreno", "pesquisa de nicho", "players", "brechas" | Cartógrafo | portal-do-terreno |
 | "mapeia a persona", "SZC", "Alma da Persona", "quem é o lead", "inferno/purgatório/céu" | Cartógrafo | forja-da-persona |
 | "worldbuilding", "universo de marca", "Primal Branding", "StoryBrand", "léxico de marca", "Forja do Universo", "Mapa do Universo", "DNA de marca" | Cartógrafo | forja-do-universo |
@@ -288,6 +289,7 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 | Pesquisa de Nicho | `outputs/nicho/nicho-update-[data].md` | Zettelkasten | Nota: "Pesquisa de Nicho — YYYY-MM-DD", Tipo: Flash, Zona: Output, Tags: mercado, Destino: Conteúdo, Potencial: Semente, Formato: Ideia |
 | Pesquisa de Nicho (ação) | seção "Ação Recomendada" do mesmo arquivo | Tarefas (`collection://00cfc122-de3b-83a0-ad2a-87e3bd2d78ed`) | Nome: texto da ação, Feito: false, Data: data do output |
 | Transformação em Conteúdo | `outputs/conteudo/conteudo-[data].md` | DB Conteúdo (`collection://25cfc122-de3b-81c2-a76a-000bcf8453f4`) | 1 página por peça — campos do MANIFESTO DE PRODUÇÃO + corpo completo em "Notas & Briefing" |
+| Lua Cheia — Ciclo de Expansão | `outputs/expansao/lua-cheia-[YYYY-MM].md` | Zettelkasten (`collection://6e4c8442-1596-4eab-ab69-a7917e93e046`) | Nota: "Lua Cheia — YYYY-MM", Tipo: MOC, Zona: Estrutura, Tags: expansão + curadoria, Destino: Pesquisa, Potencial: Árvore, Data: data do output |
 
 **Campos DB Conteúdo ao criar cada peça:**
 - `Título` — título da peça
@@ -328,6 +330,30 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 4. Confirmar: *"X notas exportadas para `inputs/notas/`. Rotinas vão usá-las como input no próximo ciclo."*
 
 **Naming:** `[YYYY-MM-DD]-[titulo-40-chars-sem-acento-hifenizado].md`
+
+---
+
+### Protocolo Lua Cheia — Ciclo de Expansão
+
+**GATILHO:** "lua cheia expansão", "ciclo de expansão", "roda o lua cheia", "ciclo mensal de notas".
+
+**O que faz:** conta as notas novas desde o último ciclo → se ≥ 8, executa triage intelectual completa de cada nota (3 trajetórias: Aprofundar / Criar / Produtizar), detecta padrões e pontos cegos do período, gera curadoria ativa (livros, filmes, especialista novo via WebSearch). Output: 1 página MOC no Zettelkasten + arquivo git.
+
+**Passos:**
+1. Ler `06-ROTINAS/config/CONFIG-GLOBAL.md` → obter `lua_cheia_last_run` e `lua_cheia_threshold`
+2. Contar arquivos `.md` em `sistema-de-conhecimento/notas/` e `06-ROTINAS/inputs/notas/` modificados após `lua_cheia_last_run`
+3. Se total < threshold:
+   - Salvar `06-ROTINAS/outputs/expansao/lua-cheia-[YYYY-MM]-volume-insuficiente.md` com contagem
+   - Informar ao usuário: *"[N]/[threshold] notas. Próximo ciclo quando atingir [threshold - N] notas."*
+   - Encerrar
+4. Se total ≥ threshold: executar o prompt completo em `06-ROTINAS/prompts/PROMPT-LUA-CHEIA-EXPANSAO.md`
+5. Salvar output em `06-ROTINAS/outputs/expansao/lua-cheia-[YYYY-MM].md`
+6. Criar 1 página no Zettelkasten: Título "Lua Cheia — YYYY-MM", Tipo: MOC, Zona: Estrutura, Tags: expansão + curadoria, Destino: Pesquisa, Potencial: Árvore
+7. Atualizar `06-ROTINAS/config/CONFIG-GLOBAL.md`: campo `lua_cheia_last_run` com data de hoje
+8. Atualizar `06-ROTINAS/config/SYNC-STATE.md`: registrar execução com status e ID Notion
+9. `git add 06-ROTINAS/ && git commit -m "feat: lua cheia expansão [YYYY-MM]" && git pull --rebase origin main && git push`
+
+**Regra:** nunca inventar notas ou usar notas de ciclos anteriores. Se volume insuficiente → encerra graciosamente.
 
 ---
 
