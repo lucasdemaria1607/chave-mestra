@@ -337,7 +337,7 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 
 **GATILHO:** "lua cheia expansão", "ciclo de expansão", "roda o lua cheia", "ciclo mensal de notas".
 
-**O que faz:** conta as notas novas desde o último ciclo → se ≥ 8, executa triage intelectual completa de cada nota (3 trajetórias: Aprofundar / Criar / Produtizar), detecta padrões e pontos cegos do período, gera curadoria ativa (livros, filmes, especialista novo via WebSearch). Output: 1 página MOC no Zettelkasten + arquivo git.
+**O que faz:** conta as notas novas desde o último ciclo → se ≥ 8, cataloga e ordena cronologicamente todas as notas (preenchendo propriedades ausentes nas adicionadas ad-hoc), executa triage completa em 3 trajetórias (Aprofundar / Criar / Produtizar), detecta padrões e pontos cegos do período, gera curadoria ativa (livros, filmes, especialista novo via WebSearch). Output: 1 página MOC no Zettelkasten + arquivo git.
 
 **Passos:**
 1. Ler `06-ROTINAS/config/CONFIG-GLOBAL.md` → obter `lua_cheia_last_run` e `lua_cheia_threshold`

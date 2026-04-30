@@ -47,6 +47,50 @@ Nenhuma ação necessária agora."
 
 ---
 
+FASE 0 — CATALOGAÇÃO E ORDENAÇÃO
+
+Antes de qualquer triage, construir o inventário cronológico das notas.
+
+Para cada nota coletada:
+1. Verificar se tem YAML frontmatter com campo `Data` ou `date`
+   → Se tem: usar essa data
+   → Se não tem: usar a data de modificação do arquivo (file mtime)
+2. Verificar se tem `Tipo` (Flash/Literatura/Permanente/Projeto/MOC)
+   → Se não tem: inferir do conteúdo (Flash = captura rápida, 1-3 parágrafos;
+     Literatura = baseada em leitura; Permanente = elaborada, conectada; Projeto = acionável)
+3. Verificar se tem `Zona` (Inbox/Literatura/Permanente/Estrutura/Analogia/Output/Domínio)
+   → Se não tem: inferir do conteúdo
+
+### Inventário cronológico do período
+
+Apresentar como tabela antes de iniciar a triage:
+
+| # | Data | Título | Tipo inferido | Zona inferida | Tem propriedades? |
+|---|------|--------|--------------|--------------|-------------------|
+| 1 | [data] | [título] | [tipo] | [zona] | Sim / Parcial / Não |
+| ... | | | | | |
+
+[INSTRUÇÃO — se rodando localmente com acesso a git]
+Para notas com "Tem propriedades? = Não" ou "Parcial":
+- Atualizar o arquivo .md da nota adicionando frontmatter YAML com os campos inferidos
+- Marcar como inferido: `tipo_origem: inferido` no frontmatter
+- Se a nota também existe no Notion (tem `notion_id` no frontmatter ou foi exportada):
+  atualizar propriedades no Notion também
+
+Formato frontmatter a adicionar/completar:
+```yaml
+---
+titulo: [Título da nota]
+data: [YYYY-MM-DD]
+tipo: [Flash | Literatura | Permanente | Projeto | MOC]
+zona: [Inbox | Literatura | Permanente | Estrutura | Analogia | Output | Domínio]
+tags: []
+tipo_origem: [original | inferido]
+---
+```
+
+---
+
 FASE 1 — TRIAGE INDIVIDUAL
 
 Para cada nota nova, execute a triage nas 3 trajetórias:
@@ -141,9 +185,13 @@ OUTPUT FINAL:
 
 **Período:** [data lua_cheia_last_run] → [data de hoje]
 **Notas processadas:** [N]
+**Notas com propriedades inferidas:** [X] ← notas sem estrutura prévia que foram catalogadas
+
+### Inventário Cronológico
+[Tabela da Fase 0 — todas as notas ordenadas por data]
 
 ### Triage de Notas
-[Fase 1 completa]
+[Fase 1 completa — na mesma ordem cronológica do inventário]
 
 ### Padrão do Período
 [Fase 2 completa]
