@@ -155,6 +155,12 @@ NOTA TÉCNICA:
 Exercício: [nome] — [justificativa de seleção]
 Ritmo: [padrão aplicado — ex: Manchete → 2x Immersive → Grito → 2x Immersive → Grito → Immersive → Fechamento]
 Efeito retórico: [o que este carrossel deve fazer ao público ao chegar no slide 10]
+
+CALIBRAÇÃO DE ATIVOS:
+Ativo primário: [Autoridade | Confiança | Status | Afinidade]
+Slide de ativação por ativo: [Slide 1: Af | Slides 3–7: Au | Slide 8: Co | Slide 9–10: S]
+Custo percebido: [alto | médio | baixo — o que torna este carrossel custoso de ignorar]
+Pseudo-autenticidade: [não | sim — onde]
 ```
 
 ---
@@ -176,4 +182,5 @@ Efeito retórico: [o que este carrossel deve fazer ao público ao chegar no slid
 - `exemplos.md` — exemplos gold standard de roteiros completos
 - `copy-3x5.md` — calibração de qual camada cada slide serve (C1/C2/C3)
 - `metodo-carga.md` — calibração de intensidade emocional e intelectual
+- `ativos-de-percepcao/SKILL.md` — ativo primário por carrossel + sequência slide a slide; Slide 1 abre com Afinidade, slides centrais constroem Autoridade, Slide 8–9 ativa Confiança, Slide 10 fecha com Status ou Afinidade dependendo do objetivo
 - `progymnasmata-video-map.md` — a mesma estrutura exercício → adaptação para vídeo (Chavideo)

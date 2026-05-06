@@ -39,13 +39,20 @@ Antes de gerar roteiro, verificar no **Dossiê CM** (`05-ASSETS/dossies/[projeto
 
 ## Anatomia do Roteiro Chavideo
 
-Cada roteiro tem 5 camadas obrigatórias:
+Cada roteiro tem 6 camadas obrigatórias:
 
 1. **Exercício Progymnasmata** — esqueleto argumentativo
 2. **Combinação cinematográfica** — mecânica de tensão e retenção
 3. **Calibração de Carga** — intensidade narrativa (ver Pergaminho de Copy)
 4. **Formato** — vertical (60–90s), horizontal (2–5min), ou carrossel-vídeo (90–180s)
 5. **CTA implícito ou explícito** — determinado pelo objetivo e nível de consciência do público
+6. **Ativo de percepção primário** — qual dos 4 ativos esta peça constrói (ver `ativos-de-percepcao/SKILL.md`)
+
+**Sequência de ativação padrão num roteiro de 60–90s:**
+- 0–5s (gancho): **Afinidade** — identificação imediata ou espelho emocional
+- 5–60s (desenvolvimento): **Autoridade** — mecanismo real, perspectiva original
+- 50–75s (virada): **Confiança** — custo demonstrado, dado com risco real
+- 75–90s (CTA): **Status implícito** — validação ou consequência específica
 
 ---
 
@@ -203,6 +210,12 @@ NOTA TÉCNICA:
 Exercício: [nome] — [por que foi escolhido]
 Mecânica principal: [mecanismo + onde opera]
 Efeito retórico pretendido: [o que o roteiro deve fazer ao público]
+
+CALIBRAÇÃO DE ATIVOS:
+Ativo primário: [Autoridade | Confiança | Status | Afinidade]
+Sequência de ativação: [0–5s: Af] → [5–60s: Au] → [virada: Co] → [CTA: S impl.]
+Custo percebido: [alto | médio | baixo — justificativa]
+Pseudo-autenticidade: [não | sim — onde]
 ```
 
 ---
@@ -225,3 +238,4 @@ Efeito retórico pretendido: [o que o roteiro deve fazer ao público]
 - `alma-da-persona.md` — Inferno/Céu alimenta Dramatic Question e Catharsis
 - `szc.md` — Zeitgeist alimenta Rising Stakes e Identity Threat
 - `BLUEPRINT-PESSOA-CHAVE.md` — P1 (Pitch) e P2 (Publicação): todo roteiro é um pitch; volume de publicação consistente constrói autoridade
+- `ativos-de-percepcao/SKILL.md` — ativo primário + sequência de ativação por peça; todo roteiro deve declarar qual ativo constrói e com qual custo

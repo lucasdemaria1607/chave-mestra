@@ -199,6 +199,13 @@ FASE DE RESISTÊNCIA — CHECKLIST:
 [ ] Desconfiança: [como foi tratada]
 [ ] Escrutínio: [como foi tratada]
 [ ] Inércia: [como foi tratada]
+
+CALIBRAÇÃO DE ATIVOS DE PERCEPÇÃO:
+Ativo primário: [Autoridade | Confiança | Status | Afinidade]
+Ativos de suporte: [lista]
+Sequência de ativação na peça: [ex: Af (gancho) → Au (desenvolvimento) → Co (virada)]
+Custo percebido: [alto | médio | baixo — justificativa]
+Pseudo-autenticidade detectada: [não | sim — onde e por quê]
 ```
 
 ---
@@ -220,3 +227,4 @@ FASE DE RESISTÊNCIA — CHECKLIST:
 - `modalidades.md` → proporção C1/C2/C3 muda por modalidade de campanha
 - `chavideo.md` → Método Carga é o calibrador pós-roteiro
 - `chavossel.md` → Copy 3x5 define qual camada cada slide serve
+- `ativos-de-percepcao/SKILL.md` → C1 ativa principalmente Afinidade; C2 ativa Status (via universo de marca) e Autoridade (via reframing); C3 ativa Autoridade + Confiança (argumento + prova). O bloco "Calibração de Ativos" ao final de cada output fecha esse loop.

@@ -59,6 +59,7 @@ Cada plugin tem:
 | "analisa o mercado", "mapa do terreno", "pesquisa de nicho", "players", "brechas" | Cartógrafo | portal-do-terreno |
 | "mapeia a persona", "SZC", "Alma da Persona", "quem é o lead", "inferno/purgatório/céu" | Cartógrafo | forja-da-persona |
 | "worldbuilding", "universo de marca", "Primal Branding", "StoryBrand", "léxico de marca", "Forja do Universo", "Mapa do Universo", "DNA de marca" | Cartógrafo | forja-do-universo |
+| "ativos de percepção", "mapa de ativos", "diagnóstico de percepção", "calibra os ativos", "engenharia de credibilidade", "autoridade percebida", "como construir confiança", "como construir status", "diagnóstico de sinalização" | Cartógrafo | ativos-de-percepcao |
 | "copy", "Copy 3x5", "Método Carga", "calibra a peça", "nível de consciência" | Alquimista | pergaminho-de-copy |
 | "cria a oferta", "stack de bônus", "equação de valor", "garantia", "oferta irresistível" | Alquimista | forja-de-oferta |
 | "diagnóstico de fase", "alavancas", "CAC", "LTV", "escala o negócio", "esteira de valor" | Alquimista | portal-da-escala |
@@ -260,6 +261,8 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 **Para mapear persona:** ative Cartógrafo → leia `forja-da-persona/SKILL.md` + `alma-da-persona.md` + `szc.md` + `perfis-cognitivos.md`.
 
 **Para construir universo de marca:** ative Cartógrafo → leia `forja-do-universo/SKILL.md` + `primal-branding.md` + `storybrand.md` + `worldbuilding.md`.
+
+**Para mapear e engenheirar percepção de marca:** ative Cartógrafo → leia `ativos-de-percepcao/SKILL.md` + `fundamentos-teoricos.md` + `diagnostico.md`. A lente de Ativos de Percepção é transversal — após diagnóstico, integra-se a copy (Alquimista), conteúdo (Bardo) e campanha (Arauto) via bloco "Calibração de Ativos" no output de cada skill.
 
 **Para planejar rotina/workflow:** ative Chaveiro → leia `ritual-da-chave/SKILL.md`. Usar os 3 ciclos: Lua Cheia (mensal) → Forja Semanal → Giro da Chave (diário).
 
