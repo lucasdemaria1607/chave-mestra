@@ -284,15 +284,23 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 
 **O que faz:** lê outputs novos em `06-ROTINAS/outputs/` que ainda não foram sincronizados (consultar `06-ROTINAS/config/SYNC-STATE.md`), cria **1 página por arquivo** no Notion com todos os temas/insights dentro dela, atualiza SYNC-STATE.md.
 
+**⚠️ ESPAÇO DE DESTINO — verificar antes de qualquer escrita:**
+Todos os databases abaixo pertencem ao espaço **"Sistema Chave Mestra - Lucas Grigo"** (root: `245fc122de3b80e1a508cf0988ab6227`). O espaço "Sistema Chave Mestra - Nome do Cliente" (`357fc122`) é o template produto para clientes — **nunca escrever lá**.
+
+**Passo 0 — verificação de roteamento (executar se houver dúvida):**
+`notion-fetch collection://6e4c8442-1596-4eab-ab69-a7917e93e046`
+→ Confirmar que `ancestor-8` na resposta é `245fc122de3b80e1a508cf0988ab6227` (Lucas Grigo).
+→ Se for diferente: PARAR e alertar Lucas — "Os IDs do Notion mudaram após reorganização. Preciso que você confirme os novos IDs antes de qualquer escrita."
+
 **Mapeamento de destino:**
 
 | Tipo de output | Arquivo | Notion DB | Propriedades da página |
 |---|---|---|---|
-| Temas em Alta | `outputs/temas/temas-[data].md` | Zettelkasten (`collection://6e4c8442-1596-4eab-ab69-a7917e93e046`) | Nota: "Temas em Alta — YYYY-MM-DD", Tipo: Flash, Zona: Inbox, Tags: conteúdo, Destino: Conteúdo, Potencial: Semente, Formato: Ideia, Data: data do arquivo |
-| Pesquisa de Nicho | `outputs/nicho/nicho-update-[data].md` | Zettelkasten | Nota: "Pesquisa de Nicho — YYYY-MM-DD", Tipo: Flash, Zona: Output, Tags: mercado, Destino: Conteúdo, Potencial: Semente, Formato: Ideia |
-| Pesquisa de Nicho (ação) | seção "Ação Recomendada" do mesmo arquivo | Tarefas (`collection://00cfc122-de3b-83a0-ad2a-87e3bd2d78ed`) | Nome: texto da ação, Feito: false, Data: data do output |
-| Transformação em Conteúdo | `outputs/conteudo/conteudo-[data].md` | DB Conteúdo (`collection://25cfc122-de3b-81c2-a76a-000bcf8453f4`) | 1 página por peça — campos do MANIFESTO DE PRODUÇÃO + corpo completo em "Notas & Briefing" |
-| Lua Cheia — Ciclo de Expansão | `outputs/expansao/lua-cheia-[YYYY-MM].md` | Zettelkasten (`collection://6e4c8442-1596-4eab-ab69-a7917e93e046`) | Nota: "Lua Cheia — YYYY-MM", Tipo: MOC, Zona: Estrutura, Tags: expansão + curadoria, Destino: Pesquisa, Potencial: Árvore, Data: data do output |
+| Temas em Alta | `outputs/temas/temas-[data].md` | Zettelkasten — `collection://6e4c8442-1596-4eab-ab69-a7917e93e046` — Lucas Grigo ✅ | Nota: "Temas em Alta — YYYY-MM-DD", Tipo: Flash, Zona: Inbox, Tags: conteúdo, Destino: Conteúdo, Potencial: Semente, Formato: Ideia, Data: data do arquivo |
+| Pesquisa de Nicho | `outputs/nicho/nicho-update-[data].md` | Zettelkasten — Lucas Grigo ✅ | Nota: "Pesquisa de Nicho — YYYY-MM-DD", Tipo: Flash, Zona: Output, Tags: mercado, Destino: Conteúdo, Potencial: Semente, Formato: Ideia |
+| Pesquisa de Nicho (ação) | seção "Ação Recomendada" do mesmo arquivo | Tarefas — `collection://00cfc122-de3b-83a0-ad2a-87e3bd2d78ed` — Lucas Grigo ✅ | Nome: texto da ação, Feito: false, Data: data do output |
+| Transformação em Conteúdo | `outputs/conteudo/conteudo-[data].md` | DB Conteúdo — `collection://25cfc122-de3b-81c2-a76a-000bcf8453f4` — Lucas Grigo ✅ | 1 página por peça — campos do MANIFESTO DE PRODUÇÃO + corpo completo em "Notas & Briefing" |
+| Lua Cheia — Ciclo de Expansão | `outputs/expansao/lua-cheia-[YYYY-MM].md` | Zettelkasten — `collection://6e4c8442-1596-4eab-ab69-a7917e93e046` — Lucas Grigo ✅ | Nota: "Lua Cheia — YYYY-MM", Tipo: MOC, Zona: Estrutura, Tags: expansão + curadoria, Destino: Pesquisa, Potencial: Árvore, Data: data do output |
 
 **Campos DB Conteúdo ao criar cada peça:**
 - `Título` — título da peça
