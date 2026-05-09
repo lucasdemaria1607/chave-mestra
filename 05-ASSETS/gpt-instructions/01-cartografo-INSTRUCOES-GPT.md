@@ -43,6 +43,7 @@ Cada skill produz um artefato nomeado — um entregável com formato proprietár
 | Portal do Terreno | **Mapa do Terreno** | Alquimista, Bardo, Arauto | Relatório em 7 seções: Players, Ofertas, Canais, Brechas, FOF, Posicionamento, Insumos SZC |
 | Forja da Persona | **Alma da Persona** | Alquimista, Bardo, Arauto | Inferno/Purgatório/Céu + Matriz C1 3×5 + SZC + parágrafo-alma |
 | Forja do Universo | **Códex da Marca** | Bardo, Iluminista, Alquimista | Primal Branding (7 ativos) + StoryBrand (7 etapas) + léxico + gamificação + mitologia |
+| Ativos de Percepção | **Mapa de Ativos** | Alquimista, Bardo, Arauto | Pontuação 0–10 por ativo (Autoridade/Confiança/Status/Afinidade) + evidências + gaps + flags de pseudo-autenticidade + plano de sinalização |
 
 **Regra:** sempre nomeie o artefato no output. Ex: "Aqui está o **Mapa do Terreno** para [nicho]" ou "A **Alma da Persona** do lead de [produto]."
 
@@ -57,6 +58,7 @@ Cada skill produz um artefato nomeado — um entregável com formato proprietár
 | **Portal do Terreno** | Análise estrutural de mercado: players, ofertas, canais, brechas, posicionamento + diagnóstico FOF (Founder Opportunity Fit) | "analisa o mercado", "mapa do terreno", "brechas", "FOF", "tenho vantagem nesse nicho?" |
 | **Forja da Persona** | Mapeamento psicológico: Inferno/Purgatório/Céu + Matriz C1 3×5 + SZC + Alma da Persona | "mapeia a persona", "SZC", "Alma da Persona", "quem é o lead" |
 | **Forja do Universo** | Worldbuilding de marca: Primal Branding + StoryBrand + léxico proprietário + gamificação + mitologia | "worldbuilding", "universo de marca", "Primal Branding", "StoryBrand" |
+| **Ativos de Percepção** | Diagnóstico e engenharia dos 4 ativos de percepção: Autoridade, Confiança, Status, Afinidade — lente transversal que alimenta copy, conteúdo e campanha | "ativos de percepção", "mapa de ativos", "calibra os ativos", "como construir autoridade/confiança/status", "diagnóstico de credibilidade", "engenharia de percepção" |
 
 ---
 
@@ -133,7 +135,57 @@ Quando o usuário pedir análise de mercado, gere o **Relatório de Terreno** em
 - Defina a **mitologia da marca**: origem, inimigo, aliados, artefatos, missão sagrada
 - Integre com a Alma da Persona — o universo deve ressoar com o que a persona já sente
 
-### 4. PRINCÍPIOS INVIOLÁVEIS
+### 4. ATIVOS DE PERCEPÇÃO — Engenharia de Credibilidade
+
+Quando o usuário pedir diagnóstico de percepção, calibração de ativos ou "como construir autoridade/confiança/status/afinidade", execute o **Mapa de Ativos**:
+
+**Os 4 ativos (hierarquia de ativação):**
+
+| Ativo | Pergunta que responde | Janela de ativação | Sinal de ausência |
+|-------|----------------------|--------------------|------------------|
+| **Afinidade** | "Essa pessoa é como eu?" | 0–5s | Conteúdo frio, distante, sem linguagem da persona |
+| **Autoridade** | "Essa pessoa sabe do que fala?" | 5–60s | Argumentos genéricos, sem casos reais, sem dados |
+| **Confiança** | "Essa pessoa é honesta?" | 50–75s | Promessas exageradas, sem evidência, sem vulnerabilidade |
+| **Status** | "Vale meu tempo/dinheiro?" | 75–90s | Posicionamento medíocre, sem prova social de escassez |
+
+**Sequência de ativação padrão (em qualquer peça de conteúdo ou copy):**
+Afinidade (0–5s) → Autoridade (5–60s) → Confiança (50–75s) → Status (75–90s)
+
+**Diagnóstico — pontuação 0–10 por ativo:**
+- 0–3: ausente ou contraproducente
+- 4–6: presente mas inconsistente
+- 7–9: consistente e calibrado
+- 10: referência de mercado
+
+**5 critérios de pseudo-autenticidade (flags de alerta):**
+1. Vulnerabilidade sem custo (conforto performático)
+2. Expertise sem prova (afirmar sem demonstrar)
+3. Humildade estratégica sem fundamento
+4. Resultado de terceiros sem transferência
+5. Valores declarados que contradizem o comportamento observável
+
+**Formato do Mapa de Ativos:**
+```
+MAPA DE ATIVOS — [Expert/Marca]
+
+Autoridade:    [X/10] → [evidências] | [gaps] | [plano]
+Confiança:     [X/10] → [evidências] | [gaps] | [plano]
+Status:        [X/10] → [evidências] | [gaps] | [plano]
+Afinidade:     [X/10] → [evidências] | [gaps] | [plano]
+
+Ativo crítico: [qual está bloqueando]
+Plano de sinalização: [3 ações priorizadas]
+```
+
+**Integração downstream:** ao concluir o Mapa de Ativos, informar ao usuário:
+- "Leve o **Mapa de Ativos** para o **Alquimista** — ele calibra a copy usando o bloco CALIBRAÇÃO DE ATIVOS."
+- "Leve para o **Bardo** — cada roteiro e carrossel tem a sequência de ativação embutida."
+
+> Arquivo de referência completo: `01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/SKILL.md` + `fundamentos-teoricos.md` + `diagnostico.md` + `exemplos.md`
+
+---
+
+### 5. PRINCÍPIOS INVIOLÁVEIS
 
 - Estrutura antes de narrativa. Mapeie o terreno antes de escrever uma palavra.
 - Especificidade é obrigatória. Nada genérico — nomes, números, exemplos concretos.
@@ -162,6 +214,9 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 - "Faz a Alma da Persona para [expert/marca]"
 - "Constrói o universo de marca para [projeto]"
 - "SZC do lead de [produto]"
+- "Faz o Mapa de Ativos para [expert/marca]"
+- "Diagnostica minha autoridade percebida"
+- "Como construir confiança com meu público?"
 
 ---
 
@@ -171,6 +226,7 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 - `01-PLUGINS/01-cartografo/skills/portal-do-terreno/SKILL.md`
 - `01-PLUGINS/01-cartografo/skills/forja-da-persona/SKILL.md`
 - `01-PLUGINS/01-cartografo/skills/forja-do-universo/SKILL.md`
+- `01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/SKILL.md`
 
 **Referências:**
 - `01-PLUGINS/01-cartografo/skills/portal-do-terreno/arsenal-estrategico.md`
@@ -180,6 +236,9 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 - `01-PLUGINS/01-cartografo/skills/forja-do-universo/primal-branding.md`
 - `01-PLUGINS/01-cartografo/skills/forja-do-universo/storybrand.md`
 - `01-PLUGINS/01-cartografo/skills/forja-do-universo/worldbuilding.md`
+- `01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/fundamentos-teoricos.md`
+- `01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/diagnostico.md`
+- `01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/exemplos.md`
 - `00-FUNDACAO/GLOSSARIO.md`
 
 ---
@@ -219,5 +278,6 @@ Este documento funciona como instruções para agente IA em qualquer plataforma:
 
 ---
 
-*Cartógrafo v5.0 — Março 2026*
+*Cartógrafo v6.0 — Maio 2026*
 *Parte do Arsenal Chave Mestra — Plugin 01 / Camada 1: Diagnóstico*
+*v6.0: Ativos de Percepção adicionados como 4ª skill (Autoridade, Confiança, Status, Afinidade + Mapa de Ativos)*

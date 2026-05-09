@@ -32,6 +32,7 @@ Para adicionar arquivos: dentro do projeto → "Add content" → arrastar ou col
 01-PLUGINS/01-cartografo/skills/portal-do-terreno/SKILL.md
 01-PLUGINS/01-cartografo/skills/forja-da-persona/SKILL.md
 01-PLUGINS/01-cartografo/skills/forja-do-universo/SKILL.md
+01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/SKILL.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/SKILL.md
 01-PLUGINS/02-alquimista/skills/forja-de-oferta/SKILL.md
 01-PLUGINS/02-alquimista/skills/portal-da-escala/SKILL.md
@@ -64,6 +65,9 @@ Para adicionar arquivos: dentro do projeto → "Add content" → arrastar ou col
 01-PLUGINS/01-cartografo/skills/forja-do-universo/primal-branding.md
 01-PLUGINS/01-cartografo/skills/forja-do-universo/storybrand.md
 01-PLUGINS/01-cartografo/skills/forja-do-universo/worldbuilding.md
+01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/fundamentos-teoricos.md
+01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/diagnostico.md
+01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/exemplos.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/copy-3x5.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/metodo-carga.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/arsenal-retorico.md
@@ -93,7 +97,7 @@ REGRA FUNDAMENTAL: antes de qualquer output em uma camada, leia o SKILL.md do pl
 
 MAPA DE PLUGINS:
 - Manutenção + Conhecimento → Chaveiro (chaveiro, forja-do-conhecimento, tesouro-dos-erros, ritual-da-chave)
-- Diagnóstico + Universo → Cartógrafo (portal-do-terreno, forja-da-persona, forja-do-universo)
+- Diagnóstico + Universo → Cartógrafo (portal-do-terreno, forja-da-persona, forja-do-universo, ativos-de-percepcao)
 - Estratégia + Escala → Alquimista (pergaminho-de-copy, forja-de-oferta, portal-da-escala, frameworks-anuncios)
 - Criação → Bardo (chavideo, chavossel, headline-generator, script-creator, script-analyzer, copy-enhancer)
 - Lançamento + Operação → Arauto (mapa-de-campanha, esteira-notion, protocolo-massivo)
@@ -122,6 +126,10 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 01-PLUGINS/01-cartografo/skills/forja-do-universo/primal-branding.md
 01-PLUGINS/01-cartografo/skills/forja-do-universo/storybrand.md
 01-PLUGINS/01-cartografo/skills/forja-do-universo/worldbuilding.md
+01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/SKILL.md
+01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/fundamentos-teoricos.md
+01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/diagnostico.md
+01-PLUGINS/01-cartografo/skills/ativos-de-percepcao/exemplos.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/SKILL.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/copy-3x5.md
 01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/metodo-carga.md
@@ -138,12 +146,14 @@ PLUGINS DISPONÍVEIS:
 - Cartógrafo → Portal do Terreno (portal-do-terreno) — diagnóstico estrutural de mercado: Mapa de Sofisticação, gaps, posicionamento, Matriz C1 3x5, FOF + arsenal-estrategico.md
 - Cartógrafo → Forja da Persona (forja-da-persona) — SZC + Alma da Persona (Inferno/Purgatório/Paraíso) + perfis-cognitivos.md
 - Cartógrafo → Forja do Universo (forja-do-universo) — Primal Branding (7 ativos) + StoryBrand (7 etapas) + World Building + léxico proprietário + gamificação
+- Cartógrafo → Ativos de Percepção (ativos-de-percepcao) — diagnóstico e engenharia dos 4 ativos: Autoridade, Confiança, Status, Afinidade + Mapa de Ativos
 - Alquimista → Pergaminho de Copy (pergaminho-de-copy) — Copy 3x5 + Método Carga + arsenal-retorico.md
 
 QUANDO USAR CADA SKILL:
 - "analisa o mercado / nicho / concorrência / FOF" → Portal do Terreno
 - "mapeia a persona / avatar / lead" → Forja da Persona + szc.md + alma-da-persona.md
 - "worldbuilding / universo de marca / Primal / StoryBrand / léxico" → Forja do Universo
+- "ativos de percepção / mapa de ativos / como construir autoridade/confiança/status" → Ativos de Percepção
 - "calibra a peça / que carga usar / nível de consciência" → Pergaminho de Copy + copy-3x5.md + metodo-carga.md
 
 FLUXO NATURAL:
@@ -272,6 +282,7 @@ ARCO NARRATIVO: toda campanha tem 4 atos — Estabelecimento do Mundo / Incident
 
 ```
 01-PLUGINS/02-alquimista/skills/portal-da-escala/SKILL.md
+01-PLUGINS/02-alquimista/skills/portal-da-escala/biblioteca-por-fase.md
 01-PLUGINS/02-alquimista/skills/frameworks-anuncios/SKILL.md
 01-PLUGINS/02-alquimista/skills/frameworks-anuncios/frameworks-anuncios.md
 01-PLUGINS/02-alquimista/skills/frameworks-anuncios/manychat-ativacao.md
@@ -303,7 +314,11 @@ DIAGNÓSTICO DE FASE (sempre fazer primeiro):
 
 AS 4 ALAVANCAS (Naval Ravikant): Mídia → Código → Pessoas → Capital. Ativar na ordem certa para o estágio certo.
 
-OUTPUT PADRÃO: Diagnóstico de Fase + Alavanca Prioritária + Esteira de Valor + Painel de Métricas + Próximo Movimento (1 ação principal + 2 suporte + 1 parar).
+AS 3 FORMAS DE CRESCER (Jay Abraham): (1) Mais clientes [referrals, parcerias, Host-Beneficiary] (2) Maior ticket médio [upsell, premium tier, reposicionamento] (3) Maior frequência [continuidade, assinatura, reativação]. Diagnosticar qual está sub-otimizada ANTES de abrir novo canal.
+
+VALIDAÇÃO (quando o negócio ainda não tem PMF): Mom Test (entrevistas sobre comportamento passado, não sobre intenção) + Regra 48h MDW (Dream Ten → pré-venda → 3 pagantes em 48h). Referência completa: `biblioteca-por-fase.md`.
+
+OUTPUT PADRÃO: Diagnóstico de Fase + Alavanca Prioritária (Naval) + 3 Formas Abraham (qual está sub-otimizada) + Esteira de Valor + Painel de Métricas + Próximo Movimento (1 ação principal + 2 suporte + 1 parar).
 ```
 
 ---

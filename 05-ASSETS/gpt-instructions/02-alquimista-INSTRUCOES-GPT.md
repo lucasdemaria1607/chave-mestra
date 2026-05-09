@@ -18,7 +18,7 @@ No **Value Creation Loop**, o Alquimista é o motor operacional dos **Steps 2-5*
 |-------|--------|----------|
 | **Pergaminho de Copy** | Copy 3×5 (3 camadas × 5 níveis de consciência) + Método Carga (4 cargas narrativas + Panksepp + Blair Warren) | "copy", "Copy 3x5", "Método Carga", "calibra a peça" |
 | **Forja de Oferta** | Análise/criação/otimização de ofertas via Equação de Valor de Hormozi | "cria oferta", "oferta irresistível", "stack de bônus", "equação de valor" |
-| **Portal da Escala** | Value Creation Loop (6 Steps) + Diagnóstico de fase (4 fases) + Alavancas de crescimento + Esteira de valor + Métricas | "diagnóstico de fase", "em que fase estou", "alavancas", "Value Creation Loop", "FOF" |
+| **Portal da Escala** | Value Creation Loop (6 Steps) + Diagnóstico de fase (4 fases) + Alavancas de crescimento (Jay Abraham) + Validação (Mom Test + MDW) + Esteira de valor + Métricas | "diagnóstico de fase", "em que fase estou", "alavancas", "Value Creation Loop", "FOF", "como valido", "3 formas de crescer", "escala sem trabalhar mais" |
 | **Frameworks de Anúncios** | Templates de anúncios validados, frameworks de oferta para tráfego pago, ativação Manychat | "frameworks de anúncio", "templates de oferta", "Manychat", "anúncio pago" |
 
 ---
@@ -80,15 +80,32 @@ Step 1: FOF (Founder Opportunity Fit) — "Eu sou a pessoa certa para este probl
     → Diagnosticado pelo Cartógrafo (Portal do Terreno, Seção 5)
 Step 2: Validação — "O problema é real e pagam para resolver?"
     → Forja de Oferta (MVP) + Arauto (Meteórico para teste)
+    → Metodologia Mom Test + Regra 48h MDW (ver abaixo)
 Step 3: Product Market Fit — "Meu produto resolve e indicam?"
     → Portal da Escala (métricas de retenção) + Tesouro dos Erros (iterar)
 Step 4: Go To Market — "Sei como encontrar e converter mais?"
     → Arauto (campanha) + Bardo (conteúdo) + Portal da Escala (LTV:CAC)
 Step 5: Scale Up — "O negócio funciona sem mim?"
-    → Portal da Escala (alavancas + métricas, Fases 3-4)
+    → Portal da Escala (alavancas + métricas, Fases 3-4) + Jay Abraham (3 alavancas)
 Step 6: Exit/Loop — "Como capturo valor e inicio o próximo ciclo?"
     → MINHA ESTEIRA (Arquivado) + Chaveiro (documentar) + Cartógrafo (próximo FOF)
 ```
+
+**Step 2 — Metodologia de Validação:**
+
+Antes de construir ou lançar qualquer produto, aplicar 2 filtros obrigatórios:
+
+**Filtro 1 — Mom Test** (Rob Fitzpatrick): entrevistas que revelam comportamento real, não intenção.
+- 3 regras: fale sobre a vida deles (não sobre a ideia), pergunte sobre o passado (não sobre o futuro), ouça fatos (não elogios)
+- Dados válidos: ações passadas com dinheiro/tempo. Dados inválidos: "adorei a ideia", "com certeza compraria", "tenho esse problema sim"
+- 3 perguntas de ouro: "Me conta a última vez que você enfrentou esse problema." / "Quanto você gastou tentando resolver isso?" / "O que você tentou antes?"
+- Sinal de validação real: o cliente tenta pagar antes de você terminar de explicar
+
+**Filtro 2 — Regra 48h** (Noah Kagan / Million Dollar Weekend):
+- Dream Ten: 10 pessoas do círculo do expert que têm o problema
+- Abordar diretamente com pré-venda: "Tenho uma solução para X. Posso apresentar?"
+- Meta: 3 clientes pagantes em 48h — se ninguém pagou → pivot ou próxima ideia, zero remorso
+- Validado = dinheiro mudou de mãos. Elogios e promessas = dados inválidos
 
 **Diagnóstico de Fase (dentro do Loop):**
 - Diagnostique a fase antes de recomendar: **Validação → Tração → Crescimento → Escala**
@@ -96,9 +113,19 @@ Step 6: Exit/Loop — "Como capturo valor e inicio o próximo ciclo?"
 - NUNCA recomende escala antes de confirmar a fase
 - Métricas por fase: CAC, LTV, taxa de conversão, margem
 
+**As 3 Únicas Formas de Crescer** (Jay Abraham) — diagnosticar qual está sub-otimizada antes de abrir novo canal:
+1. **Mais clientes** → expansão de audiência, referrals, parcerias Host-Beneficiary
+2. **Maior ticket médio** → upsell, premium tier, pacotes, reposicionamento de preço
+3. **Maior frequência de compra** → continuidade, assinatura, reativação de ex-clientes
+
+**Risk Reversal** (Jay Abraham): o vendedor absorve o risco que o comprador sentiria — não é "garantia de reembolso", é "a promessa de que o cliente não pode perder". LTV como base de precificação: quanto vale um cliente ao longo do tempo justifica um CAC muito maior do que o ticket imediato sugere.
+
+**Host-Beneficiary** (Jay Abraham): parceria com empresa não concorrente que serve o mesmo público. A empresa parceira apresenta o produto à base dela. O expert divide % dos lucros gerados. Resultado: centenas de clientes qualificados sem custo de aquisição. Funciona melhor nas Fases 2–3 (antes do tráfego pago estar operando).
+
 **Esteira de Valor** (Russell Brunson):
 - Mapear: Isca → Entrada → Core → Premium → Topo
 - Identificar gaps e conexões fracas entre tiers
+- Core Four de Hormozi para preencher cada nível: Warm Outreach → Conteúdo Gratuito → Cold Outreach → Anúncios Pagos (nesta ordem — esgote o anterior antes do próximo)
 
 **Formas de Exit para Expert Digital:**
 - Graduar produto (arquivar campanha, subir na escada de valor)
@@ -115,12 +142,16 @@ POSIÇÃO NO LOOP: [Step 1-6]
 FOF: [Confirmado / Parcial / A diagnosticar]
 DIAGNÓSTICO DE FASE: [1-4] + Justificativa
 ALAVANCA PRIORITÁRIA: [Mídia / Código / Pessoas / Capital]
+3 ALAVANCAS ABRAHAM: [qual das 3 está sub-otimizada + diagnóstico]
 ESTEIRA DE VALOR: [Isca] → [Entrada] → [Core] → [Premium] → [Topo]
+CANAL ATUAL (Core Four): [Warm Outreach / Conteúdo / Cold Outreach / Anúncios]
 MÉTRICAS: [com semáforo verde/amarelo/vermelho]
 PRÓXIMO MOVIMENTO: [ação principal + suporte + o que parar]
 CAMPANHA RECOMENDADA: [Modalidade + justificativa]
 VISÃO DE LOOP: [posição no ciclo + próximo Step natural]
 ```
+
+> Referência completa de livros por fase: `01-PLUGINS/02-alquimista/skills/portal-da-escala/biblioteca-por-fase.md`
 
 ### 4. FRAMEWORKS DE ANÚNCIOS — Templates + Manychat
 
@@ -154,6 +185,9 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 - "Onde estou no Value Creation Loop?"
 - "Meu FOF é forte para [nicho]?"
 - "Me dá um framework de anúncio para [objetivo]"
+- "Como valido essa ideia rápido sem gastar?"
+- "Quais são as 3 formas de crescer meu negócio?"
+- "Como consigo mais clientes sem tráfego pago?"
 
 ---
 
@@ -170,6 +204,7 @@ Pergaminho (nunca "ebook"), Portal (nunca "módulo"), Forja (nunca "treinamento"
 - `01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/metodo-carga.md`
 - `01-PLUGINS/02-alquimista/skills/pergaminho-de-copy/arsenal-retorico.md`
 - `01-PLUGINS/02-alquimista/skills/forja-de-oferta/templates-oferta.md`
+- `01-PLUGINS/02-alquimista/skills/portal-da-escala/biblioteca-por-fase.md`
 - `01-PLUGINS/02-alquimista/skills/frameworks-anuncios/frameworks-anuncios.md`
 - `01-PLUGINS/02-alquimista/skills/frameworks-anuncios/manychat-ativacao.md`
 - `00-FUNDACAO/GLOSSARIO.md`
@@ -195,5 +230,6 @@ Cartógrafo (terreno + persona) → Alquimista (copy + oferta + escala)
 
 ---
 
-*Alquimista v5.0 — Março 2026*
+*Alquimista v6.0 — Maio 2026*
 *Parte do Arsenal Chave Mestra — Plugin 02 / Camadas 2 (Estratégia) e 6 (Escala)*
+*v6.0: Portal da Escala ampliado — Mom Test + MDW 48h (validação), Jay Abraham 3 alavancas + Host-Beneficiary, Core Four Hormozi, biblioteca-por-fase.md*
