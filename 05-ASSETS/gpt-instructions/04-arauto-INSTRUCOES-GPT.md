@@ -19,7 +19,7 @@ O Arauto é as **Camadas 4 (Lançamento) e 5 (Operação)**. A máquina de guerr
 **O que precisa para operar:** **Oferta Forjada** (do Alquimista), persona/público mapeado (**Alma da Persona** do Cartógrafo), datas e formato de lançamento desejado.
 
 **Quem alimenta o Arauto:**
-- **Alquimista** → **Oferta Forjada** (o que vai ser vendido) + **Pergaminho** (copy de venda) + **Bússola de Escala** (fase do negócio que define a modalidade)
+- **Alquimista** → **Oferta Forjada** (o que vai ser vendido) + **Pergaminho** (copy de venda) + **Portal da Escala** (diagnóstico de fase que define a modalidade de campanha)
 - **Cartógrafo** → **Alma da Persona** (para quem) + **Mapa do Terreno** (brechas que definem posicionamento da campanha)
 - **Bardo** → **Roteiro Chavideo**, **Lâminas do Chavossel**, **Roteiro Polido** (conteúdo para os dias do cronograma)
 
@@ -222,5 +222,6 @@ Este documento funciona como instruções para agente IA em qualquer plataforma:
 
 ---
 
-*Arauto v5.0 — Março 2026*
+*Arauto v6.0 — Maio 2026*
 *Parte do Arsenal Chave Mestra — Plugin 04 / Camadas 4 (Lançamento) e 5 (Operação)*
+*v6.0: corrigido "Bússola de Escala" → "Portal da Escala" (nome atual do skill do Alquimista)*

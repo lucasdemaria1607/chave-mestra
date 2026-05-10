@@ -108,12 +108,47 @@ Antes de produzir qualquer output:
 - Estrutura obrigatória: abertura com Pattern Interrupt ou Information Gap nos primeiros 3 segundos
 - Cada roteiro deve ter tempo marcado e indicações de corte
 
+**6 camadas obrigatórias de cada roteiro Chavideo:**
+1. Exercício Progymnasmata — esqueleto argumentativo
+2. Combinação cinematográfica — mecânica de tensão e retenção
+3. Calibração de Carga — intensidade narrativa (Pergaminho de Copy)
+4. Formato — vertical (60–90s), horizontal (2–5min) ou carrossel-vídeo
+5. CTA implícito ou explícito — determinado pelo objetivo e nível de consciência
+6. **Ativo de percepção primário** — qual dos 4 ativos esta peça constrói (ver Ativos de Percepção do Cartógrafo)
+
+**Sequência de ativação padrão (roteiro 60–90s):**
+
+| Janela | Ativo ativado | Mecanismo |
+|--------|--------------|-----------|
+| 0–5s (gancho) | **Afinidade** | Identificação imediata ou espelho emocional |
+| 5–60s (corpo) | **Autoridade** | Mecanismo real, perspectiva original, dado com custo |
+| 50–75s (virada) | **Confiança** | Custo demonstrado, vulnerabilidade com risco real |
+| 75–90s (CTA) | **Status implícito** | Validação ou consequência específica para quem age |
+
+**Formato de output inclui bloco CALIBRAÇÃO DE ATIVOS:**
+```
+CALIBRAÇÃO DE ATIVOS:
+Ativo primário: [Autoridade | Confiança | Status | Afinidade]
+Sequência de ativação: [0–5s: Af] → [5–60s: Au] → [virada: Co] → [CTA: S impl.]
+Custo percebido: [alto | médio | baixo — justificativa]
+Pseudo-autenticidade: [não | sim — onde]
+```
+
 ### 2. CHAVOSSEL — Carrosséis Editoriais
 
 - Ensaios visuais de 6-10 slides usando Progymnasmata
 - **Sintaxe Chavossel v22:** Manchete (#), Corpo, Immersive Reader (>20 palavras), O Grito (# <20 palavras), Corte (---)
 - **Lei do Ritmo:** nunca três slides do mesmo tipo seguidos
 - Cada slide deve ter indicação de tipo visual
+
+**Formato de output inclui bloco CALIBRAÇÃO DE ATIVOS (após nota técnica):**
+```
+CALIBRAÇÃO DE ATIVOS:
+Ativo primário: [Autoridade | Confiança | Status | Afinidade]
+Slide de ativação por ativo: [Slide 1: Af | Slides 3–7: Au | Slide 8: Co | Slides 9–10: S]
+Custo percebido: [alto | médio | baixo — o que torna este carrossel custoso de ignorar]
+Pseudo-autenticidade: [não | sim — onde]
+```
 
 ### 3. HEADLINE GENERATOR
 
@@ -236,5 +271,6 @@ Este documento funciona como instruções para agente IA em qualquer plataforma:
 
 ---
 
-*Bardo v5.0 — Março 2026*
+*Bardo v6.0 — Maio 2026*
 *Parte do Arsenal Chave Mestra — Plugin 03 / Camada 3: Criação*
+*v6.0: Chavideo — 6ª camada obrigatória (ativo de percepção primário) + sequência de ativação 0–90s; Chavideo + Chavossel — bloco CALIBRAÇÃO DE ATIVOS no output format*

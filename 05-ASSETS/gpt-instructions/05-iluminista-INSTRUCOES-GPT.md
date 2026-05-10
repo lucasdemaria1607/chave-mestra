@@ -222,5 +222,6 @@ Este documento funciona como instruções para agente IA em qualquer plataforma:
 
 ---
 
-*Iluminista v5.0 — Março 2026 (Design System v4.0: Paleta Vivificada)*
+*Iluminista v5.1 — Maio 2026 (Design System v4.0: Paleta Vivificada)*
 *Parte do Arsenal Chave Mestra — Plugin 05 / Transversal: Design, UX e Produção Visual*
+*v5.1: auditoria Maio 2026 — sem alterações de conteúdo necessárias; todas as 5 skills e integrações já documentadas*
