@@ -139,26 +139,22 @@ Todos os 6 agentes + Zeus como coordenador. O diferencial do Olimpo Completo: co
 
 ---
 
-## Os dois canais do Olimpo
+## O Olimpo — produto ChatGPT
 
-Mesmo produto, duas interfaces. O cliente escolhe conforme o workflow dele.
+O produto ao cliente é entregue como **ChatGPT Custom GPTs** — 6 agentes com identidade grega, persona definida, método invisível. O cliente interage com Zeus, Apolo, Hermes, Atena, Ares e Hefesto.
 
-| Canal | Interface | Identidade dos agentes | Arquivo de configuração |
-|-------|-----------|----------------------|------------------------|
-| **ChatGPT** | Custom GPT | Nomes gregos — Zeus, Apolo, Hermes, Atena, Ares, Hefesto | `05-ASSETS/gpt-instructions/` |
-| **Claude** | Project + SKILL.md | Nomes CM — Chaveiro, Cartógrafo, Bardo, Alquimista, Arauto, Iluminista | `CLAUDE-PROJECTS.md` |
+| Agente GPT | Identidade grega | Função CM |
+|-----------|-----------------|-----------|
+| Zeus | Deus-rei, governante, coordenador | O Chaveiro — entrada universal, diagnóstico 6D |
+| Apolo | Oráculo, iluminador, visionário | O Cartógrafo — mercado, persona, universo de marca |
+| Atena | Estrategista, sábia, guerreira da mente | A Alquimista — copy, oferta, escala |
+| Hermes | Mensageiro, veloz, persuasivo | O Bardo — vídeo, carrossel, headlines, scripts |
+| Ares | Executor, combativo, condutor da batalha | O Arauto — campanha, lançamento, Notion |
+| Hefesto | Artesão, preciso, criador manual | O Iluminista — design, imagem, Figma |
 
-**Correspondência entre Ordens e kits Claude:**
+**Arquivos de instrução:** `05-ASSETS/gpt-instructions/` — um arquivo por agente com identidade grega + metodologia CM completa.
 
-| Ordem | Claude Kit equivalente | Arquivo |
-|-------|----------------------|---------|
-| Ordem do Mapa | KIT 2 — Diagnóstico | `CLAUDE-PROJECTS.md § KIT 2` |
-| Ordem da Pena | KIT 3 — Criação | `CLAUDE-PROJECTS.md § KIT 3` |
-| Ordem da Estratégia | KIT 2 + KIT 5 combinados | — |
-| Ordem Visual | *(sem kit dedicado — usar Arsenal Completo filtrado)* | — |
-| Ordem da Cruzada | KIT 4 — Lançamento | `CLAUDE-PROJECTS.md § KIT 4` |
-| Ordem da Forja | KIT 6 — Conhecimento | `CLAUDE-PROJECTS.md § KIT 6` |
-| O Olimpo Completo | KIT 1 — Arsenal Completo | `CLAUDE-PROJECTS.md § KIT 1` |
+**Os kits Claude Projects (`CLAUDE-PROJECTS.md`) são infraestrutura interna** — usados por Lucas na entrega dos serviços (Implementação, Mentoria), não vendidos diretamente ao cliente. O único produto onde o SKILL.md é entregue integralmente é o White Label.
 
 ---
 
@@ -208,10 +204,9 @@ Quem quer só a ferramenta compra a Ordem. Quem quer o sistema funcionando com s
 ## Ordem de construção
 
 ### AGORA (30–60 dias)
-- [ ] Finalizar o Sistema Operacional (Notion + onboarding gravado 30–60min)
-- [ ] Definir nome comercial do produto ①
+- [ ] Finalizar o **Sistema Chave Mestra** — produto ① (Notion + onboarding gravado 30–60min)
 - [ ] Vender para 5–10 clientes beta (R$97–197) → coletar feedback e casos
-- [ ] Configurar Apolo (Cartógrafo) e Hermes (Bardo) como primeiros ChatGPT GPTs
+- [ ] Configurar Apolo e Hermes como primeiros ChatGPT GPTs (identidade grega ativa)
 
 ### PRÓXIMO (60–120 dias)
 - [ ] Lançar Sistema Operacional no preço cheio (R$297–497)
