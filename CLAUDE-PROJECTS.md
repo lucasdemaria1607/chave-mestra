@@ -39,6 +39,7 @@ Para adicionar arquivos: dentro do projeto → "Add content" → arrastar ou col
 01-PLUGINS/02-alquimista/skills/frameworks-anuncios/SKILL.md
 01-PLUGINS/03-bardo/skills/chavideo/SKILL.md
 01-PLUGINS/03-bardo/skills/chavossel/SKILL.md
+01-PLUGINS/03-bardo/skills/cavalo-de-troia/SKILL.md
 01-PLUGINS/03-bardo/skills/headline-generator/SKILL.md
 01-PLUGINS/03-bardo/skills/script-creator/SKILL.md
 01-PLUGINS/03-bardo/skills/script-analyzer/SKILL.md
@@ -184,6 +185,7 @@ GLOSSÁRIO OBRIGATÓRIO: SZC, Alma da Persona, Método Carga, Copy 3x5, Mapa do 
 01-PLUGINS/03-bardo/skills/chavossel/SKILL.md
 01-PLUGINS/03-bardo/skills/chavossel/exercicios.md
 01-PLUGINS/03-bardo/skills/chavossel/exemplos.md
+01-PLUGINS/03-bardo/skills/cavalo-de-troia/SKILL.md
 01-PLUGINS/03-bardo/skills/headline-generator/SKILL.md
 01-PLUGINS/03-bardo/skills/script-creator/SKILL.md
 01-PLUGINS/03-bardo/skills/script-analyzer/SKILL.md
@@ -210,6 +212,7 @@ PLUGINS DISPONÍVEIS:
 QUANDO USAR CADA SKILL:
 - "roteiro de vídeo / reel / script / chavideo" → Chavideo
 - "carrossel / 10 slides / chavossel / ensaio visual" → Chavossel
+- "cavalo de troia / entra no mundo deles / usa cultura pop / conteúdo que não parece vendedor" → Cavalo de Troia (define a arquitetura; executa no Chavideo ou Chavossel)
 - "gere headlines / ideias de conteúdo" → Headline Generator
 - "cria roteiro a partir da headline" → Script Creator
 - "analisa esse roteiro viral / engenharia reversa" → Script Analyzer

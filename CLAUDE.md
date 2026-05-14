@@ -66,6 +66,7 @@ Cada plugin tem:
 | "frameworks de anúncio", "templates de oferta", "Manychat" | Alquimista | frameworks-anuncios |
 | "roteiro de vídeo", "chavideo", "reel", "script", "Progymnasmata" | Bardo | chavideo |
 | "carrossel", "chavossel", "10 slides", "ensaio visual" | Bardo | chavossel |
+| "cavalo de troia", "entra no mundo deles", "usa cultura pop", "conteúdo que não parece vendedor", "referência cultural", "topo de funil por imersão" | Bardo | cavalo-de-troia |
 | "gere headlines", "headlines para", "ideias de conteúdo" | Bardo | headline-generator |
 | "cria roteiro a partir da headline", "desenvolve roteiro" | Bardo | script-creator |
 | "analisa esse roteiro viral", "engenharia reversa" | Bardo | script-analyzer |
@@ -233,6 +234,8 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 **Antes de qualquer output em uma camada:** leia o `SKILL.md` do plugin correspondente.
 
 **Para criar carrossel:** ative Bardo → leia `chavossel/SKILL.md` + `exercicios.md` + `exemplos.md`.
+
+**Para criar conteúdo por imersão cultural (Cavalo de Troia):** ative Bardo → leia `cavalo-de-troia/SKILL.md`. Entrega pelo Chavideo (vídeo), Chavossel (carrossel) ou Pergaminho de Copy (post/anúncio) — o Cavalo de Troia é a arquitetura narrativa; o formato é executado pela skill correspondente.
 
 **Para criar roteiro de vídeo:** ative Bardo → leia `chavideo/SKILL.md` + `progymnasmata-video-map.md` + `cinematicas-combinacoes.md` + `arsenal-narrativo.md`.
 
