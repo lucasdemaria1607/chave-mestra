@@ -12,6 +12,7 @@ O criador. Transforma estratégia em conteúdo audiovisual e editorial de alto i
 | **Script Analyzer** | Engenharia reversa de scripts virais: hooks, gatilhos, mecânicas de retenção |
 | **Copy Enhancer** | Otimização de copy para fala/delivery: cadência, verbos fortes, carga cognitiva |
 | **Script Creator** | Criação completa de roteiros virais (60-90s) com estrutura validada |
+| **Cavalo de Troia** | Arquitetura de conteúdo por imersão cultural — entra no mundo do lead via referência cultural/pop, transporta para o mundo da marca sem que ele perceba a travessia |
 
 ## Posição no Pipeline
 
@@ -29,4 +30,4 @@ Alquimista (copy calibrada) → Bardo (vídeo + carrossel) → Arauto (campanha)
 
 ## Gatilhos
 
-`"roteiro de vídeo"` · `"chavideo"` · `"carrossel"` · `"chavossel"` · `"gere headlines"` · `"analisa esse script"` · `"cria roteiro completo"`
+`"roteiro de vídeo"` · `"chavideo"` · `"carrossel"` · `"chavossel"` · `"gere headlines"` · `"analisa esse script"` · `"cria roteiro completo"` · `"cavalo de troia"` · `"usa cultura pop"` · `"entra no mundo deles"` · `"conteúdo que não parece vendedor"`
