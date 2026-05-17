@@ -337,6 +337,40 @@ Todos os databases abaixo pertencem ao espaço **"Sistema Chave Mestra - Lucas G
 
 ---
 
+### Protocolo de Espelhamento — Lucas Grigo ↔ Nome do Cliente
+
+**REGRA PERMANENTE:** toda alteração estrutural feita no workspace Lucas Grigo (`245fc122`) que seja infraestrutura operacional **deve ser replicada no workspace Nome do Cliente (`357fc122`) na mesma sessão**, sem precisar ser lembrado.
+
+**O que É infraestrutura operacional (espelhar nos dois):**
+- Criação ou modificação de databases (Conteúdo, Tarefas, AGENDA, MINHA ESTEIRA)
+- Adição de campos/propriedades a databases existentes
+- Criação ou atualização de views
+- Criação de páginas de portal (AGENDA, ESTEIRA, etc.)
+- Atualização de templates de produto
+
+**O que NÃO é infraestrutura (fica só no Lucas):**
+- Sistema de Conhecimento (Zettelkasten, PARA, notas pessoais)
+- Dados reais (entradas em databases — conteúdo, tarefas, produtos reais)
+- Dossiê CM pessoal
+- Outputs de rotinas (06-ROTINAS/)
+
+**Checklist ao encerrar qualquer mudança no Notion:**
+```
+[ ] Mudança foi só de dados (entradas) → só Lucas, ok
+[ ] Mudança foi estrutural (campos, views, páginas, schemas) →
+    [ ] Replicado no Nome do Cliente (357fc122)?
+```
+
+**IDs de referência:**
+- Lucas Grigo root: `245fc122-de3b-80e1-a508-cf0988ab6227`
+- Nome do Cliente root: `357fc122-de3b-80a9-a691-c709a165e697`
+- PORTAIS 🪄 Lucas: `collection://254fc122-de3b-80de-bffd-000b2629d678`
+- PORTAIS 🪄 Cliente: `collection://357fc122-de3b-81ef-b06e-000bb1020090`
+- MINHA ESTEIRA Lucas: `collection://25cfc122-de3b-8131-9284-000b78f0406d`
+- MINHA ESTEIRA Cliente: `collection://357fc122-de3b-8105-b590-000b69392e73`
+
+---
+
 ### Protocolo Export Notas → Git
 
 **GATILHO:** "exporta notas", "exporta do notion", "traz notas pro git".
