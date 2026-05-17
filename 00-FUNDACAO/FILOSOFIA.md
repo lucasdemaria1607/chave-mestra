@@ -271,7 +271,9 @@ O mundo corporativo chama isso de "risco da pessoa-chave" — dependência de um
 Duas forças constroem essa posição:
 
 - **Personalidade** — torna o Key Person incopiável. Posicionamento que não pode ser replicado porque nasceu de uma trajetória singular. O mercado não te escolhe pelo que você sabe — te escolhe por quem você é.
-- **Inteligência** — torna o Key Person escalável. Sistemas, ofertas e operação que sustentam a posição sem aprisionar o expert na agenda. A referência do mercado não pode ser refém do próprio calendário.
+- **Inteligência** — torna o Key Person escalável. No nível operacional, se manifesta em dois eixos:
+  - **Estratégia**: visão de mercado, posicionamento, decisões de oferta, copy, escala — o processamento que transforma conhecimento em vantagem competitiva
+  - **Sistema**: a operação que converte essa estratégia em resultado sem depender da presença constante do expert — Notion, IA, processos, esteira
 
 Sem Personalidade: expert competente entre vários competentes. Substituível.
 Sem Inteligência: referência aprisionada. O reconhecimento cresce; o tempo não.
