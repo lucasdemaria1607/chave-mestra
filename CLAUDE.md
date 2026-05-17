@@ -74,6 +74,9 @@ Cada plugin tem:
 | "campanha", "lançamento", "meteórico", "desafio", "cronograma" | Arauto | mapa-de-campanha |
 | "popula o Notion", "MINHA ESTEIRA", "cria as tarefas no Notion" | Arauto | esteira-notion |
 | "protocolo massivo", "protocolo luxo", "protocolo urgência", "campanha intensiva" | Arauto | protocolo-massivo |
+| "cria novo produto na esteira", "novo produto", "adiciona produto", "cria produto no sistema", "novo infoproduto" | Arauto | criar-produto-esteira |
+| "prospecção ativa", "venda direta", "vender pelo Pix", "Pix sem plataforma", "cadência de prospecção", "registra objeção", "objeções do campo", "feedback de prospecção", "ajusta abordagem" | Arauto | prospeccao-ativa |
+| "registra métricas", "como foi o lançamento", "retrospectiva do produto", "dashboard do produto", "resultado do lançamento", "preenche as métricas", "analisa o desempenho", "CAC do produto" | Alquimista | metricas-produto |
 | "tema visual", "paleta", "design system", "pergaminho branco/preto/dourado/arcano" | Iluminista | sistema-de-design |
 | "gera imagem", "forja de imagem", "nano banana", "edita imagem" | Iluminista | forja-de-imagem |
 | "UX", "hierarquia visual", "layout", "arquiteto de experiência" | Iluminista | arquiteto-de-experiencia |
@@ -248,6 +251,12 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 **Para campanha intensiva:** ative Arauto → leia `protocolo-massivo/SKILL.md`.
 
 **Para popular Notion:** ative Arauto → leia `esteira-notion/SKILL.md` + `notion-integracao.md`.
+
+**Para criar novo produto na esteira:** ative Arauto → leia `criar-produto-esteira/SKILL.md`.
+
+**Para prospecção ativa / venda direta / Pix sem plataforma:** ative Arauto → leia `prospeccao-ativa/SKILL.md`.
+
+**Para registrar e analisar métricas de produto:** ative Alquimista → leia `metricas-produto/SKILL.md`.
 
 **Para diagnosticar escala:** ative Alquimista → leia `portal-da-escala/SKILL.md`.
 
