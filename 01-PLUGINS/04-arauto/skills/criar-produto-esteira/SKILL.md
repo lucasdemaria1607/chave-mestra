@@ -3,9 +3,9 @@ name: criar-produto-esteira
 description: Usar quando o usuário pedir "cria novo produto na esteira", "novo produto", "adiciona produto", "cria produto no sistema", "novo infoproduto", ou qualquer ação de criar um produto completo no sistema CM com todas as seções e vínculos.
 version: 1.0
 layer: Camada 4 — Lançamento (operacional)
-role: Orquestra a criação completa de um novo produto na MINHA ESTEIRA — página, esquema, tarefas, metas e vínculos com todos os setores do sistema
+role: Orquestra a criação completa de um novo produto na MINHA ESTEIRA — página, esquema, tarefas e vínculos com todos os setores do sistema
 inputs: tipo de produto, nome, preço, data prevista de lançamento
-outputs: produto completo no Notion com todas as seções preenchidas + tarefas criadas no DB Tarefas + meta no DB Metas + vínculo ao Zettelkasten
+outputs: produto completo no Notion com todas as seções preenchidas + tarefas criadas no DB Tarefas + vínculo ao Zettelkasten
 feeds-into: Mapa de Campanha (cronograma), Prospecção Ativa (CRM de leads), Métricas do Produto (tracking pós-lançamento), Esteira Notion (população de cronogramas)
 ---
 
@@ -25,14 +25,14 @@ A criação de um produto no sistema CM não é só adicionar uma linha num banc
        │                      │                      │
   ANTES (insumo)        DURANTE (opera)        DEPOIS (resultado)
        │                      │                      │
-  Zettelkasten           DB Conteúdo            DB Clientes
-  ORIGEM do produto      orgânico vinculado     quem comprou
-       │                      │                      │
-  Alma da Persona         DB Tarefas             DB Metas
-  Terreno mapeado         checklist operac.      meta de fat.
-       │                      │                      │
-  Forja de Oferta         Cronogramas            Tesouro dos Erros
-  Brief preenchido        de lançamento          aprendizados
+  Zettelkasten           DB Conteúdo            Tesouro dos Erros
+  ORIGEM do produto      orgânico vinculado     aprendizados
+       │                      │
+  Alma da Persona         DB Tarefas
+  Terreno mapeado         checklist operac.
+       │                      │
+  Forja de Oferta         Cronogramas
+  Brief preenchido        de lançamento
                                │
                           Criativos + Depoimentos
                           (Iluminista + pós-compra)
@@ -205,20 +205,7 @@ Criar 12–15 tarefas padrão:
 
 ---
 
-## Etapa 5 — Criar Meta no DB Metas
-
-```
-DB Metas: collection://25cfc122-de3b-8170-b444-000bc8903c36
-```
-
-Criar 1 entrada:
-- **Nome:** "Meta de lançamento — [nome do produto]"
-- **Meta de faturamento:** preço × estimativa conservadora de vendas
-- **Prazo:** data de lançamento prevista
-
----
-
-## Etapa 6 — Vincular ao Zettelkasten (ORIGEM)
+## Etapa 5 — Vincular ao Zettelkasten (ORIGEM)
 
 Buscar no Zettelkasten notas relevantes ao tema do produto:
 
@@ -231,7 +218,7 @@ Registrar na seção ORIGEM da página do produto os títulos das notas que fund
 
 ---
 
-## Etapa 7 — Confirmar ao Usuário
+## Etapa 6 — Confirmar ao Usuário
 
 ```
 Produto criado: [nome]
@@ -244,8 +231,7 @@ Workspace: [Lucas Grigo / Nome do cliente]
 ✅ Tabela de métricas criada (vazia)
 ✅ Fluxo de entrega estruturado
 ✅ CRM de prospecção pronto
-✅ [N] tarefas criadas no DB Tarefas
-✅ Meta de lançamento criada no DB Metas
+✅ [N] tarefas criadas no DB Tarefas (campo Produto vinculado)
 ✅ ORIGEM vinculada ao Zettelkasten
 
 Próximos passos:
