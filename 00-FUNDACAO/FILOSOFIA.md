@@ -260,6 +260,29 @@ Se a pessoa é profunda, a amplificação produz impacto em escala.
 
 ---
 
+## O Destino: Key Person Business
+
+A tese da Chave Mestra, executada integralmente, converge para um modelo específico: o **Key Person Business** — o negócio construído em torno de ser a pessoa-chave do próprio mercado.
+
+Não é sobre tamanho de empresa. Não é sobre trabalhar sozinho. É sobre posição: o expert que o mercado reconhece como a referência — o nome que aparece quando alguém precisa de alguém de verdade. O profissional que outros profissionais recomendam. A figura que o mercado vai buscar, não a que precisa correr atrás.
+
+O mundo corporativo chama isso de "risco da pessoa-chave" — dependência de um indivíduo como vulnerabilidade. O Key Person Business inverte a lógica: a dependência é a estratégia. É o diferencial. É o moat.
+
+Duas forças constroem essa posição:
+
+- **Personalidade** — torna o Key Person incopiável. Posicionamento que não pode ser replicado porque nasceu de uma trajetória singular. O mercado não te escolhe pelo que você sabe — te escolhe por quem você é.
+- **Inteligência** — torna o Key Person escalável. Sistemas, ofertas e operação que sustentam a posição sem aprisionar o expert na agenda. A referência do mercado não pode ser refém do próprio calendário.
+
+Sem Personalidade: expert competente entre vários competentes. Substituível.
+Sem Inteligência: referência aprisionada. O reconhecimento cresce; o tempo não.
+Com os dois: negócio que cresce porque a pessoa cresceu — e que sustenta a posição que o mercado reconhece.
+
+**O sistema CM existe para construir Key Person Businesses.** Não para produzir conteúdo mais rápido. Não para automatizar tarefas. Para forjar o expert até o ponto em que o mercado não consegue ignorá-lo — e para construir a operação que converte esse reconhecimento em resultado.
+
+→ Ver `BLUEPRINT-PESSOA-CHAVE.md` para os 5 P's de ativação.
+
+---
+
 ## O Universo Simbólico
 
 Toda a linguagem do sistema reforça a filosofia:

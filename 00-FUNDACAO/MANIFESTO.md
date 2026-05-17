@@ -27,6 +27,8 @@ Para o expert que recusa a mediocridade do genérico. Que entende que copiar fó
 
 Para o produtor que quer escala sem perder alma. Que busca sistemas que multiplicam sem diluir. Que entende que a operação serve a visão — nunca o contrário.
 
+Para quem quer ser a pessoa-chave do próprio mercado — não apenas um profissional competente entre vários, mas a referência que o mercado procura, segue e recomenda. E para quem entende que essa posição se constrói: com inteligência, com personalidade, com sistema.
+
 ---
 
 ## O Que Defendemos

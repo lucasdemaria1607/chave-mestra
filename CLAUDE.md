@@ -4,6 +4,8 @@ Sistema de criação, estratégia e operação para qualquer expert, marca ou ne
 
 **Tese central:** Personalidade + Inteligência = diferenciação real e resultados sustentáveis.
 
+**Output:** Key Person Business — o negócio construído em torno de ser a pessoa-chave do próprio mercado. Não apenas um profissional competente: a referência que o mercado procura, segue e recomenda.
+
 **Natureza do sistema:** ecossistema de coprodução — opera para qualquer cliente. A marca Chave Mestra é a arquitetura; invisível nos outputs para clientes externos.
 
 ---

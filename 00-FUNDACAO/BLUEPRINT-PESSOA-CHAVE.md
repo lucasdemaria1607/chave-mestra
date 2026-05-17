@@ -5,6 +5,25 @@
 
 ---
 
+## Key Person of Influence × Key Person Business
+
+Este Blueprint cobre os **5 P's** para se tornar um **Key Person of Influence** — a pessoa que o mercado reconhece, procura e recomenda dentro da sua especialidade.
+
+Mas influência sem arquitetura é aprisionamento. O expert que se torna referência sem construir sistemas vira escravo da própria agenda: mais demanda, mais horas, mesmo teto.
+
+O destino é o **Key Person Business**: o negócio construído intencionalmente para sustentar e escalar a posição de pessoa-chave no mercado — sem abrir mão do que criou essa posição.
+
+```
+Key Person of Influence  →  o que o mercado percebe em você
+Key Person Business      →  como o negócio opera em torno disso
+```
+
+Os 5 P's constroem a influência. O sistema CM constrói o negócio.
+
+→ Ver `FILOSOFIA.md` para a fundação filosófica completa.
+
+---
+
 ## A Nova Matemática da Renda
 
 A tecnologia alterou irrevogavelmente a matemática da distribuição de renda.
