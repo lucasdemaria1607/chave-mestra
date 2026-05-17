@@ -201,6 +201,49 @@ Quem quer só a ferramenta compra a Ordem. Quem quer o sistema funcionando com s
 
 ---
 
+## ⏳ Implementações Futuras
+
+### CRM — Central de Leads e Clientes
+
+> **Quando implementar:** 2+ produtos ativos simultaneamente OU 50+ leads acumulados nas tabelas por produto OU o mesmo lead aparecendo em 2 produtos diferentes.
+> Por enquanto: a tabela de leads dentro da seção 🎯 PROSPECÇÃO de cada produto cumpre o papel.
+
+**Arquitetura projetada — um DB, dois estados:**
+
+```
+LEADS (DB Central)
+├── Nome + Contato (WhatsApp / Instagram / Email)
+├── Canal de Origem (DM / Indicação / Conteúdo / Anúncio)
+├── Produto de Entrada → relation → MINHA ESTEIRA
+├── Status (Frio / Morno / Quente / Negociando / Cliente / Perdido / Nutrição)
+├── Última Interação (date)
+├── Próximo Follow-up (date)
+├── Objeção Principal (text — palavras exatas)
+├── Histórico (text — notas de conversa)
+└── Cliente? (checkbox → aciona seção de pós-venda)
+
+CLIENTES = view filtrada onde Cliente? = true
+├── Produto Comprado → relation → MINHA ESTEIRA
+├── Data de Compra / Valor Pago
+├── Depoimento Solicitado + Recebido (checkbox)
+└── Potencial de Upsell → relation → MINHA ESTEIRA (próximo produto natural)
+```
+
+**Estratégia de entrada de dados:**
+- DM / WhatsApp → entrada manual via Arauto ("adiciona lead" — Claude cria a entrada)
+- Formulário de interesse → Tally/Typeform → Zapier → Notion (zero fricção)
+- Prospecção ativa → importar leads da tabela do produto por rodada
+- Compra via Pix → manual no momento da confirmação (30 segundos)
+- Compra via plataforma → webhook → Zapier → Notion (automático)
+
+**Gatilhos de migração:**
+- [ ] 2+ produtos ativos simultaneamente
+- [ ] 50+ leads acumulados nas tabelas por produto
+- [ ] Mesmo lead aparecendo em 2 tabelas de produto diferentes
+- [ ] Querer ver taxa de conversão cross-produto
+
+---
+
 ## Ordem de construção
 
 ### AGORA (30–60 dias)
