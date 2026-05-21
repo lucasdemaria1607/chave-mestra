@@ -79,7 +79,39 @@ Salvar em `01-BRIEFING/diagnostico-6d.md` + preencher §0 do `dossie.md`.
 
 ---
 
-### Fase 5 — Identificar Tipo de Jornada
+### Fase 5 — Arquitetura Comercial Inicial (mini-diagnóstico)
+
+**Ativar se:** D3 (Estratégia) estiver 🔴 ou 🟡, OU se o cliente já tem produto definido e meta de receita.
+
+**Ativar:** Alquimista → `maquina-de-receita/SKILL.md` — executar versão comprimida do SOP-COMERCIAL:
+
+**4.1 — Fase do negócio** (3 perguntas rápidas):
+- Quantos clientes pagantes já tem? (< 50 / 50–500 / 500+)
+- A receita é previsível? (Não / Às vezes / Sim)
+- Tem canal de aquisição funcionando? (Nenhum / 1 orgânico / pago testado)
+
+**4.2 — Plataforma atual** (ou qual vai usar):
+- Já usa alguma plataforma de venda? Qual?
+- Se ainda não: recomendar Cakto (ticket baixo + PIX) ou Hotmart (afiliados + área de membros) conforme o modelo
+
+**4.3 — Math de receita** (1 cálculo):
+```
+Meta mensal ÷ ticket = vendas necessárias
+Vendas necessárias ÷ taxa de conversão estimada = leads necessários
+```
+→ Os leads são atingíveis com os canais atuais? Sim / Não → flag no roadmap
+
+**4.4 — Funil existente** (ou ausente):
+- Como vende hoje? (manual 1:1 / WhatsApp / email / campanha estruturada / nada)
+- Fase 1 → sempre manual. Fase 2+ → funil a definir no SOP-COMERCIAL
+
+Registrar em: `01-BRIEFING/arquitetura-comercial-inicial.md` + preencher §3 > Comercial do Dossiê.
+
+> **Nota:** este mini-diagnóstico é uma fotografia inicial. O SOP-COMERCIAL completo é executado antes de cada campanha ou lançamento.
+
+---
+
+### Fase 6 — Identificar Tipo de Jornada
 
 | Tipo | Condição | Fluxo |
 |------|---------|-------|
@@ -91,7 +123,7 @@ Salvar em `01-BRIEFING/diagnostico-6d.md` + preencher §0 do `dossie.md`.
 
 ---
 
-### Fase 6 — Gerar Roadmap Personalizado
+### Fase 7 — Gerar Roadmap Personalizado
 
 Apresentar ao cliente em 3 horizontes:
 
@@ -112,7 +144,7 @@ Salvar em §0 > Roadmap Personalizado do `dossie.md`.
 
 ---
 
-### Fase 7 — Alinhamento e Confirmação
+### Fase 8 — Alinhamento e Confirmação
 
 - [ ] Apresentar diagnóstico + roadmap ao cliente
 - [ ] Confirmar prioridades ("isso faz sentido para você?")
@@ -122,7 +154,7 @@ Salvar em §0 > Roadmap Personalizado do `dossie.md`.
 
 ---
 
-### Fase 8 — Documentar e Configurar
+### Fase 9 — Documentar e Configurar
 
 - [ ] Preencher `01-BRIEFING/escopo-contrato.md` com o que foi combinado
 - [ ] Atualizar versão 0.1 do `dossie.md` no HISTÓRICO DE VERSÕES

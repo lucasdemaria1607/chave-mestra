@@ -791,4 +791,4 @@ Se tiver qualquer dificuldade, me manda aqui.
 
 ---
 
-*Referencia cruzada: copy-campanha.md (narrativa e frameworks), protocolo-massivo/SKILL.md (campanha intensiva), negociacao-1x1.md (venda direta high-ticket)*
+*Referencia cruzada: copy-campanha.md (narrativa e frameworks), forja-de-caixa/SKILL.md (campanha intensiva), negociacao-1x1.md (venda direta high-ticket)*

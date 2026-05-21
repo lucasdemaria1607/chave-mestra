@@ -41,7 +41,7 @@ Um erro merece entrar no Tesouro quando atende a pelo menos 1 critério:
 | Categoria | Escopo | Exemplo |
 |-----------|--------|---------|
 | **Copy** | Pergaminho de Copy, Método Carga | Copy N1 com CTA direto (nível errado) |
-| **Campanha** | Mapa de Campanha, Protocolo Massivo | Meteórico com audiência fria (modalidade errada) |
+| **Campanha** | Mapa de Campanha, Forja de Caixa | Meteórico com audiência fria (modalidade errada) |
 | **Oferta** | Forja de Oferta, Portal da Escala | Oferta high ticket sem prova social (fase errada) |
 | **Roteamento** | Chaveiro, Pipeline | Skill ativado fora de contexto (diagnóstico falhou) |
 | **Conteúdo** | Chavideo, Chavossel | Roteiro sem exercício Progymnasmata definido |

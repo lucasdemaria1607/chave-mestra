@@ -87,7 +87,7 @@ Este protocolo se aplica a todos os skills de producao de conteudo:
 
 - **Bardo** — Chavideo, Chavossel, Script Creator, Copy Enhancer, Headline Generator
 - **Alquimista** — Pergaminho de Copy, Forja de Oferta, Frameworks de Anuncios
-- **Arauto** — Mapa de Campanha, Protocolo Massivo
+- **Arauto** — Mapa de Campanha, Forja de Caixa
 - **Cartografo** — Portal do Terreno, Forja da Persona, Forja do Universo
 
 Skills operacionais e de meta-manutencao tem seus proprios protocolos de intake:

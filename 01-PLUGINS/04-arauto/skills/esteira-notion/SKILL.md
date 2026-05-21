@@ -53,7 +53,7 @@ MINHA ESTEIRA (database principal — campo "Arquivado" checkbox para campanhas 
     └── Depoimentos (toggle)
 ```
 
-**Conteúdo de campanha vai DENTRO dos cronogramas de cada produto** — texto, imagem, data, tudo dentro da linha do dia correspondente. A database separada "Conteúdo" é exclusivamente para conteúdo orgânico e Protocolo Massivo (campo `Origem`: Orgânico / Protocolo Massivo).
+**Conteúdo de campanha vai DENTRO dos cronogramas de cada produto** — texto, imagem, data, tudo dentro da linha do dia correspondente. A database separada "Conteúdo" é exclusivamente para conteúdo orgânico e Forja de Caixa (campo `Origem`: Orgânico / Forja de Caixa).
 
 ### Schema dos Cronogramas de Lançamento (todos os tipos)
 
@@ -192,7 +192,7 @@ Corpo de cada tarefa em Notion Markdown:
 
 **Importante:** Conteúdo de campanha NUNCA vai na database Conteúdo. Vai DENTRO do cronograma do produto na MINHA ESTEIRA. A database Conteúdo é exclusivamente para:
 - Conteúdo orgânico (Origem: Orgânico)
-- Peças de apoio do Protocolo Massivo (Origem: Protocolo Massivo)
+- Peças de apoio do Forja de Caixa (Origem: Forja de Caixa)
 
 ---
 
@@ -212,7 +212,7 @@ Corpo de cada tarefa em Notion Markdown:
 |---|---|---|
 | Conteúdo de lançamento (Meteórico, Desafio, Interno) | Cronograma dentro do produto na MINHA ESTEIRA | N/A — é o próprio cronograma |
 | Conteúdo orgânico (posts, reels, carrosséis regulares) | Database Conteúdo | Origem: Orgânico |
-| Peças de apoio Protocolo Massivo (manifestos, stories) | Database Conteúdo | Origem: Protocolo Massivo |
+| Peças de apoio Forja de Caixa (manifestos, stories) | Database Conteúdo | Origem: Forja de Caixa |
 
 ---
 
@@ -221,5 +221,5 @@ Corpo de cada tarefa em Notion Markdown:
 - `notion-integracao.md` — protocolo técnico completo com exemplos de calls reais
 - `modalidades.md` — estrutura de cada campanha que alimenta os dias
 - `mapa-de-campanha.md` — gera o cronograma que esta skill executa
-- `protocolo-massivo/SKILL.md` — campanhas intensivas (peças orgânicas vão na database Conteúdo)
+- `forja-de-caixa/SKILL.md` — campanhas intensivas (peças orgânicas vão na database Conteúdo)
 - `portal-da-escala.md` — recebe os resultados registrados na MINHA ESTEIRA

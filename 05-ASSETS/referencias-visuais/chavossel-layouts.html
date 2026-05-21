@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chavossel — Referência Visual de Layouts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37; --gold-dk: #8b6914; --gold-lt: #e8c84a;
+            --void: #0a0a08; --void-c: #0e0e0c; --void-s: #141412; --void-r: #1c1c18;
+            --txt-hi: #f5f0e8; --txt-md: #b8b098; --txt-lo: #726a58; --txt-dim: #38362e;
+            --ga06: rgba(212,175,55,0.06); --ga15: rgba(212,175,55,0.15);
+            --ga25: rgba(212,175,55,0.25); --ga40: rgba(212,175,55,0.40); --ga50: rgba(212,175,55,0.50);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--void);
+            background-image: radial-gradient(ellipse 65% 45% at 18% 68%, rgba(212,175,55,0.04) 0%, transparent 55%),
+                              radial-gradient(ellipse 45% 28% at 82% 18%, rgba(212,175,55,0.02) 0%, transparent 50%);
+            color: var(--txt-md); font-family: 'Inter', sans-serif;
+            padding: 48px 40px; min-height: 100vh;
+        }
+        header { text-align: center; margin-bottom: 64px; }
+        h1 {
+            font-family: 'Cinzel Decorative', serif; color: var(--gold);
+            font-size: 36px; font-weight: 700; letter-spacing: 10px;
+            margin-bottom: 10px; text-shadow: 0 0 50px rgba(212,175,55,0.25);
+        }
+        .subtitle {
+            font-family: 'Cinzel', serif; font-size: 9px;
+            color: var(--txt-lo); letter-spacing: 7px; text-transform: uppercase;
+        }
+        .section { margin-bottom: 56px; }
+        .section-label {
+            font-family: 'Cinzel', serif; font-size: 9px; color: var(--gold);
+            letter-spacing: 4px; text-transform: uppercase;
+            margin-bottom: 24px; padding-bottom: 10px;
+            border-bottom: 1px solid var(--ga15);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, var(--ga15), transparent); }
+        .grid { display: flex; flex-wrap: wrap; gap: 24px; }
+
+        /* ── FRAME BASE — proporção 4:5 (Instagram portrait 1080×1350) ── */
+        .layout-card { display: flex; flex-direction: column; align-items: center; gap: 10px; cursor: default; transition: transform 0.2s; }
+        .layout-card:hover { transform: translateY(-4px); }
+        .frame {
+            width: 160px; height: 200px;
+            background: var(--void-c);
+            border: 1px solid var(--ga25); border-radius: 4px;
+            position: relative; overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .layout-card:hover .frame { border-color: var(--ga50); box-shadow: 0 0 24px rgba(212,175,55,0.15); }
+
+        /* ── ZONAS ── */
+        .zi { position: absolute; background: var(--void-r); }
+        .zi.full { background: linear-gradient(145deg, #1a1a14 0%, #0e0e0c 100%); }
+        .zi.photo { background: linear-gradient(135deg, #252520 0%, #181814 100%); border: 1px solid rgba(255,255,255,0.03); }
+        .zi.rounded { border-radius: 4px; }
+        .zt { position: absolute; background: var(--gold); opacity: 0.75; border-radius: 2px; }
+        .zb { position: absolute; background: var(--txt-dim); border-radius: 1px; }
+        .zs { position: absolute; background: #28261e; border-radius: 1px; }
+        .zcard { position: absolute; background: var(--void-c); border: 1px solid var(--ga25); border-radius: 5px; }
+        .zdot { position: absolute; border-radius: 50%; background: var(--txt-dim); }
+        .grad-ov { position: absolute; inset: 0; pointer-events: none; }
+
+        /* ── LABELS ── */
+        .layout-name { font-family: 'Cinzel', serif; font-size: 10px; color: var(--txt-md); letter-spacing: 0.5px; text-align: center; }
+        .layout-id   { font-family: 'Inter', sans-serif; font-size: 7px; color: var(--txt-dim); letter-spacing: 1.5px; text-align: center; font-weight: 500; text-transform: uppercase; }
+
+        /* ── TOKENS ── */
+        .token-swatch { width: 52px; height: 52px; border-radius: 6px; margin-bottom: 6px; }
+        .token-label { font-family: 'Cinzel', serif; font-size: 7px; color: var(--txt-lo); letter-spacing: 1.5px; text-align: center; text-transform: uppercase; }
+        .token-hex   { font-family: 'Inter', sans-serif; font-size: 7px; color: var(--txt-dim); text-align: center; margin-top: 2px; }
+        .typo-card {
+            background: var(--void-c); border: 1px solid var(--ga15);
+            border-radius: 8px; padding: 18px 20px; min-width: 130px;
+        }
+        .typo-sample { font-size: 22px; color: var(--txt-hi); font-weight: 700; line-height: 1; }
+        .typo-id     { font-family: 'Inter', sans-serif; font-size: 7px; color: var(--txt-lo); letter-spacing: 2px; margin-top: 8px; font-weight: 600; text-transform: uppercase; }
+        .typo-pair   { font-size: 7px; color: var(--txt-dim); margin-top: 3px; }
+        .effect-card {
+            background: var(--void-c); border: 1px solid var(--ga15);
+            border-radius: 6px; padding: 12px; width: 100px;
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+        }
+        .effect-thumb { width: 72px; height: 72px; border-radius: 4px; background: var(--void-r); position: relative; overflow: hidden; }
+        .effect-id { font-family: 'Inter', sans-serif; font-size: 7px; color: var(--txt-dim); text-align: center; letter-spacing: 1px; }
+
+        footer { text-align: center; margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--ga06); }
+        footer p { font-family: 'Cinzel', serif; font-size: 8px; color: var(--txt-dim); letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CHAVOSSEL</h1>
+    <p class="subtitle">Referência Visual de Layouts — Motor Oráculo 1.0 — Lucas Grigo 2026</p>
+</header>
+
+<!-- ══════════════════ CAPAS ══════════════════ -->
+<div class="section">
+    <div class="section-label">Capas — Slide 1</div>
+    <div class="grid">
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi full" style="width:100%;height:100%;left:0;top:0;"></div>
+                <div class="zt" style="width:58%;left:21%;top:43%;height:6px;"></div>
+                <div class="zb" style="width:38%;left:31%;top:54%;height:3px;"></div>
+                <div class="zs" style="width:20%;left:40%;bottom:12%;height:2px;"></div>
+            </div>
+            <span class="layout-name">Capa Centro</span>
+            <span class="layout-id">COVER_CENTER</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi full" style="width:100%;height:100%;left:0;top:0;"></div>
+                <div class="zt" style="width:58%;left:21%;top:17%;height:6px;"></div>
+                <div class="zb" style="width:38%;left:31%;top:28%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Capa Topo</span>
+            <span class="layout-id">COVER_TOP</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi full" style="width:100%;height:100%;left:0;top:0;background:linear-gradient(to top,#1a1a14,#0a0a08);"></div>
+                <div class="zt" style="width:58%;left:21%;bottom:22%;height:6px;"></div>
+                <div class="zb" style="width:38%;left:31%;bottom:14%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Capa Base</span>
+            <span class="layout-id">COVER_BOTTOM</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame" style="background:var(--void);">
+                <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(212,175,55,0.07) 0%,transparent 70%);"></div>
+                <div class="zt" style="width:58%;left:21%;top:43%;height:6px;"></div>
+                <div class="zb" style="width:38%;left:31%;top:54%;height:3px;"></div>
+                <div class="zdot" style="width:24px;height:1px;left:68px;top:65%;background:var(--ga40);border-radius:1px;"></div>
+            </div>
+            <span class="layout-name">Capa Nativa</span>
+            <span class="layout-id">COVER_NATIVE</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- ══════════════════ STORYTELLING ══════════════════ -->
+<div class="section">
+    <div class="section-label">Storytelling</div>
+    <div class="grid">
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:100%;height:100%;left:0;top:0;"></div>
+                <div class="grad-ov" style="background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,transparent 45%);"></div>
+                <div class="zt" style="width:68%;left:10%;bottom:20%;height:5px;"></div>
+                <div class="zb" style="width:52%;left:10%;bottom:12%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Total</span>
+            <span class="layout-id">STORY_TOTAL</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:40%;height:100%;left:0;top:0;"></div>
+                <div class="zt" style="width:42%;right:5%;top:40%;height:5px;"></div>
+                <div class="zb" style="width:36%;right:5%;top:51%;height:3px;"></div>
+                <div class="zs" style="width:28%;right:5%;top:59%;height:2px;"></div>
+            </div>
+            <span class="layout-name">Pilar Esq</span>
+            <span class="layout-id">STORY_LEFT</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:40%;height:100%;right:0;top:0;"></div>
+                <div class="zt" style="width:42%;left:5%;top:40%;height:5px;"></div>
+                <div class="zb" style="width:36%;left:5%;top:51%;height:3px;"></div>
+                <div class="zs" style="width:28%;left:5%;top:59%;height:2px;"></div>
+            </div>
+            <span class="layout-name">Pilar Dir</span>
+            <span class="layout-id">STORY_RIGHT</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:100%;height:40%;left:0;top:15%;"></div>
+                <div class="zt" style="width:60%;left:20%;bottom:22%;height:5px;"></div>
+                <div class="zb" style="width:46%;left:20%;bottom:14%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Horizonte</span>
+            <span class="layout-id">STORY_HORIZ</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:100%;height:30%;left:0;bottom:0;"></div>
+                <div class="zt" style="width:62%;left:19%;top:37%;height:9px;"></div>
+                <div class="zb" style="width:48%;left:19%;top:52%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Grito</span>
+            <span class="layout-id">STORY_SHOUT</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zt" style="width:60%;left:20%;top:11%;height:5px;"></div>
+                <div class="zb" style="width:46%;left:20%;top:21%;height:3px;"></div>
+                <div class="zi photo" style="width:100%;height:35%;left:0;top:32%;"></div>
+                <div class="zb" style="width:68%;left:16%;top:72%;height:3px;"></div>
+                <div class="zs" style="width:54%;left:23%;top:80%;height:2px;"></div>
+            </div>
+            <span class="layout-name">Sanduíche</span>
+            <span class="layout-id">STORY_MID_IMG</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- ══════════════════ EDITORIAL ══════════════════ -->
+<div class="section">
+    <div class="section-label">Editorial</div>
+    <div class="grid">
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:70%;height:50%;left:15%;top:12%;"></div>
+                <div class="zt" style="width:70%;left:15%;bottom:20%;height:5px;"></div>
+                <div class="zb" style="width:55%;left:15%;bottom:12%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Padrão</span>
+            <span class="layout-id">EDITORIAL_STD</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:80%;height:46%;left:10%;top:8%;"></div>
+                <div class="zt" style="width:80%;left:10%;bottom:20%;height:5px;"></div>
+                <div class="zb" style="width:65%;left:10%;bottom:12%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Img Topo</span>
+            <span class="layout-id">EDIT_TOP</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zt" style="width:80%;left:10%;top:18%;height:5px;"></div>
+                <div class="zb" style="width:65%;left:10%;top:28%;height:3px;"></div>
+                <div class="zi photo" style="width:80%;height:46%;left:10%;bottom:8%;"></div>
+            </div>
+            <span class="layout-name">Img Base</span>
+            <span class="layout-id">EDIT_BOT</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zt" style="width:80%;left:10%;top:39%;height:9px;"></div>
+                <div class="zb" style="width:66%;left:17%;top:55%;height:3px;"></div>
+                <div class="zs" style="width:52%;left:24%;top:63%;height:2px;"></div>
+            </div>
+            <span class="layout-name">Textão</span>
+            <span class="layout-id">EDIT_TXT</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:40%;height:42%;right:5%;top:4%;"></div>
+                <div class="zi photo" style="width:40%;height:42%;right:5%;bottom:4%;"></div>
+                <div class="zt" style="width:37%;left:8%;top:38%;height:5px;"></div>
+                <div class="zb" style="width:30%;left:8%;top:49%;height:3px;"></div>
+                <div class="zs" style="width:24%;left:8%;top:57%;height:2px;"></div>
+            </div>
+            <span class="layout-name">Duplo Dir</span>
+            <span class="layout-id">EDITORIAL_DUAL_IMG</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:40%;height:42%;left:5%;top:4%;"></div>
+                <div class="zi photo" style="width:40%;height:42%;left:5%;bottom:4%;"></div>
+                <div class="zt" style="width:37%;right:8%;top:38%;height:5px;"></div>
+                <div class="zb" style="width:30%;right:8%;top:49%;height:3px;"></div>
+                <div class="zs" style="width:24%;right:8%;top:57%;height:2px;"></div>
+            </div>
+            <span class="layout-name">Duplo Esq</span>
+            <span class="layout-id">EDITORIAL_DUAL_LEFT</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:42%;height:42%;left:4%;top:4%;"></div>
+                <div class="zi photo" style="width:42%;height:42%;right:4%;top:4%;"></div>
+                <div class="zt" style="width:80%;left:10%;bottom:22%;height:5px;"></div>
+                <div class="zb" style="width:65%;left:10%;bottom:14%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Duplo Topo</span>
+            <span class="layout-id">EDITORIAL_DUAL_TOP</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo rounded" style="width:80%;height:48%;left:10%;top:8%;"></div>
+                <div class="zt" style="width:64%;left:18%;bottom:18%;height:5px;"></div>
+                <div class="zb" style="width:80%;left:10%;bottom:10%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Card Topo</span>
+            <span class="layout-id">CARD_IMG_TOP</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zt" style="width:64%;left:18%;top:12%;height:5px;"></div>
+                <div class="zb" style="width:80%;left:10%;top:22%;height:3px;"></div>
+                <div class="zi photo rounded" style="width:80%;height:48%;left:10%;bottom:8%;"></div>
+            </div>
+            <span class="layout-name">Card Base</span>
+            <span class="layout-id">CARD_IMG_BOT</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- ══════════════════ MAGAZINE ══════════════════ -->
+<div class="section">
+    <div class="section-label">Magazine</div>
+    <div class="grid">
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:100%;height:100%;left:0;top:0;"></div>
+                <div class="grad-ov" style="background:linear-gradient(to bottom,rgba(0,0,0,0.7) 0%,transparent 45%);"></div>
+                <div class="zt" style="width:74%;left:13%;top:15%;height:6px;"></div>
+                <div class="zb" style="width:58%;left:13%;top:27%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Topo</span>
+            <span class="layout-id">MAG_TOP</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:100%;height:100%;left:0;top:0;"></div>
+                <div class="grad-ov" style="background:linear-gradient(to bottom,transparent 25%,rgba(0,0,0,0.72) 45%,rgba(0,0,0,0.72) 62%,transparent 80%);"></div>
+                <div class="zt" style="width:74%;left:13%;top:42%;height:6px;"></div>
+                <div class="zb" style="width:58%;left:21%;top:54%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Centro</span>
+            <span class="layout-id">MAG_MID</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:100%;height:100%;left:0;top:0;"></div>
+                <div class="grad-ov" style="background:linear-gradient(to top,rgba(0,0,0,0.75) 0%,transparent 45%);"></div>
+                <div class="zt" style="width:74%;left:13%;bottom:18%;height:6px;"></div>
+                <div class="zb" style="width:58%;left:13%;bottom:10%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Base</span>
+            <span class="layout-id">MAG_BOT</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- ══════════════════ NOTÍCIAS & CORTES ══════════════════ -->
+<div class="section">
+    <div class="section-label">Notícias &amp; Cortes</div>
+    <div class="grid">
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:45%;height:100%;left:0;top:0;"></div>
+                <div class="zt" style="width:38%;right:6%;top:37%;height:5px;"></div>
+                <div class="zb" style="width:30%;right:6%;top:48%;height:3px;"></div>
+                <div class="zs" style="width:24%;right:6%;top:56%;height:2px;"></div>
+            </div>
+            <span class="layout-name">News Esq</span>
+            <span class="layout-id">NEWS_L</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:45%;height:100%;right:0;top:0;"></div>
+                <div class="zt" style="width:38%;left:6%;top:37%;height:5px;"></div>
+                <div class="zb" style="width:30%;left:6%;top:48%;height:3px;"></div>
+                <div class="zs" style="width:24%;left:6%;top:56%;height:2px;"></div>
+            </div>
+            <span class="layout-name">News Dir</span>
+            <span class="layout-id">NEWS_R</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:100%;height:50%;left:0;top:0;"></div>
+                <div class="zt" style="width:68%;left:16%;bottom:22%;height:5px;"></div>
+                <div class="zb" style="width:54%;left:16%;bottom:14%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Corte H</span>
+            <span class="layout-id">HALF_H</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:50%;height:100%;left:0;top:0;"></div>
+                <div class="zt" style="width:32%;right:6%;top:37%;height:5px;"></div>
+                <div class="zb" style="width:26%;right:6%;top:48%;height:3px;"></div>
+            </div>
+            <span class="layout-name">Corte V</span>
+            <span class="layout-id">HALF_V</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- ══════════════════ TWITTER ══════════════════ -->
+<div class="section">
+    <div class="section-label">Twitter / Social</div>
+    <div class="grid">
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi full" style="width:100%;height:100%;left:0;top:0;"></div>
+                <div style="position:absolute;width:80%;height:32%;left:10%;top:34%;background:var(--void-s);border-radius:5px;border:1px solid var(--ga15);"></div>
+                <div class="zt" style="width:58%;left:21%;top:41%;height:4px;"></div>
+                <div class="zb" style="width:48%;left:26%;top:51%;height:3px;"></div>
+                <div class="zs" style="width:38%;left:31%;top:59%;height:2px;"></div>
+            </div>
+            <span class="layout-name">Tweet</span>
+            <span class="layout-id">TWITTER</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- ══════════════════ CTAs ══════════════════ -->
+<div class="section">
+    <div class="section-label">CTAs — Encerramento</div>
+    <div class="grid">
+
+        <div class="layout-card">
+            <div class="frame" style="background:var(--void);">
+                <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(212,175,55,0.04) 0%,transparent 65%);"></div>
+                <div class="zdot" style="width:8px;height:8px;left:22px;top:18%;"></div>
+                <div class="zt" style="width:62%;left:19%;top:43%;height:5px;"></div>
+                <div class="zb" style="width:48%;left:26%;top:54%;height:3px;"></div>
+                <div style="position:absolute;width:28px;height:2px;background:var(--gold);opacity:0.35;left:66px;bottom:16%;border-radius:1px;"></div>
+            </div>
+            <span class="layout-name">Minimal</span>
+            <span class="layout-id">CTA_MINIMAL</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi full" style="width:100%;height:100%;left:0;top:0;"></div>
+                <div class="zcard" style="width:72%;height:40%;left:14%;top:28%;"></div>
+                <div class="zt" style="width:50%;left:25%;top:36%;height:5px;"></div>
+                <div class="zb" style="width:40%;left:30%;top:47%;height:3px;"></div>
+            </div>
+            <span class="layout-name">CTA Card</span>
+            <span class="layout-id">CTA_CARD</span>
+        </div>
+
+        <div class="layout-card">
+            <div class="frame">
+                <div class="zi photo" style="width:100%;height:50%;left:0;top:0;"></div>
+                <div class="zt" style="width:62%;left:19%;bottom:22%;height:5px;"></div>
+                <div class="zb" style="width:48%;left:26%;bottom:14%;height:3px;"></div>
+            </div>
+            <span class="layout-name">CTA Split</span>
+            <span class="layout-id">CTA_SPLIT</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- ══════════════════ DESIGN TOKENS ══════════════════ -->
+<div class="section">
+    <div class="section-label">Paleta de Cores</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;">
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#d4af37;"></div>
+            <div class="token-label">Ouro</div><div class="token-hex">#d4af37</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#e8c84a;"></div>
+            <div class="token-label">Ouro Lt</div><div class="token-hex">#e8c84a</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#8b6914;border:1px solid var(--ga25);"></div>
+            <div class="token-label">Ouro Dk</div><div class="token-hex">#8b6914</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#0a0a08;border:1px solid var(--ga15);"></div>
+            <div class="token-label">Void</div><div class="token-hex">#0a0a08</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#0e0e0c;border:1px solid var(--ga15);"></div>
+            <div class="token-label">Void-C</div><div class="token-hex">#0e0e0c</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#141412;border:1px solid var(--ga15);"></div>
+            <div class="token-label">Void-S</div><div class="token-hex">#141412</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#1c1c18;border:1px solid var(--ga15);"></div>
+            <div class="token-label">Void-R</div><div class="token-hex">#1c1c18</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#f5f0e8;"></div>
+            <div class="token-label">Txt Hi</div><div class="token-hex">#f5f0e8</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#b8b098;"></div>
+            <div class="token-label">Txt Md</div><div class="token-hex">#b8b098</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#726a58;"></div>
+            <div class="token-label">Txt Lo</div><div class="token-hex">#726a58</div>
+        </div>
+        <div style="text-align:center;">
+            <div class="token-swatch" style="background:#38362e;"></div>
+            <div class="token-label">Txt Dim</div><div class="token-hex">#38362e</div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════ TIPOGRAFIA ══════════════════ -->
+<div class="section">
+    <div class="section-label">Estilos Tipográficos</div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+        <div class="typo-card">
+            <div class="typo-sample" style="font-family:'Playfair Display',serif;">Aa</div>
+            <div class="typo-id">Elegant</div>
+            <div class="typo-pair">Playfair Display + Lato</div>
+        </div>
+        <div class="typo-card">
+            <div class="typo-sample" style="font-family:'Inter',sans-serif;font-weight:900;letter-spacing:-1px;">Aa</div>
+            <div class="typo-id">Modern</div>
+            <div class="typo-pair">Montserrat + Roboto</div>
+        </div>
+        <div class="typo-card">
+            <div class="typo-sample" style="font-family:'Cinzel',serif;">Aa</div>
+            <div class="typo-id">Old Money</div>
+            <div class="typo-pair">Cinzel + EB Garamond</div>
+        </div>
+        <div class="typo-card">
+            <div class="typo-sample" style="font-family:'Cinzel Decorative',serif;font-weight:900;">Aa</div>
+            <div class="typo-id">Impact</div>
+            <div class="typo-pair">Anton + Inter</div>
+        </div>
+        <div class="typo-card">
+            <div class="typo-sample" style="font-family:'Playfair Display',serif;font-style:italic;">Aa</div>
+            <div class="typo-id">Aesthetic</div>
+            <div class="typo-pair">Playfair Display + Montserrat Light</div>
+        </div>
+        <div class="typo-card">
+            <div class="typo-sample" style="font-family:'Cinzel',serif;font-weight:400;">Aa</div>
+            <div class="typo-id">Jornal</div>
+            <div class="typo-pair">Merriweather + Georgia</div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════ EFEITOS ══════════════════ -->
+<div class="section">
+    <div class="section-label">Efeitos de Imagem</div>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;">
+        <div class="effect-card">
+            <div class="effect-thumb" style="background:linear-gradient(135deg,#252520,#181814);"></div>
+            <div class="effect-id">none — Sólida</div>
+        </div>
+        <div class="effect-card">
+            <div class="effect-thumb" style="background:linear-gradient(135deg,#252520,#181814);box-shadow:inset 0 0 0 6px var(--void-c);border:2px solid var(--ga25);"></div>
+            <div class="effect-id">corte_limpo</div>
+        </div>
+        <div class="effect-card">
+            <div class="effect-thumb" style="position:relative;overflow:visible;">
+                <div style="position:absolute;inset:0;background:linear-gradient(135deg,#252520,#181814);border-radius:4px;"></div>
+                <div style="position:absolute;top:5px;left:5px;right:-5px;bottom:-5px;background:#1c1c18;border-radius:4px;border:1px solid var(--ga25);z-index:-1;"></div>
+            </div>
+            <div class="effect-id" style="margin-top:10px;">offset</div>
+        </div>
+        <div class="effect-card">
+            <div class="effect-thumb">
+                <div style="position:absolute;inset:0;background:linear-gradient(135deg,#252520,#0a0a08);"></div>
+                <div style="position:absolute;inset:0;background:linear-gradient(45deg,rgba(212,175,55,0.12),transparent);mix-blend-mode:screen;"></div>
+            </div>
+            <div class="effect-id">double_exposure</div>
+        </div>
+        <div class="effect-card">
+            <div class="effect-thumb">
+                <div style="position:absolute;inset:0;background:linear-gradient(135deg,#252520,#181814);"></div>
+                <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(10,10,8,0.85) 100%);"></div>
+            </div>
+            <div class="effect-id">fade — Dream Fade</div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════ ARQUITETURAS DE FORMATO ══════════════════ -->
+<div class="section">
+    <div class="section-label">Arquiteturas de Formato</div>
+    <div style="display:flex;flex-wrap:wrap;gap:24px;">
+        <div style="background:var(--void-c);border:1px solid var(--ga15);border-radius:8px;padding:20px 24px;min-width:200px;">
+            <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);letter-spacing:3px;margin-bottom:12px;">STORYTELLING</div>
+            <div style="font-size:10px;color:var(--txt-md);line-height:2;font-family:'Inter',sans-serif;">
+                STORY_TOTAL<br>STORY_LEFT<br>STORY_HORIZ<br>STORY_RIGHT<br>STORY_SHOUT<br>STORY_MID_IMG<br>EDITORIAL_DUAL_TOP
+            </div>
+        </div>
+        <div style="background:var(--void-c);border:1px solid var(--ga15);border-radius:8px;padding:20px 24px;min-width:200px;">
+            <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);letter-spacing:3px;margin-bottom:12px;">EDITORIAL</div>
+            <div style="font-size:10px;color:var(--txt-md);line-height:2;font-family:'Inter',sans-serif;">
+                EDITORIAL_STD<br>EDIT_TOP<br>EDIT_BOT<br>EDIT_TXT<br>EDITORIAL_DUAL_IMG<br>STORY_MID_IMG<br>EDITORIAL_DUAL_LEFT<br>EDITORIAL_DUAL_TOP<br>CARD_IMG_TOP<br>CARD_IMG_BOT
+            </div>
+        </div>
+        <div style="background:var(--void-c);border:1px solid var(--ga15);border-radius:8px;padding:20px 24px;min-width:200px;">
+            <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);letter-spacing:3px;margin-bottom:12px;">MAGAZINE</div>
+            <div style="font-size:10px;color:var(--txt-md);line-height:2;font-family:'Inter',sans-serif;">
+                MAG_TOP<br>MAG_MID<br>MAG_BOT<br>CARD_IMG_BOT
+            </div>
+        </div>
+        <div style="background:var(--void-c);border:1px solid var(--ga15);border-radius:8px;padding:20px 24px;min-width:200px;">
+            <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);letter-spacing:3px;margin-bottom:12px;">NEWS / HALF</div>
+            <div style="font-size:10px;color:var(--txt-md);line-height:2;font-family:'Inter',sans-serif;">
+                NEWS_L<br>NEWS_R<br>EDITORIAL_DUAL_IMG<br>EDITORIAL_DUAL_LEFT<br>HALF_H<br>HALF_V
+            </div>
+        </div>
+        <div style="background:var(--void-c);border:1px solid var(--ga15);border-radius:8px;padding:20px 24px;min-width:200px;">
+            <div style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold);letter-spacing:3px;margin-bottom:12px;">CTAs</div>
+            <div style="font-size:10px;color:var(--txt-md);line-height:2;font-family:'Inter',sans-serif;">
+                CTA_MINIMAL<br>CTA_CARD<br>CTA_SPLIT
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© LUCAS GRIGO 2026 — CHAVOSSEL ORÁCULO 1.0 — REFERÊNCIA VISUAL DO SISTEMA</p>
+</footer>
+
+</body>
+</html>

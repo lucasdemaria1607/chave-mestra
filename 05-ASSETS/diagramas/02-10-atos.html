@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Os 10 Atos do Chavossel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; background: #0a0a08; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; }
+  .canvas { width: 1080px; height: 1080px; display: grid; grid-template-columns: 1fr; padding: 64px 80px; }
+
+  .header { margin-bottom: 36px; }
+  .title { font-family: 'Playfair Display', serif; font-size: 36px; color: #f5f0e8; margin-bottom: 6px; }
+  .subtitle { font-size: 11px; color: #726a58; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
+
+  .acts { display: flex; flex-direction: column; gap: 0; flex: 1; }
+
+  .act { display: flex; align-items: stretch; min-height: 72px; }
+
+  /* linha vertical conectora */
+  .connector { display: flex; flex-direction: column; align-items: center; width: 40px; flex-shrink: 0; }
+  .connector .dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #d4af37; background: #0a0a08; flex-shrink: 0; margin-top: 12px; }
+  .connector .dot.filled { background: #d4af37; }
+  .connector .line { width: 1px; background: #1c1c18; flex: 1; }
+  .act:last-child .connector .line { display: none; }
+
+  .act-body { flex: 1; padding: 10px 0 10px 20px; display: flex; align-items: flex-start; gap: 16px; }
+  .act-num { font-size: 11px; font-weight: 900; color: #38362e; letter-spacing: 1px; min-width: 20px; padding-top: 2px; }
+  .act-content { flex: 1; }
+  .act-name { font-size: 13px; font-weight: 600; color: #f5f0e8; margin-bottom: 2px; }
+  .act-desc { font-size: 11.5px; font-weight: 300; color: #726a58; line-height: 1.5; }
+  .act-tag { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; margin-top: 4px; }
+  .tag-abertura { color: #d4af37; border: 1px solid rgba(212,175,55,0.3); }
+  .tag-ponte { color: #b8b098; border: 1px solid rgba(184,176,152,0.2); }
+  .tag-corpo { color: #726a58; border: 1px solid rgba(114,106,88,0.2); }
+  .tag-fechamento { color: #d4af37; border: 1px solid rgba(212,175,55,0.3); }
+
+  /* bloco do corpo agrupado */
+  .corpo-block { border-left: 1px solid #1c1c18; margin-left: 20px; padding-left: 16px; }
+
+  .footer { margin-top: 24px; display: flex; align-items: center; gap: 10px; }
+  .footer-line { width: 28px; height: 1px; background: rgba(212,175,55,0.3); }
+  .footer-text { font-size: 10px; color: #38362e; letter-spacing: 2.5px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="header">
+    <div class="title">Os 10 Atos do Chavossel</div>
+    <div class="subtitle">Estrutura invariável de todo carrossel</div>
+  </div>
+
+  <div class="acts">
+
+    <div class="act">
+      <div class="connector"><div class="dot filled"></div><div class="line"></div></div>
+      <div class="act-body">
+        <div class="act-num">01</div>
+        <div class="act-content">
+          <div class="act-name">Abertura</div>
+          <div class="act-desc">Título + subtítulo que desafiam uma crença ou prometem transformação real</div>
+          <span class="act-tag tag-abertura">Manchete obrigatória</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="connector"><div class="dot filled"></div><div class="line"></div></div>
+      <div class="act-body">
+        <div class="act-num">02</div>
+        <div class="act-content">
+          <div class="act-name">A Ponte</div>
+          <div class="act-desc">Contextualização que abre lacuna de informação — o lead precisa continuar</div>
+          <span class="act-tag tag-ponte">Information Gap</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="connector"><div class="dot"></div><div class="line"></div></div>
+      <div class="act-body">
+        <div class="act-num">03–09</div>
+        <div class="act-content">
+          <div class="act-name">O Corpo</div>
+          <div class="act-desc">Estrutura retórica do exercício Progymnasmata escolhido. Ritmo alternado obrigatório — nunca três slides do mesmo tipo seguidos</div>
+          <span class="act-tag tag-corpo">Manchete · Immersive · O Grito</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="connector"><div class="dot filled"></div><div class="line"></div></div>
+      <div class="act-body">
+        <div class="act-num">10</div>
+        <div class="act-content">
+          <div class="act-name">Fechamento</div>
+          <div class="act-desc">Conclusão moral ou prática que entrega o que foi prometido na abertura + CTA</div>
+          <span class="act-tag tag-fechamento">Resolução + Ação</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- tipos de slide -->
+  <div style="margin-top:28px; border-top:1px solid #141412; padding-top:20px;">
+    <div style="font-size:10px;color:#38362e;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">Tipos de slide disponíveis</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div style="background:#0e0e0c;border:1px solid #1c1c18;padding:12px;border-radius:4px;">
+        <div style="font-size:11px;font-weight:600;color:#d4af37;margin-bottom:4px;"># Título</div>
+        <div style="font-size:10px;color:#726a58;line-height:1.5;">Manchete — domina o slide, subtítulo abaixo</div>
+      </div>
+      <div style="background:#0e0e0c;border:1px solid #1c1c18;padding:12px;border-radius:4px;">
+        <div style="font-size:11px;font-weight:600;color:#b8b098;margin-bottom:4px;">Texto puro</div>
+        <div style="font-size:10px;color:#726a58;line-height:1.5;">Immersive Reader — argumento denso, foco tipográfico</div>
+      </div>
+      <div style="background:#0e0e0c;border:1px solid #1c1c18;padding:12px;border-radius:4px;">
+        <div style="font-size:11px;font-weight:600;color:#f5f0e8;margin-bottom:4px;"># Frase curta</div>
+        <div style="font-size:10px;color:#726a58;line-height:1.5;">O Grito — ruptura, aforismo, plot twist</div>
+      </div>
+      <div style="background:#0e0e0c;border:1px solid #1c1c18;padding:12px;border-radius:4px;">
+        <div style="font-size:11px;font-weight:600;color:#726a58;margin-bottom:4px;">Corpo curto</div>
+        <div style="font-size:10px;color:#726a58;line-height:1.5;">Transição — pausa, ponto médio</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer" style="margin-top:20px;">
+    <div class="footer-line"></div>
+    <div class="footer-text">Chave Mestra — Motor Chavossel v22</div>
+    <div class="footer-line"></div>
+  </div>
+</div>
+</body>
+</html>

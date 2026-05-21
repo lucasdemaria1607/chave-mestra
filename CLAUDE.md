@@ -20,7 +20,7 @@ CHAVE-MESTRA/
 │   ├── 01-cartografo/    → Diagnóstico de Mercado + Persona
 │   ├── 02-alquimista/    → Copy + Oferta + Escala + Frameworks
 │   ├── 03-bardo/         → Vídeo + Carrossel + Headlines + Scripts
-│   ├── 04-arauto/        → Campanha + Notion + Protocolo Massivo
+│   ├── 04-arauto/        → Campanha + Notion + Forja de Caixa
 │   └── 05-iluminista/     → Design, UX e Produção Visual (5 skills)
 ├── 04-PERGAMINHOS/       → Conteúdo produzido (brancos/pretos/dourados)
 ├── 05-ASSETS/            → Brand kit, tema visual, prompts
@@ -43,7 +43,7 @@ Cada plugin tem:
 | 01 | Cartógrafo | `01-PLUGINS/01-cartografo/` | C1 — Diagnóstico | portal-do-terreno, forja-da-persona, forja-do-universo |
 | 02 | Alquimista | `01-PLUGINS/02-alquimista/` | C2 — Estratégia + C6 — Escala | pergaminho-de-copy, forja-de-oferta, portal-da-escala, frameworks-anuncios |
 | 03 | Bardo | `01-PLUGINS/03-bardo/` | C3 — Criação | chavideo, chavossel, headline-generator, script-creator, script-analyzer, copy-enhancer |
-| 04 | Arauto | `01-PLUGINS/04-arauto/` | C4 — Lançamento + C5 — Operação | mapa-de-campanha, esteira-notion, protocolo-massivo |
+| 04 | Arauto | `01-PLUGINS/04-arauto/` | C4 — Lançamento + C5 — Operação | mapa-de-campanha, esteira-notion, forja-de-caixa |
 | 05 | Iluminista | `01-PLUGINS/05-iluminista/` | Transversal | sistema-de-design, forja-de-imagem, arquiteto-de-experiencia, ponte-figma, publicador-visual |
 
 ---
@@ -66,6 +66,8 @@ Cada plugin tem:
 | "cria a oferta", "stack de bônus", "equação de valor", "garantia", "oferta irresistível" | Alquimista | forja-de-oferta |
 | "diagnóstico de fase", "alavancas", "CAC", "LTV", "escala o negócio", "esteira de valor" | Alquimista | portal-da-escala |
 | "frameworks de anúncio", "templates de oferta", "Manychat" | Alquimista | frameworks-anuncios |
+| "monetização", "plataforma de venda", "Cakto", "Hotmart", "como ganhar dinheiro", "bater 10k", "bater 30k", "bater 100k", "funil curto", "ManyChat direto", "vende pelo PIX", "co-produção comercial", "split de receita", "afiliado", "margem do produto", "quanto investe", "calculadora de receita" | Alquimista | maquina-de-receita |
+| "frameworks de PM", "frameworks de PMM", "JTBD", "Jobs to Be Done", "posicionamento Dunford", "Obviously Awesome", "North Star", "AARRR", "Shape Up", "OKRs", "PLG", "Product-Led Growth", "Van Westendorp", "Battle Cards", "Message House", "Bullseye", "GTM tiers", "Category Design", "referências de produto" | Fundação | REFERENCIAS-PM-PMM |
 | "roteiro de vídeo", "chavideo", "reel", "script", "Progymnasmata" | Bardo | chavideo |
 | "carrossel", "chavossel", "10 slides", "ensaio visual" | Bardo | chavossel |
 | "cavalo de troia", "entra no mundo deles", "usa cultura pop", "conteúdo que não parece vendedor", "referência cultural", "topo de funil por imersão" | Bardo | cavalo-de-troia |
@@ -75,7 +77,7 @@ Cada plugin tem:
 | "otimiza essa copy para fala", "melhora o roteiro" | Bardo | copy-enhancer |
 | "campanha", "lançamento", "meteórico", "desafio", "cronograma" | Arauto | mapa-de-campanha |
 | "popula o Notion", "MINHA ESTEIRA", "cria as tarefas no Notion" | Arauto | esteira-notion |
-| "protocolo massivo", "protocolo luxo", "protocolo urgência", "campanha intensiva" | Arauto | protocolo-massivo |
+| "forja de caixa", "protocolo luxo", "protocolo urgência", "campanha intensiva" | Arauto | forja-de-caixa |
 | "cria novo produto na esteira", "novo produto", "adiciona produto", "cria produto no sistema", "novo infoproduto" | Arauto | criar-produto-esteira |
 | "prospecção ativa", "venda direta", "vender pelo Pix", "Pix sem plataforma", "cadência de prospecção", "registra objeção", "objeções do campo", "feedback de prospecção", "ajusta abordagem" | Arauto | prospeccao-ativa |
 | "registra métricas", "como foi o lançamento", "retrospectiva do produto", "dashboard do produto", "resultado do lançamento", "preenche as métricas", "analisa o desempenho", "CAC do produto" | Alquimista | metricas-produto |
@@ -250,7 +252,7 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 
 **Para planejar campanha:** ative Arauto → leia `mapa-de-campanha/SKILL.md` + `modalidades.md` + `copy-campanha.md`.
 
-**Para campanha intensiva:** ative Arauto → leia `protocolo-massivo/SKILL.md`.
+**Para campanha intensiva:** ative Arauto → leia `forja-de-caixa/SKILL.md`.
 
 **Para popular Notion:** ative Arauto → leia `esteira-notion/SKILL.md` + `notion-integracao.md`.
 
@@ -261,6 +263,12 @@ Cada fase tem um **Kit de Entrega** padrão — documento limpo, sem referência
 **Para registrar e analisar métricas de produto:** ative Alquimista → leia `metricas-produto/SKILL.md`.
 
 **Para diagnosticar escala:** ative Alquimista → leia `portal-da-escala/SKILL.md`.
+
+**Para monetização, plataformas, metas de receita, funis curtos e co-produção:** ative Alquimista → leia `maquina-de-receita/SKILL.md`. Esta skill resolve: qual plataforma usar (Cakto vs Hotmart vs Perfect Pay), como estruturar funis por ticket, caminhos para R$10k / R$30k / R$100k, arquitetura de ManyChat e WhatsApp, e modelo comercial de afiliados e co-produções.
+
+**Para frameworks de PM/PMM, posicionamento, pricing ou referências de produto:** consultar `00-FUNDACAO/REFERENCIAS-PM-PMM.md` como contexto de apoio antes de operar qualquer skill que precise de frameworks teóricos (forja-da-persona, forja-do-universo, forja-de-oferta, portal-da-escala, mapa-de-campanha).
+
+**Para contratos, LGPD, organização jurídica ou co-produção com split:** consultar `05-ASSETS/referencias/LEGAL-AUXILIAR.md` como referência auxiliar. Redirecionar o usuário sempre que surgir questão sobre contrato de co-produção, NDA, direitos autorais de conteúdo, ou conformidade LGPD no produto digital.
 
 **Para diagnosticar / iniciar projeto:** ative Chaveiro → execute Protocolo 0 do `chaveiro/SKILL.md` (diagnóstico 6D + Dossiê CM + roadmap).
 
@@ -492,5 +500,8 @@ Quando o cliente da sessão é Chave Mestra / Lucas, nunca substituir termos pro
 - `00-FUNDACAO/MAPA-DO-PROJETO.md` — arquitetura completa
 - `00-FUNDACAO/GLOSSARIO.md` — vocabulário proprietário completo
 - `00-FUNDACAO/MODO-CLIENTE.md` — protocolo de adaptação a clientes externos
+- `00-FUNDACAO/REFERENCIAS-PM-PMM.md` — frameworks PM e PMM transversais (JTBD, Dunford, AARRR, Shape Up, OKRs, PLG, Category Design, Message House, Bullseye, Van Westendorp, Battle Cards)
+- `01-PLUGINS/02-alquimista/skills/maquina-de-receita/SKILL.md` — monetização: plataformas BR, marcos de receita, funis curtos, afiliados, co-produção
+- `05-ASSETS/referencias/LEGAL-AUXILIAR.md` — contratos, LGPD, aspectos tributários e organização documental
 - `CLAUDE-PROJECTS.md` — como montar os 6 kits no claude.ai
 - `ORDENS.md` — agrupamentos estratégicos de plugins para venda

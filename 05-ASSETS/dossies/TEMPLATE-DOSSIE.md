@@ -58,7 +58,7 @@
 
 ### Recomendações Cruzadas (flags do diagnóstico)
 - [ ] Público sofisticado → Copy 3x5 nível 4-5
-- [ ] Mercado saturado → considerar Protocolo Massivo
+- [ ] Mercado saturado → considerar Forja de Caixa
 - [ ] Brecha clara → oferta diferenciada
 - [ ] Voz genérica → Ritual da Chave antes de tudo
 

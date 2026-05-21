@@ -85,7 +85,7 @@ Funil, copy, lançamento, ROI, infoproduto, esteira, branding, lead, conversão,
 | 01 | Cartógrafo | C1 — Diagnóstico | portal-do-terreno, forja-da-persona, forja-do-universo | Mercado, persona, universo de marca, FOF |
 | 02 | Alquimista | C2 — Estratégia + C6 — Escala | pergaminho-de-copy, forja-de-oferta, portal-da-escala | Copy, oferta, Value Creation Loop, métricas |
 | 03 | Bardo | C3 — Criação | chavideo, chavossel, headline-generator, script-creator, script-analyzer, copy-enhancer | Vídeo, carrossel, headlines, scripts, otimização |
-| 04 | Arauto | C4 — Lançamento + C5 — Operação | mapa-de-campanha, esteira-notion, protocolo-massivo | Campanha, cronogramas Notion, protocolos intensivos |
+| 04 | Arauto | C4 — Lançamento + C5 — Operação | mapa-de-campanha, esteira-notion, forja-de-caixa | Campanha, cronogramas Notion, protocolos intensivos |
 | 05 | Iluminista | Transversal | sistema-de-design, forja-de-imagem, arquiteto-de-experiencia, ponte-figma, publicador-visual | Design, imagem IA, UX, Figma, publicação |
 
 ---

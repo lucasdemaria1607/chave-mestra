@@ -161,13 +161,13 @@ Planejar e executar campanhas de lançamento completas — da oferta finalizada 
 
 **O que entrega:**
 - Oferta finalizada: stack de bônus, equação de valor, garantias (Alquimista)
-- Diagnóstico de modalidade: qual lançamento usar (Meteórico, Desafio, Interno, Protocolo Massivo)
+- Diagnóstico de modalidade: qual lançamento usar (Meteórico, Desafio, Interno, Forja de Caixa)
 - Cronograma dia a dia com os 4 atos narrativos
 - Copy por fase de campanha
-- Protocolo Massivo (Luxo ou Urgência) para campanhas intensivas
+- Forja de Caixa (Luxo ou Urgência) para campanhas intensivas
 - Populamento completo da MINHA ESTEIRA no Notion — 1 linha por dia com copy completo
 
-**Skills ativadas:** forja-de-oferta, mapa-de-campanha, esteira-notion, protocolo-massivo
+**Skills ativadas:** forja-de-oferta, mapa-de-campanha, esteira-notion, forja-de-caixa
 
 **Requer do cliente:**
 - Workspace Notion ativo

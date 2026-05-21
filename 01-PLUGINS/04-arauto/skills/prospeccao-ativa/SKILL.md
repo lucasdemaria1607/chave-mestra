@@ -262,5 +262,5 @@ ESTRUTURA DA CALL DE VENDAS (20–30 min)
 - `forja-de-oferta/SKILL.md` — objeções frequentes indicam o que precisa ser reposicionado
 - `pergaminho-de-copy/SKILL.md` — usar objeções para calibrar N-level e ângulo da copy
 - `metricas-produto/SKILL.md` — dados de conversão desta fase alimentam o dashboard do produto
-- `protocolo-massivo/SKILL.md` — quando a prospecção valida o produto, protocolo massivo escala
+- `forja-de-caixa/SKILL.md` — quando a prospecção valida o produto, forja de caixa escala
 - `negociacao-1x1.md` — referência adicional para calls de fechamento

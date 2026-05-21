@@ -61,7 +61,7 @@ Para qualquer peça gerada (Carrossel, Reel, Post, Anúncio):
 | `Título` | "📅 [DD/MM] — [tema ou campanha do dia]" |
 | `Status` | Iniciar em **Rascunho** |
 | `Data de Publicação` | Data do dia de publicação |
-| `Origem` | Orgânico / Protocolo Massivo / Temas em Alta / Manual |
+| `Origem` | Orgânico / Forja de Caixa / Temas em Alta / Manual |
 | `Campanha` | Nome da campanha, se aplicável |
 | `Produto` | Vincular ao produto da MINHA ESTEIRA, se aplicável |
 
@@ -76,7 +76,7 @@ Usado quando a entrada do dia ainda não existe na database:
 ```
 ## 🗓️ Visão Geral
 
-> **Rotina:** [Orgânico / Protocolo Massivo / Lançamento]
+> **Rotina:** [Orgânico / Forja de Caixa / Lançamento]
 > **Campanha:** —
 > **Produto:** —
 > **Objetivo do dia:** [Awareness / Autoridade / Conversão / Relacionamento / Nutrição]

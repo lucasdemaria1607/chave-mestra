@@ -320,7 +320,7 @@ STATUS: [✓ publicado / □ agendado / □ em revisão]
 4. Criar
 
 ### Protocolo "Urgência" — Quando precisa gerar caixa em 48-72h
-1. Ativar Arauto → Protocolo Massivo (Modo Urgência)
+1. Ativar Arauto → Forja de Caixa (Modo Urgência)
 2. Pular planejamento — executar sequência do protocolo diretamente
 3. Após a urgência, registrar no Tesouro dos Erros o que motivou
 
@@ -367,4 +367,4 @@ STATUS: [✓ publicado / □ agendado / □ em revisão]
 - `mapa-de-campanha/SKILL.md` → planejamento de campanha na Lua Cheia
 - `esteira-notion/SKILL.md` → populamento mensal e atualização semanal
 - `headline-generator/SKILL.md` → geração de pautas na Forja Semanal
-- `protocolo-massivo/SKILL.md` → Protocolo Urgência como escape de emergência
+- `forja-de-caixa/SKILL.md` → Protocolo Urgência como escape de emergência

@@ -3,7 +3,7 @@
 **Tipo:** Complexo (sequenciado, alto impacto, muitas variáveis)
 **Quando:** ao iniciar qualquer campanha, lançamento ou protocolo intensivo
 **Tempo estimado:** 2–4 sessões de trabalho (dependendo da modalidade)
-**Plugin responsável:** Alquimista (Forja de Oferta) + Arauto (Mapa de Campanha + Protocolo Massivo)
+**Plugin responsável:** Alquimista (Forja de Oferta) + Arauto (Mapa de Campanha + Forja de Caixa)
 **Pré-requisito:** §1 (DNA) + §2 (Persona + Terreno) do Dossiê preenchidos
 
 ---

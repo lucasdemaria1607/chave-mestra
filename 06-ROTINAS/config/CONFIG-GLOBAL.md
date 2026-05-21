@@ -100,7 +100,7 @@ notion_db_conteudo: collection://25cfc122-de3b-81c2-a76a-000bcf8453f4
 # Agenda — Dashboard unificado (calendário + listas de Conteúdo e Tarefas)
 # Campos do banco Conteúdo: Título, Status, Data de Publicação, Plataforma, Tipo de Post,
 #   Tipo de conteúdo, Produto, Origem, Propósito, Campanha, Etapas, Tarefas, Arquivo, Notas & Briefing
-# Origem opções: Organico | Protocolo Massivo | Temas em Alta | Pesquisa de Nicho | Manual | Ideia Própria
+# Origem opções: Organico | Forja de Caixa | Temas em Alta | Pesquisa de Nicho | Manual | Ideia Própria
 # Propósito opções: Awareness | Autoridade | Conversão | Relacionamento | Nutrição
 notion_page_agenda: 34efc122-de3b-8106-8a36-d8ca827f428c
 ```

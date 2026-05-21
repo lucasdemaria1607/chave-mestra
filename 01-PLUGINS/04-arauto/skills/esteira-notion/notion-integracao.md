@@ -23,7 +23,7 @@ MINHA ESTEIRA (database principal — campo "Arquivado" checkbox)
     └── Depoimentos (toggle)
 ```
 
-**Conteúdo de campanha vai DENTRO dos cronogramas**, não na database Conteúdo. A database Conteúdo serve apenas para conteúdo orgânico (Origem: Orgânico) e peças de apoio do Protocolo Massivo (Origem: Protocolo Massivo).
+**Conteúdo de campanha vai DENTRO dos cronogramas**, não na database Conteúdo. A database Conteúdo serve apenas para conteúdo orgânico (Origem: Orgânico) e peças de apoio do Forja de Caixa (Origem: Forja de Caixa).
 
 Todos os cronogramas compartilham o mesmo schema base:
 

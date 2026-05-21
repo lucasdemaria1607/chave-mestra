@@ -373,7 +373,7 @@ Fase 2. Alavanca: MÍDIA mais início de CÓDIGO. Próximo movimento: criar roti
 Fase 3. Alavanca: CÓDIGO mais CAPITAL. Próximo movimento: documentar processo de venda atual, construir funil evergreen, testar tráfego pago com ROAS mínimo de 3x antes de escalar. Campanha indicada: Interno completo + perpétuo automatizado.
 
 **Situação D: Receita alta, margem caindo, criador sobrecarregado**
-Fase 4. Alavanca: PESSOAS mais CAPITAL. Próximo movimento: auditoria de tempo (1 semana anotando cada tarefa), delegar tudo abaixo de R$100/hora do criador, revisar custos fixos. Campanha indicada: Protocolo Massivo (menos volume, mais margem).
+Fase 4. Alavanca: PESSOAS mais CAPITAL. Próximo movimento: auditoria de tempo (1 semana anotando cada tarefa), delegar tudo abaixo de R$100/hora do criador, revisar custos fixos. Campanha indicada: Forja de Caixa (menos volume, mais margem).
 
 **Situação E: Produto maduro, resultados estáveis, criador querendo o próximo nível**
 Exit/Loop (Step 6). O produto atingiu maturidade — métricas estáveis, equipe funcional, processos documentados. Próximo movimento: arquivar a campanha (MINHA ESTEIRA → Arquivado = true), documentar aprendizados (Tesouro dos Erros + Forja do Conhecimento), identificar gap na escada de valor, reiniciar o Loop com FOF para o próximo produto/tier. A audiência e a receita do produto A financiam a validação do produto B.

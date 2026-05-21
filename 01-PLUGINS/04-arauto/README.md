@@ -6,9 +6,9 @@ O mobilizador. Planeja campanhas, executa cronogramas e opera a máquina de lan�
 
 | Skill | Função |
 |-------|--------|
-| **Mapa de Campanha** | 4 modalidades de lançamento (Meteórico/Desafio/Interno/Protocolo Massivo) + cronograma dia a dia + copy por fase |
+| **Mapa de Campanha** | 4 modalidades de lançamento (Meteórico/Desafio/Interno/Forja de Caixa) + cronograma dia a dia + copy por fase |
 | **Esteira Notion** | Integração com MINHA ESTEIRA: população de banco de dados, tarefas por dia, copy no corpo |
-| **Protocolo Massivo** | Campanhas intensivas: Luxo (posicionamento premium) e Urgência (caixa em 48-72h) |
+| **Forja de Caixa** | Campanhas intensivas: Luxo (posicionamento premium) e Urgência (caixa em 48-72h) |
 
 ## Posição no Pipeline
 
@@ -26,4 +26,4 @@ Bardo (conteúdo pronto) → Arauto (campanha + Notion + execução) → Alquimi
 
 ## Gatilhos
 
-`"campanha"` · `"lançamento"` · `"meteórico"` · `"desafio"` · `"popula o Notion"` · `"protocolo massivo"` · `"campanha de luxo"` · `"gerar caixa rápido"`
+`"campanha"` · `"lançamento"` · `"meteórico"` · `"desafio"` · `"popula o Notion"` · `"forja de caixa"` · `"campanha de luxo"` · `"gerar caixa rápido"`

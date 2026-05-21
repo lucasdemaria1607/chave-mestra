@@ -113,7 +113,7 @@ Mapear mercado, público e zeitgeist. Diagnóstico profundo antes de qualquer a�
 
 ### Recomendações cruzadas automáticas
 - Se a persona revela que o público é sofisticado → flag para Alquimista usar Copy 3x5 em nível 4-5
-- Se o terreno mostra mercado saturado → flag para Estrategista considerar Protocolo Massivo
+- Se o terreno mostra mercado saturado → flag para Estrategista considerar Forja de Caixa
 - Se o terreno mostra brecha clara → flag para Alquimista montar oferta diferenciada
 
 ---
@@ -236,7 +236,7 @@ Organizar, publicar, distribuir e trackear. O conteúdo entra no sistema e vira 
 | Skill | Plugin | O que faz |
 |-------|--------|-----------|
 | Esteira Notion | Arauto | Popula MINHA ESTEIRA, cria tarefas, organiza calendário |
-| Protocolo Massivo | Arauto | Operação intensiva (luxo/urgência/massivo) |
+| Forja de Caixa | Arauto | Operação intensiva (luxo/urgência/massivo) |
 | Publicador Visual | Iluminista | Exporta visuais pro Notion |
 | Ritual da Chave | Chaveiro | Giro da Chave (execução diária) |
 

@@ -18,16 +18,24 @@ O Mapa de Campanha não é planilha de tarefas. É o arco dramático completo do
 ## As 4 Modalidades
 
 ### Modalidade 01 — Meteórico (3–7 dias)
-**Conceito:** alta intensidade, curta duração. Monetização rápida de audiência quente via oferta direta com urgência real.
+**Conceito:** alta intensidade, curta duração. Monetização rápida de audiência quente via oferta direta com urgência real. Motor: represamento num caldeirão WPP → tensão crescente → abertura explosiva no Dia D.
 
 **Quando usar:**
 - Urgência de caixa
 - Produto validado (não lançar novidade aqui)
-- Base de WhatsApp com 200+ pessoas ativas
+- Base de WhatsApp com 100+ pessoas ativas
 - Ticket até R$997 (ideal até R$497)
 
 **Quando NÃO usar:**
 - Audiência fria sem aquecimento
+- Produto sem prova social
+
+**Arco Caldeirão WPP — 5 dias:**
+- **D-2 e D-1 — Convite:** Stories + DM + WPP pessoal. "Vou liberar uma condição única para [produto] apenas para quem estiver no grupo VIP. Entre agora — vou fechar o acesso em [prazo]." Grupo fica silenciado após entrada.
+- **Dia 1 — Aquecimento 1:** Vídeo ou texto curto. A dor que o produto resolve, específica e pessoal. Sem pitch.
+- **Dia 2 — Aquecimento 2:** Prova social. Depoimento + história. "Isso é o que acontece quando [mecanismo] é aplicado."
+- **Dia 3 — Aquecimento 3:** Bastidores do produto: como foi construído, por que existe, o que entrega de diferente.
+- **Dia D — Abertura + Fechamento:** Manhã: abre grupo para dúvidas por 2h. Meio-dia: solta link com condição exclusiva. Noite: "Link expira em Xh. Depois disso removo todos do grupo." Encerramento real: remove todos. O grupo acaba.
 
 ---
 
@@ -106,16 +114,17 @@ Antes de montar o cronograma, verificar sinais de campanha prematura:
 
 ---
 
-### Modalidade 04 — Protocolo Massivo (posicionamento de luxo)
-**Conceito:** combinação de alta exclusividade + jornada educativa + evento presencial ou premium online. Para especialistas posicionando oferta de alto ticket em mercado saturado.
+### Modalidade 04 — Forja de Caixa (geração de caixa rápida)
+**Conceito:** campanhas de pressão cirúrgica para converter audiência existente em receita no menor prazo possível. 5 modos: Relâmpago (24-48h), Semente (5-7d), Urgência (48-72h), Luxo (7-12d), Tripwire (perpétuo).
 
 **Quando usar:**
-- Especialista consolidado com autoridade estabelecida
-- Ticket R$3.000+
-- Quer criar evento de posicionamento, não apenas venda
-- Tem 4–12 semanas disponíveis
+- Produto validado com prova social
+- Base quente existente (WhatsApp, lista, DM)
+- Precisa de caixa sem a complexidade de um lançamento completo
 
-**Arco narrativo:** Manifestação (quem é + o que defende) → Convite exclusivo → Jornada de transformação → Oferta de alto valor
+**→ Ver `forja-de-caixa/SKILL.md` para o protocolo completo com copy por modo.**
+
+**Arco narrativo por modo:** cada modo tem seu próprio arco — ver skill dedicada.
 
 ---
 
@@ -132,10 +141,10 @@ Antes de qualquer planejamento, mapear:
 | **Objetivo primário** | Caixa rápido / Autoridade / Escala / Posicionamento |
 
 **Matriz de decisão rápida:**
-- Quente + Low/Mid + Urgência de caixa → **Meteórico**
+- Quente + Low/Mid + Urgência de caixa → **Meteórico** (3–7d, caldeirão WPP)
 - Morna + Mid + 1–3 semanas + Autoridade → **Desafio**
 - Fria + Mid/High + 1–2 meses + Escala → **Interno**
-- Consolidado + High + Posicionamento → **Protocolo Massivo**
+- Base quente + Caixa rápido + Produto validado → **Forja de Caixa** (ver skill dedicada)
 
 ---
 
@@ -150,8 +159,8 @@ Antes de qualquer planejamento, mapear:
 **Lançamento Interno — "Tese de Investimento"**
 > "[Público] que aplica [método] obtém [resultado específico] em [tempo]. Não porque são especiais — mas porque têm acesso a [mecanismo único]. Em [data], abro [X vagas] para quem quer esse acesso."
 
-**Protocolo Massivo — "Manifesto de Posicionamento"**
-> "Existe uma forma de [resultado] que [mercado] nunca ensinou porque não é interessante para o sistema. Eu construí esse método ao longo de [X anos]. Em [data], compartilho apenas com quem está pronto para [transformação específica]."
+**Forja de Caixa — ver `forja-de-caixa/SKILL.md`**
+> Cada modo tem seu próprio arco: Luxo usa manifesto de posicionamento, Urgência usa detonação direta, Semente usa revelação de método. Arcos completos na skill dedicada.
 
 ---
 
@@ -222,11 +231,11 @@ O conteúdo gerado pelo Mapa de Campanha tem destinos diferentes conforme o tipo
 | Tipo | Destino no Notion |
 |---|---|
 | Conteúdo de lançamento (Meteórico, Desafio, Interno) | Cronograma do produto na MINHA ESTEIRA → uma linha por dia com copy + assets no corpo |
-| Peças orgânicas de apoio (Protocolo Massivo) | Database Conteúdo → campo Origem: Protocolo Massivo |
+| Campanhas Forja de Caixa (Relâmpago, Semente, Urgência, Luxo) | Cronograma do produto na MINHA ESTEIRA (toggle Forja de Caixa correspondente) |
+| Peças orgânicas de suporte | Database Conteúdo → campo Origem: Orgânico |
+| Isca digital + Tripwire | Database Conteúdo → campo Origem: Forja de Caixa |
 
-**Regra fundamental:** conteúdo de campanha de lançamento NUNCA vai na database Conteúdo. Vai DENTRO do cronograma do produto correspondente na MINHA ESTEIRA. Cada produto já carrega cronogramas para todas as modalidades (Meteórico, Desafio 7d/14d/21d, Interno) — basta popular o correto.
-
-A database Conteúdo serve exclusivamente para conteúdo orgânico (Origem: Orgânico) e peças de apoio do Protocolo Massivo (Origem: Protocolo Massivo).
+**Regra fundamental:** conteúdo de campanha NUNCA vai na database Conteúdo. Vai DENTRO do produto correspondente na MINHA ESTEIRA. Cada produto já carrega cronogramas para todas as modalidades (Meteórico, Desafio 7d/14d/21d, Interno + 5 modos de Forja de Caixa) — basta popular o correto.
 
 ### Pós-campanha
 

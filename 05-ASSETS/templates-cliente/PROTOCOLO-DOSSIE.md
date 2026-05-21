@@ -275,7 +275,7 @@ Ao iniciar qualquer skill, o plugin lê as seções do Dossiê (ou campos equiva
 | Bardo — qualquer skill | §1, §2 / DNA + Persona | §3>Campanha |
 | Arauto — Mapa de Campanha | §0, §2, §3>Oferta / Diagnóstico + Oferta | §1 / DNA |
 | Arauto — Esteira Notion | §3>Campanha / Campanha | §4 |
-| Arauto — Protocolo Massivo | §0, §2, §3 / Diagnóstico + Oferta | §1 |
+| Arauto — Forja de Caixa | §0, §2, §3 / Diagnóstico + Oferta | §1 |
 | Iluminista — Sistema de Design | §1>estética / DNA | §3 |
 | Chaveiro — qualquer skill | §0 sempre | todos os §§ relevantes |
 

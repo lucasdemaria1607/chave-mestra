@@ -26,6 +26,11 @@ No digital, isso vira branding que não pode ser copiado. Porque nasceu de uma t
 
 A Regra: abrir portas sem saber no que vai dar. O que vier — acerto ou erro — vira tesouro.
 
+O destino: **Key Person Business** — o negócio construído em torno de ser a pessoa-chave do próprio mercado. Não apenas um profissional competente: a referência que o mercado procura, segue e recomenda.
+
+→ Ver `FILOSOFIA.md §O Destino: Key Person Business` para a fundação filosófica completa.
+→ Ver `BLUEPRINT-PESSOA-CHAVE.md` para os 5 P's de ativação.
+
 ---
 
 ## AS 7 CAMADAS
@@ -99,14 +104,14 @@ Onde o diagnóstico e a estratégia viram conteúdo real. O motor de criação u
 ---
 
 ### Camada 4 + C5 — Arauto (Plugin 04)
-**Skills:** mapa-de-campanha, esteira-notion, protocolo-massivo
+**Skills:** mapa-de-campanha, esteira-notion, forja-de-caixa
 **Diretório:** `01-PLUGINS/04-arauto/`
 
 Com o conteúdo criado, esta camada organiza *como ele sai ao mundo* e *onde a operação acontece*.
 
 - **Mapa de Campanha** — diagnóstico de modalidade, cronograma dia-a-dia, copy por fase. 3 modalidades: Meteórico (3-7d), Desafio (7-21d), Interno (4-8 semanas).
 - **Esteira Notion** — protocolo de integração direta com MINHA ESTEIRA no Notion. Popula tarefas em tempo real.
-- **Protocolo Massivo** — Modo Luxo (7-12 dias, ticket R$3.000+, posicionamento premium) e Modo Urgência (48-72h, ticket até R$997, cash imediato).
+- **Forja de Caixa** — Modo Luxo (7-12 dias, ticket R$3.000+, posicionamento premium) e Modo Urgência (48-72h, ticket até R$997, cash imediato).
 
 ---
 
@@ -131,7 +136,7 @@ Camada transversal de design, UX e produção visual que opera sobre os outputs 
 01 — Cartógrafo     C1           Mercado + persona + universo de marca
 02 — Alquimista     C2 + C6      Copy + oferta + escala + frameworks
 03 — Bardo          C3           Vídeo + carrossel + headlines + scripts
-04 — Arauto         C4 + C5      Campanha + Notion + protocolo massivo
+04 — Arauto         C4 + C5      Campanha + Notion + forja de caixa
 05 — Iluminista     Transversal  Design, UX, imagens, Figma, Notion (5 skills)
 ```
 
@@ -287,7 +292,7 @@ CHAVE-MESTRA/
 │   │   └── skills/
 │   │       ├── mapa-de-campanha/SKILL.md + modalidades.md + copy-campanha.md
 │   │       ├── esteira-notion/SKILL.md + notion-integracao.md
-│   │       └── protocolo-massivo/SKILL.md
+│   │       └── forja-de-caixa/SKILL.md
 │   └── 05-iluminista/
 │       ├── .claude-plugin/plugin.json
 │       ├── README.md

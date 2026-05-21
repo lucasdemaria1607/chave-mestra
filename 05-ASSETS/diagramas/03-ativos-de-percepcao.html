@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Os 4 Ativos de Percepção</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; background: #0a0a08; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; }
+  .canvas { width: 1080px; height: 1080px; padding: 64px 72px; display: flex; flex-direction: column; }
+
+  .header { margin-bottom: 12px; }
+  .title { font-family: 'Playfair Display', serif; font-size: 38px; color: #f5f0e8; margin-bottom: 6px; }
+  .subtitle { font-size: 11px; color: #726a58; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; margin-bottom: 4px; }
+  .tagline { font-size: 14px; color: #b8b098; font-weight: 300; line-height: 1.6; margin-top: 10px; }
+
+  /* eixos */
+  .axes-label {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0 8px; margin-bottom: 8px; margin-top: 24px;
+  }
+  .axis-text { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #38362e; font-weight: 600; }
+
+  /* grid 2×2 */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; flex: 1; }
+
+  .card {
+    background: #0e0e0c;
+    border: 1px solid #1c1c18;
+    border-radius: 6px;
+    padding: 32px 28px;
+    display: flex; flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: transparent;
+  }
+  .card.gold::before { background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent); }
+  .card.silver::before { background: linear-gradient(90deg, transparent, rgba(184,176,152,0.3), transparent); }
+
+  .card-number { font-size: 11px; font-weight: 900; color: #38362e; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .card-name { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #f5f0e8; margin-bottom: 10px; }
+  .card-question { font-size: 13px; color: #d4af37; font-style: italic; font-family: 'Playfair Display', serif; margin-bottom: 14px; }
+  .card-desc { font-size: 12px; color: #726a58; line-height: 1.7; font-weight: 300; flex: 1; }
+  .card-formula { margin-top: 16px; padding-top: 14px; border-top: 1px solid #141412; }
+  .card-formula-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #38362e; margin-bottom: 6px; }
+  .card-formula-text { font-size: 11px; color: #b8b098; line-height: 1.6; }
+
+  .hierarchy-note {
+    margin-top: 16px;
+    padding: 14px 20px;
+    background: #0e0e0c;
+    border: 1px solid rgba(212,175,55,0.15);
+    border-radius: 4px;
+    font-size: 12px; color: #726a58; line-height: 1.6; text-align: center;
+  }
+  .hierarchy-note strong { color: #b8b098; font-weight: 600; }
+
+  .footer { margin-top: 16px; display: flex; align-items: center; gap: 10px; }
+  .footer-line { width: 28px; height: 1px; background: rgba(212,175,55,0.3); }
+  .footer-text { font-size: 10px; color: #38362e; letter-spacing: 2.5px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="header">
+    <div class="title">Os 4 Ativos de Percepção</div>
+    <div class="subtitle">Chave Mestra — Engenharia de Credibilidade</div>
+    <div class="tagline">Pessoas não escolhem o melhor. Escolhem o que parece mais claro, mais seguro e mais validado.</div>
+  </div>
+
+  <div class="grid">
+    <div class="card gold">
+      <div class="card-number">01</div>
+      <div class="card-name">Autoridade</div>
+      <div class="card-question">"Ele sabe o que está fazendo?"</div>
+      <div class="card-desc">Capacidade demonstrada de forma comprimida e previsível. O expert que explica com clareza o que outros tornam confuso.</div>
+      <div class="card-formula">
+        <div class="card-formula-label">Equação</div>
+        <div class="card-formula-text">Compressão + Clareza + Previsibilidade lógica</div>
+      </div>
+    </div>
+
+    <div class="card silver">
+      <div class="card-number">02</div>
+      <div class="card-name">Confiança</div>
+      <div class="card-question">"É seguro — posso confiar?"</div>
+      <div class="card-desc">Consistência ao longo do tempo. Histórico de entrega. Custo visível assumido publicamente.</div>
+      <div class="card-formula">
+        <div class="card-formula-label">Equação</div>
+        <div class="card-formula-text">Custo + Consistência + Histórico documentado</div>
+      </div>
+    </div>
+
+    <div class="card silver">
+      <div class="card-number">03</div>
+      <div class="card-name">Status</div>
+      <div class="card-question">"Outros validam? O risco é menor?"</div>
+      <div class="card-desc">Validação percebida pelo contexto social. Com quem você está, quem te referencia, onde você aparece.</div>
+      <div class="card-formula">
+        <div class="card-formula-label">Equação</div>
+        <div class="card-formula-text">Validação percebida + Contexto + Escassez</div>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-number">04</div>
+      <div class="card-name">Afinidade</div>
+      <div class="card-question">"Ele é como eu — é seguro me aproximar?"</div>
+      <div class="card-desc">O pré-requisito de todos. Sem Afinidade, os outros ativos encontram resistência máxima. Cria fãs antes de criar compradores.</div>
+      <div class="card-formula">
+        <div class="card-formula-label">Equação</div>
+        <div class="card-formula-text">Similaridade + Reconhecimento + Identificação</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hierarchy-note">
+    <strong>Hierarquia:</strong> sem Afinidade → resistência máxima &nbsp;·&nbsp; sem Autoridade → fãs sem compradores &nbsp;·&nbsp; sem Confiança → admiração sem ação
+  </div>
+
+  <div class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-text">Chave Mestra — Cartógrafo</div>
+    <div class="footer-line"></div>
+  </div>
+</div>
+</body>
+</html>

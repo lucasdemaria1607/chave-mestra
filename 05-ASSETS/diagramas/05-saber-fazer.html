@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>SABER ↔ FAZER</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; background: #0a0a08; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; }
+  .canvas { width: 1080px; height: 1080px; padding: 64px 72px; display: flex; flex-direction: column; }
+
+  .header { text-align: center; margin-bottom: 48px; }
+  .title { font-family: 'Playfair Display', serif; font-size: 40px; color: #f5f0e8; margin-bottom: 8px; }
+  .title span { color: #d4af37; }
+  .subtitle { font-size: 11px; color: #726a58; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; margin-bottom: 10px; }
+  .tagline { font-size: 14px; color: #b8b098; font-weight: 300; font-style: italic; font-family: 'Playfair Display', serif; }
+
+  .pillars { display: grid; grid-template-columns: 1fr 80px 1fr; gap: 0; flex: 1; align-items: stretch; }
+
+  .pillar {
+    background: #0e0e0c;
+    border: 1px solid #1c1c18;
+    border-radius: 8px;
+    padding: 28px 24px;
+    display: flex; flex-direction: column;
+  }
+  .pillar.left { border-right: none; border-radius: 8px 0 0 8px; }
+  .pillar.right { border-left: none; border-radius: 0 8px 8px 0; }
+  .pillar.left { border-color: rgba(212,175,55,0.2); }
+  .pillar.right { border-color: rgba(184,176,152,0.15); }
+
+  .pillar-label {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 300;
+    margin-bottom: 6px;
+  }
+  .pillar.left .pillar-label { color: #d4af37; }
+  .pillar.right .pillar-label { color: #b8b098; }
+
+  .pillar-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: #f5f0e8; margin-bottom: 6px; }
+  .pillar-desc { font-size: 12px; color: #726a58; font-weight: 300; line-height: 1.6; margin-bottom: 24px; }
+
+  .items { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .item { display: flex; align-items: flex-start; gap: 12px; }
+  .item-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .pillar.left .item-dot { background: rgba(212,175,55,0.5); }
+  .pillar.right .item-dot { background: rgba(184,176,152,0.3); }
+  .item-text { font-size: 13px; color: #b8b098; font-weight: 400; line-height: 1.5; }
+  .item-sub { font-size: 10.5px; color: #38362e; font-weight: 300; display: block; margin-top: 1px; }
+
+  /* conector central */
+  .connector {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0;
+  }
+  .conn-line { flex: 1; width: 1px; background: #1c1c18; }
+  .conn-arrows {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    padding: 12px 0;
+  }
+  .arr { font-size: 16px; color: rgba(212,175,55,0.5); }
+  .conn-label { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #38362e; transform: rotate(90deg); white-space: nowrap; margin: 8px 0; }
+
+  .footer { margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+  .footer-line { width: 40px; height: 1px; background: rgba(212,175,55,0.25); }
+  .footer-text { font-size: 10px; color: #38362e; letter-spacing: 2.5px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="header">
+    <div class="title">SABER <span>↔</span> FAZER</div>
+    <div class="subtitle">Os dois pilares do sistema</div>
+    <div class="tagline">"Conhecimento sem ação é arquivo morto. Ação sem estudo é ruído."</div>
+  </div>
+
+  <div class="pillars">
+
+    <div class="pillar left">
+      <div class="pillar-label">Pilar 1</div>
+      <div class="pillar-title">Saber</div>
+      <div class="pillar-desc">Sistema de Conhecimento — onde a mente do expert se forja</div>
+      <div class="items">
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Zettelkasten<span class="item-sub">Como o conhecimento é registrado e conectado</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">PARA Method<span class="item-sub">Como o conhecimento é organizado e acessado</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Modelos Mentais<span class="item-sub">Como o conhecimento é destilado em decisão</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Progymnasmata<span class="item-sub">Como o conhecimento é exercitado e incorporado</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Tesouro dos Erros<span class="item-sub">Cada falha documentada como ativo intelectual</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Ritual da Chave<span class="item-sub">3 ciclos: Giro diário · Forja semanal · Lua Cheia</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="connector">
+      <div class="conn-line"></div>
+      <div class="conn-arrows">
+        <div class="arr">↑</div>
+        <div class="arr">↓</div>
+      </div>
+      <div class="conn-line"></div>
+    </div>
+
+    <div class="pillar right">
+      <div class="pillar-label">Pilar 2</div>
+      <div class="pillar-title">Fazer</div>
+      <div class="pillar-desc">Sistema de Produção — onde o pensamento vira ação no mundo</div>
+      <div class="items">
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Diagnóstico<span class="item-sub">Mercado, persona e universo de marca</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Estratégia<span class="item-sub">Copy calibrada, oferta estruturada, posicionamento</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Criação<span class="item-sub">Carrosséis, roteiros, headlines, scripts</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Lançamento<span class="item-sub">Campanha, cronograma, protocolo de fechamento</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Escala<span class="item-sub">Métricas, alavancas, esteira de valor</span></div>
+        </div>
+        <div class="item">
+          <div class="item-dot"></div>
+          <div class="item-text">Evolução<span class="item-sub">Erros documentados, sistema que aprende</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-text">Chave Mestra — 100% Cérebro + 100% IA</div>
+    <div class="footer-line"></div>
+  </div>
+</div>
+</body>
+</html>

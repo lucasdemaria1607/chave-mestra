@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>A Esteira — Escada de Valor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; background: #0a0a08; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; }
+  .canvas { width: 1080px; height: 1080px; padding: 56px 80px; display: flex; flex-direction: column; }
+
+  .header { margin-bottom: 40px; }
+  .title { font-family: 'Playfair Display', serif; font-size: 38px; color: #f5f0e8; margin-bottom: 6px; }
+  .subtitle { font-size: 11px; color: #726a58; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
+
+  .ladder { display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: center; }
+
+  .step {
+    display: flex; align-items: center; gap: 0;
+    margin-bottom: 6px;
+  }
+
+  /* A escada cresce da esquerda: cada degrau tem margin-left crescente */
+  .step-content {
+    display: flex; align-items: center;
+    background: #0e0e0c;
+    border: 1px solid #1c1c18;
+    border-radius: 5px;
+    padding: 14px 20px;
+    flex: 1;
+    gap: 16px;
+    position: relative;
+  }
+  .step-content.highlight { border-color: rgba(212,175,55,0.35); }
+  .step-content.service { border-color: rgba(212,175,55,0.6); background: #141412; }
+
+  /* margem crescente simula escada */
+  .step:nth-child(1) .step-indent { width: 0px; }
+  .step:nth-child(2) .step-indent { width: 40px; }
+  .step:nth-child(3) .step-indent { width: 80px; }
+  .step:nth-child(4) .step-indent { width: 120px; }
+  .step:nth-child(5) .step-indent { width: 160px; }
+  .step:nth-child(6) .step-indent { width: 200px; }
+  .step:nth-child(7) .step-indent { width: 240px; }
+  .step-indent { flex-shrink: 0; position: relative; }
+  .step-indent::after {
+    content: '';
+    position: absolute; right: -1px; top: 50%;
+    transform: translateY(-50%);
+    width: 8px; height: 8px;
+    border-right: 1px solid #1c1c18;
+    border-bottom: 1px solid #1c1c18;
+  }
+  .step:nth-child(1) .step-indent::after { display: none; }
+
+  .step-num { font-size: 11px; font-weight: 900; color: #38362e; min-width: 24px; letter-spacing: 1px; }
+  .step-num.gold { color: #d4af37; }
+
+  .step-info { flex: 1; }
+  .step-name { font-size: 14px; font-weight: 600; color: #f5f0e8; margin-bottom: 2px; }
+  .step-desc { font-size: 11px; color: #726a58; font-weight: 300; }
+
+  .step-price {
+    font-size: 12px; font-weight: 600; color: #b8b098;
+    text-align: right; min-width: 110px;
+    line-height: 1.4;
+  }
+  .step-price .price-main { color: #d4af37; font-size: 13px; }
+  .step-price .price-type { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: #38362e; display: block; margin-top: 2px; }
+
+  .divider { height: 1px; background: #141412; margin: 12px 0; }
+  .divider-label { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: #38362e; text-align: center; margin-bottom: 8px; }
+
+  .footer { margin-top: 24px; display: flex; align-items: center; gap: 10px; }
+  .footer-line { width: 28px; height: 1px; background: rgba(212,175,55,0.3); }
+  .footer-text { font-size: 10px; color: #38362e; letter-spacing: 2.5px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="header">
+    <div class="title">A Esteira de Valor</div>
+    <div class="subtitle">Dois trilhos · Digital + Serviço · Sem canibalização</div>
+  </div>
+
+  <div class="divider-label">Trilho Digital — escala, compra única</div>
+
+  <div class="ladder">
+
+    <div class="step">
+      <div class="step-indent"></div>
+      <div class="step-content">
+        <div class="step-num">↓</div>
+        <div class="step-info">
+          <div class="step-name">Isca Gratuita</div>
+          <div class="step-desc">Mini-template Notion + aula — "como organizo minha produção de conteúdo"</div>
+        </div>
+        <div class="step-price"><span class="price-main">R$ 0</span><span class="price-type">entrada</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-indent"></div>
+      <div class="step-content highlight">
+        <div class="step-num gold">①</div>
+        <div class="step-info">
+          <div class="step-name">Sistema Operacional</div>
+          <div class="step-desc">Notion completo + onboarding gravado — funciona sem IA, é a base</div>
+        </div>
+        <div class="step-price"><span class="price-main">R$297–497</span><span class="price-type">one-time</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-indent"></div>
+      <div class="step-content">
+        <div class="step-num">②A</div>
+        <div class="step-info">
+          <div class="step-name">Agente Único</div>
+          <div class="step-desc">1 agente solo — Apolo, Atena ou Hermes</div>
+        </div>
+        <div class="step-price"><span class="price-main">R$197–297</span><span class="price-type">one-time</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-indent"></div>
+      <div class="step-content highlight">
+        <div class="step-num gold">②B</div>
+        <div class="step-info">
+          <div class="step-name">Uma Ordem</div>
+          <div class="step-desc">2–4 agentes por objetivo — Mapa, Pena, Visual, Estratégia, Cruzada, Forja</div>
+        </div>
+        <div class="step-price"><span class="price-main">R$297–697</span><span class="price-type">one-time</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-indent"></div>
+      <div class="step-content highlight">
+        <div class="step-num gold">②C</div>
+        <div class="step-info">
+          <div class="step-name">O Olimpo Completo</div>
+          <div class="step-desc">Os 6 agentes + Zeus coordenador + Notion + Figma + onboarding completo</div>
+        </div>
+        <div class="step-price"><span class="price-main">R$997–1.497</span><span class="price-type">one-time</span></div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-indent"></div>
+      <div class="step-content">
+        <div class="step-num">③</div>
+        <div class="step-info">
+          <div class="step-name">Comunidade</div>
+          <div class="step-desc">Grupo + chamadas mensais + Olimpo Completo incluso — o único recorrente</div>
+        </div>
+        <div class="step-price"><span class="price-main">R$197–297</span><span class="price-type">/ mês</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider" style="margin:12px 0 8px;"></div>
+  <div class="divider-label">Trilho Serviço — profundidade, alto ticket</div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;">
+    <div style="background:#141412;border:1px solid rgba(212,175,55,0.25);border-radius:5px;padding:12px 14px;">
+      <div style="font-size:10px;font-weight:900;color:#d4af37;letter-spacing:1px;margin-bottom:4px;">④ Implementação</div>
+      <div style="font-size:11px;color:#726a58;margin-bottom:6px;font-weight:300;">Você configura o sistema para o cliente</div>
+      <div style="font-size:12px;color:#b8b098;font-weight:600;">R$2.500–5.000</div>
+    </div>
+    <div style="background:#141412;border:1px solid rgba(212,175,55,0.25);border-radius:5px;padding:12px 14px;">
+      <div style="font-size:10px;font-weight:900;color:#d4af37;letter-spacing:1px;margin-bottom:4px;">⑤ Mentoria</div>
+      <div style="font-size:11px;color:#726a58;margin-bottom:6px;font-weight:300;">Sistema + sessões ao vivo + acompanhamento</div>
+      <div style="font-size:12px;color:#b8b098;font-weight:600;">R$1.500–3.000 / mês</div>
+    </div>
+    <div style="background:#141412;border:1px solid rgba(212,175,55,0.6);border-radius:5px;padding:12px 14px;">
+      <div style="font-size:10px;font-weight:900;color:#d4af37;letter-spacing:1px;margin-bottom:4px;">⑥ White Label</div>
+      <div style="font-size:11px;color:#726a58;margin-bottom:6px;font-weight:300;">Licença para revenda ou uso com clientes</div>
+      <div style="font-size:12px;color:#b8b098;font-weight:600;">R$5.000–15.000</div>
+    </div>
+  </div>
+
+  <div class="footer" style="margin-top:16px;">
+    <div class="footer-line"></div>
+    <div class="footer-text">Chave Mestra — Arquitetura Comercial</div>
+    <div class="footer-line"></div>
+  </div>
+</div>
+</body>
+</html>

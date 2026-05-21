@@ -266,7 +266,14 @@ A tese da Chave Mestra, executada integralmente, converge para um modelo especí
 
 Não é sobre tamanho de empresa. Não é sobre trabalhar sozinho. É sobre posição: o expert que o mercado reconhece como a referência — o nome que aparece quando alguém precisa de alguém de verdade. O profissional que outros profissionais recomendam. A figura que o mercado vai buscar, não a que precisa correr atrás.
 
-O mundo corporativo chama isso de "risco da pessoa-chave" — dependência de um indivíduo como vulnerabilidade. O Key Person Business inverte a lógica: a dependência é a estratégia. É o diferencial. É o moat.
+O Key Person Business nasce da fusão de dois conceitos:
+
+```
+One Person Business        →  a estrutura (enxuta, intencional, sem gordura)
+Key Person of Influence    →  a posição (a referência que o mercado procura)
+```
+
+Não é sobre tamanho nem sobre isolamento. É sobre ser, ao mesmo tempo, o arquiteto do próprio negócio e a figura que o mercado identifica como a referência dentro de uma especialidade.
 
 Duas forças constroem essa posição:
 

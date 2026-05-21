@@ -47,7 +47,7 @@ CAMADA 3 — BARDO (Plugin 03)
 CAMADA 4 + C5 — ARAUTO (Plugin 04)
   ├── mapa-de-campanha (modalidades + cronogramas)
   ├── esteira-notion (integração operacional)
-  └── protocolo-massivo (Luxo + Urgência)
+  └── forja-de-caixa (Luxo + Urgência)
 
 TRANSVERSAL — VISUAL (Plugin 05)
   └── iluminista (sistema visual)

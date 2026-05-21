@@ -213,7 +213,7 @@ Enquanto trabalhadores operacionais tentam crescer de forma incremental (+1), as
 
 Alguém no mundo acordou hoje e já possui o dinheiro, o público ou a credibilidade que você passaria décadas para construir. A parceria certa resolve anos de gargalos logísticos e de marketing em um único contrato.
 
-**Integração CM:** Parcerias são mapeadas pelo **Cartógrafo** (Portal do Terreno — análise de players e oportunidades) e executadas pelo **Arauto** (Protocolo Massivo — negociação 1x1 high-ticket).
+**Integração CM:** Parcerias são mapeadas pelo **Cartógrafo** (Portal do Terreno — análise de players e oportunidades) e executadas pelo **Arauto** (Forja de Caixa — negociação 1x1 high-ticket).
 
 ---
 
@@ -264,7 +264,7 @@ O topo absoluto dos 5% da sua indústria está esperando. Pare de saltar lateral
 | P2: Publicação | Bardo + Arauto | chavideo, chavossel, headline-generator, mapa-de-campanha | Produzir e distribuir conteúdo |
 | P3: Produtos | Alquimista | forja-de-oferta, portal-da-escala | Estruturar ofertas e escalar |
 | P4: Perfil | Iluminista + Cartógrafo | sistema-de-design, forja-do-universo, forja-de-imagem | Construir identidade e presença |
-| P5: Parcerias | Cartógrafo + Arauto | portal-do-terreno, protocolo-massivo | Mapear players e negociar |
+| P5: Parcerias | Cartógrafo + Arauto | portal-do-terreno, forja-de-caixa | Mapear players e negociar |
 
 **Diagnóstico de P's:** Ao iniciar qualquer coprodução, o Cartógrafo (Portal do Terreno) deve avaliar em qual dos 5 P's o especialista está mais forte e mais fraco — isso determina a prioridade de atuação dos plugins.
 
