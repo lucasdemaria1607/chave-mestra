@@ -1,7 +1,7 @@
 ---
 name: esteira-notion
 description: Usar quando o usuário pedir "popula o Notion", "MINHA ESTEIRA", "cria as tarefas no Notion", "joga a campanha no Notion", "atualiza o Notion", ou qualquer operação de escrita e população de campanhas no banco de dados Notion.
-version: 1.0
+version: 1.1
 layer: Camada 4 — Lançamento (operacional)
 role: Protocolo de escrita e população do banco de dados MINHA ESTEIRA no Notion com campanhas completas
 inputs: produto (nome), modalidade de lançamento, cronograma gerado pelo Mapa de Campanha, data de início
@@ -38,36 +38,56 @@ MINHA ESTEIRA (database principal — campo "Arquivado" checkbox para campanhas 
 ├── Vista "Arquivo" (table — filtra Arquivado = true)
 └── [Produto X] (página do produto)
     ├── Checklist de Criação (toggle)
-    ├── Lançamento (toggle)
+    ├── Lançamentos (toggle)
     │   ├── Lançamento Meteórico (toggle)
     │   │   └── [cronograma: linhas = dias da campanha + copy completo]
+    │   ├── Lançamento Desafio (toggle)
+    │   │   ├── Desafio 7d  → [cronograma]
+    │   │   ├── Desafio 14d → [cronograma]
+    │   │   └── Desafio 21d → [cronograma]
     │   ├── Lançamento Interno (toggle)
-    │   │   └── [cronograma: linhas = dias da campanha + copy completo]
-    │   ├── Lançamento Desafio 7d (toggle)
-    │   │   └── [cronograma: linhas = dias da campanha + copy completo]
-    │   ├── Lançamento Desafio 14d (toggle)
-    │   │   └── [cronograma: linhas = dias da campanha + copy completo]
-    │   └── Lançamento Desafio 21d (toggle)
-    │       └── [cronograma: linhas = dias da campanha + copy completo]
+    │   │   └── [cronograma]
+    │   ├── ⚡ Forja de Caixa — Relâmpago (toggle)
+    │   │   └── [cronograma: 4 momentos em 48h]
+    │   ├── 🌱 Forja de Caixa — Semente (toggle)
+    │   │   └── [cronograma: 7 dias + pitch]
+    │   ├── 🔥 Forja de Caixa — Urgência (toggle)
+    │   │   └── [cronograma: 3 fases em 72h]
+    │   ├── 💎 Forja de Caixa — Luxo (toggle)
+    │   │   └── [cronograma: 5 fases em 7–12d]
+    │   └── 🎯 Forja de Caixa — Tripwire (toggle)
+    │       └── [cronograma: 4 passos perpétuos]
     ├── Meus Criativos (toggle)
     └── Depoimentos (toggle)
 ```
 
-**Conteúdo de campanha vai DENTRO dos cronogramas de cada produto** — texto, imagem, data, tudo dentro da linha do dia correspondente. A database separada "Conteúdo" é exclusivamente para conteúdo orgânico e Forja de Caixa (campo `Origem`: Orgânico / Forja de Caixa).
+**Conteúdo de campanha vai DENTRO dos cronogramas de cada produto** — texto, imagem, data, tudo dentro da linha do dia correspondente. A database separada "Conteúdo" é exclusivamente para conteúdo orgânico (campo `Origem`: Orgânico). Peças de apoio da Forja de Caixa (stories de manifesto, scripts WPP) podem ir na database Conteúdo com `Origem: Forja de Caixa`, mas o **cronograma operacional da campanha** vai DENTRO do produto na MINHA ESTEIRA.
 
 ### Schema dos Cronogramas de Lançamento (todos os tipos)
 
-Todos os cronogramas (Meteórico, Interno, Desafio 7d/14d/21d) compartilham o mesmo schema base:
+Todos os cronogramas (Meteórico, Interno, Desafio 7d/14d/21d, e os 5 modos Forja de Caixa) compartilham o mesmo schema base:
 
 | Campo | Tipo | Valores |
 |---|---|---|
 | `Nome da Tarefa` | title | Texto livre — ex: "Dia 1 — Revelação" |
-| `Fase do Lançamento` | select | Pré-pré-lançamento / Pré-lançamento / Lançamento / Pós-lançamento |
+| `Fase do Lançamento` | select | Pré-pré-lançamento / Pré-lançamento / Lançamento / Pós-lançamento (lançamentos clássicos) ou fases específicas do modo Forja (ver tabela abaixo) |
 | `Data` | date | Data real do dia (ISO: YYYY-MM-DD) |
 | `Status` | select | A fazer / Em andamento / Concluída / Atrasada |
 | `Template de Copy` | text | Resumo curto: canal + gancho + CTA (1–3 linhas) |
 
 Cada linha é também uma **página** com corpo completo onde fica o copy detalhado + imagens + assets do dia.
+
+### Schema das Fases — Forja de Caixa (por modo)
+
+Os cronogramas Forja usam o mesmo campo `Fase do Lançamento` com valores específicos:
+
+| Modo | Fases disponíveis |
+|---|---|
+| ⚡ Relâmpago | Antecipação / Abertura / Prova Social / Fechamento |
+| 🌱 Semente | Captação / Aquecimento / Aula e Pitch / Fechamento |
+| 🔥 Urgência | Detonação / Pressão Narrativa / Fechamento de Portão |
+| 💎 Luxo | Manifestação / Seleção / Revelação / Conversão Silenciosa / Fechamento Natural |
+| 🎯 Tripwire | Setup / Isca / Tripwire / Order Bump / Nurture |
 
 ### Arquivamento de Campanhas
 
@@ -99,7 +119,7 @@ A página retornará as databases embutidas no formato:
 <database url="..." data-source-url="collection://[collection-id]">
 ```
 
-Identificar qual das três sub-databases é a modalidade correta (Meteórico / Interno / Desafio) pelo contexto da seção.
+Identificar qual das sub-databases é a modalidade correta (Meteórico / Desafio 7d/14d/21d / Interno / Forja Relâmpago / Forja Semente / Forja Urgência / Forja Luxo / Forja Tripwire) pelo contexto da seção.
 
 ### Etapa 3 — Mapear o data-source-id
 
@@ -151,11 +171,13 @@ Corpo de cada tarefa em Notion Markdown:
 
 ## Mapeamento de Fases para o Campo `Fase do Lançamento`
 
+### Lançamentos Clássicos
+
 | Modalidade | Fase | Dias típicos |
 |---|---|---|
-| Meteórico | Pré-lançamento | Dias antes da abertura de carrinho |
-| Meteórico | Lançamento | Dias de carrinho aberto |
-| Meteórico | Pós-lançamento | Fechamento + lista de espera |
+| Meteórico | Pré-lançamento | D-2 e D-1 — Convite ao Caldeirão |
+| Meteórico | Lançamento | Dias 1–3 Aquecimento + Dia D Abertura/Fechamento |
+| Meteórico | Pós-lançamento | Lista de espera + próximo ciclo |
 | Desafio | Pré-pré-lançamento | Construção de curiosidade |
 | Desafio | Pré-lançamento | Dias do desafio antes do carrinho |
 | Desafio | Lançamento | Dias de carrinho aberto |
@@ -163,6 +185,32 @@ Corpo de cada tarefa em Notion Markdown:
 | Interno | Pré-lançamento | Aquecimento de lista |
 | Interno | Lançamento | Carrinho aberto |
 | Interno | Pós-lançamento | Entrega + upsell |
+
+### Forja de Caixa
+
+| Modo | Fase | Momento típico |
+|---|---|---|
+| ⚡ Relâmpago | Antecipação | D-1 tarde |
+| ⚡ Relâmpago | Abertura | D0 manhã |
+| ⚡ Relâmpago | Prova Social | D0 tarde |
+| ⚡ Relâmpago | Fechamento | D0 noite |
+| 🌱 Semente | Captação | Dias 1–3 |
+| 🌱 Semente | Aquecimento | Dias 4–5 |
+| 🌱 Semente | Aula e Pitch | Dia 6 |
+| 🌱 Semente | Fechamento | Dia 7 |
+| 🔥 Urgência | Detonação | H0–6 |
+| 🔥 Urgência | Pressão Narrativa | H6–48 |
+| 🔥 Urgência | Fechamento de Portão | H48–72 |
+| 💎 Luxo | Manifestação | D-7 a D-3 |
+| 💎 Luxo | Seleção | D-3 a D-1 |
+| 💎 Luxo | Revelação | D0 |
+| 💎 Luxo | Conversão Silenciosa | D1–3 |
+| 💎 Luxo | Fechamento Natural | D4–5 |
+| 🎯 Tripwire | Setup | Configuração inicial |
+| 🎯 Tripwire | Isca | Entrega gratuita |
+| 🎯 Tripwire | Tripwire | Oferta de impulso |
+| 🎯 Tripwire | Order Bump | Checkout |
+| 🎯 Tripwire | Nurture | Email nurture → oferta principal |
 
 ---
 
@@ -210,9 +258,10 @@ Corpo de cada tarefa em Notion Markdown:
 
 | Tipo de conteúdo | Destino | Campo |
 |---|---|---|
-| Conteúdo de lançamento (Meteórico, Desafio, Interno) | Cronograma dentro do produto na MINHA ESTEIRA | N/A — é o próprio cronograma |
+| Cronograma de lançamento (Meteórico, Desafio, Interno) | Cronograma dentro do produto na MINHA ESTEIRA | N/A — é o próprio cronograma |
+| Cronograma Forja de Caixa (Relâmpago, Semente, Urgência, Luxo, Tripwire) | Cronograma Forja correspondente dentro do produto na MINHA ESTEIRA | N/A — é o próprio cronograma |
 | Conteúdo orgânico (posts, reels, carrosséis regulares) | Database Conteúdo | Origem: Orgânico |
-| Peças de apoio Forja de Caixa (manifestos, stories) | Database Conteúdo | Origem: Forja de Caixa |
+| Scripts WPP/DM de apoio da Forja (não o cronograma) | Database Conteúdo | Origem: Forja de Caixa, Tipo: Copy WPP |
 
 ---
 
