@@ -2,133 +2,209 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1080">
-<title>Os 4 Ativos de Percepção</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+<title>Os 4 Ativos de Percepção — Chave Mestra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1080px; height: 1080px; overflow: hidden; background: #0a0a08; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; }
-  .canvas { width: 1080px; height: 1080px; padding: 64px 72px; display: flex; flex-direction: column; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1350px;
+  background: #EDE6DA;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1A1612; overflow: hidden; position: relative;
+}
+.brand-bar { display: flex; align-items: center; gap: 16px; padding: 40px 60px 0; }
+.brand-name { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #1A1612; white-space: nowrap; }
+.brand-line { flex: 1; height: 1px; background: rgba(26,22,18,0.22); }
+.header { padding: 26px 60px 0; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(184,122,60,0.1); border: 1px solid rgba(184,122,60,0.22);
+  border-radius: 100px; padding: 5px 14px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #B87A3C;
+  margin-bottom: 12px;
+}
+.section-dot { width: 5px; height: 5px; border-radius: 50%; background: #B87A3C; flex-shrink: 0; }
+.headline { font-size: 68px; font-weight: 900; line-height: 0.88; letter-spacing: -0.04em; color: #1A1612; margin-bottom: 10px; }
+.headline em { font-style: normal; color: #B87A3C; }
+.subline { font-size: 15px; line-height: 1.5; color: #6B5D4F; }
 
-  .header { margin-bottom: 12px; }
-  .title { font-family: 'Playfair Display', serif; font-size: 38px; color: #f5f0e8; margin-bottom: 6px; }
-  .subtitle { font-size: 11px; color: #726a58; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; margin-bottom: 4px; }
-  .tagline { font-size: 14px; color: #b8b098; font-weight: 300; line-height: 1.6; margin-top: 10px; }
+/* 2x2 grid */
+.ativos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: 28px 60px 0;
+}
 
-  /* eixos */
-  .axes-label {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 8px; margin-bottom: 8px; margin-top: 24px;
-  }
-  .axis-text { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #38362e; font-weight: 600; }
+.ativo-card {
+  background: #FAF6F1;
+  border-radius: 22px;
+  border: 1px solid rgba(26,22,18,0.07);
+  padding: 26px 24px 22px;
+  display: flex; flex-direction: column; gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.ativo-card::before {
+  content: '';
+  position: absolute; top: 0; left: 24px; right: 24px;
+  height: 3px;
+  background: #B87A3C;
+  border-radius: 0 0 3px 3px;
+}
 
-  /* grid 2×2 */
-  .grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; flex: 1; }
+.ativo-top { display: flex; align-items: center; justify-content: space-between; }
+.ativo-chip {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #B87A3C;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 900; color: #fff;
+}
+.ativo-badge {
+  font-size: 9px; font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(184,122,60,0.6);
+  background: rgba(184,122,60,0.08);
+  border-radius: 100px; padding: 3px 9px;
+}
 
-  .card {
-    background: #0e0e0c;
-    border: 1px solid #1c1c18;
-    border-radius: 6px;
-    padding: 32px 28px;
-    display: flex; flex-direction: column;
-    position: relative;
-    overflow: hidden;
-  }
-  .card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 2px;
-    background: transparent;
-  }
-  .card.gold::before { background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent); }
-  .card.silver::before { background: linear-gradient(90deg, transparent, rgba(184,176,152,0.3), transparent); }
+.ativo-name { font-size: 26px; font-weight: 900; letter-spacing: -0.03em; color: #1A1612; line-height: 1.1; }
+.ativo-question { font-size: 13px; font-style: italic; color: #A89880; line-height: 1.4; }
+.ativo-desc { font-size: 12px; color: #6B5D4F; line-height: 1.55; }
 
-  .card-number { font-size: 11px; font-weight: 900; color: #38362e; letter-spacing: 1.5px; margin-bottom: 12px; }
-  .card-name { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #f5f0e8; margin-bottom: 10px; }
-  .card-question { font-size: 13px; color: #d4af37; font-style: italic; font-family: 'Playfair Display', serif; margin-bottom: 14px; }
-  .card-desc { font-size: 12px; color: #726a58; line-height: 1.7; font-weight: 300; flex: 1; }
-  .card-formula { margin-top: 16px; padding-top: 14px; border-top: 1px solid #141412; }
-  .card-formula-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #38362e; margin-bottom: 6px; }
-  .card-formula-text { font-size: 11px; color: #b8b098; line-height: 1.6; }
+.ativo-signals {
+  display: flex; flex-direction: column; gap: 5px;
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(26,22,18,0.07);
+}
+.signal-row {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 11px; color: #6B5D4F; line-height: 1.4;
+}
+.signal-arrow { color: #B87A3C; font-size: 10px; flex-shrink: 0; padding-top: 2px; }
 
-  .hierarchy-note {
-    margin-top: 16px;
-    padding: 14px 20px;
-    background: #0e0e0c;
-    border: 1px solid rgba(212,175,55,0.15);
-    border-radius: 4px;
-    font-size: 12px; color: #726a58; line-height: 1.6; text-align: center;
-  }
-  .hierarchy-note strong { color: #b8b098; font-weight: 600; }
+/* Convergence arrow */
+.converge-row {
+  padding: 0 60px;
+  display: flex; align-items: center; gap: 0;
+  margin-top: 14px;
+}
+.converge-arrow {
+  flex: 1; display: flex; align-items: center; gap: 8px;
+}
+.converge-line { flex: 1; height: 1px; background: rgba(184,122,60,0.3); }
+.converge-tip { font-size: 16px; color: #B87A3C; }
+.converge-pill {
+  background: #1A1612; border-radius: 100px;
+  padding: 14px 28px;
+  font-size: 13px; font-weight: 900; letter-spacing: -0.01em; color: #EDE6DA;
+  white-space: nowrap;
+  display: flex; align-items: center; gap: 10px;
+}
+.converge-label { font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(237,230,218,0.4); }
 
-  .footer { margin-top: 16px; display: flex; align-items: center; gap: 10px; }
-  .footer-line { width: 28px; height: 1px; background: rgba(212,175,55,0.3); }
-  .footer-text { font-size: 10px; color: #38362e; letter-spacing: 2.5px; text-transform: uppercase; }
+.bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; background: #1A1612; padding: 24px 60px; }
+.bottom-reveal { font-size: 15px; line-height: 1.55; color: #EDE6DA; max-width: 860px; }
+.bottom-tag { margin-top: 5px; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,230,218,0.3); }
 </style>
 </head>
 <body>
-<div class="canvas">
-  <div class="header">
-    <div class="title">Os 4 Ativos de Percepção</div>
-    <div class="subtitle">Chave Mestra — Engenharia de Credibilidade</div>
-    <div class="tagline">Pessoas não escolhem o melhor. Escolhem o que parece mais claro, mais seguro e mais validado.</div>
-  </div>
+<div class="brand-bar">
+  <svg width="28" height="28" viewBox="0 0 30 30" fill="none"><circle cx="11" cy="11" r="6.25" stroke="#B87A3C" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="26" y2="26" stroke="#B87A3C" stroke-width="2.4" stroke-linecap="round"/><line x1="23.5" y1="23.5" x2="21.5" y2="27" stroke="#B87A3C" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="20" x2="18" y2="23.5" stroke="#B87A3C" stroke-width="2" stroke-linecap="round"/></svg>
+  <span class="brand-name">Chave Mestra</span>
+  <div class="brand-line"></div>
+</div>
+<div class="header">
+  <div class="section-tag"><span class="section-dot"></span>Posicionamento &amp; Autoridade</div>
+  <h1 class="headline">Os <em>4 Ativos</em><br>de Percepção</h1>
+  <p class="subline">Autoridade não se declara — se engenheira. Quatro camadas que constroem como o mercado te vê.</p>
+</div>
 
-  <div class="grid">
-    <div class="card gold">
-      <div class="card-number">01</div>
-      <div class="card-name">Autoridade</div>
-      <div class="card-question">"Ele sabe o que está fazendo?"</div>
-      <div class="card-desc">Capacidade demonstrada de forma comprimida e previsível. O expert que explica com clareza o que outros tornam confuso.</div>
-      <div class="card-formula">
-        <div class="card-formula-label">Equação</div>
-        <div class="card-formula-text">Compressão + Clareza + Previsibilidade lógica</div>
-      </div>
+<div class="ativos-grid">
+
+  <div class="ativo-card">
+    <div class="ativo-top">
+      <div class="ativo-chip">01</div>
+      <div class="ativo-badge">Competência</div>
     </div>
-
-    <div class="card silver">
-      <div class="card-number">02</div>
-      <div class="card-name">Confiança</div>
-      <div class="card-question">"É seguro — posso confiar?"</div>
-      <div class="card-desc">Consistência ao longo do tempo. Histórico de entrega. Custo visível assumido publicamente.</div>
-      <div class="card-formula">
-        <div class="card-formula-label">Equação</div>
-        <div class="card-formula-text">Custo + Consistência + Histórico documentado</div>
-      </div>
-    </div>
-
-    <div class="card silver">
-      <div class="card-number">03</div>
-      <div class="card-name">Status</div>
-      <div class="card-question">"Outros validam? O risco é menor?"</div>
-      <div class="card-desc">Validação percebida pelo contexto social. Com quem você está, quem te referencia, onde você aparece.</div>
-      <div class="card-formula">
-        <div class="card-formula-label">Equação</div>
-        <div class="card-formula-text">Validação percebida + Contexto + Escassez</div>
-      </div>
-    </div>
-
-    <div class="card gold">
-      <div class="card-number">04</div>
-      <div class="card-name">Afinidade</div>
-      <div class="card-question">"Ele é como eu — é seguro me aproximar?"</div>
-      <div class="card-desc">O pré-requisito de todos. Sem Afinidade, os outros ativos encontram resistência máxima. Cria fãs antes de criar compradores.</div>
-      <div class="card-formula">
-        <div class="card-formula-label">Equação</div>
-        <div class="card-formula-text">Similaridade + Reconhecimento + Identificação</div>
-      </div>
+    <div class="ativo-name">Especialidade</div>
+    <div class="ativo-question">"Você realmente sabe do que fala?"</div>
+    <div class="ativo-desc">O domínio técnico e teórico que você demonstra publicamente. Não basta ter — precisa ser visível.</div>
+    <div class="ativo-signals">
+      <div class="signal-row"><span class="signal-arrow">→</span> Conteúdo educativo de profundidade</div>
+      <div class="signal-row"><span class="signal-arrow">→</span> Zettelkasten e modelos mentais publicados</div>
+      <div class="signal-row"><span class="signal-arrow">→</span> Referências e frameworks proprietários</div>
     </div>
   </div>
 
-  <div class="hierarchy-note">
-    <strong>Hierarquia:</strong> sem Afinidade → resistência máxima &nbsp;·&nbsp; sem Autoridade → fãs sem compradores &nbsp;·&nbsp; sem Confiança → admiração sem ação
+  <div class="ativo-card">
+    <div class="ativo-top">
+      <div class="ativo-chip">02</div>
+      <div class="ativo-badge">Prova</div>
+    </div>
+    <div class="ativo-name">Resultados</div>
+    <div class="ativo-question">"Você já fez isso funcionar?"</div>
+    <div class="ativo-desc">A evidência concreta de que o método funciona. Cases, números, depoimentos — sem âncora, a promessa não sustenta.</div>
+    <div class="ativo-signals">
+      <div class="signal-row"><span class="signal-arrow">→</span> Cases documentados com antes e depois</div>
+      <div class="signal-row"><span class="signal-arrow">→</span> Depoimentos em formato de história</div>
+      <div class="signal-row"><span class="signal-arrow">→</span> Dados públicos de performance</div>
+    </div>
   </div>
 
-  <div class="footer">
-    <div class="footer-line"></div>
-    <div class="footer-text">Chave Mestra — Cartógrafo</div>
-    <div class="footer-line"></div>
+  <div class="ativo-card">
+    <div class="ativo-top">
+      <div class="ativo-chip">03</div>
+      <div class="ativo-badge">Sistema</div>
+    </div>
+    <div class="ativo-name">Método</div>
+    <div class="ativo-question">"Você tem um caminho replicável?"</div>
+    <div class="ativo-desc">A arquitetura que transforma o que você faz em algo transferível. Método é o que separa expert de consultor genérico.</div>
+    <div class="ativo-signals">
+      <div class="signal-row"><span class="signal-arrow">→</span> Nome proprietário para o processo</div>
+      <div class="signal-row"><span class="signal-arrow">→</span> Diagrama visual do sistema</div>
+      <div class="signal-row"><span class="signal-arrow">→</span> Linguagem própria e consistente</div>
+    </div>
   </div>
+
+  <div class="ativo-card">
+    <div class="ativo-top">
+      <div class="ativo-chip">04</div>
+      <div class="ativo-badge">Confiança</div>
+    </div>
+    <div class="ativo-name">Caráter</div>
+    <div class="ativo-question">"Eu consigo confiar nessa pessoa?"</div>
+    <div class="ativo-desc">A percepção de integridade, consistência e alinhamento de valores. Sem isso, todo o resto é marketing sem raiz.</div>
+    <div class="ativo-signals">
+      <div class="signal-row"><span class="signal-arrow">→</span> Posicionamento claro e mantido no tempo</div>
+      <div class="signal-row"><span class="signal-arrow">→</span> Narrativa biográfica coerente</div>
+      <div class="signal-row"><span class="signal-arrow">→</span> Consistência entre discurso e entrega</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="converge-row">
+  <div class="converge-arrow">
+    <div class="converge-line"></div>
+    <div class="converge-tip">→</div>
+  </div>
+  <div class="converge-pill">
+    <div>
+      <div class="converge-label">Resultado</div>
+      <div>Autoridade Percebida</div>
+    </div>
+  </div>
+  <div class="converge-arrow" style="transform: scaleX(-1);">
+    <div class="converge-line"></div>
+    <div class="converge-tip">→</div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <div class="bottom-reveal">Os 4 ativos operam em conjunto — fragilidade em um compromete todos os outros. O diagnóstico de percepção revela qual está fraco.</div>
+  <div class="bottom-tag">Módulo Cartógrafo · Ativos de Percepção · Autoridade</div>
 </div>
 </body>
 </html>

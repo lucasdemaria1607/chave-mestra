@@ -2,192 +2,222 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1080">
-<title>A Esteira — Escada de Valor</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+<title>A Esteira como Escada — Chave Mestra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1080px; height: 1080px; overflow: hidden; background: #0a0a08; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; }
-  .canvas { width: 1080px; height: 1080px; padding: 56px 80px; display: flex; flex-direction: column; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1350px;
+  background: #EDE6DA;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1A1612; overflow: hidden; position: relative;
+}
+.brand-bar { display: flex; align-items: center; gap: 16px; padding: 40px 60px 0; }
+.brand-name { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #1A1612; white-space: nowrap; }
+.brand-line { flex: 1; height: 1px; background: rgba(26,22,18,0.22); }
+.header { padding: 26px 60px 0; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(184,122,60,0.1); border: 1px solid rgba(184,122,60,0.22);
+  border-radius: 100px; padding: 5px 14px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #B87A3C;
+  margin-bottom: 12px;
+}
+.section-dot { width: 5px; height: 5px; border-radius: 50%; background: #B87A3C; flex-shrink: 0; }
+.headline { font-size: 68px; font-weight: 900; line-height: 0.88; letter-spacing: -0.04em; color: #1A1612; margin-bottom: 10px; }
+.headline em { font-style: normal; color: #B87A3C; }
+.subline { font-size: 15px; line-height: 1.5; color: #6B5D4F; }
 
-  .header { margin-bottom: 40px; }
-  .title { font-family: 'Playfair Display', serif; font-size: 38px; color: #f5f0e8; margin-bottom: 6px; }
-  .subtitle { font-size: 11px; color: #726a58; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
+/* Staircase */
+.staircase { padding: 28px 60px 0; display: flex; flex-direction: column; gap: 0; }
 
-  .ladder { display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: center; }
+.step-row {
+  display: flex;
+  align-items: stretch;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(26,22,18,0.07);
+}
+.step-row.dark { border-color: rgba(237,230,218,0.06); }
 
-  .step {
-    display: flex; align-items: center; gap: 0;
-    margin-bottom: 6px;
-  }
+.step-num {
+  width: 72px; flex-shrink: 0;
+  background: rgba(26,22,18,0.04);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px;
+  padding: 20px 0;
+}
+.dark .step-num { background: rgba(237,230,218,0.05); }
+.step-num-chip {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(184,122,60,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 900; color: #B87A3C;
+}
+.dark .step-num-chip { background: rgba(237,230,218,0.1); color: rgba(237,230,218,0.5); }
 
-  /* A escada cresce da esquerda: cada degrau tem margin-left crescente */
-  .step-content {
-    display: flex; align-items: center;
-    background: #0e0e0c;
-    border: 1px solid #1c1c18;
-    border-radius: 5px;
-    padding: 14px 20px;
-    flex: 1;
-    gap: 16px;
-    position: relative;
-  }
-  .step-content.highlight { border-color: rgba(212,175,55,0.35); }
-  .step-content.service { border-color: rgba(212,175,55,0.6); background: #141412; }
+.step-main {
+  flex: 1;
+  background: #FAF6F1;
+  padding: 22px 26px;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  min-height: 168px;
+}
+.dark .step-main { background: #1A1612; }
 
-  /* margem crescente simula escada */
-  .step:nth-child(1) .step-indent { width: 0px; }
-  .step:nth-child(2) .step-indent { width: 40px; }
-  .step:nth-child(3) .step-indent { width: 80px; }
-  .step:nth-child(4) .step-indent { width: 120px; }
-  .step:nth-child(5) .step-indent { width: 160px; }
-  .step:nth-child(6) .step-indent { width: 200px; }
-  .step:nth-child(7) .step-indent { width: 240px; }
-  .step-indent { flex-shrink: 0; position: relative; }
-  .step-indent::after {
-    content: '';
-    position: absolute; right: -1px; top: 50%;
-    transform: translateY(-50%);
-    width: 8px; height: 8px;
-    border-right: 1px solid #1c1c18;
-    border-bottom: 1px solid #1c1c18;
-  }
-  .step:nth-child(1) .step-indent::after { display: none; }
+.step-info {}
+.step-tier { font-size: 9px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: #A89880; margin-bottom: 4px; }
+.dark .step-tier { color: rgba(237,230,218,0.3); }
+.step-name { font-size: 22px; font-weight: 900; letter-spacing: -0.025em; color: #1A1612; margin-bottom: 4px; line-height: 1.1; }
+.dark .step-name { color: #EDE6DA; }
+.step-desc { font-size: 12px; color: #6B5D4F; line-height: 1.45; max-width: 520px; }
+.dark .step-desc { color: rgba(237,230,218,0.45); }
+.step-transform {
+  display: flex; align-items: center; gap: 6px;
+  margin-top: 10px; padding-top: 10px;
+  border-top: 1px solid rgba(26,22,18,0.07);
+  font-size: 11px; color: #B87A3C; font-weight: 700;
+}
+.dark .step-transform { color: rgba(184,122,60,0.7); border-color: rgba(237,230,218,0.07); }
+.transform-label { font-size: 9px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: #A89880; margin-right: 4px; }
+.dark .transform-label { color: rgba(237,230,218,0.3); }
 
-  .step-num { font-size: 11px; font-weight: 900; color: #38362e; min-width: 24px; letter-spacing: 1px; }
-  .step-num.gold { color: #d4af37; }
+.step-price { text-align: right; flex-shrink: 0; }
+.price-label { font-size: 9px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #A89880; margin-bottom: 3px; }
+.dark .price-label { color: rgba(237,230,218,0.3); }
+.price-value { font-size: 22px; font-weight: 900; letter-spacing: -0.02em; color: #B87A3C; }
+.dark .price-value { color: rgba(237,230,218,0.7); }
 
-  .step-info { flex: 1; }
-  .step-name { font-size: 14px; font-weight: 600; color: #f5f0e8; margin-bottom: 2px; }
-  .step-desc { font-size: 11px; color: #726a58; font-weight: 300; }
+/* Arrow between steps */
+.step-arrow {
+  display: flex; align-items: center; justify-content: center;
+  height: 18px; color: rgba(26,22,18,0.2); font-size: 15px;
+  margin: 0 auto;
+}
 
-  .step-price {
-    font-size: 12px; font-weight: 600; color: #b8b098;
-    text-align: right; min-width: 110px;
-    line-height: 1.4;
-  }
-  .step-price .price-main { color: #d4af37; font-size: 13px; }
-  .step-price .price-type { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: #38362e; display: block; margin-top: 2px; }
-
-  .divider { height: 1px; background: #141412; margin: 12px 0; }
-  .divider-label { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: #38362e; text-align: center; margin-bottom: 8px; }
-
-  .footer { margin-top: 24px; display: flex; align-items: center; gap: 10px; }
-  .footer-line { width: 28px; height: 1px; background: rgba(212,175,55,0.3); }
-  .footer-text { font-size: 10px; color: #38362e; letter-spacing: 2.5px; text-transform: uppercase; }
+.bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; background: #1A1612; padding: 24px 60px; }
+.bottom-reveal { font-size: 15px; line-height: 1.55; color: #EDE6DA; max-width: 860px; }
+.bottom-tag { margin-top: 5px; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,230,218,0.3); }
 </style>
 </head>
 <body>
-<div class="canvas">
-  <div class="header">
-    <div class="title">A Esteira de Valor</div>
-    <div class="subtitle">Dois trilhos · Digital + Serviço · Sem canibalização</div>
-  </div>
+<div class="brand-bar">
+  <svg width="28" height="28" viewBox="0 0 30 30" fill="none"><circle cx="11" cy="11" r="6.25" stroke="#B87A3C" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="26" y2="26" stroke="#B87A3C" stroke-width="2.4" stroke-linecap="round"/><line x1="23.5" y1="23.5" x2="21.5" y2="27" stroke="#B87A3C" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="20" x2="18" y2="23.5" stroke="#B87A3C" stroke-width="2" stroke-linecap="round"/></svg>
+  <span class="brand-name">Chave Mestra</span>
+  <div class="brand-line"></div>
+</div>
+<div class="header">
+  <div class="section-tag"><span class="section-dot"></span>Negócio &amp; Escala</div>
+  <h1 class="headline">A Esteira<br>como <em>Escada</em></h1>
+  <p class="subline">Produto único não escala. A escada de valor move o cliente do gratuito até o alto ticket — sem pulos.</p>
+</div>
 
-  <div class="divider-label">Trilho Digital — escala, compra única</div>
+<div class="staircase">
 
-  <div class="ladder">
-
-    <div class="step">
-      <div class="step-indent"></div>
-      <div class="step-content">
-        <div class="step-num">↓</div>
-        <div class="step-info">
-          <div class="step-name">Isca Gratuita</div>
-          <div class="step-desc">Mini-template Notion + aula — "como organizo minha produção de conteúdo"</div>
-        </div>
-        <div class="step-price"><span class="price-main">R$ 0</span><span class="price-type">entrada</span></div>
+  <div class="step-row">
+    <div class="step-num">
+      <div class="step-num-chip">01</div>
+    </div>
+    <div class="step-main">
+      <div class="step-info">
+        <div class="step-tier">Entrada · Lead Magnet</div>
+        <div class="step-name">Isca Digital</div>
+        <div class="step-desc">PDF, checklist, mini-aula. Capta o lead. Prova de entrega imediata sem fricção.</div>
+        <div class="step-transform"><span class="transform-label">Transforma</span> Desconhecido → Lead com nome e e-mail</div>
       </div>
-    </div>
-
-    <div class="step">
-      <div class="step-indent"></div>
-      <div class="step-content highlight">
-        <div class="step-num gold">①</div>
-        <div class="step-info">
-          <div class="step-name">Sistema Operacional</div>
-          <div class="step-desc">Notion completo + onboarding gravado — funciona sem IA, é a base</div>
-        </div>
-        <div class="step-price"><span class="price-main">R$297–497</span><span class="price-type">one-time</span></div>
+      <div class="step-price">
+        <div class="price-label">Ticket</div>
+        <div class="price-value">Grátis</div>
       </div>
-    </div>
-
-    <div class="step">
-      <div class="step-indent"></div>
-      <div class="step-content">
-        <div class="step-num">②A</div>
-        <div class="step-info">
-          <div class="step-name">Agente Único</div>
-          <div class="step-desc">1 agente solo — Apolo, Atena ou Hermes</div>
-        </div>
-        <div class="step-price"><span class="price-main">R$197–297</span><span class="price-type">one-time</span></div>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-indent"></div>
-      <div class="step-content highlight">
-        <div class="step-num gold">②B</div>
-        <div class="step-info">
-          <div class="step-name">Uma Ordem</div>
-          <div class="step-desc">2–4 agentes por objetivo — Mapa, Pena, Visual, Estratégia, Cruzada, Forja</div>
-        </div>
-        <div class="step-price"><span class="price-main">R$297–697</span><span class="price-type">one-time</span></div>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-indent"></div>
-      <div class="step-content highlight">
-        <div class="step-num gold">②C</div>
-        <div class="step-info">
-          <div class="step-name">O Olimpo Completo</div>
-          <div class="step-desc">Os 6 agentes + Zeus coordenador + Notion + Figma + onboarding completo</div>
-        </div>
-        <div class="step-price"><span class="price-main">R$997–1.497</span><span class="price-type">one-time</span></div>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-indent"></div>
-      <div class="step-content">
-        <div class="step-num">③</div>
-        <div class="step-info">
-          <div class="step-name">Comunidade</div>
-          <div class="step-desc">Grupo + chamadas mensais + Olimpo Completo incluso — o único recorrente</div>
-        </div>
-        <div class="step-price"><span class="price-main">R$197–297</span><span class="price-type">/ mês</span></div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="divider" style="margin:12px 0 8px;"></div>
-  <div class="divider-label">Trilho Serviço — profundidade, alto ticket</div>
-
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px;">
-    <div style="background:#141412;border:1px solid rgba(212,175,55,0.25);border-radius:5px;padding:12px 14px;">
-      <div style="font-size:10px;font-weight:900;color:#d4af37;letter-spacing:1px;margin-bottom:4px;">④ Implementação</div>
-      <div style="font-size:11px;color:#726a58;margin-bottom:6px;font-weight:300;">Você configura o sistema para o cliente</div>
-      <div style="font-size:12px;color:#b8b098;font-weight:600;">R$2.500–5.000</div>
-    </div>
-    <div style="background:#141412;border:1px solid rgba(212,175,55,0.25);border-radius:5px;padding:12px 14px;">
-      <div style="font-size:10px;font-weight:900;color:#d4af37;letter-spacing:1px;margin-bottom:4px;">⑤ Mentoria</div>
-      <div style="font-size:11px;color:#726a58;margin-bottom:6px;font-weight:300;">Sistema + sessões ao vivo + acompanhamento</div>
-      <div style="font-size:12px;color:#b8b098;font-weight:600;">R$1.500–3.000 / mês</div>
-    </div>
-    <div style="background:#141412;border:1px solid rgba(212,175,55,0.6);border-radius:5px;padding:12px 14px;">
-      <div style="font-size:10px;font-weight:900;color:#d4af37;letter-spacing:1px;margin-bottom:4px;">⑥ White Label</div>
-      <div style="font-size:11px;color:#726a58;margin-bottom:6px;font-weight:300;">Licença para revenda ou uso com clientes</div>
-      <div style="font-size:12px;color:#b8b098;font-weight:600;">R$5.000–15.000</div>
     </div>
   </div>
 
-  <div class="footer" style="margin-top:16px;">
-    <div class="footer-line"></div>
-    <div class="footer-text">Chave Mestra — Arquitetura Comercial</div>
-    <div class="footer-line"></div>
+  <div class="step-arrow">↓</div>
+
+  <div class="step-row">
+    <div class="step-num">
+      <div class="step-num-chip">02</div>
+    </div>
+    <div class="step-main">
+      <div class="step-info">
+        <div class="step-tier">Low Ticket · Acesso</div>
+        <div class="step-name">Sistema Operacional</div>
+        <div class="step-desc">O primeiro produto pago. Método comprimido. Transforma seguidor em comprador.</div>
+        <div class="step-transform"><span class="transform-label">Transforma</span> Lead frio → Primeiro comprador</div>
+      </div>
+      <div class="step-price">
+        <div class="price-label">Ticket</div>
+        <div class="price-value">R$97–297</div>
+      </div>
+    </div>
   </div>
+
+  <div class="step-arrow">↓</div>
+
+  <div class="step-row">
+    <div class="step-num">
+      <div class="step-num-chip">03</div>
+    </div>
+    <div class="step-main">
+      <div class="step-info">
+        <div class="step-tier">Mid Ticket · Transformação</div>
+        <div class="step-name">O Olimpo</div>
+        <div class="step-desc">Sistema completo com 6 agentes de IA. Resultado profundo e acompanhado.</div>
+        <div class="step-transform"><span class="transform-label">Transforma</span> Comprador → Usuário do sistema completo</div>
+      </div>
+      <div class="step-price">
+        <div class="price-label">Ticket</div>
+        <div class="price-value">R$997–2k</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-arrow">↓</div>
+
+  <div class="step-row">
+    <div class="step-num">
+      <div class="step-num-chip">04</div>
+    </div>
+    <div class="step-main">
+      <div class="step-info">
+        <div class="step-tier">Comunidade · Continuidade</div>
+        <div class="step-name">A Ordem</div>
+        <div class="step-desc">Comunidade de portadores. Atualização contínua + pertencimento + sinergia entre pares.</div>
+        <div class="step-transform"><span class="transform-label">Transforma</span> Usuário → Portador com rede e identidade</div>
+      </div>
+      <div class="step-price">
+        <div class="price-label">Ticket</div>
+        <div class="price-value">R$97/mês</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-arrow">↓</div>
+
+  <div class="step-row dark">
+    <div class="step-num dark">
+      <div class="step-num-chip">05</div>
+    </div>
+    <div class="step-main">
+      <div class="step-info">
+        <div class="step-tier">High Ticket · Execução</div>
+        <div class="step-name">Co-Produção / Serviço</div>
+        <div class="step-desc">Mentoria individual, co-produção ou execução direta. Alto ticket. Máxima transformação.</div>
+        <div class="step-transform"><span class="transform-label">Transforma</span> Portador → Parceiro ou case de alto impacto</div>
+      </div>
+      <div class="step-price">
+        <div class="price-label">Ticket</div>
+        <div class="price-value">R$5k–15k</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="bottom-bar">
+  <div class="bottom-reveal">É por isso que a Chave Mestra tem dois trilhos — digital (escala) e serviço (alto ticket) — que se alimentam mutuamente.</div>
+  <div class="bottom-tag">Módulo Escala · Esteira de Valor · Portal da Escala</div>
 </div>
 </body>
 </html>

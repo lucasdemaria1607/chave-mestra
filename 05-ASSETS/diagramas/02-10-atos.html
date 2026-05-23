@@ -2,135 +2,173 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1080">
-<title>Os 10 Atos do Chavossel</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+<title>Os 10 Atos do Chavossel — Chave Mestra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1080px; height: 1080px; overflow: hidden; background: #0a0a08; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; }
-  .canvas { width: 1080px; height: 1080px; display: grid; grid-template-columns: 1fr; padding: 64px 80px; }
-
-  .header { margin-bottom: 36px; }
-  .title { font-family: 'Playfair Display', serif; font-size: 36px; color: #f5f0e8; margin-bottom: 6px; }
-  .subtitle { font-size: 11px; color: #726a58; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; }
-
-  .acts { display: flex; flex-direction: column; gap: 0; flex: 1; }
-
-  .act { display: flex; align-items: stretch; min-height: 72px; }
-
-  /* linha vertical conectora */
-  .connector { display: flex; flex-direction: column; align-items: center; width: 40px; flex-shrink: 0; }
-  .connector .dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #d4af37; background: #0a0a08; flex-shrink: 0; margin-top: 12px; }
-  .connector .dot.filled { background: #d4af37; }
-  .connector .line { width: 1px; background: #1c1c18; flex: 1; }
-  .act:last-child .connector .line { display: none; }
-
-  .act-body { flex: 1; padding: 10px 0 10px 20px; display: flex; align-items: flex-start; gap: 16px; }
-  .act-num { font-size: 11px; font-weight: 900; color: #38362e; letter-spacing: 1px; min-width: 20px; padding-top: 2px; }
-  .act-content { flex: 1; }
-  .act-name { font-size: 13px; font-weight: 600; color: #f5f0e8; margin-bottom: 2px; }
-  .act-desc { font-size: 11.5px; font-weight: 300; color: #726a58; line-height: 1.5; }
-  .act-tag { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; margin-top: 4px; }
-  .tag-abertura { color: #d4af37; border: 1px solid rgba(212,175,55,0.3); }
-  .tag-ponte { color: #b8b098; border: 1px solid rgba(184,176,152,0.2); }
-  .tag-corpo { color: #726a58; border: 1px solid rgba(114,106,88,0.2); }
-  .tag-fechamento { color: #d4af37; border: 1px solid rgba(212,175,55,0.3); }
-
-  /* bloco do corpo agrupado */
-  .corpo-block { border-left: 1px solid #1c1c18; margin-left: 20px; padding-left: 16px; }
-
-  .footer { margin-top: 24px; display: flex; align-items: center; gap: 10px; }
-  .footer-line { width: 28px; height: 1px; background: rgba(212,175,55,0.3); }
-  .footer-text { font-size: 10px; color: #38362e; letter-spacing: 2.5px; text-transform: uppercase; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1350px;
+  background: #EDE6DA;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1A1612; overflow: hidden; position: relative;
+}
+.brand-bar { display: flex; align-items: center; gap: 16px; padding: 40px 60px 0; }
+.brand-name { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #1A1612; white-space: nowrap; }
+.brand-line { flex: 1; height: 1px; background: rgba(26,22,18,0.22); }
+.header { padding: 26px 60px 0; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(184,122,60,0.1); border: 1px solid rgba(184,122,60,0.22);
+  border-radius: 100px; padding: 5px 14px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #B87A3C;
+  margin-bottom: 12px;
+}
+.section-dot { width: 5px; height: 5px; border-radius: 50%; background: #B87A3C; flex-shrink: 0; }
+.headline { font-size: 66px; font-weight: 900; line-height: 0.88; letter-spacing: -0.04em; color: #1A1612; margin-bottom: 10px; }
+.headline em { font-style: normal; color: #B87A3C; }
+.subline { font-size: 15px; line-height: 1.5; color: #6B5D4F; }
+.content { padding: 26px 60px 0; }
+.phase-label { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; margin-top: 20px; }
+.phase-chip {
+  background: rgba(184,122,60,0.12); border: 1px solid rgba(184,122,60,0.2);
+  border-radius: 100px; padding: 4px 12px;
+  font-size: 9px; font-weight: 900; letter-spacing: 0.22em; text-transform: uppercase; color: #B87A3C;
+  white-space: nowrap; flex-shrink: 0;
+}
+.phase-line { flex: 1; height: 1px; background: rgba(184,122,60,0.18); }
+.acts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.act-card {
+  background: #FAF6F1; border-radius: 16px;
+  border: 1px solid rgba(26,22,18,0.07);
+  padding: 16px 18px;
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.act-card.dark { background: #1A1612; border-color: rgba(237,230,218,0.06); }
+.act-card.span2 { grid-column: span 2; }
+.act-chip {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: #B87A3C;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 900; color: #fff;
+}
+.dark .act-chip { background: rgba(237,230,218,0.12); color: rgba(237,230,218,0.6); }
+.act-function { font-size: 9px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #A89880; margin-bottom: 3px; }
+.dark .act-function { color: rgba(237,230,218,0.3); }
+.act-name { font-size: 14px; font-weight: 800; letter-spacing: -0.015em; color: #1A1612; line-height: 1.2; margin-bottom: 3px; }
+.dark .act-name { color: #EDE6DA; font-size: 16px; }
+.act-desc { font-size: 11px; color: #6B5D4F; line-height: 1.45; }
+.dark .act-desc { color: rgba(237,230,218,0.45); }
+.bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; background: #1A1612; padding: 24px 60px; }
+.bottom-reveal { font-size: 15px; line-height: 1.55; color: #EDE6DA; max-width: 860px; }
+.bottom-tag { margin-top: 5px; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,230,218,0.3); }
 </style>
 </head>
 <body>
-<div class="canvas">
-  <div class="header">
-    <div class="title">Os 10 Atos do Chavossel</div>
-    <div class="subtitle">Estrutura invariável de todo carrossel</div>
-  </div>
-
-  <div class="acts">
-
-    <div class="act">
-      <div class="connector"><div class="dot filled"></div><div class="line"></div></div>
+<div class="brand-bar">
+  <svg width="28" height="28" viewBox="0 0 30 30" fill="none"><circle cx="11" cy="11" r="6.25" stroke="#B87A3C" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="26" y2="26" stroke="#B87A3C" stroke-width="2.4" stroke-linecap="round"/><line x1="23.5" y1="23.5" x2="21.5" y2="27" stroke="#B87A3C" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="20" x2="18" y2="23.5" stroke="#B87A3C" stroke-width="2" stroke-linecap="round"/></svg>
+  <span class="brand-name">Chave Mestra</span>
+  <div class="brand-line"></div>
+</div>
+<div class="header">
+  <div class="section-tag"><span class="section-dot"></span>Criação de Conteúdo</div>
+  <h1 class="headline">Os <em>10 Atos</em><br>do Chavossel</h1>
+  <p class="subline">A estrutura invariável. Cada ato tem uma função retórica precisa — antes de escrever uma palavra.</p>
+</div>
+<div class="content">
+  <div class="phase-label"><div class="phase-chip">Abertura</div><div class="phase-line"></div></div>
+  <div class="acts-grid">
+    <div class="act-card dark">
+      <div class="act-chip">01</div>
       <div class="act-body">
-        <div class="act-num">01</div>
-        <div class="act-content">
-          <div class="act-name">Abertura</div>
-          <div class="act-desc">Título + subtítulo que desafiam uma crença ou prometem transformação real</div>
-          <span class="act-tag tag-abertura">Manchete obrigatória</span>
-        </div>
+        <div class="act-function">Capa</div>
+        <div class="act-name">O Grito / Manchete</div>
+        <div class="act-desc">Para o scroll. Promessa ou paradoxo. Maior fonte do carrossel.</div>
       </div>
     </div>
-
-    <div class="act">
-      <div class="connector"><div class="dot filled"></div><div class="line"></div></div>
+    <div class="act-card">
+      <div class="act-chip">02</div>
       <div class="act-body">
-        <div class="act-num">02</div>
-        <div class="act-content">
-          <div class="act-name">A Ponte</div>
-          <div class="act-desc">Contextualização que abre lacuna de informação — o lead precisa continuar</div>
-          <span class="act-tag tag-ponte">Information Gap</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="act">
-      <div class="connector"><div class="dot"></div><div class="line"></div></div>
-      <div class="act-body">
-        <div class="act-num">03–09</div>
-        <div class="act-content">
-          <div class="act-name">O Corpo</div>
-          <div class="act-desc">Estrutura retórica do exercício Progymnasmata escolhido. Ritmo alternado obrigatório — nunca três slides do mesmo tipo seguidos</div>
-          <span class="act-tag tag-corpo">Manchete · Immersive · O Grito</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="act">
-      <div class="connector"><div class="dot filled"></div><div class="line"></div></div>
-      <div class="act-body">
-        <div class="act-num">10</div>
-        <div class="act-content">
-          <div class="act-name">Fechamento</div>
-          <div class="act-desc">Conclusão moral ou prática que entrega o que foi prometido na abertura + CTA</div>
-          <span class="act-tag tag-fechamento">Resolução + Ação</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- tipos de slide -->
-  <div style="margin-top:28px; border-top:1px solid #141412; padding-top:20px;">
-    <div style="font-size:10px;color:#38362e;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">Tipos de slide disponíveis</div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
-      <div style="background:#0e0e0c;border:1px solid #1c1c18;padding:12px;border-radius:4px;">
-        <div style="font-size:11px;font-weight:600;color:#d4af37;margin-bottom:4px;"># Título</div>
-        <div style="font-size:10px;color:#726a58;line-height:1.5;">Manchete — domina o slide, subtítulo abaixo</div>
-      </div>
-      <div style="background:#0e0e0c;border:1px solid #1c1c18;padding:12px;border-radius:4px;">
-        <div style="font-size:11px;font-weight:600;color:#b8b098;margin-bottom:4px;">Texto puro</div>
-        <div style="font-size:10px;color:#726a58;line-height:1.5;">Immersive Reader — argumento denso, foco tipográfico</div>
-      </div>
-      <div style="background:#0e0e0c;border:1px solid #1c1c18;padding:12px;border-radius:4px;">
-        <div style="font-size:11px;font-weight:600;color:#f5f0e8;margin-bottom:4px;"># Frase curta</div>
-        <div style="font-size:10px;color:#726a58;line-height:1.5;">O Grito — ruptura, aforismo, plot twist</div>
-      </div>
-      <div style="background:#0e0e0c;border:1px solid #1c1c18;padding:12px;border-radius:4px;">
-        <div style="font-size:11px;font-weight:600;color:#726a58;margin-bottom:4px;">Corpo curto</div>
-        <div style="font-size:10px;color:#726a58;line-height:1.5;">Transição — pausa, ponto médio</div>
+        <div class="act-function">Ponte</div>
+        <div class="act-name">A Ponte</div>
+        <div class="act-desc">Conecta capa ao desenvolvimento. Promessa reforçada + contexto mínimo.</div>
       </div>
     </div>
   </div>
-
-  <div class="footer" style="margin-top:20px;">
-    <div class="footer-line"></div>
-    <div class="footer-text">Chave Mestra — Motor Chavossel v22</div>
-    <div class="footer-line"></div>
+  <div class="phase-label"><div class="phase-chip">Corpo — Desenvolvimento</div><div class="phase-line"></div></div>
+  <div class="acts-grid">
+    <div class="act-card">
+      <div class="act-chip">03</div>
+      <div class="act-body">
+        <div class="act-function">Desenvolvimento 1</div>
+        <div class="act-name">Argumento Central</div>
+        <div class="act-desc">A tese do carrossel. Ponto mais forte — entra aqui.</div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-chip">04</div>
+      <div class="act-body">
+        <div class="act-function">Desenvolvimento 2</div>
+        <div class="act-name">Aprofundamento</div>
+        <div class="act-desc">Evidência, exemplo ou segundo ângulo do argumento.</div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-chip">05</div>
+      <div class="act-body">
+        <div class="act-function">Desenvolvimento 3</div>
+        <div class="act-name">Ruptura / Contraste</div>
+        <div class="act-desc">Muda o ritmo. Grito visual, dado surpresa, comparação.</div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-chip">06</div>
+      <div class="act-body">
+        <div class="act-function">Desenvolvimento 4</div>
+        <div class="act-name">Prova ou Caso</div>
+        <div class="act-desc">Âncora na realidade. Depoimento, resultado, exemplo concreto.</div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-chip">07</div>
+      <div class="act-body">
+        <div class="act-function">Desenvolvimento 5</div>
+        <div class="act-name">Expansão</div>
+        <div class="act-desc">"Não é só X — é Y." Abre para a dimensão maior do argumento.</div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-chip">08</div>
+      <div class="act-body">
+        <div class="act-function">Desenvolvimento 6</div>
+        <div class="act-name">Objeção Antecipada</div>
+        <div class="act-desc">Responde a dúvida antes que ela apareça. Fortalece a tese.</div>
+      </div>
+    </div>
+    <div class="act-card span2">
+      <div class="act-chip">09</div>
+      <div class="act-body">
+        <div class="act-function">Desenvolvimento 7</div>
+        <div class="act-name">Síntese</div>
+        <div class="act-desc">Resume a jornada em uma frase poderosa. Prepara e antecipa o CTA.</div>
+      </div>
+    </div>
   </div>
+  <div class="phase-label"><div class="phase-chip">Fechamento</div><div class="phase-line"></div></div>
+  <div class="acts-grid">
+    <div class="act-card dark span2">
+      <div class="act-chip">10</div>
+      <div class="act-body">
+        <div class="act-function">CTA</div>
+        <div class="act-name">O Fechamento — Chamada para Ação</div>
+        <div class="act-desc">Salva, comenta, compartilha, clica. Um CTA. Um verbo. Uma direção.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom-bar">
+  <div class="bottom-reveal">É por isso que todo carrossel do Chave Mestra segue os 10 atos — estrutura antes de palavras. O exercício Progymnasmata é escolhido antes do primeiro slide.</div>
+  <div class="bottom-tag">Módulo Criação · Chavossel · Bardo</div>
 </div>
 </body>
 </html>

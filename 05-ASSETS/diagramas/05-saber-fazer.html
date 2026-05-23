@@ -2,159 +2,266 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1080">
-<title>SABER ↔ FAZER</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;900&display=swap" rel="stylesheet">
+<title>SABER ↔ FAZER — Chave Mestra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { width: 1080px; height: 1080px; overflow: hidden; background: #0a0a08; font-family: 'Montserrat', sans-serif; display: flex; align-items: center; justify-content: center; }
-  .canvas { width: 1080px; height: 1080px; padding: 64px 72px; display: flex; flex-direction: column; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  width: 1080px; height: 1350px;
+  background: #EDE6DA;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #1A1612; overflow: hidden; position: relative;
+}
+.brand-bar { display: flex; align-items: center; gap: 16px; padding: 40px 60px 0; }
+.brand-name { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #1A1612; white-space: nowrap; }
+.brand-line { flex: 1; height: 1px; background: rgba(26,22,18,0.22); }
+.header { padding: 26px 60px 0; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(184,122,60,0.1); border: 1px solid rgba(184,122,60,0.22);
+  border-radius: 100px; padding: 5px 14px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #B87A3C;
+  margin-bottom: 12px;
+}
+.section-dot { width: 5px; height: 5px; border-radius: 50%; background: #B87A3C; flex-shrink: 0; }
+.headline { font-size: 72px; font-weight: 900; line-height: 0.88; letter-spacing: -0.04em; color: #1A1612; margin-bottom: 10px; }
+.headline em { font-style: normal; color: #B87A3C; }
+.subline { font-size: 15px; line-height: 1.5; color: #6B5D4F; }
 
-  .header { text-align: center; margin-bottom: 48px; }
-  .title { font-family: 'Playfair Display', serif; font-size: 40px; color: #f5f0e8; margin-bottom: 8px; }
-  .title span { color: #d4af37; }
-  .subtitle { font-size: 11px; color: #726a58; letter-spacing: 3px; text-transform: uppercase; font-weight: 300; margin-bottom: 10px; }
-  .tagline { font-size: 14px; color: #b8b098; font-weight: 300; font-style: italic; font-family: 'Playfair Display', serif; }
+/* Bipartite layout */
+.bipartite {
+  display: grid;
+  grid-template-columns: 1fr 64px 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0;
+  padding: 22px 60px 0;
+  height: 870px;
+}
 
-  .pillars { display: grid; grid-template-columns: 1fr 80px 1fr; gap: 0; flex: 1; align-items: stretch; }
+/* Column headers */
+.col-header {
+  border-radius: 16px 16px 0 0;
+  padding: 16px 22px 14px;
+  text-align: center;
+}
+.col-header.light { background: #FAF6F1; border: 1px solid rgba(26,22,18,0.07); border-bottom: none; }
+.col-header.dark { background: #1A1612; }
+.col-title { font-size: 24px; font-weight: 900; letter-spacing: -0.025em; }
+.light .col-title { color: #1A1612; }
+.dark .col-title { color: #EDE6DA; }
+.col-sub { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-top: 2px; }
+.light .col-sub { color: #A89880; }
+.dark .col-sub { color: rgba(237,230,218,0.35); }
 
-  .pillar {
-    background: #0e0e0c;
-    border: 1px solid #1c1c18;
-    border-radius: 8px;
-    padding: 28px 24px;
-    display: flex; flex-direction: column;
-  }
-  .pillar.left { border-right: none; border-radius: 8px 0 0 8px; }
-  .pillar.right { border-left: none; border-radius: 0 8px 8px 0; }
-  .pillar.left { border-color: rgba(212,175,55,0.2); }
-  .pillar.right { border-color: rgba(184,176,152,0.15); }
+/* Center column */
+.center-col {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 6px;
+  padding: 0 2px;
+}
+.center-line {
+  width: 1px; flex: 1;
+  background: linear-gradient(to bottom, rgba(184,122,60,0.08), rgba(184,122,60,0.4), rgba(184,122,60,0.08));
+}
+.center-sym { font-size: 18px; color: #B87A3C; font-weight: 900; }
 
-  .pillar-label {
-    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 300;
-    margin-bottom: 6px;
-  }
-  .pillar.left .pillar-label { color: #d4af37; }
-  .pillar.right .pillar-label { color: #b8b098; }
+/* Item rows */
+.col-items { display: flex; flex-direction: column; flex: 1; }
+.col-item {
+  flex: 1;
+  padding: 18px 20px;
+  border-left: 1px solid rgba(26,22,18,0.07);
+  border-right: 1px solid rgba(26,22,18,0.07);
+  border-bottom: 1px solid rgba(26,22,18,0.07);
+  background: #FAF6F1;
+  display: flex; align-items: center; gap: 12px;
+}
+.col-item:last-child { border-radius: 0 0 16px 16px; }
+.col-item.dark-item {
+  background: #1A1612;
+  border-color: rgba(237,230,218,0.06);
+}
 
-  .pillar-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: #f5f0e8; margin-bottom: 6px; }
-  .pillar-desc { font-size: 12px; color: #726a58; font-weight: 300; line-height: 1.6; margin-bottom: 24px; }
+.item-chip {
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(184,122,60,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px; font-weight: 900; color: #B87A3C;
+}
+.dark-item .item-chip { background: rgba(237,230,218,0.08); color: rgba(237,230,218,0.4); }
 
-  .items { display: flex; flex-direction: column; gap: 10px; flex: 1; }
-  .item { display: flex; align-items: flex-start; gap: 12px; }
-  .item-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-  .pillar.left .item-dot { background: rgba(212,175,55,0.5); }
-  .pillar.right .item-dot { background: rgba(184,176,152,0.3); }
-  .item-text { font-size: 13px; color: #b8b098; font-weight: 400; line-height: 1.5; }
-  .item-sub { font-size: 10.5px; color: #38362e; font-weight: 300; display: block; margin-top: 1px; }
+.item-text { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; color: #1A1612; line-height: 1.25; }
+.dark-item .item-text { color: #EDE6DA; }
+.item-sub { font-size: 11px; color: #A89880; line-height: 1.35; margin-top: 1px; }
+.dark-item .item-sub { color: rgba(237,230,218,0.3); }
 
-  /* conector central */
-  .connector {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 0;
-  }
-  .conn-line { flex: 1; width: 1px; background: #1c1c18; }
-  .conn-arrows {
-    display: flex; flex-direction: column; align-items: center; gap: 6px;
-    padding: 12px 0;
-  }
-  .arr { font-size: 16px; color: rgba(212,175,55,0.5); }
-  .conn-label { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #38362e; transform: rotate(90deg); white-space: nowrap; margin: 8px 0; }
+/* Center spacer between header and items */
+.center-spacer {}
 
-  .footer { margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 12px; }
-  .footer-line { width: 40px; height: 1px; background: rgba(212,175,55,0.25); }
-  .footer-text { font-size: 10px; color: #38362e; letter-spacing: 2.5px; text-transform: uppercase; }
+/* Bridge callout */
+.bridge {
+  margin: 18px 60px 0;
+  background: #FAF6F1;
+  border-radius: 18px;
+  border: 1px solid rgba(26,22,18,0.07);
+  padding: 20px 26px;
+  display: flex; align-items: center; gap: 20px;
+}
+.bridge-left {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(184,122,60,0.12);
+  border: 1.5px solid rgba(184,122,60,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.bridge-text {}
+.bridge-label { font-size: 9px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: #B87A3C; margin-bottom: 4px; }
+.bridge-body { font-size: 13px; font-weight: 700; letter-spacing: -0.01em; color: #1A1612; line-height: 1.4; }
+.bridge-body em { font-style: normal; color: #B87A3C; }
+
+.bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; background: #1A1612; padding: 24px 60px; }
+.bottom-reveal { font-size: 15px; line-height: 1.55; color: #EDE6DA; max-width: 860px; }
+.bottom-tag { margin-top: 5px; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(237,230,218,0.3); }
 </style>
 </head>
 <body>
-<div class="canvas">
-  <div class="header">
-    <div class="title">SABER <span>↔</span> FAZER</div>
-    <div class="subtitle">Os dois pilares do sistema</div>
-    <div class="tagline">"Conhecimento sem ação é arquivo morto. Ação sem estudo é ruído."</div>
+<div class="brand-bar">
+  <svg width="28" height="28" viewBox="0 0 30 30" fill="none"><circle cx="11" cy="11" r="6.25" stroke="#B87A3C" stroke-width="2.4"/><line x1="15.5" y1="15.5" x2="26" y2="26" stroke="#B87A3C" stroke-width="2.4" stroke-linecap="round"/><line x1="23.5" y1="23.5" x2="21.5" y2="27" stroke="#B87A3C" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="20" x2="18" y2="23.5" stroke="#B87A3C" stroke-width="2" stroke-linecap="round"/></svg>
+  <span class="brand-name">Chave Mestra</span>
+  <div class="brand-line"></div>
+</div>
+<div class="header">
+  <div class="section-tag"><span class="section-dot"></span>Aprendizado &amp; Produção</div>
+  <h1 class="headline"><em>Saber</em> ↔<br><em>Fazer</em></h1>
+  <p class="subline">O sistema foi construído para que estudo vire ação automaticamente — sem o gap que mata a maioria.</p>
+</div>
+
+<div class="bipartite">
+  <!-- SABER header -->
+  <div class="col-header light">
+    <div class="col-title">SABER</div>
+    <div class="col-sub">Inputs de conhecimento</div>
+  </div>
+  <!-- Center header spacer -->
+  <div></div>
+  <!-- FAZER header -->
+  <div class="col-header dark">
+    <div class="col-title">FAZER</div>
+    <div class="col-sub">Camadas de execução</div>
   </div>
 
-  <div class="pillars">
-
-    <div class="pillar left">
-      <div class="pillar-label">Pilar 1</div>
-      <div class="pillar-title">Saber</div>
-      <div class="pillar-desc">Sistema de Conhecimento — onde a mente do expert se forja</div>
-      <div class="items">
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Zettelkasten<span class="item-sub">Como o conhecimento é registrado e conectado</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">PARA Method<span class="item-sub">Como o conhecimento é organizado e acessado</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Modelos Mentais<span class="item-sub">Como o conhecimento é destilado em decisão</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Progymnasmata<span class="item-sub">Como o conhecimento é exercitado e incorporado</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Tesouro dos Erros<span class="item-sub">Cada falha documentada como ativo intelectual</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Ritual da Chave<span class="item-sub">3 ciclos: Giro diário · Forja semanal · Lua Cheia</span></div>
-        </div>
+  <!-- SABER items -->
+  <div class="col-items">
+    <div class="col-item">
+      <div class="item-chip">S1</div>
+      <div>
+        <div class="item-text">Livros &amp; Cursos</div>
+        <div class="item-sub">Notas atômicas via Zettelkasten</div>
       </div>
     </div>
-
-    <div class="connector">
-      <div class="conn-line"></div>
-      <div class="conn-arrows">
-        <div class="arr">↑</div>
-        <div class="arr">↓</div>
+    <div class="col-item">
+      <div class="item-chip">S2</div>
+      <div>
+        <div class="item-text">Experiências</div>
+        <div class="item-sub">Insumos biográficos capturados</div>
       </div>
-      <div class="conn-line"></div>
     </div>
-
-    <div class="pillar right">
-      <div class="pillar-label">Pilar 2</div>
-      <div class="pillar-title">Fazer</div>
-      <div class="pillar-desc">Sistema de Produção — onde o pensamento vira ação no mundo</div>
-      <div class="items">
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Diagnóstico<span class="item-sub">Mercado, persona e universo de marca</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Estratégia<span class="item-sub">Copy calibrada, oferta estruturada, posicionamento</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Criação<span class="item-sub">Carrosséis, roteiros, headlines, scripts</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Lançamento<span class="item-sub">Campanha, cronograma, protocolo de fechamento</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Escala<span class="item-sub">Métricas, alavancas, esteira de valor</span></div>
-        </div>
-        <div class="item">
-          <div class="item-dot"></div>
-          <div class="item-text">Evolução<span class="item-sub">Erros documentados, sistema que aprende</span></div>
-        </div>
+    <div class="col-item">
+      <div class="item-chip">S3</div>
+      <div>
+        <div class="item-text">Pesquisa de Mercado</div>
+        <div class="item-sub">Portal do Terreno + Persona</div>
+      </div>
+    </div>
+    <div class="col-item">
+      <div class="item-chip">S4</div>
+      <div>
+        <div class="item-text">Erros &amp; Falhas</div>
+        <div class="item-sub">Tesouro dos Erros documentado</div>
+      </div>
+    </div>
+    <div class="col-item">
+      <div class="item-chip">S5</div>
+      <div>
+        <div class="item-text">Feedbacks de Clientes</div>
+        <div class="item-sub">Linguagem real da persona</div>
+      </div>
+    </div>
+    <div class="col-item">
+      <div class="item-chip">S6</div>
+      <div>
+        <div class="item-text">Modelos Mentais</div>
+        <div class="item-sub">Frameworks de decisão estruturados</div>
       </div>
     </div>
   </div>
 
-  <div class="footer">
-    <div class="footer-line"></div>
-    <div class="footer-text">Chave Mestra — 100% Cérebro + 100% IA</div>
-    <div class="footer-line"></div>
+  <!-- Center col: arrows + symbol -->
+  <div class="center-col">
+    <div class="center-line"></div>
+    <div class="center-sym">⇄</div>
+    <div class="center-line"></div>
   </div>
+
+  <!-- FAZER items -->
+  <div class="col-items">
+    <div class="col-item dark-item">
+      <div class="item-chip">F1</div>
+      <div>
+        <div class="item-text">Diagnóstico</div>
+        <div class="item-sub">Chaveiro · Protocolo 0 · Dossiê</div>
+      </div>
+    </div>
+    <div class="col-item dark-item">
+      <div class="item-chip">F2</div>
+      <div>
+        <div class="item-text">Estratégia</div>
+        <div class="item-sub">Cartógrafo · Alquimista</div>
+      </div>
+    </div>
+    <div class="col-item dark-item">
+      <div class="item-chip">F3</div>
+      <div>
+        <div class="item-text">Criação</div>
+        <div class="item-sub">Bardo · Chavideo · Chavossel</div>
+      </div>
+    </div>
+    <div class="col-item dark-item">
+      <div class="item-chip">F4</div>
+      <div>
+        <div class="item-text">Lançamento</div>
+        <div class="item-sub">Arauto · Mapa de Campanha</div>
+      </div>
+    </div>
+    <div class="col-item dark-item">
+      <div class="item-chip">F5</div>
+      <div>
+        <div class="item-text">Operação</div>
+        <div class="item-sub">Esteira Notion · Ritual da Chave</div>
+      </div>
+    </div>
+    <div class="col-item dark-item">
+      <div class="item-chip">F6</div>
+      <div>
+        <div class="item-text">Evolução</div>
+        <div class="item-sub">Lua Cheia · Forja do Conhecimento</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bridge">
+  <div class="bridge-left">⇄</div>
+  <div class="bridge-text">
+    <div class="bridge-label">A Ponte</div>
+    <div class="bridge-body">Toda entrada de SABER passa pelo Chaveiro antes de virar FAZER. <em>Zettelkasten → Nota Atômica → Argumento → Conteúdo</em> — o sistema faz essa conversão automaticamente.</div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <div class="bottom-reveal">O Chave Mestra não é só um sistema de IA — é a arquitetura que fecha o loop entre o que você aprende e o que você produz.</div>
+  <div class="bottom-tag">Sistema de Conhecimento · Saber ↔ Fazer · Chaveiro</div>
 </div>
 </body>
 </html>
