@@ -22,11 +22,13 @@
 | Arquivo | Data Output | Data Sync | Status | ID Notion |
 |---------|-------------|-----------|--------|-----------|
 | outputs/temas/temas-2026-04-27.md | 2026-04-27 | 2026-04-29 | ✅ sincronizado | `351fc122-de3b-818e-9b03-f1f2afb61b1b` |
+| outputs/temas/temas-2026-05-04.md | 2026-05-04 | 2026-06-05 | ✅ sincronizado | `376fc122-de3b-8100-bcc5-f23cc6b2b379` |
+| outputs/temas/temas-2026-05-11.md | 2026-05-11 | 2026-06-05 | ✅ sincronizado | `376fc122-de3b-8168-ad9d-e5c2055641af` |
+| outputs/temas/temas-2026-05-18.md | 2026-05-18 | 2026-06-05 | ✅ sincronizado | `376fc122-de3b-8123-bb34-d8e6ece2e3c2` |
 
-> ⚠️ Durante a primeira sincronização foram criadas 13 páginas individuais por engano (IDs abaixo).
-> Apagar manualmente no Notion — são Flash notes datadas 2026-04-27 no Zettelkasten.
+> ⚠️ Da sync de 2026-04-29 foram criadas 13 páginas individuais por engano — apagar manualmente no Notion (Flash notes datadas 2026-04-27 no Zettelkasten). IDs listados abaixo.
 
-### Páginas stray para deletar (erros da primeira sync)
+### Páginas stray para deletar (erros da primeira sync — 2026-04-27)
 
 | Título | ID |
 |--------|----|
@@ -50,7 +52,8 @@
 
 | Arquivo | Data Output | Data Sync | Status | IDs Notion |
 |---------|-------------|-----------|--------|------------|
-| *(nenhum output ainda)* | — | — | — | — |
+| outputs/nicho/nicho-update-2026-05-01.md | 2026-05-01 | 2026-06-05 | ✅ sincronizado | Zettelkasten: `376fc122-de3b-81fd-bbb2-d295a64cd4d4` · Tarefa: `376fc122-de3b-8120-9f69-ea1f798f9d60` |
+| outputs/nicho/nicho-update-2026-05-15.md | 2026-05-15 | 2026-06-05 | ✅ sincronizado | Zettelkasten: `376fc122-de3b-81e8-9e4f-caebb8237ac4` · Tarefa: `376fc122-de3b-81b6-87f1-c12d90832183` |
 
 ---
 
