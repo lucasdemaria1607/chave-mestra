@@ -71,10 +71,10 @@ lua_cheia_last_run: null    # atualizado automaticamente após cada execução
 ## Rotinas ativas
 
 ```
-rotina_temas: ativa           # 1x/semana — Seg 09h Bahia
-rotina_nicho: ativa           # Dia 1 e 15, 08h Bahia
-rotina_accountability: pausada # Reativar em 25/05 — aguardando acúmulo de notas
-rotina_conteudo: pausada      # Reativar em 25/05 — depende de accountability ativa
+rotina_temas: ativa           # 1x/semana — Seg 12h UTC (09h Bahia)
+rotina_nicho: ativa           # Dia 1 e 15, 11h UTC (08h Bahia)
+rotina_accountability: ativa  # Reativada em 2026-06-05 — todo Dom 23h UTC (20h Bahia)
+rotina_conteudo: ativa        # Reativada em 2026-06-05 — toda Seg 14h UTC (11h Bahia)
 rotina_lua_cheia: manual      # 1x/mês ou ao atingir lua_cheia_threshold notas novas
 ```
 
