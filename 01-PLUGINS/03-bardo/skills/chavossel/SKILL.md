@@ -32,22 +32,91 @@ Antes de gerar carrossel, verificar no **Dossiê CM** (`05-ASSETS/dossies/[proje
 2. **Publicar no Notion via Publicador Visual** — adicionar seção 🗂️ Carrossel na entrada do dia na database Conteúdo:
    - Buscar entrada onde `date:Data de Publicação:start` = [data planejada]
    - Se não existe: criar entrada do dia (Título = "📅 [DD/MM] — [tema]", Status = Rascunho, data = [data])
-   - Adicionar seção com diagnóstico Chavossel (exercício, N-level, proporção C1/C2/C3) + roteiro dos 10 slides com sintaxe v22 + nota técnica
+   - Adicionar seção com diagnóstico Chavossel (exercício, N-level, número de slides, proporção C1/C2/C3) + roteiro completo com sintaxe v22 + nota técnica
    → Ver `publicador-visual/SKILL.md` para o fluxo completo.
 
 ---
 
 ## Sintaxe Chavossel v22 (OBRIGATÓRIA)
 
-| Ferramenta | Sintaxe | Efeito Visual |
-|---|---|---|
-| **Manchete** | `# Frase longa de título` | Título de impacto no topo do slide |
-| **Corpo** | Texto normal (parágrafos) | Leitura narrativa padrão |
-| **Immersive Reader** | Texto puro >20 palavras, sem título | Remove distrações, foco tipográfico — para argumentos densos |
-| **O Grito** | `# Frase curta <20 palavras` + slide vazio | Aforismo, plot twist, ruptura |
-| **Corte** | `---` em linha isolada | Separador de slides |
+A sintaxe é parseada bloco a bloco pelo plugin. Um bloco = tudo entre dois `---`. A identificação do tipo de slide é feita pelo conteúdo do bloco, não por marcações externas.
 
-**Regra crítica:** todo slide é separado por `---`. Nunca escrever dois slides sem o corte entre eles.
+---
+
+### Tipos de Bloco — Regras de Identificação
+
+| Tipo | Como escrever | Como o plugin identifica | Efeito no render |
+|---|---|---|---|
+| **Manchete** | `# Título` + texto(s) abaixo no mesmo bloco | Linha `#` **com** conteúdo adicional no bloco | Título TITLE_LG (ouro) + subtítulo/corpo abaixo |
+| **O Grito** | `# Aforismo` — **nada mais** no bloco | Linha `#` **sem** conteúdo adicional — bloco contém só o `#` | Slide inteiro = aforismo centralizado, espaço vazio ao redor |
+| **Immersive Reader** | Texto puro sem `#`, **≥ 20 palavras** | Sem `#`, word count ≥ 20 | Texto corrido, tipografia aumentada, sem título — máxima imersão |
+| **Corpo** | Texto puro sem `#`, **< 20 palavras** | Sem `#`, word count < 20 | Texto curto centralizado no frame |
+| **Corte** | `---` em linha isolada | Linha exatamente `---` | Delimita fim de um slide, início do próximo |
+
+> **A diferença crítica Manchete ↔ O Grito não é o tamanho do título — é a presença ou ausência de texto abaixo do `#` no mesmo bloco.**
+
+---
+
+### Anatomia dos Blocos
+
+**Manchete — Slide 1 (Abertura canônica):**
+```
+# Título que desafia crença ou promete transformação
+Subtítulo que aprofunda o paradoxo ou ancora a promessa.
+```
+→ Plugin: título TITLE_LG (72px, ouro) + linha abaixo como SUBTITLE (32px, TXT_MD).
+
+**Manchete — Slides interiores:**
+```
+# Argumento-título
+Parágrafo de corpo que desenvolve o argumento.
+
+Segundo parágrafo se necessário.
+```
+→ Plugin: título TITLE_LG + linhas seguintes como BODY (26px, TXT_MD).
+
+**O Grito:**
+```
+# Uma frase que não precisa de mais nada.
+```
+→ Plugin: aforismo centralizado, TITLE_LG, slide vazio ao redor. Zero corpo.
+
+**Immersive Reader:**
+```
+O argumento se desenvolve aqui em texto corrido, sem nenhuma linha de título acima. Densidade necessária para que o leitor sinta que está dentro do pensamento, não observando de fora. A ausência de título remove a distância entre o texto e quem lê.
+```
+→ Plugin: texto corrido, tipografia aumentada. Ativado automaticamente se o bloco tiver 20+ palavras sem `#`.
+
+**Corpo:**
+```
+Consequência inevitável. Sem escudo.
+```
+→ Plugin: texto curto centralizado. Ativado se o bloco tiver <20 palavras sem `#`. Usar para pausas, transições, frases de impacto que não chegam ao nível de O Grito (sem `#`).
+
+**Corte:**
+```
+---
+```
+→ Linha isolada. Sempre antes e depois de cada bloco. Nunca dentro de um bloco.
+
+---
+
+### Regra do Corte — Crítica
+
+Todo slide começa e termina com `---`. O roteiro completo tem o padrão:
+
+```
+[bloco 1]
+---
+[bloco 2]
+---
+[bloco 3]
+---
+```
+
+Nunca: dois blocos sem `---` entre eles. Nunca: `---` dentro de um bloco Immersive Reader para quebrar parágrafos (isso criaria um novo slide).
+
+Para separar parágrafos dentro de um Immersive Reader: usar linha em branco, não `---`.
 
 ---
 
