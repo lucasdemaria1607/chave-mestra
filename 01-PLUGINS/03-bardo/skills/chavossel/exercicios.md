@@ -1,6 +1,8 @@
 # Exercícios Progymnasmata — Templates Chave Mestra
 
-Cada exercício está mapeado nos 10 atos do carrossel. Os templates são estruturas, não fórmulas rígidas. Adapte a linguagem ao insumo. Mantenha a sintaxe Chavossel.
+Cada exercício está mapeado em **até 10 atos**. O número real de slides é decidido antes de escrever (6–10), conforme a densidade do insumo — ver `SKILL.md` seção "Número de Slides". Os templates abaixo são referência máxima: atos podem ser fundidos, comprimidos ou omitidos quando a narrativa não os exige. O que nunca é omitido: Abertura (slide 1), A Ponte (slide 2) e Fechamento (último slide).
+
+**Compressão de atos:** quando for usar menos de 10 slides, fundir os atos do corpo de menor impacto em um único Immersive Reader ou eliminar o segundo Grito se o argumento não precisar de segunda ruptura. Registrar as fusões na nota técnica.
 
 ---
 
