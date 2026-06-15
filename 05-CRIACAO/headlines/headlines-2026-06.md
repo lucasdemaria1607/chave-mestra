@@ -29,3 +29,31 @@
 5. Uma pergunta que muda como você pensa sobre queda de engajamento: alguém procurou pelo seu nome essa semana?
 
 ---
+
+## 2026-06-15 — Transformação em Conteúdo (3 peças)
+
+### Peça 1 — João Gomes e o domínio que especialistas têm medo de imitar
+
+1. O que João Gomes fez que especialistas digitais têm medo de fazer
+2. Você está se tornando uma opção quando poderia ser a referência
+3. Ampliar o nicho para crescer é o conselho que está te mantendo pequeno
+4. Como ir mais fundo numa coisa específica vira o ativo mais difícil de copiar
+5. 4 indicações ao Prêmio da Música Brasileira. 0 tentativas de agradar a crítica. A matemática do domínio.
+
+### Peça 2 — Você sabe criar Reels. Não sabe fazer um funil.
+
+1. O que o Instagram documentou sobre funil que a maioria dos criadores nunca leu
+2. Você sabe criar Reels, carrossel e Stories — mas não sabe fazer um funil
+3. Dominar formatos de conteúdo não é estratégia de conteúdo
+4. Como transformar cada formato que você já domina em etapa de uma jornada que converte
+5. Instagram confirmou em 2026: 5 formatos, 5 funções. Usar todos como "conteúdo" é usar 20% da plataforma.
+
+### Peça 3 — Deepfake do especialista: identidade fraca te torna falsificável
+
+1. Por que especialistas com identidade fraca são os mais fáceis de falsificar com IA
+2. Se fizessem um deepfake seu, seus seguidores perceberiam rapidamente?
+3. A melhor proteção contra deepfake não é lei — é ser inconfundível
+4. Como construir uma identidade tão específica que qualquer imitação parece errada para quem te acompanha
+5. Deepfake exige que a original seja previsível. Quem tem perspectiva própria documentada é tecnicamente mais difícil de falsificar.
+
+---
