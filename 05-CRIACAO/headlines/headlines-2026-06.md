@@ -57,3 +57,31 @@
 5. Deepfake exige que a original seja previsível. Quem tem perspectiva própria documentada é tecnicamente mais difícil de falsificar.
 
 ---
+
+## 2026-06-22 — Transformação em Conteúdo (3 peças)
+
+### Peça 1 — O Brasil tem 18 influenciadores que não existem
+
+1. O Brasil tem 18 influenciadores que não existem — e o que isso revela sobre a sua credibilidade
+2. Se credibilidade pode ser fabricada em escala industrial, como a sua sobrevive?
+3. Avatar de IA não é sua concorrência — a ausência de posicionamento real é
+4. Como construir uma autoridade que nenhum sistema sintético consegue replicar
+5. 2 em cada 3 conteúdos políticos gerados por IA circularam sem identificação — e o problema não é político
+
+### Peça 2 — A renda real da creator economy
+
+1. O número que o mercado de marketing digital nunca cita nos anúncios
+2. 45% dos criadores ganham menos de R$50k por ano — e ninguém te avisou antes de você entrar
+3. A diferença entre os 5,7% e os outros 94% não é talento nem consistência
+4. Como entrar no mercado digital já com a estrutura dos 5,7% que chegam a seis dígitos
+5. 94,3% dos criadores nunca ultrapassam 6 dígitos anuais — aqui está a única diferença que importa
+
+### Peça 3 — Adeus, Viral
+
+1. As plataformas decretaram o que quem convertia já sabia sobre viral
+2. Você otimizou para alcance durante anos — e o viral está sendo penalizado retroativamente
+3. Viral nunca foi estratégia — era consequência que você confundiu com método
+4. Como construir audiência que sobrevive quando o algoritmo para de distribuir de graça
+5. Pela primeira vez em quase uma década, usuários passam menos tempo nas redes — e o que isso significa para quem depende de alcance
+
+---
