@@ -85,3 +85,31 @@
 5. Pela primeira vez em quase uma década, usuários passam menos tempo nas redes — e o que isso significa para quem depende de alcance
 
 ---
+
+## 2026-06-29 — Transformação em Conteúdo (3 peças)
+
+### Peça 1 — 5.000 seguidores com método batem 500.000 sem oferta
+
+1. Por que alguém com 5.000 seguidores pode faturar mais do que alguém com 500.000
+2. Você está crescendo o número errado — e é por isso que audiência não vira caixa
+3. Mais seguidores não é a resposta. Você está fazendo a pergunta errada.
+4. 5k seguidores + oferta clara = negócio real. 500k sem funil = número bonito na bio.
+5. Dados de creator economy 2026: micro criadores com oferta estruturada superam mega influencers sem produto próprio
+
+### Peça 2 — O marketing anti-IA pode ser a estratégia mais avançada de 2026
+
+1. Por que a estratégia de conteúdo mais sofisticada de 2026 pode ser parecer menos estratégico
+2. IA produz em escala — e está tornando o seu conteúdo substituível por padrão
+3. Usar menos IA pode ser a estratégia de conteúdo mais avançada que você tem agora
+4. Como recusar conteúdo indistinguível se torna diferenciação real numa era de volume fácil
+5. 43% dos criadores em burnout em 2026 — e a resposta não é onde o mercado está olhando
+
+### Peça 3 — Publicar todo dia pode ser seu maior erro estratégico — não de saúde mental
+
+1. Por que publicar todo dia pode estar destruindo sua estratégia — não só sua saúde
+2. Frequência sem argumento não é consistência — é compulsão com melhor embalagem
+3. O mito do conteúdo diário não destrói só criadores — destrói o conteúdo que você publica
+4. Uma análise por semana supera cinco posts de preenchimento que o algoritmo esquece em 36h
+5. 52% dos criadores em burnout em 2026 — mas o problema vem antes do que o debate nomeia
+
+---
