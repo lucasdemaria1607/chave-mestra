@@ -25,6 +25,12 @@
 | outputs/temas/temas-2026-05-04.md | 2026-05-04 | 2026-06-05 | ✅ sincronizado | `376fc122-de3b-8100-bcc5-f23cc6b2b379` |
 | outputs/temas/temas-2026-05-11.md | 2026-05-11 | 2026-06-05 | ✅ sincronizado | `376fc122-de3b-8168-ad9d-e5c2055641af` |
 | outputs/temas/temas-2026-05-18.md | 2026-05-18 | 2026-06-05 | ✅ sincronizado | `376fc122-de3b-8123-bb34-d8e6ece2e3c2` |
+| outputs/temas/temas-2026-05-25.md | 2026-05-25 | — | ⏳ pendente | — |
+| outputs/temas/temas-2026-06-01.md | 2026-06-01 | — | ⏳ pendente | — |
+| outputs/temas/temas-2026-06-08.md | 2026-06-08 | — | ⏳ pendente | — |
+| outputs/temas/temas-2026-06-15.md | 2026-06-15 | — | ⏳ pendente | — |
+| outputs/temas/temas-2026-06-22.md | 2026-06-22 | — | ⏳ pendente | — |
+| outputs/temas/temas-2026-06-29.md | 2026-06-29 | — | ⏳ pendente | — |
 
 > ⚠️ Da sync de 2026-04-29 foram criadas 13 páginas individuais por engano — apagar manualmente no Notion (Flash notes datadas 2026-04-27 no Zettelkasten). IDs listados abaixo.
 
@@ -54,6 +60,9 @@
 |---------|-------------|-----------|--------|------------|
 | outputs/nicho/nicho-update-2026-05-01.md | 2026-05-01 | 2026-06-05 | ✅ sincronizado | Zettelkasten: `376fc122-de3b-81fd-bbb2-d295a64cd4d4` · Tarefa: `376fc122-de3b-8120-9f69-ea1f798f9d60` |
 | outputs/nicho/nicho-update-2026-05-15.md | 2026-05-15 | 2026-06-05 | ✅ sincronizado | Zettelkasten: `376fc122-de3b-81e8-9e4f-caebb8237ac4` · Tarefa: `376fc122-de3b-81b6-87f1-c12d90832183` |
+| outputs/nicho/nicho-update-2026-06-01.md | 2026-06-01 | — | ⏳ pendente | — |
+| outputs/nicho/nicho-update-2026-06-15.md | 2026-06-15 | — | ⏳ pendente | — |
+| outputs/nicho/nicho-update-2026-07-01.md | 2026-07-01 | — | ⏳ pendente | — |
 
 ---
 
@@ -61,7 +70,21 @@
 
 | Arquivo | Data Output | Data Sync | Status | Páginas criadas |
 |---------|-------------|-----------|--------|-----------------|
-| *(nenhum output ainda)* | — | — | — | — |
+| outputs/conteudo/conteudo-2026-06-08.md | 2026-06-08 | — | ⏳ pendente | — |
+| outputs/conteudo/conteudo-2026-06-15.md | 2026-06-15 | — | ⏳ pendente | — |
+| outputs/conteudo/conteudo-2026-06-22.md | 2026-06-22 | — | ⏳ pendente | — |
+| outputs/conteudo/conteudo-2026-06-29.md | 2026-06-29 | — | ⏳ pendente | — |
+
+---
+
+## Forja Semanal / Alertas → (registro)
+
+| Arquivo | Data Output | Data Sync | Status |
+|---------|-------------|-----------|--------|
+| outputs/forja-semanal/ALERTA-CRITICO-2026-06-07.md | 2026-06-07 | — | ⏳ pendente |
+| outputs/forja-semanal/ALERTA-CRITICO-2026-06-14.md | 2026-06-14 | — | ⏳ pendente |
+| outputs/forja-semanal/ALERTA-CRITICO-2026-06-21.md | 2026-06-21 | — | ⏳ pendente |
+| outputs/forja-semanal/ALERTA-CRITICO-2026-06-28.md | 2026-06-28 | — | ⏳ pendente |
 
 ---
 
